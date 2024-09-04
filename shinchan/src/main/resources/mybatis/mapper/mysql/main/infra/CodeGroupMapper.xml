@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shinnosuke.infra.codegroup.CodeGroupDao">
+	<!-- namespace = mapper 와 연결될 dao -->
+	<!-- xml 에서 주석 단축키 : ctrl + shift + C -->
+
+	<!-- resultMap : 결과를 담아줄 그으르읏 -->
+	<resultMap type="com.shinnosuke.infra.codegroup.CodeGroupDto" id="resultMapObj"></resultMap>
+
+	<select id="selectList" resultMap="resultMapObj">
+		select
+			a.seq
+			,a.cg_Name
+			,a.cg_UseNY
+			,a.cg_Order
+			,a.cg_Desc
+			,a.cg_ReDate
+			,a.cg_MoDate
+			,a.cg_DelNY
+		from
+			CodeGroup a
+		order by
+			a.seq desc
+	</select>
+	
+	<insert id = "insert">
+		insert into codegroup(
+    		cg_Name
+    		,cg_UseNY
+    		,cg_Order
+    		,cg_Desc
+    		,cg_ReDate
+    		,cg_MoDate
+    		,cg_DelNY
+		)value(
+    		#{cg_Name}
+    		,#{cg_UseNY}
+    		,#{cg_Order}
+    		,#{cg_Desc}
+    		,now()
+    		,now()
+    		,#{cg_DelNY}
+		)
+	</insert>
+		
+	<select id = "selectOne" resultMap="resultMapObj">
+		select
+			a.seq
+			,a.cg_Name
+			,a.cg_UseNY
+			,a.cg_Order
+			,a.cg_Desc
+			,a.cg_ReDate
+			,a.cg_MoDate
+			,a.cg_DelNY
+		from
+			CodeGroup a
+		where 1 =1
+			and a.seq = #{seq}		
+	</select>
+		
+	<update id="update">
+		update CodeGroup
+		set
+			cg_Name = #{cg_Name}
+			,cg_UseNY = #{cg_UseNY}
+			,cg_Order = #{cg_Order}
+			,cg_Desc = #{cg_Desc}
+			,cg_DelNY = #{cg_DelNY}
+		where 1 = 1
+			and seq = #{seq}
+	</update>
+	
+	</mapper>
