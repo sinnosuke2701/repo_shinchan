@@ -657,13 +657,13 @@
                                                         </tr>
                                                         <tr th:each="List : ${list1}">
                                                             <td th:text = "${List.seq}"><input type="checkbox"></td>
-                                                            <td th:text = "${List.cd_Name}"></td>
+                                                            <td><a th:href="@{/xdm/v1/infra/code/codeXdmMfom(seq=${List.seq})}" th:text="${List.cd_Name}"></a></td>
                                                             <td th:if = "${List.cd_UseNY eq 0}">N</td>
                                                             <td th:unless="${List.cd_UseNY eq 0}">Y</td>
                                                             <td th:text = "${List.cd_Order}"></td>
                                                             <td th:text = "${List.cd_Desc}"></td>
-                                                            <th th:text = "${#dates.format(List.cd_ReDate)}"></th>
-                                                            <td th:text = "${#dates.format(List.cd_MoDate, '1999-09-03 07:34:27')}"></td>
+                                                            <th th:text = "${#dates.format(List.cd_ReDate, 'yyyy-MM-dd HH:mm:ss')}"></th>
+                                                            <td th:text = "${#dates.format(List.cd_MoDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                                             <td th:if = "${List.cd_DelNY eq 0}">N</td>
                                                             <td th:unless = "${List.cd_DelNY eq 0}">Y</td>
                                                             <td th:text = "${List.CodeGroup_seq}"></td>
@@ -720,7 +720,7 @@
                                                         </svg>
                                                     </button>
                                                     <button type="button" id='seobin' class="btn btn-white"
-                                                        style="background-color: blue;">
+                                                        style="background-color: blue;" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/code/codeXdmForm';">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                             fill="white" class="bi bi-plus-square" viewBox="0 0 16 16">
                                                             <path

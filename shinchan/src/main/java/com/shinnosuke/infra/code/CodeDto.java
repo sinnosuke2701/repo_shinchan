@@ -7,13 +7,14 @@ public class CodeDto {
 	private String seq;
 	private String cd_Name;
 	private Integer cd_UseNY;
-	private Integer cd_Order;
+	private String cd_Order;
 	private String cd_Desc;
 	private Date cd_ReDate;
 	private Date cd_MoDate;
 	private Integer cd_DelNY;
-	private Integer CodeGroup_seq;
 	
+	private String CodeGroup_seq;
+	private String cg_Name;
 	//-------------
 	
 	public String getSeq() {
@@ -34,10 +35,10 @@ public class CodeDto {
 	public void setCd_UseNY(Integer cd_UseNY) {
 		this.cd_UseNY = cd_UseNY;
 	}
-	public Integer getCd_Order() {
+	public String getCd_Order() {
 		return cd_Order;
 	}
-	public void setCd_Order(Integer cd_Order) {
+	public void setCd_Order(String cd_Order) {
 		this.cd_Order = cd_Order;
 	}
 	public String getCd_Desc() {
@@ -64,14 +65,17 @@ public class CodeDto {
 	public void setCd_DelNY(Integer cd_DelNY) {
 		this.cd_DelNY = cd_DelNY;
 	}
-	public Integer getCodeGroup_seq() {
+	public String getCodeGroup_seq() {
 		return CodeGroup_seq;
 	}
-	public void setCodeGroup_seq(Integer codeGroup_seq) {
+	public void setCodeGroup_seq(String codeGroup_seq) {
 		CodeGroup_seq = codeGroup_seq;
 	}
-	
-	
-	
+	public String getCg_Name() {
+		return cg_Name;
+	}
+	public void setCg_Name(String cg_Name) {
+		this.cg_Name = cg_Name;	
+	}
 	
 }

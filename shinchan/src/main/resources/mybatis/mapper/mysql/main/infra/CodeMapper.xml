@@ -7,7 +7,7 @@
 
 	<!-- resultMap : 결과를 담아줄 그으르읏 -->
 	<resultMap type="com.shinnosuke.infra.code.CodeDto" id="resultMapObj"></resultMap>
-
+	
 	<select id="selectList" resultMap="resultMapObj">
 		select
 			a.seq
@@ -26,33 +26,65 @@
 	</select>
 	
 	<insert id="insert">
-		insert into member1(
-    		mem_Authority
-    		,mem_Name
-    		,mem_Id
-    		,mem_Password
-    		,mem_Gender
-         	,mem_Birth
-         	,mem_Email
-         	,mem_Phone
-         	,mem_Desc
-         	,mem_ReDate
-    		,mem_MoDate
-    		,mem_DelNY
-		)value(
-    		#{mem_Authority}
-    		,#{mem_Name}
-    		,#{mem_Id}
-    		,#{mem_Password}
-    		,#{mem_Gender}
-         	,#{mem_Birth}
-         	,#{mem_Email}
-         	,#{mem_Phone}
-         	,#{mem_Desc}
+		insert into code(
+    		 cd_Name       
+			 ,cd_UseNY       
+			 ,cd_Order       
+			 ,cd_Desc           
+			 ,cd_ReDate           
+			 ,cd_MoDate       
+			 ,cd_DelNY   
+			 ,CodeGroup_seq	
+		)values(
+    		#{cd_Name}
+    		,#{cd_UseNY}
+    		,#{cd_Order}
+    		,#{cd_Desc}
          	,now()
     		,now()
-    		,#{mem_DelNY}
+    		,0
+			,#{CodeGroup_seq}			
 		)
 	</insert>
+	
+	<select id = "selectOne" resultMap="resultMapObj">
+		select
+			a.seq
+			,a.cd_Name
+			,a.cd_UseNY
+			,a.cd_Order
+			,a.cd_Desc
+			,a.cd_ReDate
+			,a.cd_MoDate
+			,a.cd_DelNY
+			,a.CodeGroup_seq	
+		from
+			Code a
+		where 1 =1
+			and a.seq = #{seq}		
+	</select>
+		
+	<update id="update">
+		update Code
+		set
+			
+			,cd_Name = #{cd_Name}
+			,cd_UseNY = #{cd_UseNY}
+			,cd_Order = #{cd_Order}
+			,cd_Desc = #{cd_Desc}
+			,cd_DelNY = #{cd_DelNY}
+		where 1 = 1
+			and seq = #{seq}
+	</update>
+	
+	<select id="selectListCodeGroup" resultMap="resultMapObj">
+		select
+			a.seq as CodeGroup_seq
+			,a.cg_Name
+		from
+			CodeGroup a
+		where 1=1
+			
+	</select>
 	
 </mapper>

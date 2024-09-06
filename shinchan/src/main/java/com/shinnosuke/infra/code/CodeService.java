@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.shinnosuke.infra.codegroup.CodeGroupDto;
+
 @Service
 public class CodeService {
 	
@@ -15,4 +17,26 @@ public class CodeService {
 					return codes;
 		}
 	
+	public int insert(CodeDto codeDto) {
+		int result = CodeDao.insert(codeDto);
+		return result;
+	}
+		
+	public CodeDto selectOne(CodeDto codeDto){
+		 CodeDto dto = CodeDao.selectOne(codeDto);
+		return dto;
+	}
+	
+	public int update(CodeDto codeDto) {
+		 return CodeDao.update(codeDto);
+	 }
+	
+//	public List<CodeDto> selectListCodeGroup(){
+//		List<CodeDto> codeGroups = CodeDao.selectListCodeGroup();
+//		return codeGroups;
+//	}
+	
+	public List<CodeDto> selectListCodeGroup(){	
+		return CodeDao.selectListCodeGroup();
+	}
 }
