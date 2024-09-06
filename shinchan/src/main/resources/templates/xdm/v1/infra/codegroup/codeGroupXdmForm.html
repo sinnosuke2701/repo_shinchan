@@ -437,14 +437,22 @@
 														</div>
 													</div>
 													<div class="col-md-3">
-														<div class = "card">
-															<div class="card-body">
-																<label for="cg_Desc" class="form-label">설명</label>
-																<input type="text" class="form-control" id="cg_Desc" name="cg_Desc" th:value="${item?.cg_Desc}">
+														<div class="">
+															<div class="">
+																<label for="validationCustom04"
+																	class="form-label"><span style="color: red;"></span></label>
 															</div>
 														</div>
 													</div>
-													<div class="col-md-3">
+													<div class="col-md-6">
+													    <div class="card">
+													        <div class="card-body">
+													            <label for="cg_Desc" class="form-label">설명</label>
+													            <textarea class="form-control" id="cg_Desc" name="cg_Desc" th:value="${item?.cg_Desc}" rows="3"></textarea>
+													        </div>
+													    </div>
+													</div>
+													<!-- <div class="col-md-3">
 														<div class="card">
 															<div class="card-body">
 																<label for="cg_DelNY" class="form-label">삭제여부<span
@@ -455,11 +463,11 @@
 																</select>
 															</div>
 														</div>
-													</div>
+													</div> -->
 												</div>
 												<div class="row mb-3">
 													<div class="col">
-														<button type="button" id='seobin' class="btn btn-white">
+														<button type="button" id='seobin' class="btn btn-white" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/codegroup/codeGroupXdmList';">
 															<svg xmlns="http://www.w3.org/2000/svg" width="16"
 																height="16" fill="black" style="background-color: white;"
 																class="bi bi-list-ul" viewBox="0 0 16 16">

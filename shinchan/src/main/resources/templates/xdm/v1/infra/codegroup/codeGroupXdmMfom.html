@@ -409,9 +409,11 @@
 														<div class="card-body">
 															<label for="validationCustom02" class="form-label">seq<span
 																			style="color: red;">*</span></label>
-															<input type="text" class="form-control" name="seq" th:value="${item?.seq}">
+															<input type="text" class="form-control" name="seq" th:value="${item?.seq}"  readonly>
 														</div>
 													</div>
+												</div>
+												<div class="col-md-9">
 												</div>
 												<div class="col-md-3">
 													<div class="card">
@@ -431,7 +433,7 @@
 																style="color: red;">*</span></label>
 															<select class="form-select" id="cg_UseNY" name="cg_UseNY">
 																<option value="0" th:selected="${item?.cg_UseNY == 0}">미사용</option>
-																	<option value="1" th:selected="${item?.cg_UseNY == 1}" >사용</option>
+																<option value="1" th:selected="${item?.cg_UseNY == 1}" >사용</option>
 															</select>
 														</div>
 													</div>
@@ -439,58 +441,84 @@
 												<div class="col-md-3">
 													<div class="card">
 														<div class="card-body">
-															<div class="">
 																<label for="validationCustom02" class="form-label">순서<span
 																	style="color: red;">*</span></label>
 																<input type="text" class="form-control" name="cg_Order" th:value="${item?.cg_Order}">
-															</div>
 														</div>
 													</div>
 												</div>
 												<div class="col-md-3">
-													<div class="card">
-														<div class="card-body">
-															<label for="validationCustom04"
-																class="form-label">삭제여부<span style="color: red;">*</span></label>
-															<select class="form-select" id="validationCustom04" name="cg_DelNY">
-																<option selected disabled value="">삭제 여부</option>
-																<option value = "0" th:selected="${item?.cg_DelNY == 0}">미삭제</option>
-																<option value = "1" th:selected="${item?.cg_DelNY == 1}">삭제</option>
-															</select>
+												</div>
+													<div class="col-md-6">
+													    <div class="card">
+													        <div class="card-body">
+													            <label for="cg_Desc" class="form-label">설명</label>
+													            <textarea class="form-control" id="cg_Desc" name="cg_Desc" th:text="${item?.cg_Desc}" rows="3"></textarea>
+													        </div>
+													    </div>
+													</div>
+													<div class="col-md-6">
+													</div>
+													<div class="col-md-3">
+														<div class="card">
+															<div class="card-body">
+																<label for="validationCustom02" class="form-label">등록일</label>
+																<input type="text" class="form-control" name="cg_ReDate" th:value="${#dates.format(item?.cg_ReDate, 'yyyy-MM-dd HH:mm:ss')}" disabled>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-3">
+														<div class="card">
+															<div class="card-body">
+																<label for="validationCustom02" class="form-label">수정일</label>
+																<input type="text" class="form-control" name="cg_MoDate" th:value="${#dates.format(item?.cg_MoDate, 'yyyy-MM-dd HH:mm:ss')}" readonly>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-3">
+														<div class="card">
+															<div class="card-body">
+																<label for="validationCustom04"
+																	class="form-label">삭제여부<span style="color: red;">*</span></label>
+																<select class="form-select" id="validationCustom04" name="cg_DelNY">
+																	<option selected disabled value="">삭제 여부</option>
+																	<option disabled="disabled" value = "0" th:selected="${item?.cg_DelNY == 0}">미삭제</option>
+																	<option disabled="disabled" value = "1" th:selected="${item?.cg_DelNY == 1}">삭제</option>
+																</select>
+															</div>
+														</div>
+													</div>
+													<div class="row mb-3">
+														<div class="col">
+															<button type="button" id='seobin' class="btn btn-white" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/codegroup/codeGroupXdmList';">
+																<svg xmlns="http://www.w3.org/2000/svg" width="16"
+																	height="16" fill="black"
+																	style="background-color: white;" class="bi bi-list-ul"
+																	viewBox="0 0 16 16">
+																	<path fill-rule="evenodd"
+																		d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+																</svg>
+															</button>
+														</div>
+														<div class="col"></div>
+														<div class="col"></div>
+														<div class="col">
+															<button type="submit" id='seobin' class="btn btn-white"
+																style="float: right;">
+																<svg xmlns="http://www.w3.org/2000/svg" width="10"
+																	height="10" fill="white" style="background-color: blue;"
+																	class="bi bi-plus-square" viewBox="0 0 16 16">
+																	<path
+																		d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+																	<path
+																		d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+																</svg>
+															</button>
 														</div>
 													</div>
 												</div>
-												<div class="row mb-3">
-													<div class="col">
-														<button type="button" id='seobin' class="btn btn-white">
-															<svg xmlns="http://www.w3.org/2000/svg" width="16"
-																height="16" fill="black"
-																style="background-color: white;" class="bi bi-list-ul"
-																viewBox="0 0 16 16">
-																<path fill-rule="evenodd"
-																	d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
-															</svg>
-														</button>
-													</div>
-													<div class="col"></div>
-													<div class="col"></div>
-													<div class="col">
-														<button type="submit" id='seobin' class="btn btn-white"
-															style="float: right;">
-															<svg xmlns="http://www.w3.org/2000/svg" width="10"
-																height="10" fill="white" style="background-color: blue;"
-																class="bi bi-plus-square" viewBox="0 0 16 16">
-																<path
-																	d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
-																<path
-																	d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
-															</svg>
-														</button>
-													</div>
-												</div>
 											</div>
-										</div>
-								</form>
+										</form>
 
 								<!-- Row end -->
 

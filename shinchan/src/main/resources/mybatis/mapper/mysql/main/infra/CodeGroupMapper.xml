@@ -40,7 +40,7 @@
     		,#{cg_Desc}
     		,now()
     		,now()
-    		,#{cg_DelNY}
+    		,0
 		)
 	</insert>
 		

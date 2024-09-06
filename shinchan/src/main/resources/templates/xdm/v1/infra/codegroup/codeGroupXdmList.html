@@ -649,7 +649,8 @@
 <!--                                                     		 th:if="${!#lists.isEmpty(List)}" th:each="list : ${list}" th:id="'trNum_' + ${list.seq}"> -->
 <!--                                                     	</tr> -->
                                                         <tr>
-                                                        	<td >#</td>
+                                                        	<td></td>
+                                                        	<td>#</td>
                                                             <td >seq</td>
                                                             <td>이름</td>
                                                             <td>사용여부</td>
@@ -661,7 +662,8 @@
                                                         </tr>
                                                         <tr th:each="List : ${list}">
                                                         	<td></td>
-                                                            <td th:text = "${List.seq}"><input type="checkbox"></td>
+                                                        	<td><input type="checkbox"></input></td>
+                                                            <td th:text = "${List.seq}"></td>
 <!--                                                             <td ><a href="/xdm/v1/infra/codegroup/codeGroupXdmMfom?seq=1" th:text = "${List.cg_Name}">?</a></td> -->
                                                             <td><a th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMfom(seq=${List.seq})}" th:text="${List.cg_Name}"></a></td>
 <!--                                                             주석친게 get방식 아래가 타임리프방식 -->
