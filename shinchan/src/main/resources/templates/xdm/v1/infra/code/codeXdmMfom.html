@@ -410,7 +410,7 @@
 															<label for="CodeGroup_seq" class="form-label">코드그룹</label>
 															<select class="form-select" id="CodeGroup_seq" name="CodeGroup_seq">
 																<option value="">선택</option>
-																<option th:each = "List : ${listCodeGroup}" th:value = "${List.CodeGroup_seq}" th:text="${List.cg_Name}" >사용</option>
+																<option th:each = "List : ${listCodeGroup}" th:value = "${List.CodeGroup_seq}" th:text="${List.cg_Name}" th:selected="${List.CodeGroup_seq == item?.CodeGroup_seq}">사용</option>
 															</select>
 														</div>
 													</div>
@@ -439,19 +439,6 @@
 												<div class="col-md-3">
 													<div class="card">
 														<div class="card-body">
-															<label for="validationCustom04"
-																class="form-label">삭제여부<span style="color: red;">*</span></label>
-															<select class="form-select" id="validationCustom04" name="cd_DelNY" >
-															    <option selected disabled value="">삭제 여부</option>
-															    <option selected disabled value="0" th:selected="${item?.cd_DelNY == 0}">미삭제</option>
-															    <option  value="1" th:selected="${item?.cd_DelNY == 1}">삭제</option>
-															</select>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-3">
-													<div class="card">
-														<div class="card-body">
 															<label for="validationCustom02" class="form-label">순서<span
 																style="color: red;">*</span></label>
 															<input type="text" class="form-control" name="cd_Order" th:value="${item?.cd_Order}">
@@ -473,8 +460,8 @@
 													<div class="col-md-3">
 														<div class="card">
 															<div class="card-body">
-																<label for="validationCustom02" class="form-label">등록일</label>
-																<input type="text" class="form-control" name="cd_ReDate" th:value="${#dates.format(item?.cd_ReDate, 'yyyy-MM-dd HH:mm:ss')}" disabled>
+																<label for="validationCustom02" class="form-label">등일</label>
+																<input type="text" class="form-control" name="cd_MoDate" th:value="${#dates.format(item?.cd_MoDate, 'yyyy-MM-dd HH:mm:ss')}" disabled>
 															</div>
 														</div>
 													</div>
@@ -482,7 +469,7 @@
 														<div class="card">
 															<div class="card-body">
 																<label for="validationCustom02" class="form-label">수정일</label>
-																<input type="text" class="form-control" name="cd_MoDate" th:value="${#dates.format(item?.cd_MoDate, 'yyyy-MM-dd HH:mm:ss')}" readonly>
+																<input type="text" class="form-control" name="cd_MoDate" th:value="${#dates.format(item?.cd_MoDate, 'yyyy/MM/dd HH:mm:ss')}" readonly>
 															</div>
 														</div>
 													</div>
@@ -493,8 +480,8 @@
 																	class="form-label">삭제여부<span style="color: red;">*</span></label>
 																<select class="form-select" id="validationCustom04" name="cd_DelNY">
 																	<option selected disabled value="">삭제 여부</option>
-																	<option  value = "0" th:selected="${item?.cd_DelNY == 0}">미삭제</option>
-																	<option  value = "1" th:selected="${item?.cd_DelNY == 1}">삭제</option>
+																	<option disabled="disabled" value = "0" th:selected="${item?.cd_DelNY == 0}">미삭제</option>
+																	<option disabled="disabled" value = "1" th:selected="${item?.cd_DelNY == 1}">삭제</option>
 																</select>
 															</div>
 														</div>

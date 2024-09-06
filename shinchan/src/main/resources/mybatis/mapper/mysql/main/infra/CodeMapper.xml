@@ -67,8 +67,7 @@
 	<update id="update">
 		update Code
 		set
-			
-			,cd_Name = #{cd_Name}
+			cd_Name = #{cd_Name}
 			,cd_UseNY = #{cd_UseNY}
 			,cd_Order = #{cd_Order}
 			,cd_Desc = #{cd_Desc}
