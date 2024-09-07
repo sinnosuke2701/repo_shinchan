@@ -438,6 +438,18 @@
 												</div>
 												<div class="col-md-3">
 													<div class="card">
+														<div class="card-body">																
+															<label for="cd_UseNY" class="form-label">사용여부<span
+																style="color: red;">*</span></label>
+															<select class="form-select" id="cd_UseNY" name="cd_UseNY">
+																<option value="0" th:selected="${item?.cd_UseNY == 0}">미사용</option>
+																<option value="1" th:selected="${item?.cd_UseNY == 1}" >사용</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="card">
 														<div class="card-body">
 															<label for="validationCustom02" class="form-label">순서<span
 																style="color: red;">*</span></label>
