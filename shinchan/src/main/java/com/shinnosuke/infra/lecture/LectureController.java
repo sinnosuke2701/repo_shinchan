@@ -21,11 +21,11 @@ public class LectureController {
 		model.addAttribute("list2",lectures);
 		
 //		for(LectureDto lecturedto : lectures) {
-//			System.out.println(lecturedto.getSeq() + " | " + lecturedto.getLec_Type() + " | " + lecturedto.getLec_Name() + " | " + 
-//								lecturedto.getLec_Price() + " | " + lecturedto.getLec_Instructor() + " | " + lecturedto.getLec_StratCR() + " | " + 
-//								lecturedto.getLec_EndCR() + " | " + lecturedto.getLec_StartLearn() + " | " + lecturedto.getLec_EndLearn() + " | " + 
-//								lecturedto.getLec_Place() + " | " + lecturedto.getLec_Detail() + " | " + lecturedto.getLec_ReDate() + " | " + 
-//								lecturedto.getLec_MoDate() + " | " + lecturedto.getLec_DelNY());
+//		System.out.println(lecturedto.getSeq() + " | " + lecturedto.getLec_Type() + " | " + lecturedto.getLec_Name() + " | " + 
+//			lecturedto.getLec_Price() + " | " + lecturedto.getLec_Instructor() + " | " + lecturedto.getLec_StratCR() + " | " + 
+//			lecturedto.getLec_EndCR() + " | " + lecturedto.getLec_StartLearn() + " | " + lecturedto.getLec_EndLearn() + " | " + 
+//			lecturedto.getLec_Place() + " | " + lecturedto.getLec_Detail() + " | " + lecturedto.getLec_ReDate() + " | " + 
+//			lecturedto.getLec_MoDate() + " | " + lecturedto.getLec_DelNY());
 //		}
 		
 		return "/xdm/v1/infra/lecture/LectureXdmList";
