@@ -11,24 +11,24 @@
 
 	<select id="selectList" resultMap="resultMapObj">
 		select
-		a.seq
-		,a.lec_Type
-		,a.lec_Name
-		,a.lec_Price
-		,a.lec_Instructor
-		,a.lec_StartCr
-		,a.lec_EndCr
-		,a.lec_StartLearn
-		,a.lec_EndLearn
-		,a.lec_Place
-		,a.lec_Detail
-		,a.lec_ReDate
-		,a.lec_MoDate
-		,a.lec_DelNY
+			a.seq
+			,a.lec_Type
+			,a.lec_Name
+			,a.lec_Price
+			,a.lec_Instructor	
+			,a.lec_StartCR
+			,a.lec_EndCR
+			,a.lec_StartLearn
+			,a.lec_EndLearn
+			,a.lec_Place
+			,a.lec_Detail
+			,a.lec_ReDate
+			,a.lec_MoDate
+			,a.lec_DelNY
 		from
-		lecture a
+			lecture a
 		order by
-		a.seq
+			a.seq
 	</select>
 
 <!-- 	<insert id="insert"> -->
@@ -134,8 +134,8 @@
 			,a.lec_Name
 			,a.lec_Price
 			,a.lec_Instructor
-			,a.lec_StartCr
-			,a.lec_EndCr
+			,a.lec_StartCR
+			,a.lec_EndCR
 			,a.lec_StartLearn
 			,a.lec_EndLearn
 			,a.lec_Place
