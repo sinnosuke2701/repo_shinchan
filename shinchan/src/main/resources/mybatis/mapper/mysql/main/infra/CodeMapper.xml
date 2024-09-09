@@ -86,4 +86,18 @@
 			
 	</select>
 	
+	<update id="uelete">
+		update Code
+		set
+			cd_DelNY = #{cd_DelNY}
+		where 1 = 1
+			and seq = #{seq}
+	</update>
+	
+	<delete id="delete">
+		delete from code
+		where 1=1
+			and seq = #{seq}
+	</delete>
+	
 </mapper>

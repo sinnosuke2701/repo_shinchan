@@ -39,4 +39,13 @@ public class CodeService {
 	public List<CodeDto> selectListCodeGroup(){	
 		return CodeDao.selectListCodeGroup();
 	}
+	
+	public int uelete (CodeDto codeDto) {
+		return CodeDao.uelete(codeDto);
+	}
+	
+	public int delete(CodeDto codeDto) {
+		return CodeDao.delete(codeDto);
+	}
+	
 }
