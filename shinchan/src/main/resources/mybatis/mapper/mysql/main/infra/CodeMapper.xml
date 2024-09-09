@@ -21,8 +21,7 @@
 			,a.CodeGroup_seq
 		from
 			Code a
-		order by
-			a.seq desc
+		
 	</select>
 	
 	<insert id="insert">
