@@ -19,9 +19,18 @@
 			,a.cd_MoDate
 			,a.cd_DelNY
 			,a.CodeGroup_seq
+			,b.cg_Name
+			,b.seq
 		from
 			Code a
-		
+		inner join
+			codegroup b
+		on
+			a.CodeGroup_seq =b.seq
+		<!-- left join
+			codegroup b
+		on
+			a.CodeGroup_seq = b.seq -->
 	</select>
 	
 	<insert id="insert">
@@ -71,6 +80,7 @@
 			,cd_Order = #{cd_Order}
 			,cd_Desc = #{cd_Desc}
 			,cd_DelNY = #{cd_DelNY}
+			,CodeGroup_seq = #{CodeGroup_seq}
 		where 1 = 1
 			and seq = #{seq}
 	</update>
