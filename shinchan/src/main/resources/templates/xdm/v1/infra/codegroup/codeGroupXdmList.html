@@ -618,25 +618,26 @@
                             <!-- Row start -->
                             <div class="row">
                                 <div class="col-sm-12 col-12">
-
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="table-responsive">
                                                 <table class="table m-0">
                                                     <thead>
-                                                    		<h5>Total : 171</h5>
-                                                    	<tr>
-                                                    	        <span style="float: right;">
-                                                        	        <select class="form-select"
-                                                            	    	aria-label="Default select example" style="width: 150px;">
-                                                                		<option selected>5</option>
-                                                                    	<option value="2">4</option>
-                                                                    	<option value="3">3</option>
-                                                                    	<option value="4">2</option>
-                                                                    	<option value="5">1</option>
-                                                                	</select>
-                                                              	</span>
-                                                        	</tr>
+                                                        <tr>
+                                                            <th colspan='8' style="width: 140px; padding-right:0px;">
+                                                      	    	<h5>Total : 171</h5>
+                                                           	</th>
+	                                           	            <th style="width: 140px; padding-right:0px;">
+	                                           	            	<select class="form-select" aria-label="Default select example"
+            	                                                        style="width: 140px; padding-right:0px;">
+                	                                                    <option selected>5</option>
+                    	                                                <option value="2">4</option>
+                        	                                            <option value="3">3</option>
+                            	                                        <option value="4">2</option>
+                                	                                    <option value="5">1</option>
+                                    	                        </select>
+                                    	                    </th>
+                                                		</tr>
                                                     </thead>
                                                     <tbody>
 <!--                                                     	<tr th:if="${#lists.isEmpty(List)}" class="hover-actions-trigger btn-reveal-trigger position-static"> -->
@@ -649,29 +650,28 @@
 <!--                                                     		 th:if="${!#lists.isEmpty(List)}" th:each="list : ${list}" th:id="'trNum_' + ${list.seq}"> -->
 <!--                                                     	</tr> -->
                                                         <tr>
-                                                        	<td></td>
                                                         	<td>#</td>
                                                             <td >seq</td>
                                                             <td>이름</td>
+                                                            <td>개수</td>
                                                             <td>사용여부</td>
                                                             <td>순서</td>
                                                             <td>등록일</td>
                                                             <td>수정일</td>
                                                             <td>삭제여부</td>
-                                                            
                                                         </tr>
                                                         <tr th:each="List : ${list}">
-                                                        	<td></td>
                                                         	<td><input type="checkbox"></input></td>
                                                             <td th:text = "${List.seq}"></td>
 <!--                                                             <td ><a href="/xdm/v1/infra/codegroup/codeGroupXdmMfom?seq=1" th:text = "${List.cg_Name}">?</a></td> -->
                                                             <td><a th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMfom(seq=${List.seq})}" th:text="${List.cg_Name}"></a></td>
 <!--                                                             주석친게 get방식 아래가 타임리프방식 -->
+															<td th:text="${List.codeGroupCount}"></td>
                                                             <td th:if = "${List.cg_UseNY eq 0}">N</td>
                                                             <td th:unless="${List.cg_UseNY eq 0}">Y</td>
                                                             <td th:text = "${List.cg_Order}"></td>
-                                                            <th th:text = "${#dates.format(List.cg_ReDate, 'yyyy-MM-dd HH:mm:ss')}"></th>
-                                                            <th th:text = "${#dates.format(List.cg_ReDate, 'yyyy-MM-dd HH:mm:ss')}"></th>
+                                                            <td th:text = "${#dates.format(List.cg_ReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                            <td th:text = "${#dates.format(List.cg_ReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                                             <td th:if = "${List.cg_DelNY eq 0}">N</td>
                                                             <td th:unless = "${List.cg_DelNY eq 0}">Y</td>
                                                         </tr>

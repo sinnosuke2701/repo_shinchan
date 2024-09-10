@@ -13,6 +13,8 @@ public class CodeGroupDto {
 	private Date cg_MoDate;
 	private Integer cg_DelNY;
 	
+	private Integer codeGroupCount;
+	
 	//----------
 	
 	public String getSeq() {
@@ -63,6 +65,14 @@ public class CodeGroupDto {
 	public void setCg_DelNY(Integer cg_DelNY) {
 		this.cg_DelNY = cg_DelNY;
 	}
+	public Integer getCodeGroupCount() {
+		return codeGroupCount;
+	}
+	public void setCodeGroupCount(Integer codeGroupCount) {
+		this.codeGroupCount = codeGroupCount;
+	}
+	
+	
 	
 	
 	

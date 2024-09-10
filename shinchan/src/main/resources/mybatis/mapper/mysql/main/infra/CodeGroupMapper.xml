@@ -18,6 +18,7 @@
 			,a.cg_ReDate
 			,a.cg_MoDate
 			,a.cg_DelNY
+			,(select count(b.CodeGroup_seq) from code b where 1 = 1 and b.CodeGroup_seq = a.seq) as codeGroupCount
 		from
 			CodeGroup a
 		order by
@@ -71,5 +72,28 @@
 		where 1 = 1
 			and seq = #{seq}
 	</update>
-	
+		
+	<delete id="delete">
+		delete from codegroup
+		where 1=1
+			and seq = #{seq}
+	</delete>
+		
+	<update id="uelete">
+		update codegroup
+		set
+			cg_DelNY = #{cg_DelNY}
+		where 1 = 1
+			and seq = #{seq}
+	</update>
+		
+	<!-- <select id="selectCount" resultMap="resultMapObj">
+	   	select
+	   		a.seq
+    		,a.cg_Name
+    		,(select count(b.CodeGroup_seq) from code b where 1 = 1 and b.CodeGroup_seq = a.seq) as codeGroupCount
+		from
+			codegroup a
+	</select> -->
+		
 	</mapper>

@@ -19,6 +19,7 @@ public class CodeGroupController {
 		List<CodeGroupDto> codegroups = CodeGroupService.selectList();
 
 		model.addAttribute("list",codegroups);
+		
 		//모든객체를 html로 넘길때 model을 사용 / codegroups의 내용을 list 에 담아서 리턴으로 보냄 .
 //		model.addAttribute("list",CodeGroupService.selectList()); //내용을 담을게 없으면 축약형.
 		
@@ -72,4 +73,17 @@ public class CodeGroupController {
 		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}
 	
-}
+	@RequestMapping(value = "/xdm/v1/infra/codegroup/codeGroupXdmDele")
+	public String codeGroupXdmDele(CodeGroupDto codeGroupDto) {
+		CodeGroupService.delete(codeGroupDto);
+		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
+	}
+	
+	@RequestMapping(value = "/xdm/v1/infra/codegroup/codeGroupXdmUele")
+	public String codeGroupXdmUele(CodeGroupDto codeGroupDto) {
+		CodeGroupService.uelete(codeGroupDto);
+		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
+	}
+	
+	
+}	
