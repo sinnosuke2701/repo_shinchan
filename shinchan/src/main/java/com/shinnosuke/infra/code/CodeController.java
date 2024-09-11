@@ -16,9 +16,9 @@ public class CodeController {
 	CodeService CodeService;
 
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmList")
-	public String codeXdmList(Model model) {
+	public String codeXdmList(Model model , CodeVo codeVo) {
 
-		List<CodeDto> codes = CodeService.selectList();
+		List<CodeDto> codes = CodeService.selectList(codeVo);
 
 		model.addAttribute("list1", codes);
 

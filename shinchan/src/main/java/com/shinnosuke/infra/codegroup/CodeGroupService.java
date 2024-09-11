@@ -18,9 +18,10 @@ public class CodeGroupService {
 //		}
 	
 		private CodeGroupDao CodeGroupDao;
-		List<CodeGroupDto> selectList(){
+		
+		List<CodeGroupDto> selectList(CodeGroupVo codeGroupVo){
 			
-			return CodeGroupDao.selectList();
+			return CodeGroupDao.selectList(codeGroupVo);
 		}
 		
 		
@@ -62,6 +63,7 @@ public class CodeGroupService {
 		 public int uelete(CodeGroupDto codeGroupDto) {
 			 return CodeGroupDao.uelete(codeGroupDto);
 		 }
+		 
 		 
 		 
 }

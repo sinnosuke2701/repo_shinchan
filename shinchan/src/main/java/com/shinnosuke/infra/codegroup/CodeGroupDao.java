@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CodeGroupDao {
 	
-	List<CodeGroupDto> selectList();
+	List<CodeGroupDto> selectList(CodeGroupVo codeGroupVo);
 	
 	public int insert(CodeGroupDto codeGroupDto);
 	
@@ -18,6 +18,7 @@ public interface CodeGroupDao {
 	public int delete(CodeGroupDto codeGroupDto);
 	
 	public int uelete(CodeGroupDto codeGroupDto);	
+	
 	
 	
 }
