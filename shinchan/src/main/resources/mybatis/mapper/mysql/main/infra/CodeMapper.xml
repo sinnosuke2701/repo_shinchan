@@ -23,14 +23,24 @@
 			,b.seq
 		from
 			Code a
-		inner join
+		left join
 			codegroup b
 		on
-			a.CodeGroup_seq =b.seq
-		<!-- left join
+			a.CodeGroup_seq = b.seq
+		WHERE 1=1		
+		<if test="sh_DelNY != null and !sh_DelNY.equals('')">And cd_DelNY = #{sh_DelNY}</if>
+		<if test="sh_UseNY != null and !sh_UseNY.equals('')">And cd_UseNY = #{sh_UseNY}</if>
+		
+		<choose>
+			<when test="sh_Option == 1 ">AND CodeGroup_seq = #{sh_Value}</when>
+			<when test="sh_Option == 2 ">AND cg_Name LIKE CONCAT('%',#{sh_Value},'%')</when>
+			<when test="sh_Option == 3 ">AND a.seq = #{sh_Value}</when> 
+			<when test="sh_Option == 4 ">AND cd_Name LIKE CONCAT('%',#{sh_Value},'%')</when> 
+		</choose>
+		<!-- inner join
 			codegroup b
 		on
-			a.CodeGroup_seq = b.seq -->
+			a.CodeGroup_seq =b.seq -->
 	</select>
 	
 	<insert id="insert">

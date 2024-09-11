@@ -1,4 +1,5 @@
 <!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -555,23 +556,25 @@
                             <!-- Breadcrumb end -->
 
                             <h2>Code</h2>
-
+						<form action="/xdm/v1/infra/code/codeXdmList" name="form">
                             <from>
                                 <table>
                                     <thead>
                                         <tr>
                                             <th>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;">
-                                                    <option selected>N</option>
+                                                    style="width: 200px;" name="sh_DelNY">
+                                                    <option value="">삭제여부</option>
+                                                    <option value="0">N</option>
                                                     <option value="1">Y</option>
                                                 </select>
                                             </th>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;">
-                                                    <option selected>Y</option>
-                                                    <option value="1">N</option>
+                                                    style="width: 200px;" name="sh_UseNY">
+                                                    <option value="">사용여부</option>
+                                                    <option value="0">N</option>
+                                                    <option value="1">Y</option>
                                                 </select>
                                             </td>
                                             <td>
@@ -595,17 +598,20 @@
                                         <tr>
                                             <th>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;">
-                                                    <option selected>검색구분</option>
-                                                    <option value="1">검색구분</option>
+                                                    style="width: 200px;" name="sh_Option">
+                                                    <option value="">검색구분</option>
+                                                    <option value="1">코드그룹 코드</option>
+                                                    <option value="2">코드그룹 이름</option>
+                                                    <option value="3">코드</option>
+                                                    <option value="4">코드 이름</option>
                                                 </select>
                                             </th>
                                             <td>
-                                                <input type="text" placeholder="검색어"
+                                                <input type="text" placeholder="검색어" name="sh_Value"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
-                                            <td><button>🔍</button>
-                                                <button>🔄</button>
+                                            <td><button type="submit">🔍</button>
+                                                <button onclick="window.location.href='http://localhost:8080/xdm/v1/infra/code/codeXdmList';">🔄</button>
                                             </td>
 
                                         </tr>
@@ -739,6 +745,7 @@
 
                                 </div>
                             </div>
+                            </form>
                             <!-- Row end -->
                         </div>
                     </div>
