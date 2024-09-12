@@ -26,9 +26,14 @@
 		<if test="sh_UseNY != null and !sh_UseNY.equals('')">And cg_UseNY = #{sh_UseNY}</if>
 		
 		<choose>
-			<when test="sh_Option == 1 ">AND a.seq = #{sh_Value}</when> 
-			<when test="sh_Option == 2 ">AND cg_Name LIKE CONCAT('%',#{sh_Value},'%')</when>
-			<when test="sh_Option == 3 ">AND cg_Order = #{sh_Value}</when>
+			<when test="sh_OptionDate == 1">AND a.cg_ReDate BETWEEN #{sh_DateStart} AND #{sh_DateEnd}</when>
+			<when test="sh_OptionDate == 2">AND a.cg_MoDate BETWEEN #{sh_DateStart} AND #{sh_DateEnd}</when>
+		</choose>
+		
+		<choose>
+			<when test="sh_Option == 1">AND a.seq = #{sh_Value}</when> 
+			<when test="sh_Option == 2">AND cg_Name LIKE CONCAT('%',#{sh_Value},'%')</when>
+			<when test="sh_Option == 3">AND cg_Order = #{sh_Value}</when>
 		</choose>
 		order by
 			a.seq desc

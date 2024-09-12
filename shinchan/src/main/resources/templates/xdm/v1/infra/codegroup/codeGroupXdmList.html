@@ -54,12 +54,13 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="/xdm/v1/template/vivo/assets/css/main.min.css">
-
+	
+	<!-- datetimepicker css -->
+	<link rel="stylesheet" href="/xdm/v1/css/datetimepicker/jquery.datetimepicker.min.css">
 
     <!-- *************
          ************ Vendor Css Files *************
       ************ -->
-
     <!-- Scrollbar CSS -->
     <link rel="stylesheet" href="/xdm/v1/template/vivo/vendor/overlay-scroll/OverlayScrollbars.min.css">
 
@@ -578,17 +579,18 @@
                                             </td>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;">
-                                                    <option selected>수정일</option>
-                                                    <option value="1">수정일</option>
+                                                    style="width: 200px;" name="sh_OptionDate">
+                                                    <option value="">날짜</option>
+                                                    <option value="1">등록일</option>
+                                                    <option value="2">수정일</option>
                                                 </select>
                                             </td>
                                             <td>
-                                                <input type="date"
+                                                <input type="text" id="sh_DateStart" name="sh_DateStart" autocomplete="off" placeholder="시작일"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td>
-                                                <input type="date"
+                                                <input type="text" id="sh_DateEnd" name="sh_DateEnd" placeholder="마감일"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                         </tr>
@@ -605,7 +607,7 @@
                                                 </select>
                                             </th>
                                             <td>
-                                                <input type="text" placeholder="검색어" name="sh_Value"
+                                                <input type="text" placeholder="검색어" name="sh_Value" 
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td><button type="submit" >🔍</button>
@@ -780,7 +782,7 @@
 
     <!-- *************
          ************ Required JavaScript Files *************
-      ************* -->
+      ************* -->	
     <!-- Required jQuery first, then Bootstrap Bundle JS -->
     <script src="/xdm/v1/template/vivo/assets/js/jquery.min.js"></script>
     <script src="/xdm/v1/template/vivo/assets/js/bootstrap.bundle.min.js"></script>
@@ -805,8 +807,23 @@
     <!-- Main Js Required -->
     <script src="/xdm/v1/template/vivo/assets/js/main.js"></script>
     
- 
+    <!-- by developer -->
+    
+ 	<script src="/xdm/v1/js/datetimepicker/jquery.datetimepicker.full.min.js"></script>
 
+	<script>
+		
+		window.addEventListener('load', function(){
+			
+			$.datetimepicker.setLocale('ko');
+
+			$("#sh_DateStart, #sh_DateEnd").datetimepicker({
+				timepicker:false,
+				format: 'Y-m-d'
+			});
+		});
+	</script>
+	
 </body>
 
 </html>
