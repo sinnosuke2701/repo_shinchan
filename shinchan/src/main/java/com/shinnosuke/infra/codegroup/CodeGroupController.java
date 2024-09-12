@@ -15,21 +15,21 @@ public class CodeGroupController {
 
 	@RequestMapping(value = "/xdm/v1/infra/codegroup/codeGroupXdmList")
 	public String codeGroupXdmList(Model model , CodeGroupVo codeGroupVo) {
-
+		
+		codeGroupVo.setSh_DateStart(codeGroupVo.getSh_DateStart()+ " 00:00:00");
+		codeGroupVo.setSh_DateEnd(codeGroupVo.getSh_DateEnd()+ " 23:59:59");
+		
 		List<CodeGroupDto> codegroups = CodeGroupService.selectList(codeGroupVo);
 		model.addAttribute("list",codegroups);
 		
-	
-//		 System.out.println("삭제 여부: " + sh_DelNY);
-		
 		//모든객체를 html로 넘길때 model을 사용 / codegroups의 내용을 list 에 담아서 리턴으로 보냄 .
 //		model.addAttribute("list",CodeGroupService.selectList()); //내용을 담을게 없으면 축약형.
+		
 		
 
 		return "/xdm/v1/infra/codegroup/codeGroupXdmList";
 
 	}
-
 	@RequestMapping(value = "/xdm/v1/infra/codegroup/codeGroupXdmForm")
 	public String codeGroupXdmForm() {
 		

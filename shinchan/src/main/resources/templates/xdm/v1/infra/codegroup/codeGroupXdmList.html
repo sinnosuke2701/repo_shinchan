@@ -556,7 +556,7 @@
                             <!-- Breadcrumb end -->
 
                             <h2>CodeGroup</h2>
-						<form action="/xdm/v1/infra/codegroup/codeGroupXdmList" name="form"> 
+						<form method ="post" action="/xdm/v1/infra/codegroup/codeGroupXdmList" name="form"> 
                             <from>
                                 <table>
                                     <thead>
@@ -586,11 +586,11 @@
                                                 </select>
                                             </td>
                                             <td>
-                                                <input type="text" id="sh_DateStart" name="sh_DateStart" autocomplete="off" placeholder="시작일"
+                                                <input type="text" id="sh_DateStart" name="sh_DateStart" placeholder="시작일" autocomplete="off"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td>
-                                                <input type="text" id="sh_DateEnd" name="sh_DateEnd" placeholder="마감일"
+                                                <input type="text" id="sh_DateEnd" name="sh_DateEnd" placeholder="마감일" autocomplete="off"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                         </tr>
@@ -808,7 +808,6 @@
     <script src="/xdm/v1/template/vivo/assets/js/main.js"></script>
     
     <!-- by developer -->
-    
  	<script src="/xdm/v1/js/datetimepicker/jquery.datetimepicker.full.min.js"></script>
 
 	<script>
