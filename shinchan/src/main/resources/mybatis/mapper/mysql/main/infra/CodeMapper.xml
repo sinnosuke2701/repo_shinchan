@@ -37,6 +37,11 @@
 			<when test="sh_Option == 3 ">AND a.seq = #{sh_Value}</when> 
 			<when test="sh_Option == 4 ">AND cd_Name LIKE CONCAT('%',#{sh_Value},'%')</when> 
 		</choose>
+		
+		<choose>
+			<when test="sh_OptionDate == 1">AND a.cd_ReDate BETWEEN #{sh_DateStart} AND #{sh_DateEnd}</when>
+			<when test="sh_OptionDate == 2">AND a.cd_MoDate BETWEEN #{sh_DateStart} AND #{sh_DateEnd}</when>
+		</choose>
 		<!-- inner join
 			codegroup b
 		on

@@ -17,16 +17,12 @@ public class CodeController {
 
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmList")
 	public String codeXdmList(Model model , CodeVo codeVo) {
-
+		
+		codeVo.setSh_DateStart(codeVo.getSh_DateStart()+ " 00:00:00");
+		codeVo.setSh_DateEnd(codeVo.getSh_DateEnd()+ " 23:59:59");
+		
 		List<CodeDto> codes = CodeService.selectList(codeVo);
-
 		model.addAttribute("list1", codes);
-
-//		for(CodeDto codedto : codes)
-//			System.out.println(codedto.getSeq() + " | " + codedto.getCd_Name() + " | " + 
-//					codedto.getCd_UseNy() + " | " + codedto.getCd_Order() + " | " + 
-//					codedto.getCd_Desc() + " | " + codedto.getCd_ReDate() + " | " + 
-//					codedto.getCd_MoDate() + " | " + codedto.getCd_DelNY() + " | " + codedto.getCodeGroup_seq());
 
 		return "/xdm/v1/infra/code/codeXdmList";
 	}
