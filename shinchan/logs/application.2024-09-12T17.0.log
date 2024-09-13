@@ -65,3 +65,7 @@
 			a.CodeGroup_seq = b.seq
 		WHERE 1=1
  {executed in 1 msec} 
+2024-09-12T17:30:42.737 [HikariPool-4 housekeeper] WARN c.z.h.p.HikariPool - HikariPool-4 - Thread starvation or clock leap detected (housekeeper delta=58s342ms). 
+2024-09-12T17:33:23.449 [HikariPool-4 housekeeper] WARN c.z.h.p.HikariPool - HikariPool-4 - Thread starvation or clock leap detected (housekeeper delta=2m40s712ms). 
+2024-09-12T17:34:57.634 [HikariPool-4 housekeeper] WARN c.z.h.p.HikariPool - HikariPool-4 - Thread starvation or clock leap detected (housekeeper delta=1m34s185ms). 
+2024-09-12T17:42:41.767 [HikariPool-4 housekeeper] WARN c.z.h.p.HikariPool - HikariPool-4 - Thread starvation or clock leap detected (housekeeper delta=7m44s133ms). 
