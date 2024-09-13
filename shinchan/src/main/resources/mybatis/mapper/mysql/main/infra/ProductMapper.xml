@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shinnosuke.infra.prduct.ProductDao">
+	<!-- namespace = mapper 와 연결될 dao -->
+	<!-- xml 에서 주석 단축키 : ctrl + shift + C -->
+
+	<!-- resultMap : 결과를 담아줄 그으르읏 -->
+	<resultMap type="com.shinnosuke.infra.product.ProductDto" id="resultMapObj"></resultMap>
+
+	<select id="selectList" resultMap="resultMapObj">
+		select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+	</select>	
+	
+</mapper>
