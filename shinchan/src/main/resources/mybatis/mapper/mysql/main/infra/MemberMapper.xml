@@ -55,7 +55,7 @@
             ,#{mem_Desc}
             ,now()
     		,now()
-    		,#{mem_DelNY}
+    		,0
 		)
 	</insert>
 	

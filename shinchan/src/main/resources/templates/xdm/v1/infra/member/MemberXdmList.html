@@ -563,22 +563,25 @@
                                             <th>
                                                 <select class="form-select" aria-label="Default select example"
                                                     style="width: 200px;">
-                                                    <option selected>N</option>
-                                                    <option value="1">Y</option>
+                                                    <option value="">삭제여부</option>
+                                                    <option value="1">N</option>
+                                                    <option value="2">Y</option>
                                                 </select>
                                             </th>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
                                                     style="width: 200px;">
-                                                    <option selected>Y</option>
+                                                    <option value="">사용여부</option>
                                                     <option value="1">N</option>
+                                                    <option value="2">Y</option>
                                                 </select>
                                             </td>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
                                                     style="width: 200px;">
-                                                    <option selected>수정일</option>
-                                                    <option value="1">수정일</option>
+                                                    <option value="">날짜</option>
+                                                    <option value="1">시작일</option>
+                                                    <option value="2">마감일</option>
                                                 </select>
                                             </td>
                                             <td>
@@ -625,26 +628,25 @@
                                                 <table class="table m-0">
                                                     <thead>
                                                         <tr>
-                                                            <th>
-                                                                <h5>Total : 171</h5>
-                                                            </th>
-                                                            <th>
-                                                                <span style="float: right;">
-                                                                    <select class="form-select"
-                                                                        aria-label="Default select example"
-                                                                        style="width: 150px;">
-                                                                        <option selected>5</option>
-                                                                        <option value="2">4</option>
-                                                                        <option value="3">3</option>
-                                                                        <option value="4">2</option>
-                                                                        <option value="5">1</option>
-                                                                    </select>
-                                                                </span>
-                                                            </th>
+                                                            <th colspan='13' style="width: 140px; padding-right:0px;">
+                                                      	    	<h5>Total : 171</h5>
+                                                           	</th>
+	                                           	            <th style="width: 140px; padding-right:0px;">
+	                                           	            	<select class="form-select" aria-label="Default select example"
+            	                                                        style="width: 140px; padding-right:0px;">
+                	                                                    <option selected>5</option>
+                    	                                                <option value="2">4</option>
+                        	                                            <option value="3">3</option>
+                            	                                        <option value="4">2</option>
+                                	                                    <option value="5">1</option>
+                                    	                        </select>
+                                    	                    </th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
+                                                        	<td><input type="checkbox"></td>
+                                                        	<td>#</td>
                                                             <td>seq</td>
                                                             <td>관리자권한</td>
                                                             <td>이름</td>
@@ -654,12 +656,14 @@
                                                             <td>생년월일</td>
                                                             <td>이메일</td>
                                                             <td>전화번호</td>
-                                                            <td>설명</td>
+                                                            <!-- <td>설명</td> -->
                                                             <td>등록일</td>
                                                             <td>수정일</td>
                                                             <td>삭제여부</td>
                                                         </tr>
                                                         <tr th:each="List : ${list3}">
+                                                        	<td><input type="checkbox"></input></td>
+                                                        	<td></td>
                                                             <td th:text = "${List.seq}"><input type="checkbox"></td>
                                                             <td th:if = "${List.mem_Authority eq 0}">회원</td>
                                                             <td th:unless = "${List.mem_Authority eq 0}">관리자</td>
@@ -673,9 +677,9 @@
                                                             <td th:text = "${List.mem_Birth}"></td>
                                                             <td th:text = "${List.mem_Email}"></td>
                                                             <td th:text = "${List.mem_Phone}"></td>
-                                                            <td th:text = "${List.mem_Desc}"></td>
-                                                            <th th:text = "${#dates.format(List.mem_ReDate)}"></th>
-                                                            <td th:text = "${#dates.format(List.mem_MoDate)}"></td>
+                                                            <!-- <td th:text = "${List.mem_Desc}"></td> -->
+                                                            <td th:text = "${#dates.format(List.mem_ReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                            <td th:text = "${#dates.format(List.mem_MoDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                                             <td th:if = "${List.mem_DelNY eq 0}">N</td>
                                                             <td th:unless = "${List.mem_DelNY eq 0}">Y</td>
                                                         </tr>
@@ -731,7 +735,7 @@
                                                         </svg>
                                                     </button>
                                                     <button type="button" id='seobin' class="btn btn-white"
-                                                        style="background-color: blue;">
+                                                        style="background-color: blue;" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/member/MemberXdmForm';">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                             fill="white" class="bi bi-plus-square" viewBox="0 0 16 16">
                                                             <path
