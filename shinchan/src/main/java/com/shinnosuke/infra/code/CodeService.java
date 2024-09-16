@@ -13,12 +13,13 @@ public class CodeService {
 	@Autowired
 	private CodeDao CodeDao;
 		List<CodeDto> selectList(CodeVo codeVo){
-					return CodeDao.selectList(codeVo);
+			
+		return CodeDao.selectList(codeVo);
 		}
 	
 	public int insert(CodeDto codeDto) {
-		int result = CodeDao.insert(codeDto);
-		return result;
+		
+		return CodeDao.insert(codeDto);
 	}
 		
 	public CodeDto selectOne(CodeDto codeDto){
