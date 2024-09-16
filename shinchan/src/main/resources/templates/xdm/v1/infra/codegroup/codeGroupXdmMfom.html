@@ -441,14 +441,13 @@
 												<div class="col-md-3">
 													<div class="card">
 														<div class="card-body">
-																<label for="validationCustom02" class="form-label">순서<span
-																	style="color: red;">*</span></label>
-																<input type="text" class="form-control" name="cg_Order" th:value="${item?.cg_Order}">
+															<label for="validationCustom02" class="form-label">순서<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" name="cg_Order" th:value="${item?.cg_Order}">
 														</div>
 													</div>
 												</div>
-												<div class="col-md-3">
-												</div>
+												<div class="col-md-3"></div>
 													<div class="col-md-6">
 													    <div class="card">
 													        <div class="card-body">
@@ -457,12 +456,11 @@
 													        </div>
 													    </div>
 													</div>
-													<div class="col-md-6">
-													</div>
+													<div class="col-md-6"></div>
 													<div class="col-md-3">
 														<div class="card">
 															<div class="card-body">
-																<label for="validationCustom02" class="form-label">등록일</label>
+																<label class="form-label">등록일</label>
 																<input type="text" class="form-control" name="cg_ReDate" th:value="${#dates.format(item?.cg_ReDate, 'yyyy-MM-dd HH:mm:ss')}" disabled>
 															</div>
 														</div>
@@ -470,7 +468,7 @@
 													<div class="col-md-3">
 														<div class="card">
 															<div class="card-body">
-																<label for="validationCustom02" class="form-label">수정일</label>
+																<label class="form-label">수정일</label>
 																<input type="text" class="form-control" name="cg_MoDate" th:value="${#dates.format(item?.cg_MoDate, 'yyyy/MM/dd HH:mm:ss')}" readonly>
 															</div>
 														</div>
