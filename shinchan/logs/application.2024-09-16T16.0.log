@@ -1,0 +1,713 @@
+2024-09-16T16:05:40.046 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-16T16:05:40.048 [Thread-381] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-16T16:05:40.052 [Thread-381] INFO c.z.h.HikariDataSource - HikariPool-33 - Shutdown initiated... 
+2024-09-16T16:05:40.056 [Thread-381] INFO c.z.h.HikariDataSource - HikariPool-33 - Shutdown completed. 
+2024-09-16T16:05:40.105 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 21836 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-16T16:05:40.105 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-16T16:05:40.196 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-16T16:05:40.196 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-16T16:05:40.196 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-16T16:05:40.196 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-16T16:05:40.200 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-16T16:05:40.200 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 94 ms 
+2024-09-16T16:05:40.300 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-16T16:05:40.306 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-16T16:05:40.307 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-16T16:05:40.310 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.215 seconds (process running for 21832.921) 
+2024-09-16T16:05:40.310 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-16T16:05:47.103 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-16T16:05:47.103 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-16T16:05:47.105 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-16T16:05:47.107 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-34 - Starting... 
+2024-09-16T16:05:47.125 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-34 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@2ad3dfa6 
+2024-09-16T16:05:47.125 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-34 - Start completed. 
+2024-09-16T16:05:47.126 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:06:35.099 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 0 msec} 
+2024-09-16T16:07:55.045 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 0 msec} 
+2024-09-16T16:07:58.440 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:08:02.529 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 0 msec} 
+2024-09-16T16:08:21.013 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:08:30.408 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:08:53.645 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:09:50.612 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:09:54.680 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:10:23.708 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 0 msec} 
+2024-09-16T16:11:19.968 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:12:11.760 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:12:40.774 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:12:57.286 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:13:38.502 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 0 msec} 
+2024-09-16T16:14:56.088 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:16:04.895 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 0 msec} 
+2024-09-16T16:16:08.307 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:16:12.156 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:17:38.386 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:23:41.738 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 0 msec} 
+2024-09-16T16:24:23.305 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:24:26.158 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:24:26.397 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:24:26.592 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:24:26.764 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:24:26.942 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:24:27.139 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:24:27.312 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:24:48.733 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:24:48.972 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:25:15.807 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:25:16.128 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:25:50.508 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:25:51.245 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:25:51.715 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 0 msec} 
+2024-09-16T16:25:51.862 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:27:03.955 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:27:56.185 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:28:30.977 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:28:53.401 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:29:20.472 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+341. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 
+2024-09-16T16:36:26.461 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+351. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 0 msec} 
+2024-09-16T16:36:32.323 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+351. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 0 msec} 
+2024-09-16T16:37:47.085 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+351. select
+			a.memseq
+    		,a.memName
+   			,a.memGender
+    		,a.memId
+    		,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+    		,a.memDelNY
+		from
+			member a
+ {executed in 1 msec} 

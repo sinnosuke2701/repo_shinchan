@@ -1,0 +1,1050 @@
+2024-09-14T18:23:16.268 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 18008 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-14T18:23:16.269 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-14T18:23:16.290 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2024-09-14T18:23:16.290 [restartedMain] INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2024-09-14T18:23:16.940 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-14T18:23:16.946 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:23:16.948 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-14T18:23:16.949 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-14T18:23:16.972 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-14T18:23:16.972 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 682 ms 
+2024-09-14T18:23:17.136 [restartedMain] INFO o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation should only be used on methods with parameters: public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmList() 
+2024-09-14T18:23:17.361 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-14T18:23:17.373 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:23:17.383 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-14T18:23:17.390 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 1.29 seconds (process running for 1.735) 
+2024-09-14T18:27:45.822 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-14T18:27:45.829 [Thread-5] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:27:45.892 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 18008 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-14T18:27:45.892 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-14T18:27:46.008 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-14T18:27:46.009 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:27:46.009 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-14T18:27:46.009 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-14T18:27:46.014 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-14T18:27:46.014 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 121 ms 
+2024-09-14T18:27:46.057 [restartedMain] INFO o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation should only be used on methods with parameters: public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmList() 
+2024-09-14T18:27:46.137 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-14T18:27:46.145 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:27:46.146 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-14T18:27:46.149 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.274 seconds (process running for 270.494) 
+2024-09-14T18:27:46.151 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-14T18:27:47.998 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-14T18:27:47.999 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-14T18:27:48.000 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 0 ms 
+2024-09-14T18:28:41.503 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-14T18:28:41.508 [Thread-7] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:28:41.554 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 18008 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-14T18:28:41.554 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-14T18:28:41.655 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-14T18:28:41.656 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:28:41.656 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-14T18:28:41.656 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-14T18:28:41.660 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-14T18:28:41.660 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 105 ms 
+2024-09-14T18:28:41.698 [restartedMain] INFO o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation should only be used on methods with parameters: public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmList() 
+2024-09-14T18:28:41.762 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-14T18:28:41.768 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:28:41.769 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-14T18:28:41.773 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.231 seconds (process running for 326.117) 
+2024-09-14T18:28:41.773 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-14T18:28:47.405 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-14T18:28:47.406 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-14T18:28:47.409 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 3 ms 
+2024-09-14T18:29:52.555 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-14T18:29:52.557 [Thread-11] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:29:52.599 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 18008 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-14T18:29:52.599 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-14T18:29:52.699 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-14T18:29:52.700 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:29:52.700 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-14T18:29:52.700 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-14T18:29:52.705 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-14T18:29:52.705 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 105 ms 
+2024-09-14T18:29:52.743 [restartedMain] INFO o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation should only be used on methods with parameters: public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmList() 
+2024-09-14T18:29:52.809 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-14T18:29:52.814 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:29:52.816 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-14T18:29:52.819 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.235 seconds (process running for 397.163) 
+2024-09-14T18:29:52.820 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-14T18:30:55.365 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-14T18:30:55.367 [Thread-15] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:30:55.409 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 18008 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-14T18:30:55.409 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-14T18:30:55.496 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-14T18:30:55.497 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:30:55.497 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-14T18:30:55.497 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-14T18:30:55.501 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-14T18:30:55.501 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 91 ms 
+2024-09-14T18:30:55.532 [restartedMain] INFO o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation should only be used on methods with parameters: public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmList() 
+2024-09-14T18:30:55.593 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-14T18:30:55.598 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:30:55.599 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-14T18:30:55.603 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.207 seconds (process running for 459.947) 
+2024-09-14T18:30:55.603 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-14T18:33:06.140 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-14T18:33:06.140 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-14T18:33:06.142 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 2 ms 
+2024-09-14T18:33:06.188 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+2024-09-14T18:33:06.366 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@38988d1a 
+2024-09-14T18:33:06.367 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+2024-09-14T18:33:06.382 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.seq
+			,a.cg_Name
+			,a.cg_UseNY
+			,a.cg_Order
+			,a.cg_Desc
+			,a.cg_ReDate
+			,a.cg_MoDate
+			,a.cg_DelNY
+			,(select count(b.CodeGroup_seq) from code b where 1 = 1 and b.CodeGroup_seq = a.seq) as codeGroupCount
+		from
+			CodeGroup a
+		where 1 = 1
+
+		order by
+			a.seq desc
+ {executed in 5 msec} 
+2024-09-14T18:33:46.428 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.seq
+			,a.cg_Name
+			,a.cg_UseNY
+			,a.cg_Order
+			,a.cg_Desc
+			,a.cg_ReDate
+			,a.cg_MoDate
+			,a.cg_DelNY
+		from
+			CodeGroup a
+		where 1 =1
+			and a.seq = '36'
+ {executed in 3 msec} 
+2024-09-14T18:33:50.557 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.seq
+			,a.cg_Name
+			,a.cg_UseNY
+			,a.cg_Order
+			,a.cg_Desc
+			,a.cg_ReDate
+			,a.cg_MoDate
+			,a.cg_DelNY
+		from
+			CodeGroup a
+		where 1 =1
+			and a.seq = '36'
+ {executed in 2 msec} 
+2024-09-14T18:34:46.680 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.seq
+			,a.cg_Name
+			,a.cg_UseNY
+			,a.cg_Order
+			,a.cg_Desc
+			,a.cg_ReDate
+			,a.cg_MoDate
+			,a.cg_DelNY
+		from
+			CodeGroup a
+		where 1 =1
+			and a.seq = '36'
+ {executed in 2 msec} 
+2024-09-14T18:35:09.292 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.seq
+			,a.cg_Name
+			,a.cg_UseNY
+			,a.cg_Order
+			,a.cg_Desc
+			,a.cg_ReDate
+			,a.cg_MoDate
+			,a.cg_DelNY
+			,(select count(b.CodeGroup_seq) from code b where 1 = 1 and b.CodeGroup_seq = a.seq) as codeGroupCount
+		from
+			CodeGroup a
+		where 1 = 1
+
+		order by
+			a.seq desc
+ {executed in 1 msec} 
+2024-09-14T18:35:33.205 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.seq
+			,a.cg_Name
+			,a.cg_UseNY
+			,a.cg_Order
+			,a.cg_Desc
+			,a.cg_ReDate
+			,a.cg_MoDate
+			,a.cg_DelNY
+			,(select count(b.CodeGroup_seq) from code b where 1 = 1 and b.CodeGroup_seq = a.seq) as codeGroupCount
+		from
+			CodeGroup a
+		where 1 = 1
+
+		order by
+			a.seq desc
+ {executed in 2 msec} 
+2024-09-14T18:35:36.597 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.seq
+			,a.cg_Name
+			,a.cg_UseNY
+			,a.cg_Order
+			,a.cg_Desc
+			,a.cg_ReDate
+			,a.cg_MoDate
+			,a.cg_DelNY
+			,(select count(b.CodeGroup_seq) from code b where 1 = 1 and b.CodeGroup_seq = a.seq) as codeGroupCount
+		from
+			CodeGroup a
+		where 1 = 1
+		 And cg_DelNY = 0 
+
+		order by
+			a.seq desc
+ {executed in 2 msec} 
+2024-09-14T18:35:57.612 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.seq
+			,a.cg_Name
+			,a.cg_UseNY
+			,a.cg_Order
+			,a.cg_Desc
+			,a.cg_ReDate
+			,a.cg_MoDate
+			,a.cg_DelNY
+			,(select count(b.CodeGroup_seq) from code b where 1 = 1 and b.CodeGroup_seq = a.seq) as codeGroupCount
+		from
+			CodeGroup a
+		where 1 = 1
+
+		order by
+			a.seq desc
+ {executed in 1 msec} 
+2024-09-14T18:36:07.164 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.seq
+			,a.cg_Name
+			,a.cg_UseNY
+			,a.cg_Order
+			,a.cg_Desc
+			,a.cg_ReDate
+			,a.cg_MoDate
+			,a.cg_DelNY
+			,(select count(b.CodeGroup_seq) from code b where 1 = 1 and b.CodeGroup_seq = a.seq) as codeGroupCount
+		from
+			CodeGroup a
+		where 1 = 1
+
+		order by
+			a.seq desc
+ {executed in 2 msec} 
+2024-09-14T18:36:14.163 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.seq
+			,a.cg_Name
+			,a.cg_UseNY
+			,a.cg_Order
+			,a.cg_Desc
+			,a.cg_ReDate
+			,a.cg_MoDate
+			,a.cg_DelNY
+			,(select count(b.CodeGroup_seq) from code b where 1 = 1 and b.CodeGroup_seq = a.seq) as codeGroupCount
+		from
+			CodeGroup a
+		where 1 = 1
+
+		 AND a.cg_ReDate BETWEEN '2024-09-13 00:00:00' AND '2024-09-13 23:59:59' 
+
+		order by
+			a.seq desc
+ {executed in 1 msec} 
+2024-09-14T18:36:41.963 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.seq
+			,a.cg_Name
+			,a.cg_UseNY
+			,a.cg_Order
+			,a.cg_Desc
+			,a.cg_ReDate
+			,a.cg_MoDate
+			,a.cg_DelNY
+			,(select count(b.CodeGroup_seq) from code b where 1 = 1 and b.CodeGroup_seq = a.seq) as codeGroupCount
+		from
+			CodeGroup a
+		where 1 = 1
+
+		order by
+			a.seq desc
+ {executed in 1 msec} 
+2024-09-14T18:41:58.956 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-14T18:41:58.958 [Thread-19] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:41:58.963 [Thread-19] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2024-09-14T18:41:58.973 [Thread-19] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2024-09-14T18:41:59.007 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 18008 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-14T18:41:59.007 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-14T18:41:59.103 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-14T18:41:59.104 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:41:59.104 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-14T18:41:59.104 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-14T18:41:59.108 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-14T18:41:59.108 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 100 ms 
+2024-09-14T18:41:59.139 [restartedMain] INFO o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation should only be used on methods with parameters: public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmList() 
+2024-09-14T18:41:59.207 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-14T18:41:59.213 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:41:59.214 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-14T18:41:59.218 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.222 seconds (process running for 1123.561) 
+2024-09-14T18:41:59.218 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-14T18:42:46.262 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-14T18:42:46.264 [Thread-23] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:42:46.307 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 18008 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-14T18:42:46.307 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-14T18:42:46.395 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-14T18:42:46.395 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:42:46.395 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-14T18:42:46.395 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-14T18:42:46.399 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-14T18:42:46.399 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 91 ms 
+2024-09-14T18:42:46.429 [restartedMain] INFO o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation should only be used on methods with parameters: public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmList() 
+2024-09-14T18:42:46.430 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productController': Injection of autowired dependencies failed 
+2024-09-14T18:42:46.430 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-14T18:42:46.434 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-14T18:42:46.441 [restartedMain] ERROR o.s.b.SpringApplication - Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productController': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.shinnosuke.ShinchanApplication.main(ShinchanApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	ProductService cannot be resolved to a variable
+	Syntax error on token ".", ; expected
+
+	at com.shinnosuke.infra.product.ProductController.ProductXdmList(ProductController.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:854)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	... 22 common frames omitted
+2024-09-14T18:45:18.938 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 18008 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-14T18:45:18.938 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-14T18:45:19.025 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-14T18:45:19.026 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:45:19.026 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-14T18:45:19.026 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-14T18:45:19.030 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-14T18:45:19.030 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 91 ms 
+2024-09-14T18:45:19.061 [restartedMain] INFO o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation should only be used on methods with parameters: public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmList() 
+2024-09-14T18:45:19.062 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productController': Injection of autowired dependencies failed 
+2024-09-14T18:45:19.062 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-14T18:45:19.065 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-14T18:45:19.066 [restartedMain] ERROR o.s.b.SpringApplication - Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productController': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.shinnosuke.ShinchanApplication.main(ShinchanApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	ProductService cannot be resolved to a variable
+	Syntax error on token ".", ; expected
+
+	at com.shinnosuke.infra.product.ProductController.ProductXdmList(ProductController.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:854)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	... 22 common frames omitted
+2024-09-14T18:45:22.616 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 18008 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-14T18:45:22.616 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-14T18:45:22.705 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-14T18:45:22.705 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:45:22.705 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-14T18:45:22.705 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-14T18:45:22.709 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-14T18:45:22.709 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 92 ms 
+2024-09-14T18:45:22.737 [restartedMain] INFO o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation should only be used on methods with parameters: public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmList() 
+2024-09-14T18:45:22.737 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productController': Injection of autowired dependencies failed 
+2024-09-14T18:45:22.737 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-14T18:45:22.741 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-14T18:45:22.742 [restartedMain] ERROR o.s.b.SpringApplication - Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productController': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.shinnosuke.ShinchanApplication.main(ShinchanApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	ProductService cannot be resolved to a variable
+	Syntax error on token ".", ; expected
+
+	at com.shinnosuke.infra.product.ProductController.ProductXdmList(ProductController.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:854)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	... 22 common frames omitted
+2024-09-14T18:45:46.956 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 18008 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-14T18:45:46.956 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-14T18:45:47.045 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-14T18:45:47.045 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:45:47.045 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-14T18:45:47.045 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-14T18:45:47.049 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-14T18:45:47.049 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 92 ms 
+2024-09-14T18:45:47.074 [restartedMain] INFO o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation should only be used on methods with parameters: public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmList() 
+2024-09-14T18:45:47.075 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productController': Injection of autowired dependencies failed 
+2024-09-14T18:45:47.075 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-14T18:45:47.078 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-14T18:45:47.079 [restartedMain] ERROR o.s.b.SpringApplication - Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productController': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.shinnosuke.ShinchanApplication.main(ShinchanApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	ProductService cannot be resolved to a variable
+	Syntax error on token ".", ; expected
+
+	at com.shinnosuke.infra.product.ProductController.ProductXdmList(ProductController.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:854)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	... 22 common frames omitted
+2024-09-14T18:45:52.668 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 18008 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-14T18:45:52.668 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-14T18:45:52.755 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-14T18:45:52.755 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:45:52.755 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-14T18:45:52.756 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-14T18:45:52.759 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-14T18:45:52.759 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 90 ms 
+2024-09-14T18:45:52.787 [restartedMain] INFO o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation should only be used on methods with parameters: public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmList() 
+2024-09-14T18:45:52.787 [restartedMain] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productController': Injection of autowired dependencies failed 
+2024-09-14T18:45:52.787 [restartedMain] INFO o.a.c.c.StandardService - Stopping service [Tomcat] 
+2024-09-14T18:45:52.790 [restartedMain] INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2024-09-14T18:45:52.792 [restartedMain] ERROR o.s.b.SpringApplication - Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productController': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.shinnosuke.ShinchanApplication.main(ShinchanApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	ProductService cannot be resolved to a variable
+	Syntax error on token ".", ; expected
+
+	at com.shinnosuke.infra.product.ProductController.ProductXdmList(ProductController.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:854)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	... 22 common frames omitted
+2024-09-14T18:47:41.892 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 18008 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-14T18:47:41.893 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-14T18:47:41.978 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-14T18:47:41.979 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:47:41.979 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-14T18:47:41.979 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-14T18:47:41.985 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-14T18:47:41.985 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 92 ms 
+2024-09-14T18:47:42.074 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-14T18:47:42.079 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:47:42.080 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-14T18:47:42.084 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.204 seconds (process running for 1466.427) 
+2024-09-14T18:47:42.085 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-14T18:49:02.551 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-14T18:49:02.553 [Thread-27] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:49:02.596 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 18008 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-14T18:49:02.596 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-14T18:49:02.694 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-14T18:49:02.694 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:49:02.695 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-14T18:49:02.695 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-14T18:49:02.698 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-14T18:49:02.698 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 101 ms 
+2024-09-14T18:49:02.794 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-14T18:49:02.800 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:49:02.805 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-14T18:49:02.808 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.222 seconds (process running for 1547.151) 
+2024-09-14T18:49:02.809 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-14T18:49:37.754 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-14T18:49:37.754 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-14T18:49:37.756 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 2 ms 
+2024-09-14T18:49:37.765 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.shinnosuke.infra.product.ProductDao.selectList] with root cause 
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.shinnosuke.infra.product.ProductDao.selectList
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:229)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:96)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:94)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy16/jdk.proxy16.$Proxy219.selectList(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy16/jdk.proxy16.$Proxy220.selectList(Unknown Source)
+	at com.shinnosuke.infra.product.ProductService.selectList(ProductService.java:15)
+	at com.shinnosuke.infra.product.ProductController.ProductXdmList(ProductController.java:19)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-14T18:58:26.388 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-14T18:58:26.392 [Thread-46] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:58:26.436 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 18008 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-14T18:58:26.436 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-14T18:58:26.526 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-14T18:58:26.526 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:58:26.526 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-14T18:58:26.526 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-14T18:58:26.530 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-14T18:58:26.530 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 93 ms 
+2024-09-14T18:58:26.622 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-14T18:58:26.628 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-14T18:58:26.629 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-14T18:58:26.632 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.207 seconds (process running for 2110.975) 
+2024-09-14T18:58:26.633 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-14T18:58:27.199 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-14T18:58:27.199 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-14T18:58:27.201 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-14T18:58:27.203 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.shinnosuke.infra.product.ProductDao.selectList] with root cause 
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.shinnosuke.infra.product.ProductDao.selectList
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:229)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:96)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:94)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy17/jdk.proxy17.$Proxy233.selectList(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy17/jdk.proxy17.$Proxy234.selectList(Unknown Source)
+	at com.shinnosuke.infra.product.ProductService.selectList(ProductService.java:15)
+	at com.shinnosuke.infra.product.ProductController.ProductXdmList(ProductController.java:19)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-14T18:58:27.472 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.shinnosuke.infra.product.ProductDao.selectList] with root cause 
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.shinnosuke.infra.product.ProductDao.selectList
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:229)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:96)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:94)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy17/jdk.proxy17.$Proxy233.selectList(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy17/jdk.proxy17.$Proxy234.selectList(Unknown Source)
+	at com.shinnosuke.infra.product.ProductService.selectList(ProductService.java:15)
+	at com.shinnosuke.infra.product.ProductController.ProductXdmList(ProductController.java:19)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-14T18:58:27.642 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.shinnosuke.infra.product.ProductDao.selectList] with root cause 
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.shinnosuke.infra.product.ProductDao.selectList
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:229)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:96)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:94)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy17/jdk.proxy17.$Proxy233.selectList(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy17/jdk.proxy17.$Proxy234.selectList(Unknown Source)
+	at com.shinnosuke.infra.product.ProductService.selectList(ProductService.java:15)
+	at com.shinnosuke.infra.product.ProductController.ProductXdmList(ProductController.java:19)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-14T18:58:27.808 [http-nio-8080-exec-4] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.shinnosuke.infra.product.ProductDao.selectList] with root cause 
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.shinnosuke.infra.product.ProductDao.selectList
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:229)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:96)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:94)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy17/jdk.proxy17.$Proxy233.selectList(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy17/jdk.proxy17.$Proxy234.selectList(Unknown Source)
+	at com.shinnosuke.infra.product.ProductService.selectList(ProductService.java:15)
+	at com.shinnosuke.infra.product.ProductController.ProductXdmList(ProductController.java:19)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-14T18:58:27.957 [http-nio-8080-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.shinnosuke.infra.product.ProductDao.selectList] with root cause 
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.shinnosuke.infra.product.ProductDao.selectList
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:229)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:96)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:94)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy17/jdk.proxy17.$Proxy233.selectList(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy17/jdk.proxy17.$Proxy234.selectList(Unknown Source)
+	at com.shinnosuke.infra.product.ProductService.selectList(ProductService.java:15)
+	at com.shinnosuke.infra.product.ProductController.ProductXdmList(ProductController.java:19)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)

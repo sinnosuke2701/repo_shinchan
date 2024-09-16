@@ -1,0 +1,1460 @@
+2024-09-15T18:01:12.363 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-15T18:01:12.365 [Thread-233] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:01:12.371 [Thread-233] INFO c.z.h.HikariDataSource - HikariPool-20 - Shutdown initiated... 
+2024-09-15T18:01:12.376 [Thread-233] INFO c.z.h.HikariDataSource - HikariPool-20 - Shutdown completed. 
+2024-09-15T18:01:12.428 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 21836 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-15T18:01:12.428 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-15T18:01:12.518 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-15T18:01:12.518 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:01:12.518 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-15T18:01:12.518 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-15T18:01:12.522 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-15T18:01:12.522 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 93 ms 
+2024-09-15T18:01:12.614 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-15T18:01:12.621 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:01:12.622 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-15T18:01:12.626 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.207 seconds (process running for 10392.228) 
+2024-09-15T18:01:12.626 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-15T18:01:13.370 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-15T18:01:13.370 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-15T18:01:13.371 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-15T18:01:13.373 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-21 - Starting... 
+2024-09-15T18:01:13.387 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-21 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@24055848 
+2024-09-15T18:01:13.387 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-21 - Start completed. 
+2024-09-15T18:01:13.388 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 0 msec} 
+2024-09-15T18:01:18.061 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+
+		 AND prseq = '1'
+ {executed in 1 msec} 
+2024-09-15T18:01:22.606 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+
+		 AND prseq = '4'
+ {executed in 1 msec} 
+2024-09-15T18:01:28.204 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:01:38.687 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+
+		 AND prProdName LIKE CONCAT('%','반','%')
+ {executed in 3 msec} 
+2024-09-15T18:01:43.571 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 0 msec} 
+2024-09-15T18:01:53.362 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+
+		 AND prReguPrice LIKE CONCAT('%','000','%')
+ {executed in 1 msec} 
+2024-09-15T18:01:57.399 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:02:06.577 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+
+		 AND prSalePrice LIKE CONCAT('%','4,','%')
+ {executed in 1 msec} 
+2024-09-15T18:02:12.933 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:02:20.652 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+
+		 AND prInventory LIKE CONCAT('%','12','%')
+ {executed in 1 msec} 
+2024-09-15T18:02:22.395 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 0 msec} 
+2024-09-15T18:02:25.192 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+
+		 AND prInventory LIKE CONCAT('%','1','%')
+ {executed in 1 msec} 
+2024-09-15T18:02:29.013 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:03:43.442 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 0 msec} 
+2024-09-15T18:04:11.843 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:06:26.434 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:08:13.324 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 0 msec} 
+2024-09-15T18:09:37.036 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:14:45.445 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:15:01.064 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:18:39.415 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:18:39.421 [http-nio-8080-exec-3] ERROR o.t.TemplateEngine - [THYMELEAF][http-nio-8080-exec-3] Exception processing template "/xdm/v1/infra/product/ProductXdmList": An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141) 
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1432)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.attoparser.ParseException: (Line = 591, Column = 141) Malformed markup: Attribute "autocomplete" appears more than once in element
+	at org.attoparser.MarkupEventProcessorHandler.handleAttribute(MarkupEventProcessorHandler.java:549)
+	at org.attoparser.ParsingAttributeSequenceUtil.parseAttributeSequence(ParsingAttributeSequenceUtil.java:300)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:153)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 48 common frames omitted
+2024-09-15T18:18:39.422 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141)] with root cause 
+org.attoparser.ParseException: (Line = 591, Column = 141) Malformed markup: Attribute "autocomplete" appears more than once in element
+	at org.attoparser.MarkupEventProcessorHandler.handleAttribute(MarkupEventProcessorHandler.java:549)
+	at org.attoparser.ParsingAttributeSequenceUtil.parseAttributeSequence(ParsingAttributeSequenceUtil.java:300)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:153)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1432)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-15T18:18:39.425 [http-nio-8080-exec-3] ERROR o.s.b.a.w.s.e.ErrorMvcAutoConfiguration$StaticView - Cannot render error page for request [/xdm/v1/infra/product/ProductXdmList] and exception [An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141)] as the response has already been committed. As a result, the response may have the wrong status code. 
+2024-09-15T18:18:52.524 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 0 msec} 
+2024-09-15T18:18:57.703 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 0 msec} 
+2024-09-15T18:19:13.932 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:19:21.145 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 0 msec} 
+2024-09-15T18:19:21.153 [http-nio-8080-exec-1] ERROR o.t.TemplateEngine - [THYMELEAF][http-nio-8080-exec-1] Exception processing template "/xdm/v1/infra/product/ProductXdmList": An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141) 
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1432)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.attoparser.ParseException: (Line = 591, Column = 141) Malformed markup: Attribute "autocomplete" appears more than once in element
+	at org.attoparser.MarkupEventProcessorHandler.handleAttribute(MarkupEventProcessorHandler.java:549)
+	at org.attoparser.ParsingAttributeSequenceUtil.parseAttributeSequence(ParsingAttributeSequenceUtil.java:300)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:153)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 48 common frames omitted
+2024-09-15T18:19:21.154 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141)] with root cause 
+org.attoparser.ParseException: (Line = 591, Column = 141) Malformed markup: Attribute "autocomplete" appears more than once in element
+	at org.attoparser.MarkupEventProcessorHandler.handleAttribute(MarkupEventProcessorHandler.java:549)
+	at org.attoparser.ParsingAttributeSequenceUtil.parseAttributeSequence(ParsingAttributeSequenceUtil.java:300)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:153)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1432)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-15T18:19:21.157 [http-nio-8080-exec-1] ERROR o.s.b.a.w.s.e.ErrorMvcAutoConfiguration$StaticView - Cannot render error page for request [/xdm/v1/infra/product/ProductXdmList] and exception [An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141)] as the response has already been committed. As a result, the response may have the wrong status code. 
+2024-09-15T18:19:35.608 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:19:56.220 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+201. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:19:56.225 [http-nio-8080-exec-10] ERROR o.t.TemplateEngine - [THYMELEAF][http-nio-8080-exec-10] Exception processing template "/xdm/v1/infra/product/ProductXdmList": An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141) 
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1432)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.attoparser.ParseException: (Line = 591, Column = 141) Malformed markup: Attribute "autocomplete" appears more than once in element
+	at org.attoparser.MarkupEventProcessorHandler.handleAttribute(MarkupEventProcessorHandler.java:549)
+	at org.attoparser.ParsingAttributeSequenceUtil.parseAttributeSequence(ParsingAttributeSequenceUtil.java:300)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:153)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 48 common frames omitted
+2024-09-15T18:19:56.226 [http-nio-8080-exec-10] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141)] with root cause 
+org.attoparser.ParseException: (Line = 591, Column = 141) Malformed markup: Attribute "autocomplete" appears more than once in element
+	at org.attoparser.MarkupEventProcessorHandler.handleAttribute(MarkupEventProcessorHandler.java:549)
+	at org.attoparser.ParsingAttributeSequenceUtil.parseAttributeSequence(ParsingAttributeSequenceUtil.java:300)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:153)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1432)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-15T18:19:56.232 [http-nio-8080-exec-10] ERROR o.s.b.a.w.s.e.ErrorMvcAutoConfiguration$StaticView - Cannot render error page for request [/xdm/v1/infra/product/ProductXdmList] and exception [An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141)] as the response has already been committed. As a result, the response may have the wrong status code. 
+2024-09-15T18:23:05.832 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-15T18:23:05.834 [Thread-237] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:23:05.840 [Thread-237] INFO c.z.h.HikariDataSource - HikariPool-21 - Shutdown initiated... 
+2024-09-15T18:23:05.844 [Thread-237] INFO c.z.h.HikariDataSource - HikariPool-21 - Shutdown completed. 
+2024-09-15T18:23:05.898 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 21836 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-15T18:23:05.898 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-15T18:23:05.992 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-15T18:23:05.993 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:23:05.993 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-15T18:23:05.993 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-15T18:23:05.996 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-15T18:23:05.996 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 97 ms 
+2024-09-15T18:23:06.088 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-15T18:23:06.093 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:23:06.094 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-15T18:23:06.097 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.21 seconds (process running for 11705.722) 
+2024-09-15T18:23:06.098 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-15T18:23:07.559 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-15T18:23:07.559 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-15T18:23:07.560 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-15T18:23:07.562 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-22 - Starting... 
+2024-09-15T18:23:07.575 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-22 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@66befb54 
+2024-09-15T18:23:07.575 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-22 - Start completed. 
+2024-09-15T18:23:07.576 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+211. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:23:07.593 [http-nio-8080-exec-1] ERROR o.t.TemplateEngine - [THYMELEAF][http-nio-8080-exec-1] Exception processing template "/xdm/v1/infra/product/ProductXdmList": An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141) 
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1432)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.attoparser.ParseException: (Line = 591, Column = 141) Malformed markup: Attribute "autocomplete" appears more than once in element
+	at org.attoparser.MarkupEventProcessorHandler.handleAttribute(MarkupEventProcessorHandler.java:549)
+	at org.attoparser.ParsingAttributeSequenceUtil.parseAttributeSequence(ParsingAttributeSequenceUtil.java:300)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:153)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 48 common frames omitted
+2024-09-15T18:23:07.593 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141)] with root cause 
+org.attoparser.ParseException: (Line = 591, Column = 141) Malformed markup: Attribute "autocomplete" appears more than once in element
+	at org.attoparser.MarkupEventProcessorHandler.handleAttribute(MarkupEventProcessorHandler.java:549)
+	at org.attoparser.ParsingAttributeSequenceUtil.parseAttributeSequence(ParsingAttributeSequenceUtil.java:300)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:153)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1432)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-09-15T18:23:07.596 [http-nio-8080-exec-1] ERROR o.s.b.a.w.s.e.ErrorMvcAutoConfiguration$StaticView - Cannot render error page for request [/xdm/v1/infra/product/ProductXdmList] and exception [An error happened during template parsing (template: "class path resource [templates//xdm/v1/infra/product/ProductXdmList.html]" - line 591, col 141)] as the response has already been committed. As a result, the response may have the wrong status code. 
+2024-09-15T18:23:18.076 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+211. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:23:25.141 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+211. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:23:35.396 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+211. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:23:42.912 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+211. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+
+		 AND prReDate BETWEEN '2024-09-12' AND '2024-09-14'
+ {executed in 1 msec} 
+2024-09-15T18:23:47.858 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+211. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:23:56.259 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+211. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 0 msec} 
+2024-09-15T18:24:01.406 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+211. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+
+		 AND prReDate BETWEEN '2024-09-15' AND '2024-09-16'
+ {executed in 0 msec} 
+2024-09-15T18:24:02.882 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+211. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:24:07.212 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+211. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+
+		 AND prReDate BETWEEN '2024-09-15' AND '2024-09-15'
+ {executed in 2 msec} 
+2024-09-15T18:24:08.706 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+211. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:32:53.923 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-15T18:32:53.925 [Thread-241] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:32:53.928 [Thread-241] INFO c.z.h.HikariDataSource - HikariPool-22 - Shutdown initiated... 
+2024-09-15T18:32:53.930 [Thread-241] INFO c.z.h.HikariDataSource - HikariPool-22 - Shutdown completed. 
+2024-09-15T18:32:53.972 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 21836 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-15T18:32:53.973 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-15T18:32:54.067 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-15T18:32:54.068 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:32:54.068 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-15T18:32:54.068 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-15T18:32:54.071 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-15T18:32:54.071 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 98 ms 
+2024-09-15T18:32:54.162 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-15T18:32:54.168 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:32:54.169 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-15T18:32:54.172 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.21 seconds (process running for 12293.807) 
+2024-09-15T18:32:54.172 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-15T18:33:11.138 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-15T18:33:11.139 [Thread-245] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:33:11.190 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 21836 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-15T18:33:11.190 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-15T18:33:11.276 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-15T18:33:11.276 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:33:11.276 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-15T18:33:11.276 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-15T18:33:11.280 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-15T18:33:11.280 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 89 ms 
+2024-09-15T18:33:11.361 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-15T18:33:11.366 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:33:11.367 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-15T18:33:11.370 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.19 seconds (process running for 12311.006) 
+2024-09-15T18:33:11.371 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-15T18:33:20.478 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-15T18:33:20.478 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-15T18:33:20.479 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-15T18:33:20.481 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-23 - Starting... 
+2024-09-15T18:33:20.495 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-23 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@3bae5d21 
+2024-09-15T18:33:20.495 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-23 - Start completed. 
+2024-09-15T18:33:20.496 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+221. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 0 msec} 
+2024-09-15T18:33:27.154 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+221. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:34:02.243 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+221. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:34:07.340 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+221. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+
+		 AND prReDate BETWEEN '2024-09-15 00:00:00' AND '2024-09-15 23:59:59'
+ {executed in 0 msec} 
+2024-09-15T18:34:11.312 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+221. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:34:17.162 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+221. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+
+		 AND prReDate BETWEEN '2024-09-13 00:00:00' AND '2024-09-13 23:59:59'
+ {executed in 1 msec} 
+2024-09-15T18:34:20.197 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+221. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:34:26.046 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+221. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY	
+		from
+			Product a
+		where 1 =1
+			and a.prseq = '8'
+ {executed in 1 msec} 
+2024-09-15T18:34:28.735 [http-nio-8080-exec-1] WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmUele(com.shinnosuke.infra.product.ProductDto): [Field error in object 'productDto' on field 'prMoDate': rejected value [2024-09-15 17:52:51]; codes [typeMismatch.productDto.prMoDate,typeMismatch.prMoDate,typeMismatch.java.util.Date,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [productDto.prMoDate,prMoDate]; arguments []; default message [prMoDate]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'prMoDate'; Failed to convert from type [java.lang.String] to type [java.util.Date] for value [2024-09-15 17:52:51]]] ] 
+2024-09-15T18:34:35.390 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+221. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY	
+		from
+			Product a
+		where 1 =1
+			and a.prseq = '8'
+ {executed in 1 msec} 
+2024-09-15T18:34:37.017 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+221. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-15T18:34:37.786 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+221. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY	
+		from
+			Product a
+		where 1 =1
+			and a.prseq = '7'
+ {executed in 1 msec} 
+2024-09-15T18:34:39.190 [http-nio-8080-exec-4] WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmDele(com.shinnosuke.infra.product.ProductDto): [Field error in object 'productDto' on field 'prMoDate': rejected value [2024-09-15 16:53:36]; codes [typeMismatch.productDto.prMoDate,typeMismatch.prMoDate,typeMismatch.java.util.Date,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [productDto.prMoDate,prMoDate]; arguments []; default message [prMoDate]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'prMoDate'; Failed to convert from type [java.lang.String] to type [java.util.Date] for value [2024-09-15 16:53:36]]] ] 
+2024-09-15T18:51:24.610 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+221. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY	
+		from
+			Product a
+		where 1 =1
+			and a.prseq = '7'
+ {executed in 1 msec} 
+2024-09-15T18:51:25.871 [http-nio-8080-exec-1] WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmDele(com.shinnosuke.infra.product.ProductDto): [Field error in object 'productDto' on field 'prMoDate': rejected value [2024-09-15 16:53:36]; codes [typeMismatch.productDto.prMoDate,typeMismatch.prMoDate,typeMismatch.java.util.Date,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [productDto.prMoDate,prMoDate]; arguments []; default message [prMoDate]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'prMoDate'; Failed to convert from type [java.lang.String] to type [java.util.Date] for value [2024-09-15 16:53:36]]] ] 
+2024-09-15T18:55:01.550 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-15T18:55:01.551 [Thread-249] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:55:01.554 [Thread-249] INFO c.z.h.HikariDataSource - HikariPool-23 - Shutdown initiated... 
+2024-09-15T18:55:01.555 [Thread-249] INFO c.z.h.HikariDataSource - HikariPool-23 - Shutdown completed. 
+2024-09-15T18:55:01.596 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 21836 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-15T18:55:01.596 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-15T18:55:01.689 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-15T18:55:01.690 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:55:01.690 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-15T18:55:01.690 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-15T18:55:01.693 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-15T18:55:01.693 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 96 ms 
+2024-09-15T18:55:01.786 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-15T18:55:01.791 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:55:01.792 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-15T18:55:01.795 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.208 seconds (process running for 13621.371) 
+2024-09-15T18:55:01.796 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-15T18:55:08.457 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-15T18:55:08.460 [Thread-253] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:55:08.522 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 21836 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-15T18:55:08.522 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-15T18:55:08.606 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-15T18:55:08.607 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:55:08.607 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-15T18:55:08.607 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-15T18:55:08.610 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-15T18:55:08.610 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 88 ms 
+2024-09-15T18:55:08.695 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-15T18:55:08.700 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:55:08.701 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-15T18:55:08.704 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.193 seconds (process running for 13628.279) 
+2024-09-15T18:55:08.705 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-15T18:55:10.723 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-15T18:55:10.723 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-15T18:55:10.724 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-15T18:55:10.728 [http-nio-8080-exec-1] WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmDele(com.shinnosuke.infra.product.ProductDto): [Field error in object 'productDto' on field 'prMoDate': rejected value [2024-09-15 16:53:36]; codes [typeMismatch.productDto.prMoDate,typeMismatch.prMoDate,typeMismatch.java.util.Date,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [productDto.prMoDate,prMoDate]; arguments []; default message [prMoDate]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'prMoDate'; Failed to convert from type [java.lang.String] to type [java.util.Date] for value [2024-09-15 16:53:36]]] ] 
+2024-09-15T18:55:12.569 [http-nio-8080-exec-2] INFO c.z.h.HikariDataSource - HikariPool-24 - Starting... 
+2024-09-15T18:55:12.587 [http-nio-8080-exec-2] INFO c.z.h.p.HikariPool - HikariPool-24 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@10215a21 
+2024-09-15T18:55:12.588 [http-nio-8080-exec-2] INFO c.z.h.HikariDataSource - HikariPool-24 - Start completed. 
+2024-09-15T18:55:12.589 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+231. select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY	
+		from
+			Product a
+		where 1 =1
+			and a.prseq = '7'
+ {executed in 1 msec} 
+2024-09-15T18:55:13.743 [http-nio-8080-exec-4] WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.shinnosuke.infra.product.ProductController.ProductXdmUele(com.shinnosuke.infra.product.ProductDto): [Field error in object 'productDto' on field 'prMoDate': rejected value [2024-09-15 16:53:36]; codes [typeMismatch.productDto.prMoDate,typeMismatch.prMoDate,typeMismatch.java.util.Date,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [productDto.prMoDate,prMoDate]; arguments []; default message [prMoDate]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.util.Date' for property 'prMoDate'; Failed to convert from type [java.lang.String] to type [java.util.Date] for value [2024-09-15 16:53:36]]] ] 

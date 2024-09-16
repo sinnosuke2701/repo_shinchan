@@ -1,0 +1,111 @@
+2024-09-16T19:00:06.542 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+529. select
+			a.memseq
+			,a.memName
+   			,a.memGender
+			,a.memId
+			,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+			,a.memDelNY
+		from
+			member a
+		where 1 = 1
+
+		 AND a.memName LIKE CONCAT('%',NULL,'%')
+ {executed in 1 msec} 
+2024-09-16T19:00:48.476 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-16T19:00:48.478 [Thread-497] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-16T19:00:48.487 [Thread-497] INFO c.z.h.HikariDataSource - HikariPool-49 - Shutdown initiated... 
+2024-09-16T19:00:48.491 [Thread-497] INFO c.z.h.HikariDataSource - HikariPool-49 - Shutdown completed. 
+2024-09-16T19:00:48.546 [restartedMain] INFO c.s.ShinchanApplication - Starting ShinchanApplication using Java 17.0.11 with PID 21836 (/Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan/bin/main started by shinnosuke in /Users/shinnosuke/Desktop/shinnosuke/factory/workspace/ws_sts4_4240/repo_shinchan/shinchan) 
+2024-09-16T19:00:48.546 [restartedMain] INFO c.s.ShinchanApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-16T19:00:48.629 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-16T19:00:48.629 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-16T19:00:48.629 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-16T19:00:48.629 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-16T19:00:48.632 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-16T19:00:48.632 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 86 ms 
+2024-09-16T19:00:48.713 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-16T19:00:48.718 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-16T19:00:48.719 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-16T19:00:48.722 [restartedMain] INFO c.s.ShinchanApplication - Started ShinchanApplication in 0.185 seconds (process running for 32341.367) 
+2024-09-16T19:00:48.723 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-16T19:00:50.157 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-16T19:00:50.157 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-16T19:00:50.159 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 2 ms 
+2024-09-16T19:00:50.161 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-50 - Starting... 
+2024-09-16T19:00:50.176 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-50 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@4a74c0d9 
+2024-09-16T19:00:50.176 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-50 - Start completed. 
+2024-09-16T19:00:50.177 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+539. select
+			a.memseq
+			,a.memName
+   			,a.memGender
+			,a.memId
+			,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+			,a.memDelNY
+		from
+			member a
+		where 1 = 1
+
+		 AND a.memName LIKE CONCAT('%',NULL,'%')
+ {executed in 1 msec} 
+2024-09-16T19:00:53.623 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+539. select
+			a.memseq
+			,a.memName
+   			,a.memGender
+			,a.memId
+			,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+			,a.memDelNY
+		from
+			member a
+		where 1 = 1
+
+		 AND a.memName LIKE CONCAT('%',NULL,'%')
+ {executed in 0 msec} 
+2024-09-16T19:00:53.757 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+539. select
+			a.memseq
+			,a.memName
+   			,a.memGender
+			,a.memId
+			,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+			,a.memDelNY
+		from
+			member a
+		where 1 = 1
+ {executed in 1 msec} 
+2024-09-16T19:00:58.582 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+539. select
+			a.memseq
+			,a.memName
+   			,a.memGender
+			,a.memId
+			,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+			,a.memDelNY
+		from
+			member a
+		where 1 = 1
+
+		 AND a.memName LIKE CONCAT('%',NULL,'%')
+ {executed in 1 msec} 
