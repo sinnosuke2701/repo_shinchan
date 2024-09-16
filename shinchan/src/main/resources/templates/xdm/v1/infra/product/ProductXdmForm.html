@@ -15,7 +15,7 @@
 	<meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
 	<meta property="og:type" content="Website">
 	<meta property="og:site_name" content="Bootstrap Gallery">
-	<link rel="shortcut icon" href="assets/images/favicon.svg">
+	<link rel="shortcut icon" href="/xdm/v1/template/vivo/assets/images/favicon.svg">
 
 	<!-- Title -->
 	<title>Vivo Admin Template - Admin Dashboard</title>
@@ -26,13 +26,13 @@
 		************ -->
 
 	<!-- Animated css -->
-	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="/xdm/v1/template/vivo/assets/css/animate.css">
 
 	<!-- Bootstrap font icons css -->
-	<link rel="stylesheet" href="assets/fonts/bootstrap/bootstrap-icons.css">
+	<link rel="stylesheet" href="/xdm/v1/template/vivo/assets/fonts/bootstrap/bootstrap-icons.css">
 
 	<!-- Main css -->
-	<link rel="stylesheet" href="assets/css/main.min.css">
+	<link rel="stylesheet" href="/xdm/v1/template/vivo/assets/css/main.min.css">
 
 
 	<!-- *************
@@ -40,7 +40,7 @@
 		************ -->
 
 	<!-- Scrollbar CSS -->
-	<link rel="stylesheet" href="assets/vendor/overlay-scroll/OverlayScrollbars.min.css">
+	<link rel="stylesheet" href="/xdm/v1/template/vivo/assets/vendor/overlay-scroll/OverlayScrollbars.min.css">
 	<style>
 		.card-body,
 		.mb-3,
@@ -107,7 +107,7 @@
 			<!-- Sidebar brand starts -->
 			<div class="sidebar-brand">
 				<a href="index.html" class="logo">
-					<img src="assets/images/logo.svg" alt="Vivo Admin Dashboard" />
+					<img src="/xdm/v1/template/vivo/assets/images/logo.svg" alt="Vivo Admin Dashboard" />
 				</a>
 			</div>
 			<!-- Sidebar brand starts -->
@@ -490,24 +490,24 @@
 					<ul class="header-actions">
 						<li class="dropdown d-none d-md-block">
 							<a href="#" id="countries" data-toggle="dropdown" aria-haspopup="true">
-								<img src="assets/images/flags/1x1/gb.svg" class="flag-img" alt="AI Admin Dashboards" />
+								<img src="/xdm/v1/template/vivo/assets/images/flags/1x1/gb.svg" class="flag-img" alt="AI Admin Dashboards" />
 							</a>
 							<div class="dropdown-menu dropdown-menu-end mini" aria-labelledby="countries">
 								<div class="country-container">
 									<a href="index.html">
-										<img src="assets/images/flags/1x1/us.svg" alt="Clean Admin Dashboards" />
+										<img src="/xdm/v1/template/vivo/assets/images/flags/1x1/us.svg" alt="Clean Admin Dashboards" />
 									</a>
 									<a href="index.html">
-										<img src="assets/images/flags/1x1/in.svg" alt="Google Dashboards" />
+										<img src="/xdm/v1/template/vivo/assets/images/flags/1x1/in.svg" alt="Google Dashboards" />
 									</a>
 									<a href="index.html">
-										<img src="assets/images/flags/1x1/br.svg" alt="Admin Panels" />
+										<img src="/xdm/v1/template/vivo/assets/images/flags/1x1/br.svg" alt="Admin Panels" />
 									</a>
 									<a href="index.html">
-										<img src="assets/images/flags/1x1/tr.svg" alt="Modern Dashboards" />
+										<img src="/xdm/v1/template/vivo/assets/images/flags/1x1/tr.svg" alt="Modern Dashboards" />
 									</a>
 									<a href="index.html">
-										<img src="assets/images/flags/1x1/ca.svg" alt="Best Admin Dashboards" />
+										<img src="/xdm/v1/template/vivo/assets/images/flags/1x1/ca.svg" alt="Best Admin Dashboards" />
 									</a>
 								</div>
 							</div>
@@ -517,7 +517,7 @@
 								aria-haspopup="true">
 								<span class="user-name d-none d-md-block">Abigale Heaney</span>
 								<span class="avatar">
-									<img src="assets/images/user.png" alt="Admin Templates">
+									<img src="/xdm/v1/template/vivo/assets/images/user.png" alt="Admin Templates">
 									<span class="status online"></span>
 								</span>
 							</a>
@@ -547,7 +547,7 @@
 				<li class="breadcrumb-item breadcrumb-active" aria-current="page">Default</li>
 			</ol>
 			<!-- Breadcrumb end -->
-			<h3>Code</h3>
+			<h3>Product</h3>
 			<!-- Content wrapper scroll start -->
 			<div class="content-wrapper-scroll">
 
@@ -564,246 +564,72 @@
 								<div class="card-header">
 									<div class="card-title">기본정보</div>
 								</div>
-								<form class="needs-validation" novalidate>
+								<form class="needs-validation" novalidate 
+									method="post" action="/xdm/v1/infra/product/ProductXdmInst">
 									<div class="card-body">
 										<div class="container-fluid">
 											<div class="row mb-3">
-												<div class="row mb-3">
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div class="was-validated">
-																	<label for="validationCustom04"
-																		class="form-label">코드그룹<span
-																			style="color: red;">*</span></label>
-																	<select class="form-select" id="validationCustom04"
-																		required>
-																		<option selected disabled value="">선택하세요
-																		</option>
-																		<option>1</option>
-																		<option>2</option>
-																	</select>
-																	<div class="invalid-feedback">선택하세요.</div>
-																</div>
-															</div>
+												<div class="col-md-3">
+													<div class	="card">
+														<div class="card-body">
+															<label for="prProdName" class="form-label">상품명<span
+																	style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="prProdName" name="prProdName" th:value="${item?.prProdName}">
 														</div>
 													</div>
 												</div>
-												<div class="row mb-3">
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="was-validated">
-																		<label for="validationCustom02"
-																			class="form-label">코드<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="validationCustom02" required="">
-																		<!-- <div class="invalid-feedback">Please
-																					provide a valid zip.</div> -->
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="mb-3">
-															<label for="inputEmail"
-																class="form-label">코드(ANOTHER)</label>
-															<input type="email" class="form-control" id="inputEmail"
-																placeholder="영대소문자,숫자">
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="was-validated">
-																		<label for="validationCustom02"
-																			class="form-label">코드이름<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="validationCustom02" required="">
-																		<div class="invalid-feedback">입력하세요
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">코드
-																이름(영문)</label>
-															<input type="email" class="form-control" id="inputEmail"
-																placeholder="영대소문자,숫자">
+												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label for="prUseNY" class="form-label">사용여부<span
+																style="color: red;">*</span></label>
+															<select class="form-select" id="prUseNY" name="prUseNY">
+																<option value="0" th:selected="${item?.prUseNY == 0}">미사용</option>
+																<option value="1" th:selected="${item?.prUseNY == 1}" >사용</option>
+															</select>
 														</div>
 													</div>
 												</div>
-												<div class="row mb-3">
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div class="was-validated">
-																	<label for="validationCustom04"
-																		class="form-label">사용여부<span
-																			style="color: red;">*</span></label>
-																	<select class="form-select" id="validationCustom04"
-																		required>
-																		<option selected disabled value="">사용 여부
-																		</option>
-																		<option>사용</option>
-																		<option>미사용</option>
-																	</select>
-																	<div class="invalid-feedback">선택하세요.</div>
-																</div>
-															</div>
+												<div class="col-md-3">
+													<div class	="card">
+														<div class="card-body">
+															<label for="cg_Order" class="form-label">원가<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="prReguPrice" name="prReguPrice" th:value="${item?.prReguPrice}">
 														</div>
 													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div class="was-validated">
-																	<label for="validationCustom02"
-																		class="form-label">순서<span
-																			style="color: red;">*</span></label>
-																	<input type="text" class="form-control"
-																		id="validationCustom02" required="">
-																	<div class="invalid-feedback">입력하세요
-																	</div>
-																</div>
-															</div>
+												</div>
+												<div class="col-md-3">
+													<div class	="card">
+														<div class="card-body">
+															<label for="cg_Order" class="form-label">할인가<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="prSalePrice" name="prSalePrice" th:value="${item?.prSalePrice}">
 														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class	="card">
+														<div class="card-body">
+															<label for="cg_Order" class="form-label">재고<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="prInventory" name="prInventory" th:value="${item?.prInventory}">
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-6">
+													    <div class="card">
+													        <div class="card-body">
+													            <label for="cg_Desc" class="form-label">설명</label>
+													            <textarea class="form-control" id="prProdDesc" name="prProdDesc" th:value="${item?.prProdDesc}" rows="4"></textarea>
+													        </div>
+													    </div>
 													</div>
 												</div>
 												<div class="row mb-3">
 													<div class="col">
-														<div class="col-sm-6 col-sm-6">
-															<div class="mb-3">
-																<label for="inputMessage" class="form-label">설명</label>
-																<textarea class="form-control" id="inputMessage"
-																	rows="3"></textarea>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="row mb-3">
-													<div class="col">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">다국어1</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-													<div class="col">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">다국어2</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-													<div class="col">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">다국어3</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-													<div class="col">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">다국어4</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-												</div>
-												<div class="row mb-3">
-													<div class="col-md-3">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">다국어5</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">다국어6</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">다국어7</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">다국어8</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-												</div>
-												<div class="row mb-3">
-													<div class="col-md-3">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">예비1
-																(VARCHAR TYPE)</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">예비2
-																(VARCHAR TYPE)</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">예비3
-																(VARCHAR TYPE)</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">예비4
-																(VARCHAR TYPE)</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-												</div>
-												<div class="row mb-3">
-													<div class="col-md-3">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">예비1 (INT
-																TYPE)</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">예비2 (INT
-																TYPE)</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">예비3 (INT
-																TYPE)</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="mb-3">
-															<label for="inputEmail" class="form-label">예비4 (INT
-																TYPE)</label>
-															<input type="email" class="form-control" id="inputEmail">
-														</div>
-													</div>
-												</div>
-												<div class="row mb-3">
-													<div class="col">
-														<button type="button" id='seobin' class="btn btn-white">
+														<button type="button" id='seobin' class="btn btn-white" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/product/ProductXdmList';">
 															<svg xmlns="http://www.w3.org/2000/svg" width="16"
 																height="16" fill="black"
 																style="background-color: white;" class="bi bi-list-ul"
@@ -816,7 +642,7 @@
 													<div class="col"></div>
 													<div class="col"></div>
 													<div class="col">
-														<button type="button" id='seobin' class="btn btn-white"
+														<button type="submit" id='seobin' class="btn btn-white"
 															style="float: right;">
 															<svg xmlns="http://www.w3.org/2000/svg" width="10"
 																height="10" fill="white" style="background-color: blue;"
@@ -872,21 +698,21 @@
 			************ Required JavaScript Files *************
 		************* -->
 	<!-- Required jQuery first, then Bootstrap Bundle JS -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
-	<script src="assets/js/modernizr.js"></script>
-	<script src="assets/js/moment.js"></script>
+	<script src="/xdm/v1/template/vivo/assets/js/jquery.min.js"></script>
+	<script src="/xdm/v1/template/vivo/assets/js/bootstrap.bundle.min.js"></script>
+	<script src="/xdm/v1/template/vivo/assets/js/modernizr.js"></script>
+	<script src="/xdm/v1/template/vivo/assets/js/moment.js"></script>
 
 	<!-- *************
 			************ Vendor Js Files *************
 		************* -->
 
 	<!-- Overlay Scroll JS -->
-	<script src="assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
-	<script src="assets/vendor/overlay-scroll/custom-scrollbar.js"></script>
+	<script src="/xdm/v1/template/vivo/assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
+	<script src="/xdm/v1/template/vivo/assets/vendor/overlay-scroll/custom-scrollbar.js"></script>
 
 	<!-- Main Js Required -->
-	<script src="assets/js/main.js"></script>
+	<script src="/xdm/v1/template/vivo/assets/js/main.js"></script>
 
 </body>
 

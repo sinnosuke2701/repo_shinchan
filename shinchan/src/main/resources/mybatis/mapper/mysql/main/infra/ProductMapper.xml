@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.shinnosuke.infra.prduct.ProductDao">
+<mapper namespace="com.shinnosuke.infra.product.ProductDao">
 	<!-- namespace = mapper 와 연결될 dao -->
 	<!-- xml 에서 주석 단축키 : ctrl + shift + C -->
 
@@ -20,6 +20,95 @@
 			,a.prReDate
 			,a.prMoDate
 			,a.prDelNY
+		from 
+			product a
+		where 1 = 1
+		<if test="shDelNY != null and !shDelNY.equals('')">AND prDelNY = #{shDelNY}</if>
+		<if test="shUseNY != null and !shUseNY.equals('')">AND prUseNY = #{shUseNY}</if>
+		
+		<choose>
+			<when test="shOption == 1 ">AND a.prseq = #{shValue}</when>
+			<when test="shOption == 2 ">AND a.prProdName LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 3 ">AND a.prReguPrice LIKE CONCAT('%',#{shValue},'%')</when> 
+			<when test="shOption == 4 ">AND a.prSalePrice LIKE CONCAT('%',#{shValue},'%')</when> 
+			<when test="shOption == 5 ">AND a.prInventory LIKE CONCAT('%',#{shValue},'%')</when> 
+		</choose>
+		
+		<choose>
+			<when test="shOptionDate == 1">AND a.prReDate BETWEEN #{shStartDate} AND #{shEndDate}</when>
+			<when test="shOptionDate == 2">AND a.prMoDate BETWEEN #{shStartDate} AND #{shEndDate}</when>		
+		</choose>
+		
 	</select>	
+	
+	<insert id="insert">
+		insert into product(
+			prProdName
+			,prUseNY
+			,prProdDesc
+			,prReguPrice
+			,prSalePrice
+			,prInventory
+			,prReDate
+			,prMoDate
+			,prDelNY
+		)values(
+			#{prProdName}
+			,#{prUseNY}
+			,#{prProdDesc}
+			,#{prReguPrice}
+			,#{prSalePrice}
+			,#{prInventory}
+			,now()
+			,now()
+			,0
+		)
+	</insert>
+	
+	<select id = "selectOne" resultMap="resultMapObj">
+		select
+			a.prseq
+			,a.prProdName
+			,a.prUseNY
+			,a.prProdDesc
+			,a.prReguPrice
+			,a.prSalePrice
+			,a.prInventory
+			,a.prReDate
+			,a.prMoDate
+			,a.prDelNY	
+		from
+			Product a
+		where 1 =1
+			and a.prseq = #{prseq}		
+	</select>
+	
+	<update id="update">
+		update product
+		set
+		prProdName = #{prProdName}
+		,prUseNY = #{prUseNY}
+		,prProdDesc = #{prProdDesc}
+		,prReguPrice = #{prReguPrice}
+		,prSalePrice = #{prSalePrice}
+		,prInventory = #{prInventory}
+		,prDelNY = #{prDelNY}
+	where 1=1
+		and prseq = #{prseq}
+	</update>
+	
+	<delete id="delete">
+		delete from product
+		where 1 = 1
+			and prseq = #{prseq}
+	</delete>
+	
+	<update id="uelete">
+		update product
+		set
+			prDelNY = #{prDelNY}
+		where 1 = 1
+			and prseq = #{prseq}
+	</update>
 	
 </mapper>

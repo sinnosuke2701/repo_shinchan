@@ -6,7 +6,7 @@ public class ProductDto {
 
 	private String prseq;
 	private String prProdName;
-	private Integer UseNY;
+	private Integer prUseNY;
 	private String prProdDesc;
 	private String prReguPrice;
 	private String prSalePrice;
@@ -14,7 +14,11 @@ public class ProductDto {
 	private Date prReDate;
 	private Date prMoDate;
 	private Integer prDelNY;
+	
+	
+
 	//------------------------------
+
 	public String getPrseq() {
 		return prseq;
 	}
@@ -27,11 +31,11 @@ public class ProductDto {
 	public void setPrProdName(String prProdName) {
 		this.prProdName = prProdName;
 	}
-	public Integer getUseNY() {
-		return UseNY;
+	public Integer getPrUseNY() {
+		return prUseNY;
 	}
-	public void setUseNY(Integer useNY) {
-		UseNY = useNY;
+	public void setPrUseNY(Integer prUseNY) {
+		this.prUseNY = prUseNY;
 	}
 	public String getPrProdDesc() {
 		return prProdDesc;
@@ -75,5 +79,7 @@ public class ProductDto {
 	public void setPrDelNY(Integer prDelNY) {
 		this.prDelNY = prDelNY;
 	}
+
+	
 	
 }

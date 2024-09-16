@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+	
     <style>
         hr {
             background: black;
@@ -54,7 +55,9 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="/xdm/v1/template/vivo/assets/css/main.min.css">
-
+	
+	<!-- datetimepicker css -->
+	<link rel="stylesheet" href="/xdm/v1/css/datetimepicker/jquery.datetimepicker.min.css">
 
     <!-- *************
          ************ Vendor Css Files *************
@@ -555,7 +558,7 @@
                             <!-- Breadcrumb end -->
 
                             <h2>Product</h2>
-						<form method="post" action>
+						<form method="post" action="/xdm/v1/infra/product/ProductXdmList" name="form">
                             <from>
                                 <table>
                                     <thead>
@@ -564,16 +567,16 @@
                                                 <select class="form-select" aria-label="Default select example"
                                                     style="width: 200px;" name="shDelNY">
                                                     <option value="">삭제여부</option>
-                                                    <option value="1">N</option>
-                                                    <option value="2">Y</option>
+                                                    <option value="0">N</option>
+                                                    <option value="1">Y</option>
                                                 </select>
                                             </th>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
                                                     style="width: 200px;" name="shUseNY">
                                                     <option value="">사용여부</option>
-                                                    <option value="1">N</option>
-                                                    <option value="2">Y</option>
+                                                    <option value="0">N</option>
+                                                    <option value="1">Y</option>
                                                 </select>
                                             </td>
                                             <td>
@@ -585,11 +588,11 @@
                                                 </select>
                                             </td>
                                             <td>
-                                                <input type="date"
+                                                <input type="text" autocomplete="off" id="shStartDate" name="shStartDate" placeholder="시작일" 
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td>
-                                                <input type="date"
+                                                <input type="text" autocomplete="off" id="shEndDate" name="shEndDate" placeholder="마감일"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                         </tr>
@@ -598,17 +601,21 @@
                                         <tr>
                                             <th>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;">
-                                                    <option selected>검색구분</option>
-                                                    <option value="1">검색구분</option>
+                                                    style="width: 200px;" name="shOption">
+                                                    <option value="">검색구분</option>
+                                                    <option value="1">seq</option>
+                                                    <option value="2">상품 이름</option>
+                                                    <option value="3">상품 원가</option>
+                                                    <option value="4">상품 할인가</option>                                                    
+                                                    <option value="5">재고</option>
                                                 </select>
                                             </th>
                                             <td>
-                                                <input type="text" placeholder="검색어"
+                                                <input type="text" placeholder="검색어" name="shValue" autocomplete="off"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
-                                            <td><button>🔍</button>
-                                                <button>🔄</button>
+                                            <td><button type="submit">🔍</button>
+                                                <button onclick="window.location.href='http://localhost:8080/xdm/v1/infra/product/ProductXdmList';">🔄</button>
                                             </td>
 
                                         </tr>
@@ -647,9 +654,9 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td><input type="checkbox"></td>
+                                                            <td style=width:50px;><input type="checkbox"></td>
                                                             <td>#</td>
-                                                            <td></td>
+                                                            <td>seq</td>
                                                             <td>상품 이름</td>
                                                             <td>사용 여부</td>
                                                             <td>상품 설명</td>
@@ -660,19 +667,21 @@
                                                             <td>수정일</td>
                                                             <td>삭제여부</td>
                                                         </tr>
-                                                        <tr>
+                                                        <tr th:each="List : ${list}">
                                                             <td><input type="checkbox"></td>
                                                             <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <th></th>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
+                                                            <td th:text="${List.prseq}"></td>
+                                                            <td><a th:href="@{/xdm/v1/infra/product/ProductXdmMfom(prseq=${List.prseq})}" th:text="${List.prProdName}"></a></td>
+                                                            <td th:if="${List.prUseNY eq 0}">N</td>
+                                                            <td th:unless="${List.prUseNY eq 0}">Y</td>
+                                                            <td th:text="${List.prProdDesc}"></td>
+                                                            <td th:text="${List.prReguPrice}"></td>
+                                                            <td th:text="${List.prSalePrice}"></td>
+                                                            <td th:text="${List.prInventory}"></td>
+                                                            <td th:text="${#dates.format(List.prReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                            <td th:text="${#dates.format(List.prMoDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                            <td th:if="${List.prDelNY eq 0}">N</td>
+                                                            <td th:unless="${List.prDelNY eq 0}">Y</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -726,7 +735,7 @@
                                                         </svg>
                                                     </button>
                                                     <button type="button" id='seobin' class="btn btn-white"
-                                                        style="background-color: blue;">
+                                                        style="background-color: blue;" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/product/ProductXdmForm';">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                             fill="white" class="bi bi-plus-square" viewBox="0 0 16 16">
                                                             <path
@@ -799,7 +808,26 @@
 
     <!-- Main Js Required -->
     <script src="/xdm/v1/template/vivo/assets/js/main.js"></script>
+	
+	 <!-- Custom Data tables -->
+    <script src="/xdm/v1/template/vivo/vendor/datatables/custom/custom-datatables.js"></script>
+	
+	<!-- by developer -->
+ 	<script src="/xdm/v1/js/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+	
+	<script>
+		
+		window.addEventListener('load', function(){
+			
+			$.datetimepicker.setLocale('ko');
 
+			$("#shStartDate, #shEndDate").datetimepicker({
+				timepicker:false,
+				format: 'Y-m-d'
+			});
+		});
+	</script>
+	
 </body>
 
 </html>

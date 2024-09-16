@@ -7,6 +7,16 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProductDao {
 	
-	List<ProductDto> selectList(ProductDto productDto);
+	List<ProductDto> selectList(ProductVo productVo);
+	
+	public int insert(ProductDto productDto);
+	
+	public ProductDto selectOne(ProductDto productDto);
+	
+	public int update(ProductDto productDto);
+	
+	public int delete(ProductDto productDto);
+	
+	public int uelete(ProductDto productDto);
 	
 }
