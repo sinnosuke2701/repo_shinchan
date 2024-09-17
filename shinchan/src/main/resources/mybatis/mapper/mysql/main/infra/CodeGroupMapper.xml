@@ -96,7 +96,7 @@
 	<update id="uelete">
 		update codegroup
 		set
-			cg_DelNY = #{cg_DelNY}
+			cg_DelNY = 1
 		where 1 = 1
 			and seq = #{seq}
 	</update>
