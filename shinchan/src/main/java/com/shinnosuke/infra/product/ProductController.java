@@ -39,7 +39,6 @@ public class ProductController {
 	@RequestMapping(value="/xdm/v1/infra/product/ProductXdmMfom")
 	public String ProductXdmMfom(ProductDto productDto,Model model) {
 		model.addAttribute("item", ProductService.selectOne(productDto));
-		
 		return "/xdm/v1/infra/product/ProductXdmMfom";
 	}
 	
