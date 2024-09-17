@@ -10,8 +10,8 @@ public class MemberService {
 	
 	@Autowired
 	private MemberDao MemberDao;
-	List<MemberDto> selectList(){
-		List<MemberDto> members = MemberDao.selectList();
+	List<MemberDto> selectList(MemberVo memberVo){
+		List<MemberDto> members = MemberDao.selectList(memberVo);
 			return members;
 		}
 	
@@ -38,5 +38,12 @@ public class MemberService {
 		return MemberDao.update(memberDto);
 	}
 	
+	public int delete(MemberDto memberDto) {
+		return MemberDao.delete(memberDto);
+	}
+	
+	public int uelete(MemberDto memberDto) {
+		return MemberDao.uelete(memberDto);
+	}
 	
 }

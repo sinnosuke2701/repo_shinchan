@@ -61,12 +61,15 @@
       ************ -->
 
     <!-- Scrollbar CSS -->
-    <link rel="stylesheet" href="/xdm/v1/template/vivo/vendor/overlay-scroll/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="/xdm/v1/template/vivo/assets/vendor/overlay-scroll/OverlayScrollbars.min.css">
 
     <!-- Data Tables -->
-    <link rel="stylesheet" href="/xdm/v1/template/vivo/vendor/datatables/dataTables.bs5.css" />
-    <link rel="stylesheet" href="/xdm/v1/template/vivo/vendor/datatables/dataTables.bs5-custom.css" />
-
+    <link rel="stylesheet" href="/xdm/v1/template/vivo/assets/vendor/datatables/dataTables.bs5.css" />
+    <link rel="stylesheet" href="/xdm/v1/template/vivo/assets/vendor/datatables/dataTables.bs5-custom.css" />
+	
+	<!-- datetimepicker css -->
+	<link rel="stylesheet" href="/xdm/v1/css/datetimepicker/jquery.datetimepicker.min.css">
+	
 </head>
 
 <body>
@@ -555,41 +558,41 @@
                             <!-- Breadcrumb end -->
 
                             <h2>Member</h2>
-
+						<form method="post" action="/xdm/v1/infra/member/MemberXdmList" name="form">
                             <from>
                                 <table>
                                     <thead>
                                         <tr>
                                             <th>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;">
+                                                    style="width: 200px;" name="shDelNY">
                                                     <option value="">삭제여부</option>
-                                                    <option value="1">N</option>
-                                                    <option value="2">Y</option>
+                                                    <option value="0">N</option>
+                                                    <option value="1">Y</option>
                                                 </select>
                                             </th>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;">
-                                                    <option value="">사용여부</option>
-                                                    <option value="1">N</option>
-                                                    <option value="2">Y</option>
+                                                    style="width: 200px;" name="shGender">
+                                                    <option value="">성별</option>
+                                                    <option value="0">남</option>
+                                                    <option value="1">여</option>
                                                 </select>
                                             </td>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;">
+                                                    style="width: 200px;" name="shOptionDate">
                                                     <option value="">날짜</option>
-                                                    <option value="1">시작일</option>
-                                                    <option value="2">마감일</option>
+                                                    <option value="1">등록일</option>
+                                                    <option value="2">수정일</option>
                                                 </select>
                                             </td>
                                             <td>
-                                                <input type="date"
+                                                <input type="text" placeholder="시작일" id="shStartDate" name="shStartDate" autocomplete="off"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td>
-                                                <input type="date"
+                                                <input type="text" placeholder="마감일" id="shEndDate" name="shEndDate" autocomplete="off"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                         </tr>
@@ -598,17 +601,21 @@
                                         <tr>
                                             <th>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;">
-                                                    <option selected>검색구분</option>
-                                                    <option value="1">검색구분</option>
+                                                    style="width: 200px;" name="shOption">
+                                                    <option value="">검색구분</option>
+                                                    <option value="1">seq</option>
+                                                    <option value="2">이름</option>
+                                                    <option value="3">아이디</option>
+                                                    <option value="4">이메일</option>
+                                                    <option value="5">전화번호</option>
                                                 </select>
                                             </th>
                                             <td>
-                                                <input type="text" placeholder="검색어"
+                                                <input type="text" placeholder="검색어" autocomplete="off" name="shValue"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td><button>🔍</button>
-                                                <button>🔄</button>
+                                                <button onclick="window.location.href='http://localhost:8080/xdm/v1/infra/member/MemberXdmList';">🔄</button>
                                             </td>
 
                                         </tr>
@@ -628,60 +635,54 @@
                                                 <table class="table m-0">
                                                     <thead>
                                                         <tr>
-                                                            <th colspan='13' style="width: 140px; padding-right:0px;">
-                                                      	    	<h5>Total : 171</h5>
-                                                           	</th>
-	                                           	            <th style="width: 140px; padding-right:0px;">
-	                                           	            	<select class="form-select" aria-label="Default select example"
-            	                                                        style="width: 140px; padding-right:0px;">
-                	                                                    <option selected>5</option>
-                    	                                                <option value="2">4</option>
-                        	                                            <option value="3">3</option>
-                            	                                        <option value="4">2</option>
-                                	                                    <option value="5">1</option>
-                                    	                        </select>
-                                    	                    </th>
+                                                            <th colspan="11">
+                                                                <h5>Total : 171</h5>
+                                                            </th>
+                                                            <th>
+                                                                <span style="float: right;">
+                                                                    <select class="form-select"
+                                                                        aria-label="Default select example"
+                                                                        style="width: 150px;">
+                                                                        <option selected>5</option>
+                                                                        <option value="2">4</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">2</option>
+                                                                        <option value="5">1</option>
+                                                                    </select>
+                                                                </span>
+                                                            </th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                        	<td><input type="checkbox"></td>
-                                                        	<td>#</td>
+                                                            <td><input type="checkbox"></td>
+                                                            <td>#</td>
                                                             <td>seq</td>
-                                                            <td>관리자권한</td>
                                                             <td>이름</td>
+                                                            <td>성별</td>
                                                             <td>아이디</td>
                                                             <td>비밀번호</td>
-                                                            <td>성별</td>
-                                                            <td>생년월일</td>
                                                             <td>이메일</td>
                                                             <td>전화번호</td>
-                                                            <!-- <td>설명</td> -->
                                                             <td>등록일</td>
                                                             <td>수정일</td>
                                                             <td>삭제여부</td>
                                                         </tr>
-                                                        <tr th:each="List : ${list3}">
-                                                        	<td><input type="checkbox"></input></td>
-                                                        	<td></td>
-                                                            <td th:text = "${List.seq}"><input type="checkbox"></td>
-                                                            <td th:if = "${List.mem_Authority eq 0}">회원</td>
-                                                            <td th:unless = "${List.mem_Authority eq 0}">관리자</td>
-                                                            <td><a th:href="@{/xdm/v1/infra/member/MemberXdmMfom(seq=${List.seq})}" th:text = "${List.mem_Name}">></a></td>
-<!--                                                             <td><a th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMfom(seq=${List.seq})}" th:text="${List.cg_Name}"></a></td> -->
-                                                            <td th:text = "${List.mem_Id}"></td>
-                                                            <td th:text = "${List.mem_Password}"></td>
-                                                            <td th:text = "${List.mem_Gender}"></td>
-<!--                                                             <td th:if = "${List.mem_Gender eq 0}">남성</td> -->
-<!--                                                             <td th:unless = "${List.mem_Gender eq 0}">여성</td> -->
-                                                            <td th:text = "${List.mem_Birth}"></td>
-                                                            <td th:text = "${List.mem_Email}"></td>
-                                                            <td th:text = "${List.mem_Phone}"></td>
-                                                            <!-- <td th:text = "${List.mem_Desc}"></td> -->
-                                                            <td th:text = "${#dates.format(List.mem_ReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
-                                                            <td th:text = "${#dates.format(List.mem_MoDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
-                                                            <td th:if = "${List.mem_DelNY eq 0}">N</td>
-                                                            <td th:unless = "${List.mem_DelNY eq 0}">Y</td>
+                                                        <tr th:each="list : ${list3}">
+                                                            <td><input type="checkbox"></td>
+                                                            <td></td>
+                                                            <td th:text="${list.memseq}"></td>
+                                                            <td><a th:href="@{/xdm/v1/infra/member/MemberXdmMfom(memseq=${list.memseq})}" th:text="${list.memName}"></a></td>
+                                                            <td th:if="${list.memGender eq 0}">남</td>
+                                                            <td th:unless="${list.memGender eq 0}">여</td>
+                                                            <td th:text="${list.memId}"></td>
+                                                            <td th:text="${list.memPassword}"></td>
+                                                            <td th:text="${list.memEmail}"></td>
+                                                            <td th:text="${list.memPhoneNum}"></td>
+                                                            <td th:text="${#dates.format(list.memReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                            <td th:text="${#dates.format(list.memMoDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                            <td th:if="${list.memDelNY eq 0}">N</td>
+                                                            <td th:unless="${list.memDelNY eq 0}">Y</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -734,8 +735,8 @@
                                                                 d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
                                                         </svg>
                                                     </button>
-                                                    <button type="button" id='seobin' class="btn btn-white"
-                                                        style="background-color: blue;" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/member/MemberXdmForm';">
+                                                    <button type="button" id='seobin' class="btn btn-white" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/member/MemberXdmForm';"
+                                                        style="background-color: blue;">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                             fill="white" class="bi bi-plus-square" viewBox="0 0 16 16">
                                                             <path
@@ -752,16 +753,17 @@
 
                                 </div>
                             </div>
+						</form>
                             <!-- Row end -->
-                        </div>
-                    </div>
+					</div>
+				</div>
                     <!-- Card end -->
 
-                </div>
-            </div>
+			</div>
+		</div>
             <!-- Row end -->
 
-        </div>
+	</div>
         <!-- Content wrapper end -->
 
         <!-- App Footer start -->
@@ -795,18 +797,34 @@
       ************* -->
 
     <!-- Overlay Scroll JS -->
-    <script src="/xdm/v1/template/vivo/vendor/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
-    <script src="/xdm/v1/template/vivo/vendor/overlay-scroll/custom-scrollbar.js"></script>
+    <script src="/xdm/v1/template/vivo/assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
+    <script src="assets/vendor/overlay-scroll/custom-scrollbar.js"></script>
 
     <!-- Data Tables -->
-    <script src="/xdm/v1/template/vivo/vendor/datatables/dataTables.min.js"></script>
-    <script src="/xdm/v1/template/vivo/vendor/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="/xdm/v1/template/vivo/assets/vendor/datatables/dataTables.min.js"></script>
+    <script src="/xdm/v1/template/vivo/assets/vendor/datatables/dataTables.bootstrap.min.js"></script>
 
     <!-- Custom Data tables -->
-    <script src="/xdm/v1/template/vivo/vendor/datatables/custom/custom-datatables.js"></script>
+    <script src="/xdm/v1/template/vivo/assets/vendor/datatables/custom/custom-datatables.js"></script>
 
     <!-- Main Js Required -->
     <script src="/xdm/v1/template/vivo/assets/js/main.js"></script>
+
+	<!-- by developer -->
+ 	<script src="/xdm/v1/js/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+	
+	<script>
+		
+		window.addEventListener('load', function(){
+			
+			$.datetimepicker.setLocale('ko');
+
+			$("#shStartDate, #shEndDate").datetimepicker({
+				timepicker:false,
+				format: 'Y-m-d'
+			});
+		});
+	</script>
 
 </body>
 

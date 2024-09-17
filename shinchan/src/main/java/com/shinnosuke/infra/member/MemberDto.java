@@ -4,99 +4,78 @@ import java.util.Date;
 
 public class MemberDto {
 	
-	private String seq;
-	private Integer mem_Authority;
-	private String mem_Name;
-	private String mem_Id;
-	private String mem_Password;
-	private String mem_Gender;
-	private Integer mem_Birth;
-	private String mem_Email;
-	private String mem_Phone;
-	private String mem_Desc;
-	private Date mem_ReDate;
-	private Date mem_MoDate;
-	private Integer mem_DelNY;
+	private String memseq;
+	private String memName;
+	private Integer memGender;
+	private String memId;
+	private String memPassword;
+	private String memEmail;
+	private String memPhoneNum;
+	private Date memReDate;
+	private Date memMoDate;
+	private Integer memDelNY;
 	
 	//----------------
 	
-	public String getSeq() {
-		return seq;
+	public String getMemseq() {
+		return memseq;
 	}
-	public void setSeq(String seq) {
-		this.seq = seq;
+	public void setMemseq(String memseq) {
+		this.memseq = memseq;
 	}
-	public Integer getMem_Authority() {
-		return mem_Authority;
+	public String getMemName() {
+		return memName;
 	}
-	public void setMem_Authority(Integer mem_Authority) {
-		this.mem_Authority = mem_Authority;
+	public void setMemName(String memName) {
+		this.memName = memName;
 	}
-	public String getMem_Name() {
-		return mem_Name;
+	public Integer getMemGender() {
+		return memGender;
 	}
-	public void setMem_Name(String mem_Name) {
-		this.mem_Name = mem_Name;
+	public void setMemGender(Integer memGender) {
+		this.memGender = memGender;
 	}
-	public String getMem_Id() {
-		return mem_Id;
+	public String getMemId() {
+		return memId;
 	}
-	public void setMem_Id(String mem_Id) {
-		this.mem_Id = mem_Id;
+	public void setMemId(String memId) {
+		this.memId = memId;
 	}
-	public String getMem_Password() {
-		return mem_Password;
+	public String getMemPassword() {
+		return memPassword;
 	}
-	public void setMem_Password(String mem_Password) {
-		this.mem_Password = mem_Password;
+	public void setMemPassword(String memPassword) {
+		this.memPassword = memPassword;
 	}
-	public String getMem_Gender() {
-		return mem_Gender;
+	public String getMemEmail() {
+		return memEmail;
 	}
-	public void setMem_Gender(String mem_Gender) {
-		this.mem_Gender = mem_Gender;
+	public void setMemEmail(String memEmail) {
+		this.memEmail = memEmail;
 	}
-	public Integer getMem_Birth() {
-		return mem_Birth;
+	public String getMemPhoneNum() {
+		return memPhoneNum;
 	}
-	public void setMem_Birth(Integer mem_Birth) {
-		this.mem_Birth = mem_Birth;
+	public void setMemPhoneNum(String memPhoneNum) {
+		this.memPhoneNum = memPhoneNum;
 	}
-	public String getMem_Email() {
-		return mem_Email;
+	public Date getMemReDate() {
+		return memReDate;
 	}
-	public void setMem_Email(String mem_Email) {
-		this.mem_Email = mem_Email;
+	public void setMemReDate(Date memReDate) {
+		this.memReDate = memReDate;
 	}
-	public String getMem_Phone() {
-		return mem_Phone;
+	public Date getMemMoDate() {
+		return memMoDate;
 	}
-	public void setMem_Phone(String mem_Phone) {
-		this.mem_Phone = mem_Phone;
+	public void setMemMoDate(Date memMoDate) {
+		this.memMoDate = memMoDate;
 	}
-	public String getMem_Desc() {
-		return mem_Desc;
+	public Integer getMemDelNY() {
+		return memDelNY;
 	}
-	public void setMem_Desc(String mem_Desc) {
-		this.mem_Desc = mem_Desc;
-	}
-	public Date getMem_ReDate() {
-		return mem_ReDate;
-	}
-	public void setMem_ReDate(Date mem_ReDate) {
-		this.mem_ReDate = mem_ReDate;
-	}
-	public Date getMem_MoDate() {
-		return mem_MoDate;
-	}
-	public void setMem_MoDate(Date mem_MoDate) {
-		this.mem_MoDate = mem_MoDate;
-	}
-	public Integer getMem_DelNY() {
-		return mem_DelNY;
-	}
-	public void setMem_DelNY(Integer mem_DelNY) {
-		this.mem_DelNY = mem_DelNY;
+	public void setMemDelNY(Integer memDelNY) {
+		this.memDelNY = memDelNY;
 	}
 	
 	

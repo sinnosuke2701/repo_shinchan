@@ -569,168 +569,78 @@
 										<div class="container-fluid">
 											<div class="row mb-3">
 												<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div class="">
-																	<label for="validationCustom04"
-																		class="form-label">권한 여부<span
-																			style="color: red;">*</span></label>
-																	<select class="form-select" id="mem_DelNY"
-																		 name="mem_Authority">
-																		<option selected disabled value="">권한 여부</option>
-																		<option value = "0" th:selected="${item?.mem_Authority == 0}">회원</option>
-																		<option value = "1" th:selected="${item?.mem_Authority == 1}">관리자</option>
-																	</select>
-																</div>
+													<div class="card">
+														<div class="card-body">
+															<div class="">
+																<label class="form-label">이름<span
+																		style="color: red;">*</span></label>
+																<input type="text" class="form-control"
+																	id="memName"  name="memName" >
 															</div>
 														</div>
 													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">이름<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Name"  name="mem_Name" >
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">아이디<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Id"  name="mem_Id">
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">비밀번호<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Password"  name="mem_Password">
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div class="">
-																	<label for="validationCustom04"
-																		class="form-label">성별<span
-																			style="color: red;">*</span></label>
-																	<select class="form-select" id="validationCustom04"
-																		 name="mem_Gender">
-																		<option selected disabled value="">성별
-																		</option>
-																		<option value="0">남성</option>
-																		<option value="1">여성</option>
-																		<option value="2">기타</option>
-																	</select>
-																	<div class="invalid-feedback">선택하세요.</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">생년월일<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Birth"  name="mem_Birth" >
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">이메일<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Email"  name="mem_Email">
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">전화번호<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Phone"  name="mem_Phone">
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">설명<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Desc"  name="mem_Desc">
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
+												</div>
 												<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div class="">
-																	<label for="validationCustom04"
-																		class="form-label">삭제여부<span
-																			style="color: red;">*</span></label>
-																	<select class="form-select" id="validationCustom04"
-																		 name="mem_DelNY">
-																		<option selected disabled value="">삭제 여부</option>
-																		<option value = "0">미삭제</option>
-																		<option value = "1">삭제</option>
-																	</select>
-																	<div class="invalid-feedback">선택하세요.</div>
-																</div>
-															</div>
+													<div class="card">
+														<div class="card-body">
+															<label class="form-label">성별<span
+																style="color: red;">*</span></label>
+															<select class="form-select" id="memGender" name="memGender">
+																<option value="0">남성</option>
+																<option value="1">여성</option>
+															</select>
 														</div>
 													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label class="form-label">아이디<span
+																	style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="memId"  name="memId">
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label class="form-label">비밀번호<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="memPassword"  name="memPassword">
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label class="form-label">이메일<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="memEmail"  name="memEmail">
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label class="form-label">전화번호<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="memPhoneNum"  name="memPhoneNum">
+														</div>
+													</div>
+												</div>
+												<!-- <div class="row">
+													<div class="col-md-6">
+													    <div class="card">
+													        <div class="card-body">
+													            <label for="cg_Desc" class="form-label">설명</label>
+													            <textarea class="form-control" id="prProdDesc" name="prProdDesc" th:value="${item?.prProdDesc}" rows="4"></textarea>
+													        </div>
+													    </div>
+													</div>
+												</div> -->
 												<div class="row mb-3">
 													<div class="col">
-														<button type="button" id='seobin' class="btn btn-white">
+														<button type="button" id='seobin' class="btn btn-white" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/member/MemberXdmList';">
 															<svg xmlns="http://www.w3.org/2000/svg" width="16"
 																height="16" fill="black"
 																style="background-color: white;" class="bi bi-list-ul"

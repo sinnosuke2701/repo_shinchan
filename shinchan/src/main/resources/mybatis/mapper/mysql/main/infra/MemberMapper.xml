@@ -10,49 +10,54 @@
 
 	<select id="selectList" resultMap="resultMapObj">
 		select
-			a.seq
-    		,a.mem_Authority
-    		,a.mem_Name
-   			,a.mem_Id
-    		,a.mem_Password
-   			,a.mem_Gender
-   			,a.mem_Birth
-   		 	,a.mem_Email
-   		 	,a.mem_Phone
-    		,a.mem_Desc
-    		,a.mem_ReDate
-    		,a.mem_MoDate
-    		,a.mem_DelNY
+			a.memseq
+			,a.memName
+   			,a.memGender
+			,a.memId
+			,a.memPassword
+   			,a.memEmail
+   			,a.memPhoneNum
+   			,a.memReDate
+   			,a.memMoDate
+			,a.memDelNY
 		from
-			member1 a
- 		order by
- 			a.seq desc
+			member a
+		where 1 = 1
+		<if test="shDelNY != null and !shDelNY.equals('')">AND memDelNY = #{shDelNY}</if>
+		<if test="shGender != null and !shGender.equals('')">AND memGender = #{shGender}</if>	
+	
+		<choose>
+			<when test="shOption == 1">AND a.memseq = #{shValue}</when>
+			<when test="shOption == 2">AND a.memName LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 3">AND a.memId LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 4">AND a.memEmail LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 5">AND a.memPhoneNum LIKE CONCAT('%',#{shValue},'%')</when>
+		</choose>
+		
+		<choose>
+			<when test="shOptionDate == 1">AND a.memReDate BETWEEN #{shStartDate} AND #{shEndDate}</when>
+			<when test="shOptionDate == 2">AND a.memMoDate BETWEEN #{shStartDate} AND #{shEndDate}</when>
+		</choose>
 	</select>
 	
 	<insert id="insert">
-		insert into member1(
-    		mem_Authority
-    		,mem_Name
-    		,mem_Id
-    		,mem_Password
-    		,mem_Gender
-            ,mem_Birth
-            ,mem_Email
-            ,mem_Phone
-            ,mem_Desc
-            ,mem_ReDate
-    		,mem_MoDate
-    		,mem_DelNY
+		insert into member(
+    		memName
+    		,memGender
+    		,memId
+    		,memPassword
+            ,memEmail
+            ,memPhoneNum
+            ,memReDate
+            ,memMoDate
+    		,memDelNY
 		)values(
-    		#{mem_Authority}
-    		,#{mem_Name}
-    		,#{mem_Id}
-    		,#{mem_Password}
-    		,#{mem_Gender}
-            ,#{mem_Birth}
-            ,#{mem_Email}
-            ,#{mem_Phone}
-            ,#{mem_Desc}
+    		#{memName}
+    		,#{memGender}
+    		,#{memId}
+    		,#{memPassword}
+            ,#{memEmail}
+            ,#{memPhoneNum}
             ,now()
     		,now()
     		,0
@@ -61,39 +66,48 @@
 	
 	<select id="selectOne" resultMap="resultMapObj">
 		select
-			a.seq
-    		,a.mem_Authority
-    		,a.mem_Name
-   			,a.mem_Id
-    		,a.mem_Password
-   			,a.mem_Gender
-   			,a.mem_Birth
-   		 	,a.mem_Email
-   		 	,a.mem_Phone
-    		,a.mem_Desc
-    		,a.mem_ReDate
-    		,a.mem_MoDate
-    		,a.mem_DelNY
+			a.memseq
+    		,a.memName
+   			,a.memGender
+   			,a.memId
+    		,a.memPassword
+   		 	,a.memEmail
+   		 	,a.memPhoneNum
+    		,a.memReDate
+    		,a.memMoDate
+    		,a.memDelNY
 		from
-			member1 a
+			member a
  		where 1 = 1
- 			and a.seq = #{seq}
+ 			and a.memseq = #{memseq}
 	</select>
 	
 	<update id = "update">
-		update member1
+		update member
 		set
-			mem_Name = #{mem_Name}
-			,mem_Id = #{mem_Id}
-			,mem_Password = #{mem_Password}
-			,mem_Gender = #{mem_Gender}
-			,mem_Birth = #{mem_Birth}
-			,mem_Email = #{mem_Email}
-			,mem_Phone = #{mem_Phone}
-			,mem_Desc = #{mem_Desc}
-			,mem_DelNY = #{mem_DelNY}
+			memName = #{memName}
+			,memGender = #{memGender}
+			,memId = #{memId}
+			,memPassword = #{memPassword}
+			,memEmail = #{memEmail}
+			,memPhoneNum = #{memPhoneNum}
+			,memDelNY = #{memDelNY}
 		where 1 = 1
-			and seq = #{seq} 
+			and memseq = #{memseq} 
+	</update>
+	
+	<delete id="delete">
+		delete from member
+		where 1=1
+			and memseq = #{memseq}
+	</delete>
+	
+	<update id="uelete">
+		update member
+		set
+			memDelNY = 1
+		where 1 = 1
+			and memseq = #{memseq}
 	</update>
 	
 </mapper>

@@ -564,198 +564,108 @@
 								<div class="card-header">
 									<div class="card-title">기본정보</div>
 								</div>
-								<form class="needs-validation" novalidate id="form" name="form" method="post" action="/xdm/v1/infra/member/MemberXdmPdt">
+								<form class="needs-validation" novalidate id="form" name="form"  action="/xdm/v1/infra/member/MemberXdmPdt" method="post">
 									<div class="card-body">
 										<div class="container-fluid">
 											<div class="row mb-3">
 												<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">seq<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="seq"  name="seq" th:value="${item?.seq}">
-																	</div>
-																</div>
-															</div>
+													<div class="card">
+														<div class="card-body">
+															<label class="form-label">seq<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="memseq"  name="memseq" th:value="${item?.memseq}">
 														</div>
 													</div>
+												</div>			
+												<div class="row"></div>									
 												<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div class="">
-																	<label for="validationCustom04"
-																		class="form-label">권한 여부<span
-																			style="color: red;">*</span></label>
-																	<select class="form-select" id="mem_Authority"
-																		 name="mem_Authority">
-																		<option selected disabled value="">권한 여부</option>
-																		<option value = "0" th:selected="${item?.mem_Authority == 0}">회원</option>
-																		<option value = "1" th:selected="${item?.mem_Authority == 1}">관리자</option>
-																	</select>
-																</div>
-															</div>
+													<div class="card">
+														<div class="card-body">
+															<label class="form-label">이름<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="memName"  name="memName" th:value="${item?.memName}" >
 														</div>
 													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">이름<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Name"  name="mem_Name" th:value="${item?.mem_Name}" >
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">아이디<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Id"  name="mem_Id" th:value="${item?.mem_Id}">
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">비밀번호<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Password"  name="mem_Password" th:value="${item?.mem_Password}">
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">성별 ( 남 , 여)<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Gender"  name="mem_Gender" th:value="${item?.mem_Gender}">
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-<!-- 													<div class="col-md-3"> -->
-<!-- 														<div class="card"> -->
-<!-- 															<div class="card-body"> -->
-<!-- 																<div class=""> -->
-<!-- 																	<label for="validationCustom04" -->
-<!-- 																		class="form-label">성별<span -->
-<!-- 																			style="color: red;">*</span></label> -->
-<!-- 																	<select class="form-select" id="validationCustom04" -->
-<!-- 																		 name="mem_Gender"> -->
-<!-- 																		<option selected disabled value="">성별 -->
-<!-- 																		</option> -->
-<!-- 																		<option value="0" th:selected="${item.mem_Gender == 0}">남성</option> -->
-<!-- 																		<option value="1" th:selected="${item.mem_Gender == 1}">여성</option> -->
-<!-- 																	</select> -->
-<!-- 																	<div class="invalid-feedback">선택하세요.</div> -->
-<!-- 																</div> -->
-<!-- 															</div> -->
-<!-- 														</div> -->
-<!-- 													</div> -->
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">생년월일<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Birth"  name="mem_Birth" th:value="${item?.mem_Birth}">
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">이메일<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Email"  name="mem_Email" th:value="${item?.mem_Email}">
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">전화번호<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Phone"  name="mem_Phone" th:value="${item?.mem_Phone}">
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div>
-																	<div class="">
-																		<label for="validationCustom02"
-																			class="form-label">설명<span
-																				style="color: red;">*</span></label>
-																		<input type="text" class="form-control"
-																			id="mem_Desc"  name="mem_Desc" th:value="${item?.mem_Desc}">
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
+												</div>
 												<div class="col-md-3">
-														<div class="card">
-															<div class="card-body">
-																<div class="">
-																	<label for="validationCustom04"
-																		class="form-label">삭제여부<span
-																			style="color: red;">*</span></label>
-																	<select class="form-select" id="validationCustom04"
-																		 name="mem_DelNY">
-																		<option selected disabled value="">삭제 여부</option>
-																		<option value = "0" th:selected="${item.mem_DelNY == 0}">미삭제</option>
-																		<option value = "1" th:selected="${item.mem_DelNY == 1}">삭제</option>
-																	</select>
-																</div>
-															</div>
+													<div class="card">
+														<div class="card-body">
+															<label for="prUseNY" class="form-label">성별<span
+																style="color: red;">*</span></label>
+															<select class="form-select" id="memGender" name="memGender">
+																<option value="0" th:selected="${item?.memGender == 0}">남</option>
+																<option value="1" th:selected="${item?.memGender == 1}" >여</option>
+															</select>
 														</div>
 													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label class="form-label">아이디<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="memId"  name="memId" th:value="${item?.memId}">
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label class="form-label">비밀번호<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="memPassword"  name="memPassword" th:value="${item?.memPassword}">
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label class="form-label">이메일<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="memEmail"  name="memEmail" th:value="${item?.memEmail}">
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label class="form-label">전화번호<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="memPhoneNum"  name="memPhoneNum" th:value="${item?.memPhoneNum}">
+														</div>
+													</div>
+												</div>
+												<div class="row"></div>
+												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label class="form-label">등록일<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="memReDate"  name="memReDate" th:value="${#dates.format(item?.memReDate, 'yyyy/MM/dd HH:mm:ss')}" disabled>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label class="form-label">수정일<span
+																style="color: red;">*</span></label>
+															<input type="text" class="form-control" id="memMoDate"  name="memMoDate" th:value="${#dates.format(item?.memMoDate, 'yyyy/MM/dd HH:mm:ss')}" readonly>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label class="form-label">삭제여부<span style="color: red;">*</span></label>
+															<select class="form-select"  name="memDelNY">
+																<option selected disabled value="">삭제 여부</option>
+																<option disabled="disabled" value = "0" th:selected="${item?.memDelNY == 0}">미삭제</option>
+																<option disabled="disabled" value = "1" th:selected="${item?.memDelNY == 1}">삭제</option>
+															</select>
+														</div>
+													</div>
+												</div>
 												<div class="row mb-3">
 													<div class="col">
 														<button type="button" id='seobin' class="btn btn-white" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/member/MemberXdmList';">
@@ -858,6 +768,21 @@
 
 	<!-- Main Js Required -->
 	<script src="/xdm/v1/template/vivo/assets/js/main.js"></script>
+
+	<script>
+	document.getElementById("btnDelete").onclick = function() {
+		let form = document.querySelector("form[name='form']");
+		form.action = "/xdm/v1/infra/member/MemberXdmDele";
+		form.submit();
+	};
+
+	
+	document.getElementById("btnUelete").onclick = function() {
+		let form = document.querySelector("form[name='form']");
+		form.action = "/xdm/v1/infra/member/MemberXdmUele";
+		form.submit();
+	}
+	</script>
 
 </body>
 
