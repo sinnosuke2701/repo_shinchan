@@ -109,3 +109,4 @@
 
 		 AND a.memName LIKE CONCAT('%',NULL,'%')
  {executed in 1 msec} 
+2024-09-16T19:13:08.622 [HikariPool-50 housekeeper] WARN c.z.h.p.HikariPool - HikariPool-50 - Thread starvation or clock leap detected (housekeeper delta=9m48s322ms). 
