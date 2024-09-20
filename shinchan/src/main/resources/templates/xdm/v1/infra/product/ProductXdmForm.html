@@ -574,7 +574,7 @@
 														<div class="card-body">
 															<label for="prProdName" class="form-label">상품명<span
 																	style="color: red;">*</span></label>
-															<input type="text" class="form-control" id="prProdName" name="prProdName" th:value="${item?.prProdName}">
+															<input type="text" class="form-control" id="prProdName" name="prProdName" th:value="${item?.prProdName}"  autocomplete="off">
 														</div>
 													</div>
 												</div>
@@ -591,11 +591,24 @@
 													</div>
 												</div>
 												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label for="prSort" class="form-label">분류<span
+																style="color: red;">*</span></label>
+															<select class="form-select" id="prSort" name="prSort">
+																<option value="0" th:selected="${item?.prSort == 0}">상의</option>
+																<option value="1" th:selected="${item?.prSort == 1}" >하의</option>
+																<option value="2" th:selected="${item?.prSort == 2}" >신발</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
 													<div class	="card">
 														<div class="card-body">
 															<label for="cg_Order" class="form-label">원가<span
 																style="color: red;">*</span></label>
-															<input type="text" class="form-control" id="prReguPrice" name="prReguPrice" th:value="${item?.prReguPrice}">
+															<input type="text" class="form-control" id="prReguPrice" name="prReguPrice" th:value="${item?.prReguPrice}" autocomplete="off">
 														</div>
 													</div>
 												</div>
@@ -604,7 +617,7 @@
 														<div class="card-body">
 															<label for="cg_Order" class="form-label">할인가<span
 																style="color: red;">*</span></label>
-															<input type="text" class="form-control" id="prSalePrice" name="prSalePrice" th:value="${item?.prSalePrice}">
+															<input type="text" class="form-control" id="prSalePrice" name="prSalePrice" th:value="${item?.prSalePrice}" autocomplete="off">
 														</div>
 													</div>
 												</div>
@@ -613,7 +626,7 @@
 														<div class="card-body">
 															<label for="cg_Order" class="form-label">재고<span
 																style="color: red;">*</span></label>
-															<input type="text" class="form-control" id="prInventory" name="prInventory" th:value="${item?.prInventory}">
+															<input type="text" class="form-control" id="prInventory" name="prInventory" th:value="${item?.prInventory}" autocomplete="off">
 														</div>
 													</div>
 												</div>

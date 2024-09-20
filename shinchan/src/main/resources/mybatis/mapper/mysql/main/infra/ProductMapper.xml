@@ -13,6 +13,7 @@
 			a.prseq
 			,a.prProdName
 			,a.prUseNY
+			,a.prSort
 			,a.prProdDesc
 			,a.prReguPrice
 			,a.prSalePrice
@@ -25,6 +26,7 @@
 		where 1 = 1
 		<if test="shDelNY != null and !shDelNY.equals('')">AND prDelNY = #{shDelNY}</if>
 		<if test="shUseNY != null and !shUseNY.equals('')">AND prUseNY = #{shUseNY}</if>
+		<if test="shSort != null and !shSort.equals('')">AND prSort = #{shSort}</if>
 		
 		<choose>
 			<when test="shOption == 1 ">AND a.prseq = #{shValue}</when>
@@ -45,6 +47,7 @@
 		insert into product(
 			prProdName
 			,prUseNY
+			,prSort
 			,prProdDesc
 			,prReguPrice
 			,prSalePrice
@@ -55,6 +58,7 @@
 		)values(
 			#{prProdName}
 			,#{prUseNY}
+			,#{prSort}
 			,#{prProdDesc}
 			,#{prReguPrice}
 			,#{prSalePrice}
@@ -70,6 +74,7 @@
 			a.prseq
 			,a.prProdName
 			,a.prUseNY
+			,a.prSort
 			,a.prProdDesc
 			,a.prReguPrice
 			,a.prSalePrice
@@ -88,6 +93,7 @@
 		set
 		prProdName = #{prProdName}
 		,prUseNY = #{prUseNY}
+		,prSort = #{prSort}
 		,prProdDesc = #{prProdDesc}
 		,prReguPrice = #{prReguPrice}
 		,prSalePrice = #{prSalePrice}

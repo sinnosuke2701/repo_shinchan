@@ -4,6 +4,7 @@ public class ProductVo {
 
 	private Integer shDelNY;
 	private Integer shUseNY;
+	private Integer shSort;
 	private String shValue;
 	private Integer shOption;
 	
@@ -23,6 +24,12 @@ public class ProductVo {
 	}
 	public void setShUseNY(Integer shUseNY) {
 		this.shUseNY = shUseNY;
+	}
+	public Integer getShSort() {
+		return shSort;
+	}
+	public void setShSort(Integer shSort) {
+		this.shSort = shSort;
 	}
 	public String getShValue() {
 		return shValue;
@@ -54,6 +61,7 @@ public class ProductVo {
 	public void setShEndDate(String shEndDate) {
 		this.shEndDate = shEndDate;
 	}
+	
 	
 	
 	

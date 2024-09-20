@@ -595,7 +595,20 @@
 																style="color: red;">*</span></label>
 															<select class="form-select" id="prUseNY" name="prUseNY">
 																<option value="0" th:selected="${item?.prUseNY == 0}">미사용</option>
-																<option value="1" th:selected="${item?.prUseNY == 1}" >사용</option>
+																<option value="1" th:selected="${item?.prUseNY == 1}">사용</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label for="prSort" class="form-label">분류<span
+																style="color: red;">*</span></label>
+															<select class="form-select" id="prSort" name="prSort">
+																<option value="0" th:selected="${item?.prSort == 0}">상의</option>
+																<option value="1" th:selected="${item?.prSort == 1}">하의</option>
+																<option value="2" th:selected="${item?.prSort == 2}">신발</option>
 															</select>
 														</div>
 													</div>
@@ -657,10 +670,10 @@
 													<div class="card">
 														<div class="card-body">
 															<label class="form-label">삭제여부<span style="color: red;">*</span></label>
-															<select class="form-select"  name="prDelNY">
-																<option selected disabled value="">삭제 여부</option>
-																<option disabled="disabled" value = "0" th:selected="${item?.prDelNY == 0}">미삭제</option>
-																<option disabled="disabled" value = "1" th:selected="${item?.prDelNY == 1}">삭제</option>
+															<select class="form-select" id="prDelNY" name="prDelNY">
+																<option  readonly value="">삭제 여부</option>
+																<option value = "0" th:selected="${item?.prDelNY == 0}">미삭제</option>
+																<option value = "1" th:selected="${item?.prDelNY == 1}">삭제</option>
 															</select>
 														</div>
 													</div>
