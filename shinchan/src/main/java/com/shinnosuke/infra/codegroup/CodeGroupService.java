@@ -53,6 +53,8 @@ public class CodeGroupService {
 //		 }
 		 
 		 public int update(CodeGroupDto codeGroupDto) {
+			 CodeGroupDao.update(codeGroupDto);
+//			 CodeGroupDao.reseq(codeGroupDto);
 			 return CodeGroupDao.update(codeGroupDto);
 		 }
 		 
@@ -64,6 +66,8 @@ public class CodeGroupService {
 			 return CodeGroupDao.uelete(codeGroupDto);
 		 }
 		 
-		 
-		 
+//		 public int reseq(CodeGroupDto codeGroupDto) {
+//			 return CodeGroupDao.reseq(CodeGroupDto);
+//		 }
+//		 
 }

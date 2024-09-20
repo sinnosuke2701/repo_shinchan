@@ -607,7 +607,7 @@
                                                 </select>
                                             </th>
                                             <td>
-                                                <input type="text" placeholder="검색어" name="sh_Value" 
+                                                <input type="text" placeholder="검색어" name="sh_Value" autocomplete="off"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td><button type="submit" >🔍</button>
@@ -645,43 +645,38 @@
                                     	                    </th>
                                                 		</tr>
                                                     </thead>
-                                                    <tbody>
-<!--                                                     	<tr th:if="${#lists.isEmpty(List)}" class="hover-actions-trigger btn-reveal-trigger position-static"> -->
-<!--                                                     		<td colspan="10"> -->
-<!--                                                     			<p class= "fs-0" style="padding-top: 12px;"> There are no data!</p> -->
-<!--                                                     		</td> -->
-<!--                                                     	</tr> -->
-<!--                                                     	<tr class="hover-actions-trigger btn-reveal-trigger position-static" -->
-<!--                                                     		onmouseover="this.style.background = 'red'" onmouseover="this.style.background= ''" -->
-<!--                                                     		 th:if="${!#lists.isEmpty(List)}" th:each="list : ${list}" th:id="'trNum_' + ${list.seq}"> -->
-<!--                                                     	</tr> -->
-                                                        <tr>
-                                                        	<td>#</td>
-                                                            <td >seq</td>
-                                                            <td>이름</td>
-                                                            <td>개수</td>
-                                                            <td>사용여부</td>
-                                                            <td>순서</td>
-                                                            <td>등록일</td>
-                                                            <td>수정일</td>
-                                                            <td>삭제여부</td>
-                                                        </tr>
-                                                        <tr th:each="List : ${list}">
-                                                        	<td><input type="checkbox"></input></td>
-                                                            <td th:text = "${List.seq}"></td>
-<!--                                                             <td ><a href="/xdm/v1/infra/codegroup/codeGroupXdmMfom?seq=1" th:text = "${List.cg_Name}">?</a></td> -->
-                                                            <td><a th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMfom(seq=${List.seq})}" th:text="${List.cg_Name}"></a></td>
-<!--                                                             주석친게 get방식 아래가 타임리프방식 -->
-															<td th:text="${List.codeGroupCount}"></td>
-                                                            <td th:if = "${List.cg_UseNY eq 0}">N</td>
-                                                            <td th:unless="${List.cg_UseNY eq 0}">Y</td>
-                                                            <td th:text = "${List.cg_Order}"></td>
-                                                            <td th:text = "${#dates.format(List.cg_ReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
-                                                            <td th:text = "${#dates.format(List.cg_ReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
-                                                            <td th:if = "${List.cg_DelNY eq 0}">N</td>
-                                                            <td th:unless = "${List.cg_DelNY eq 0}">Y</td>
-                                                        </tr>
-                                                    </tbody>
+                                                    <tbody> 
+														<tr>
+													        <td>#</td>
+													        <td>seq</td>
+													        <td>이름</td>
+													        <td>개수</td>
+													        <td>사용여부</td>
+													        <td>순서</td>
+													        <td>등록일</td>
+													        <td>수정일</td>
+													        <td>삭제여부</td>
+													    </tr>
+													    <tr th:if="${#lists.isEmpty(list)}">
+													    	<td colspan="9" style="text-align: center;">
+													            <p class="fs-5" style="padding-top: 12px;">There are no data!</p>
+													            <!-- style="padding-top: 12px;" -->
+													        </td>
+														</tr>
+													    <tr th:each="item : ${list}">
+													        <td><input type="checkbox"></td>
+													        <td th:text="${item.seq}"></td>
+													        <td><a th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMfom(seq=${item.seq})}" th:text="${item.cg_Name}"></a></td>
+													        <td th:text="${item.codeGroupCount}"></td>
+													        <td th:if="${item.cg_UseNY eq 0}">N</td>
+													        <td th:unless="${item.cg_UseNY eq 0}">Y</td>
+													        <td th:text="${item.cg_Order}"></td>
+													        <td th:text="${#dates.format(item.cg_ReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+													        <td th:text="${#dates.format(item.cg_ReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+													        <td th:if="${item.cg_DelNY eq 0}">N</td>
+													        <td th:unless="${item.cg_DelNY eq 0}">Y</td>
+													    </tr>
+													</table>                                                    </tbody>
                                                 </table>
                                             </div>
 

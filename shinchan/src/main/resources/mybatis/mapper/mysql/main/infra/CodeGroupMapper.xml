@@ -32,11 +32,10 @@
 		
 		<choose>
 			<when test="sh_Option == 1">AND a.seq = #{sh_Value}</when> 
-			<when test="sh_Option == 2">AND cg_Name LIKE CONCAT('%',#{sh_Value},'%')</when>
+			<when test="sh_Option == 2">AND cg_Name LIKE CONCAT('%',#{sh_Value},'%') AND cg_Name = #{sh_Value}</when>
 			<when test="sh_Option == 3">AND cg_Order = #{sh_Value}</when>
 		</choose>
-		order by
-			a.seq desc
+		
 	</select>
 	
 	<insert id = "insert">
@@ -74,6 +73,13 @@
 		where 1 =1
 			and a.seq = #{seq}		
 	</select>
+	
+	<!-- <update id="reseq">
+		update codegroup
+		set
+			a.seq = ROW_NUMBER() OVER(ORDER BY a.seq)
+		from CodeGroup a
+	</update> -->
 		
 	<update id="update">
 		update CodeGroup

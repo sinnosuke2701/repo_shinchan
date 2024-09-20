@@ -19,6 +19,6 @@ public interface CodeGroupDao {
 	
 	public int uelete(CodeGroupDto codeGroupDto);	
 	
-	
+//	public int reseq(CodeGroupDto codeGroupDto);
 	
 }
