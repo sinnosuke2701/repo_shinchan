@@ -668,13 +668,18 @@
                                                             <td>수정일</td>
                                                             <td>삭제여부</td>
                                                         </tr>
+                                                        <tr th:if="${#lists.isEmpty(list3)}">
+                                                        	<td colspan="13" style="text-align: center;">
+                                                        		<p class="fs-5" >there are no data!</p>
+                                                        	</td>
+                                                        </tr>
                                                         <tr th:each="list : ${list3}">
                                                             <td><input type="checkbox"></td>
                                                             <td></td>
                                                             <td th:text="${list.memseq}"></td>
                                                             <td><a th:href="@{/xdm/v1/infra/member/MemberXdmMfom(memseq=${list.memseq})}" th:text="${list.memName}"></a></td>
-                                                            <td th:if="${list.memGender eq 0}">남</td>
-                                                            <td th:unless="${list.memGender eq 0}">여</td>
+                                                            <td th:if="${list.memGender eq 0}">0</td>
+                                                            <td th:unless="${list.memGender eq 0}">1</td>
                                                             <td th:text="${list.memId}"></td>
                                                             <td th:text="${list.memPassword}"></td>
                                                             <td th:text="${list.memEmail}"></td>

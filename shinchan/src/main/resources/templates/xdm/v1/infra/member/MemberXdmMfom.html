@@ -563,8 +563,9 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-title">기본정보</div>
+							
+							<form method ="post" name="form"  action="/xdm/v1/infra/member/MemberXdmPdt">
 								</div>
-								<form class="needs-validation" novalidate id="form" name="form"  action="/xdm/v1/infra/member/MemberXdmPdt" method="post">
 									<div class="card-body">
 										<div class="container-fluid">
 											<div class="row mb-3">
@@ -573,7 +574,7 @@
 														<div class="card-body">
 															<label class="form-label">seq<span
 																style="color: red;">*</span></label>
-															<input type="text" class="form-control" id="memseq"  name="memseq" th:value="${item?.memseq}">
+															<input type="text" class="form-control" id="memseq"  name="memseq" th:value="${item?.memseq}" readonly>
 														</div>
 													</div>
 												</div>			
@@ -658,10 +659,10 @@
 													<div class="card">
 														<div class="card-body">
 															<label class="form-label">삭제여부<span style="color: red;">*</span></label>
-															<select class="form-select"  name="memDelNY">
+															<select class="form-select" id="memDelNY" name="memDelNY">
 																<option selected disabled value="">삭제 여부</option>
-																<option disabled="disabled" value = "0" th:selected="${item?.memDelNY == 0}">미삭제</option>
-																<option disabled="disabled" value = "1" th:selected="${item?.memDelNY == 1}">삭제</option>
+																<option value = "0" th:selected="${item?.memDelNY == 0}">미삭제</option>
+																<option value = "1" th:selected="${item?.memDelNY == 1}">삭제</option>
 															</select>
 														</div>
 													</div>
@@ -712,6 +713,7 @@
 												</div>
 											</div>
 										</div>
+									</div>
 								</form>
 
 								<!-- Row end -->
