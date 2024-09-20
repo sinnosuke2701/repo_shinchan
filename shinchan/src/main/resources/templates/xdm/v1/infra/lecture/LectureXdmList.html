@@ -665,10 +665,13 @@
                                                             <td>등록일</td>
                                                             <td>수정일</td>
                                                             <td>삭제여부</td>
-                                                            
+                                                        </tr>
+                                                        <tr >
+                                                        	<td>
+                                                        		<p>there are no data!</p>
+                                                        	</td>
                                                         </tr>
                                                         <tr th:each="List : ${list2}">
-                                                        	
                                                         	<td><input type="checkbox"></input></td>
                                                             <td th:text = "${List.seq}"></td>
                                                             <td th:text = "${List.lec_Type}"></td>
