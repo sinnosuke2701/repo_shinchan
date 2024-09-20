@@ -423,7 +423,7 @@
 															<div class="card-body">
 																<label for="cd_Name" class="form-label">이름<span
 																	style="color: red;">*</span></label>
-																<input type="text" class="form-control" id="cd_Name" name="cd_Name" th:value="${item?.cd_Name}">
+																<input type="text" class="form-control" id="cd_Name" name="cd_Name" th:value="${item?.cd_Name}" autocomplete="off">
 															</div>
 														</div>
 													</div>
@@ -444,7 +444,7 @@
 															<div class="card-body">
 																<label for="cd_Order" class="form-label">순서<span
 																	style="color: red;">*</span></label>
-																<input type="text" class="form-control" id="cd_Order" name="cd_Order" th:value="${item?.cd_Order}">
+																<input type="text" class="form-control" id="cd_Order" name="cd_Order" th:value="${item?.cd_Order}" autocomplete="off">
 															</div>
 														</div>
 													</div>
@@ -453,7 +453,7 @@
 													    <div class="card">
 													        <div class="card-body">
 													            <label for="cd_Desc" class="form-label">설명</label>
-													            <textarea class="form-control" id="cd_Desc" name="cd_Desc" th:value="${item?.cd_Desc}" rows="3"></textarea>
+													            <textarea class="form-control" id="cd_Desc" name="cd_Desc" th:value="${item?.cd_Desc}" rows="3" autocomplete="off"></textarea>
 													        </div>
 													    </div>
 													</div>

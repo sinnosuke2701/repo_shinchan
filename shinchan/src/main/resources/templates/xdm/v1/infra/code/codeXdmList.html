@@ -1,5 +1,4 @@
 <!doctype html>
-<!doctype html>
 <html lang="en">
 
 <head>
@@ -663,6 +662,12 @@
                                                             <td>수정일</td>
                                                             <td>삭제여부</td>
                                                         </tr>
+                                                        <tr th:if="${#lists.isEmpty(list1)}">
+                                                        	<td colspan="12" style="text-align: center;">
+                                                        		<p class="fs-5" style="padding-top: 12px;">there are no data!</p>
+                                                        	</td>
+                                                        </tr>
+                                                        
                                                         <tr th:each="List : ${list1}">
                                                         	<td><input type="checkbox"></td>
                                                         	<td></td>

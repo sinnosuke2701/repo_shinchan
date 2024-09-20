@@ -437,7 +437,7 @@
 															<label for="validationCustom02" class="form-label">이름<span
 																style="color: red;">*</span></label> <input type="text"
 																class="form-control" name="cd_Name"
-																th:value="${item?.cd_Name}">
+																th:value="${item?.cd_Name}" autocomplete="off">
 														</div>
 													</div>
 												</div>
@@ -459,7 +459,7 @@
 															<label for="validationCustom02" class="form-label">순서<span
 																style="color: red;">*</span></label> <input type="text"
 																class="form-control" name="cd_Order"
-																th:value="${item?.cd_Order}">
+																th:value="${item?.cd_Order}" autocomplete="off">
 														</div>
 													</div>
 												</div>
@@ -469,7 +469,7 @@
 														<div class="card-body">
 															<label for="cd_Desc" class="form-label">설명</label>
 															<textarea class="form-control" id="cd_Desc"
-																name="cd_Desc" th:text="${item?.cd_Desc}" rows="3"></textarea>
+																name="cd_Desc" th:text="${item?.cd_Desc}" rows="3" autocomplete="off"></textarea>
 														</div>
 													</div>
 												</div>
@@ -501,10 +501,8 @@
 																style="color: red;">*</span></label> <select class="form-select"
 																id="cd_DelNY" name="cd_DelNY">
 																<option selected disabled value="">삭제 여부</option>
-																<option disabled="disabled" value="0"
-																	th:selected="${item?.cd_DelNY == 0}">미삭제</option>
-																<option disabled="disabled" value="1"
-																	th:selected="${item?.cd_DelNY == 1}">삭제</option>
+																<option value="0" th:selected="${item?.cd_DelNY == 0}">미삭제</option>
+																<option value="1" th:selected="${item?.cd_DelNY == 1}">삭제</option>
 															</select>
 														</div>
 													</div>
