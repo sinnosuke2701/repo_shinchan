@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProductDao {
 	
+//	public int selectOneCount()Produ;
 	List<ProductDto> selectList(ProductVo productVo);
 	
 	public int insert(ProductDto productDto);
