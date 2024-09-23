@@ -42,10 +42,24 @@
 			<when test="sh_OptionDate == 1">AND a.cd_ReDate BETWEEN #{sh_DateStart} AND #{sh_DateEnd}</when>
 			<when test="sh_OptionDate == 2">AND a.cd_MoDate BETWEEN #{sh_DateStart} AND #{sh_DateEnd}</when>
 		</choose>
-		<!-- inner join
-			codegroup b
-		on
-			a.CodeGroup_seq =b.seq -->
+		
+	</select>
+	
+	<select id = "selectOne" resultMap="resultMapObj">
+		select
+			a.seq
+			,a.cd_Name
+			,a.cd_UseNY
+			,a.cd_Order
+			,a.cd_Desc
+			,a.cd_ReDate
+			,a.cd_MoDate
+			,a.cd_DelNY
+			,a.CodeGroup_seq	
+		from
+			Code a
+		where 1 =1
+			and a.seq = #{seq}		
 	</select>
 	
 	<insert id="insert">
@@ -70,22 +84,6 @@
 		)
 	</insert>
 	
-	<select id = "selectOne" resultMap="resultMapObj">
-		select
-			a.seq
-			,a.cd_Name
-			,a.cd_UseNY
-			,a.cd_Order
-			,a.cd_Desc
-			,a.cd_ReDate
-			,a.cd_MoDate
-			,a.cd_DelNY
-			,a.CodeGroup_seq	
-		from
-			Code a
-		where 1 =1
-			and a.seq = #{seq}		
-	</select>
 		
 	<update id="update">
 		update Code
