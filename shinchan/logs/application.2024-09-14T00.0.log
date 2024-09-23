@@ -1,2 +1,0 @@
-2024-09-14T00:00:29.736 [RMI TCP Connection(120)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
-2024-09-14T00:00:29.737 [RMI TCP Connection(120)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
