@@ -556,8 +556,9 @@
                             <!-- Breadcrumb end -->
 
                             <h2>CodeGroup</h2>
-						<form method ="post" action="/xdm/v1/infra/codegroup/codeGroupXdmList" name="form"> 
-                            <from>
+							<form method ="post" action="/xdm/v1/infra/codegroup/codeGroupXdmList" name="formList">
+								<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/>
+								<input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}"/> 
                                 <table>
                                     <thead>
                                         <tr>
@@ -613,11 +614,10 @@
                                             <td><button type="submit" >🔍</button>
                                                 <button onclick="window.location.href='http://localhost:8080/xdm/v1/infra/codegroup/codeGroupXdmList';">🔄</button>
                                             </td>
-
                                         </tr>
                                     </tbody>
                                 </table>
-                            </from>
+                            
 
                             <hr style="color: rgb(199, 202, 209);">
 
@@ -631,16 +631,15 @@
                                                     <thead>
                                                         <tr>
                                                             <th colspan='8' style="width: 140px; padding-right:0px;">
-                                                      	    	<h5>Total : 171</h5>
+                                                      	    	<span class="fs-5" th:text= "'Total:  '+${vo.totalRows}">Total : 171</span>
                                                            	</th>
 	                                           	            <th style="width: 140px; padding-right:0px;">
 	                                           	            	<select class="form-select" aria-label="Default select example"
             	                                                        style="width: 140px; padding-right:0px;">
-                	                                                    <option selected>5</option>
-                    	                                                <option value="2">4</option>
-                        	                                            <option value="3">3</option>
-                            	                                        <option value="4">2</option>
-                                	                                    <option value="5">1</option>
+                	                                                    <option value="5">5</option>
+                    	                                                <option value="10">10</option>
+                        	                                            <option value="15">15</option>
+                            	                                        <option value="20">20</option>
                                     	                        </select>
                                     	                    </th>
                                                 		</tr>
@@ -660,7 +659,6 @@
 													    <tr th:if="${#lists.isEmpty(list)}">
 													    	<td colspan="9" style="text-align: center;">
 													            <p class="fs-5" style="padding-top: 12px;">There are no data!</p>
-													            <!-- style="padding-top: 12px;" -->
 													        </td>
 														</tr>
 													    <tr th:each="item : ${list}">
@@ -676,22 +674,34 @@
 													        <td th:if="${item.cg_DelNY eq 0}">N</td>
 													        <td th:unless="${item.cg_DelNY eq 0}">Y</td>
 													    </tr>
-													</table>                                                    </tbody>
-                                                </table>
-                                            </div>
+													</table>                                                   
+												</tbody>
+											</table>
+                                        </div>
 
                                             <!--페이지네이션 시작-->
-                                            <nav aria-label="...">
-                                                <ul class="pagination pagination-sm justify-content-center ">
-                                                    <li class="page-item active" aria-current="page">
-                                                        <span class="page-link">1</span>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">></a></li>
+                                            
+                                            <div aria-label="...">
+                                                <ul class="pagination justify-content-center ">
+                                                    <li th:if="${vo.startPage gt vo.pageNumToShow}" class="page-item" style="cursor: pointer;"><a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|"><i class="fa-solid fa-angle-left"></i></a></li>
+                                                    <li th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}">${i.index}</a></li>
+                                                    <li th:if="${vo.endPage ne vo.totalPages}" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|"><i class="fa-solid fa-angle-right"></i></a></li>
                                                 </ul>
-                                            </nav>
+                                            </div>
                                             <!--페이지네이션 끝-->
+                                            <!-- paging s  -->				
+										<!-- <div class="container-fluid px-0 mt-2 mb-2">
+												<div class="row">
+													<div class="col">
+														<ul class="pagination justify-content-center mb-0">
+															<li th:if="${vo.startPage gt vo.pageNumToShow}" class="page-item" style="cursor: pointer;"><a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|"><i class="fa-solid fa-angle-left"></i></a></li>
+											   				<li th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}">${i.index}</a></li>
+															<li th:if="${vo.endPage ne vo.totalPages}" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|"><i class="fa-solid fa-angle-right"></i></a></li>
+														</ul>
+													</div>
+												</div>
+											</div> -->
+											<!-- paging e  -->
 
                                             <div class="row">
                                                 <div class="col-md-2">
@@ -816,6 +826,15 @@
 				format: 'Y-m-d'
 			});
 		});
+		
+		
+		goList = function (thisPage) {
+			console.log("goList called with thisPage:", thisPage);
+		    document.querySelector("input[name=thisPage]").value = thisPage;
+		    document.querySelector("form[name=formList]").action = "/xdm/v1/infra/codegroup/codeGroupXdmList";
+		    document.querySelector("form[name=formList]").submit();
+		}
+		
 	</script>
 	
 </body>

@@ -16,11 +16,13 @@ public class CodeGroupService {
 //			List<CodeGroupDto> codegroups =  CodeGroupDao.selectList();
 //			return codegroups;
 //		}
-	
 		private CodeGroupDao CodeGroupDao;
-		
+	
+		public int selectOneCount(CodeGroupVo codeGroupVo) {
+			return CodeGroupDao.selectOneCount(codeGroupVo);
+		}
+	
 		List<CodeGroupDto> selectList(CodeGroupVo codeGroupVo){
-			
 			return CodeGroupDao.selectList(codeGroupVo);
 		}
 		
