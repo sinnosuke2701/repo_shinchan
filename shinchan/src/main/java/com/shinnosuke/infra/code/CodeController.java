@@ -5,9 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.shinnosuke.infra.codegroup.CodeGroupDto;
 
 @Controller
 public class CodeController {
@@ -16,10 +15,12 @@ public class CodeController {
 	CodeService CodeService;
 
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmList")
-	public String codeXdmList(Model model , CodeVo codeVo) {
+	public String codeXdmList(Model model ,@ModelAttribute("vo")  CodeVo codeVo) {
 		
 		codeVo.setSh_DateStart(codeVo.getSh_DateStart()+ " 00:00:00");
 		codeVo.setSh_DateEnd(codeVo.getSh_DateEnd()+ " 23:59:59");
+		
+		codeVo.setParamsPaging(CodeService.selectOneCount(codeVo));
 		
 		List<CodeDto> codes = CodeService.selectList(codeVo);
 		model.addAttribute("list1", codes);

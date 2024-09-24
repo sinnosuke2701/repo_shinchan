@@ -21,7 +21,7 @@
 			</choose>
 			
 			<choose>
-				<when test="sh_Option == 1">AND a.seq = #{sh_Value}</when> 
+				<when test="sh_Option == 1">AND a.cgseq = #{sh_Value}</when> 
 				<when test="sh_Option == 2">AND cg_Name LIKE CONCAT('%',#{sh_Value},'%') AND cg_Name = #{sh_Value}</when>
 				<when test="sh_Option == 3">AND cg_Order = #{sh_Value}</when>
 			</choose>
@@ -30,7 +30,7 @@
 	<select id="selectList" resultMap="resultMapObj">
 		select aa.* from (
 			select
-				a.seq
+				a.cgseq
 				,a.cg_Name
 				,a.cg_UseNY
 				,a.cg_Order
@@ -38,7 +38,7 @@
 				,a.cg_ReDate
 				,a.cg_MoDate
 				,a.cg_DelNY
-				,(select count(b.CodeGroup_seq) from code b where 1 = 1 and b.CodeGroup_seq = a.seq) as codeGroupCount
+				,(select count(b.CodeGroup_seq) from code b where 1 = 1 and b.CodeGroup_seq = a.cgseq) as codeGroupCount
 		<include refid="selectCommon"></include>
 
 		) aa
@@ -54,7 +54,7 @@
 	
 	<select id = "selectOne" resultMap="resultMapObj">
 		select
-			a.seq
+			a.cgseq
 			,a.cg_Name
 			,a.cg_UseNY
 			,a.cg_Order
@@ -65,7 +65,7 @@
 		from
 			CodeGroup a
 		where 1 =1
-			and a.seq = #{seq}		
+			and a.cgseq = #{cgseq}		
 	</select>
 	
 	<insert id = "insert">
@@ -98,13 +98,13 @@
 			,cg_Desc = #{cg_Desc}
 			,cg_DelNY = #{cg_DelNY}
 		where 1 = 1
-			and seq = #{seq}
+			and cgseq = #{cgseq}
 	</update>
 		
 	<delete id="delete">
 		delete from codegroup
 		where 1=1
-			and seq = #{seq}
+			and cgseq = #{cgseq}
 	</delete>
 		
 	<update id="uelete">
@@ -112,7 +112,7 @@
 		set
 			cg_DelNY = 1
 		where 1 = 1
-			and seq = #{seq}
+			and cgseq = #{cgseq}
 	</update>
 	
 	

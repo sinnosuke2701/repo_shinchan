@@ -4,7 +4,8 @@ import java.util.Date;
 
 public class CodeGroupDto {
 	
-	private String seq;
+	
+	private String cgseq;
 	private String cg_Name;
 	private Integer cg_UseNY;
 	private Integer cg_Order;
@@ -17,11 +18,11 @@ public class CodeGroupDto {
 	
 	//----------
 	
-	public String getSeq() {
-		return seq;
+	public String getCgseq() {
+		return cgseq;
 	}
-	public void setSeq(String seq) {
-		this.seq = seq;
+	public void setCgseq(String cgseq) {
+		this.cgseq = cgseq;
 	}
 	public String getCg_Name() {
 		return cg_Name;

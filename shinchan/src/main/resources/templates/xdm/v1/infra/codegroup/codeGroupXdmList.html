@@ -663,8 +663,8 @@
 														</tr>
 													    <tr th:each="item : ${list}">
 													        <td><input type="checkbox"></td>
-													        <td th:text="${item.seq}"></td>
-													        <td><a th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMfom(seq=${item.seq})}" th:text="${item.cg_Name}"></a></td>
+													        <td th:text="${item.cgseq}"></td>
+													        <td><a th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMfom(cgseq=${item.cgseq})}" th:text="${item.cg_Name}"></a></td>
 													        <td th:text="${item.codeGroupCount}"></td>
 													        <td th:if="${item.cg_UseNY eq 0}">N</td>
 													        <td th:unless="${item.cg_UseNY eq 0}">Y</td>
