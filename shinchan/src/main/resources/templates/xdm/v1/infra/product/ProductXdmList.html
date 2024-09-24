@@ -558,8 +558,9 @@
                             <!-- Breadcrumb end -->
 
                             <h2>Product</h2>
-						<form method="post" action="/xdm/v1/infra/product/ProductXdmList" name="form">
-                            <from>
+						<form method="post" action="/xdm/v1/infra/product/ProductXdmList" name="formList">
+							<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/>
+							<input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}"/>
                                 <table>
                                     <thead>
                                         <tr>
@@ -646,7 +647,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </from>
 
                             <hr style="color: rgb(199, 202, 209);">
 
@@ -661,7 +661,7 @@
                                                     <thead>
                                                         <tr>
                                                             <th colspan="13">
-                                                                <h5>Total : 171</h5>
+                                                                <span class="fs-5" th:text="'Total: ' +${vo.totalRows}">Total : 171</h5>
                                                             </th>
                                                             <th>
 																<span style="float: right;">

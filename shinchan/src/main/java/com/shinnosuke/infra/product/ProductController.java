@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -14,10 +15,12 @@ public class ProductController {
 	ProductService ProductService;
 	
 	@RequestMapping(value="/xdm/v1/infra/product/ProductXdmList")
-	public String ProductXdmList(Model model , ProductVo productVo) {
+	public String ProductXdmList(Model model , @ModelAttribute("vo") ProductVo productVo) {
 		
 		productVo.setShStartDate(productVo.getShStartDate()+ " 00:00:00");
 		productVo.setShEndDate(productVo.getShEndDate()+ " 23:59:59");
+		
+		productVo.setParamsPaging(ProductService.selectOneCount(productVo));
 		
 		List<ProductDto> products = ProductService.selectList(productVo);
 		model.addAttribute("list", products);

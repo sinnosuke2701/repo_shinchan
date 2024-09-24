@@ -8,19 +8,7 @@
 	<!-- resultMap : 결과를 담아줄 그으르읏 -->
 	<resultMap type="com.shinnosuke.infra.product.ProductDto" id="resultMapObj"></resultMap>
 
-	<select id="selectList" resultMap="resultMapObj">
-		select
-			a.prseq
-			,a.prProdName
-			,a.prUseNY
-			,a.prSort
-			,a.prProdDesc
-			,a.prReguPrice
-			,a.prSalePrice
-			,a.prInventory
-			,a.prReDate
-			,a.prMoDate
-			,a.prDelNY
+	<sql id="selectCommon">
 		from 
 			product a
 		where 1 = 1
@@ -40,7 +28,30 @@
 			<when test="shOptionDate == 1">AND a.prReDate BETWEEN #{shStartDate} AND #{shEndDate}</when>
 			<when test="shOptionDate == 2">AND a.prMoDate BETWEEN #{shStartDate} AND #{shEndDate}</when>		
 		</choose>
+	</sql>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		select aa.* from (
+			select
+				a.prseq
+				,a.prProdName
+				,a.prUseNY
+				,a.prSort
+				,a.prProdDesc
+				,a.prReguPrice
+				,a.prSalePrice
+				,a.prInventory
+				,a.prReDate
+				,a.prMoDate
+				,a.prDelNY
+		<include refid="selectCommon"></include>
 		
+		) aa
+		limit #{rowNumToShow} offset #{startRnumForMysql}
+	</select>
+	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
 	</select>	
 	
 	<insert id="insert">
