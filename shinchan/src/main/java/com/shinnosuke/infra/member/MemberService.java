@@ -10,6 +10,11 @@ public class MemberService {
 	
 	@Autowired
 	private MemberDao MemberDao;
+	
+	public int selectOneCount(MemberVo memberVo) {
+		return MemberDao.selectOneCount(memberVo);
+	}
+	
 	List<MemberDto> selectList(MemberVo memberVo){
 		List<MemberDto> members = MemberDao.selectList(memberVo);
 			return members;

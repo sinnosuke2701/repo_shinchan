@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -14,10 +15,12 @@ public class MemberController {
 	MemberService MemberService;
 	
 	@RequestMapping(value = "/xdm/v1/infra/member/MemberXdmList")
-	public String MemberXdmList(Model model , MemberVo memberVo) {
+	public String MemberXdmList(Model model ,@ModelAttribute("vo")  MemberVo memberVo) {
 		
 		memberVo.setShStartDate(memberVo.getShStartDate()+ " 00:00:00");
 		memberVo.setShEndDate(memberVo.getShEndDate()+ " 23:59:59");
+		
+		memberVo.setParamsPaging(MemberService.selectOneCount(memberVo));
 		
 		List<MemberDto> members = MemberService.selectList(memberVo);
 		

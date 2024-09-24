@@ -7,19 +7,8 @@
 
 	<!-- resultMap : 결과를 담아줄 그으르읏 -->
 	<resultMap type="com.shinnosuke.infra.member.MemberDto" id="resultMapObj"></resultMap>
-
-	<select id="selectList" resultMap="resultMapObj">
-		select
-			a.memseq
-			,a.memName
-   			,a.memGender
-			,a.memId
-			,a.memPassword
-   			,a.memEmail
-   			,a.memPhoneNum
-   			,a.memReDate
-   			,a.memMoDate
-			,a.memDelNY
+	
+	<sql id="selectCommon">
 		from
 			member a
 		where 1 = 1
@@ -33,11 +22,35 @@
 			<when test="shOption == 4">AND a.memEmail LIKE CONCAT('%',#{shValue},'%')</when>
 			<when test="shOption == 5">AND a.memPhoneNum LIKE CONCAT('%',#{shValue},'%')</when>
 		</choose>
-		
+	
 		<choose>
 			<when test="shOptionDate == 1">AND a.memReDate BETWEEN #{shStartDate} AND #{shEndDate}</when>
 			<when test="shOptionDate == 2">AND a.memMoDate BETWEEN #{shStartDate} AND #{shEndDate}</when>
 		</choose>
+	</sql>
+		
+	<select id="selectList" resultMap="resultMapObj">
+		select aa.* from (
+			select
+				a.memseq
+				,a.memName
+   				,a.memGender
+				,a.memId
+				,a.memPassword
+   				,a.memEmail
+   				,a.memPhoneNum
+   				,a.memReDate
+   				,a.memMoDate
+				,a.memDelNY
+		<include refid="selectCommon"></include>
+
+		) aa
+		limit #{rowNumToShow} offset #{startRnumForMysql}
+	</select>
+	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+		<include refid="selectCommon"></include>
 	</select>
 	
 	<insert id="insert">
