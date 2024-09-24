@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class CodeDto {
 	
-	private String seq;
+	private String cdseq;
 	private String cd_Name;
 	private Integer cd_UseNY;
 	private String cd_Order;
@@ -17,11 +17,11 @@ public class CodeDto {
 	private String cg_Name;
 	//-------------
 	
-	public String getSeq() {
-		return seq;
+	public String getCdseq() {
+		return cdseq;
 	}
-	public void setSeq(String seq) {
-		this.seq = seq;
+	public void setCdseq(String cdseq) {
+		this.cdseq = cdseq;
 	}
 	public String getCd_Name() {
 		return cd_Name;
@@ -75,7 +75,9 @@ public class CodeDto {
 		return cg_Name;
 	}
 	public void setCg_Name(String cg_Name) {
-		this.cg_Name = cg_Name;	
+		this.cg_Name = cg_Name;
 	}
+	
+	
 	
 }

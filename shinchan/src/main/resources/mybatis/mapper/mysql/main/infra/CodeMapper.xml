@@ -8,25 +8,13 @@
 	<!-- resultMap : 결과를 담아줄 그으르읏 -->
 	<resultMap type="com.shinnosuke.infra.code.CodeDto" id="resultMapObj"></resultMap>
 	
-	<select id="selectList" resultMap="resultMapObj">
-		select
-			a.seq
-			,a.cd_Name
-			,a.cd_UseNY
-			,a.cd_Order
-			,a.cd_Desc
-			,a.cd_ReDate
-			,a.cd_MoDate
-			,a.cd_DelNY
-			,a.CodeGroup_seq
-			,b.cg_Name
-			,b.seq
+	<sql id="selectCommon">
 		from
 			Code a
 		left join
 			codegroup b
 		on
-			a.CodeGroup_seq = b.seq
+			a.CodeGroup_seq = b.cgseq
 		WHERE 1=1		
 		<if test="sh_DelNY != null and !sh_DelNY.equals('')">And cd_DelNY = #{sh_DelNY}</if>
 		<if test="sh_UseNY != null and !sh_UseNY.equals('')">And cd_UseNY = #{sh_UseNY}</if>
@@ -34,7 +22,7 @@
 		<choose>
 			<when test="sh_Option == 1 ">AND CodeGroup_seq = #{sh_Value}</when>
 			<when test="sh_Option == 2 ">AND cg_Name LIKE CONCAT('%',#{sh_Value},'%')</when>
-			<when test="sh_Option == 3 ">AND a.seq = #{sh_Value}</when> 
+			<when test="sh_Option == 3 ">AND a.cdseq = #{sh_Value}</when> 
 			<when test="sh_Option == 4 ">AND cd_Name LIKE CONCAT('%',#{sh_Value},'%')</when> 
 		</choose>
 		
@@ -42,12 +30,36 @@
 			<when test="sh_OptionDate == 1">AND a.cd_ReDate BETWEEN #{sh_DateStart} AND #{sh_DateEnd}</when>
 			<when test="sh_OptionDate == 2">AND a.cd_MoDate BETWEEN #{sh_DateStart} AND #{sh_DateEnd}</when>
 		</choose>
-		
+	</sql>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		select aa.* from (
+			select
+				a.cdseq
+				,a.cd_Name
+				,a.cd_UseNY
+				,a.cd_Order
+				,a.cd_Desc
+				,a.cd_ReDate
+				,a.cd_MoDate
+				,a.cd_DelNY
+				,a.CodeGroup_seq
+				,b.cg_Name
+				,b.cgseq
+		<include refid="selectCommon"></include>
+
+		) aa
+		limit #{rowNumToShow} offset #{startRnumForMysql}
+	</select>
+	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+		<include refid="selectCommon"></include>
 	</select>
 	
 	<select id = "selectOne" resultMap="resultMapObj">
 		select
-			a.seq
+			a.cdseq
 			,a.cd_Name
 			,a.cd_UseNY
 			,a.cd_Order
@@ -59,7 +71,7 @@
 		from
 			Code a
 		where 1 =1
-			and a.seq = #{seq}		
+			and a.cdseq = #{cdseq}		
 	</select>
 	
 	<insert id="insert">
@@ -95,7 +107,7 @@
 			,cd_DelNY = #{cd_DelNY}
 			,CodeGroup_seq = #{CodeGroup_seq}
 		where 1 = 1
-			and seq = #{seq}
+			and cdseq = #{cdseq}
 	</update>
 	
 	<select id="selectListCodeGroup" resultMap="resultMapObj">
@@ -113,13 +125,13 @@
 		set
 			cd_DelNY = 1
 		where 1 = 1
-			and seq = #{seq}
+			and cdseq = #{cdseq}
 	</update>
 	
 	<delete id="delete">
 		delete from code
 		where 1=1
-			and seq = #{seq}
+			and cdseq = #{cdseq}
 	</delete>
 	
 </mapper>
