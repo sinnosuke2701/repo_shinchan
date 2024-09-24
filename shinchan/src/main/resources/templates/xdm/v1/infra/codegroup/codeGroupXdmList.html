@@ -565,33 +565,33 @@
                                             <th>
                                                 <select class="form-select" aria-label="Default select example"
                                                     style="width: 200px;" name="sh_DelNY">
-                                                    <option value="">삭제여부</option>
-                                                    <option value="0" >N</option>
-                                                    <option value="1" >Y</option>
+                                                    <option value="" th:selected="${vo.sh_DelNY == null}">삭제여부</option>
+                                                    <option value="0" th:selected="${vo.sh_DelNY == 0}">N</option>
+                                                    <option value="1" th:selected="${vo.sh_DelNY == 1}">Y</option>
                                                 </select>
                                             </th>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name=sh_UseNY >
-                                                    <option value="">사용여부</option>
-                                                    <option value="0">N</option>
-                                                    <option value="1">Y</option>
+                                                    style="width: 200px;" name="sh_UseNY" id="sh_UseNY">
+                                                    <option value="" th:selected="${vo.sh_UseNY == null}">사용여부</option>
+                                                    <option value="0" th:selected="${vo.sh_UseNY == 0}">N</option>
+                                                    <option value="1" th:selected="${vo.sh_UseNY == 1}">Y</option>
                                                 </select>
                                             </td>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name="sh_OptionDate">
-                                                    <option value="">날짜</option>
-                                                    <option value="1">등록일</option>
-                                                    <option value="2">수정일</option>
+                                                    style="width: 200px;" name="sh_OptionDate" id="sh_OptionDate">
+                                                    <option value="" th:selected="${vo.sh_OptionDate == null}">날짜</option>
+                                                    <option value="1" th:selected="${vo.sh_OptionDate == 1}">등록일</option>
+                                                    <option value="2" th:selected="${vo.sh_OptionDate == 2}">수정일</option>
                                                 </select>
                                             </td>
                                             <td>
-                                                <input type="text" id="sh_DateStart" name="sh_DateStart" placeholder="시작일" autocomplete="off"
+                                                <input type="text" id="sh_DateStart" name="sh_DateStart" th:value="${#strings.substring(vo.sh_DateStart, 0, 10)}" placeholder="시작일" autocomplete="off"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td>
-                                                <input type="text" id="sh_DateEnd" name="sh_DateEnd" placeholder="마감일" autocomplete="off"
+                                                <input type="text" id="sh_DateEnd" name="sh_DateEnd" th:value="${#strings.substring(vo.sh_DateEnd, 0, 10)}" placeholder="종료일" autocomplete="off"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                         </tr>
@@ -600,15 +600,15 @@
                                         <tr>
                                             <th>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name="sh_Option">
-                                                    <option value="">검색구분</option>
-                                                    <option value="1">seq</option>
-                                                    <option value="2">이름</option>
-                                                    <option value="3">순서</option>
+                                                    style="width: 200px;" name="sh_Option" id="sh_Option">
+                                                    <option value="" th:selected="${vo.sh_Option == null}">검색구분</option>
+                                                    <option value="1" th:selected="${vo.sh_Option == 1}">seq</option>
+                                                    <option value="2" th:selected="${vo.sh_Option == 2}">이름</option>
+                                                    <option value="3" th:selected="${vo.sh_Option == 3}">순서</option>
                                                 </select>
                                             </th>
                                             <td>
-                                                <input type="text" placeholder="검색어" name="sh_Value" autocomplete="off"
+                                                <input type="text" placeholder="검색어" name="sh_Value" id="sh_Value" th:value="${vo.sh_Value}" autocomplete="off"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td><button type="submit" >🔍</button>
@@ -631,15 +631,15 @@
                                                     <thead>
                                                         <tr>
                                                             <th colspan='8' style="width: 140px; padding-right:0px;">
-                                                      	    	<span class="fs-5" th:text= "'Total:  '+${vo.totalRows}">Total : 171</span>
+                                                      	    	<span class="fs-5" th:text= "'Total: '+${vo.totalRows}"></span>
                                                            	</th>
 	                                           	            <th style="width: 140px; padding-right:0px;">
 	                                           	            	<select class="form-select" aria-label="Default select example"
-            	                                                        style="width: 140px; padding-right:0px;">
-                	                                                    <option value="5">5</option>
-                    	                                                <option value="10">10</option>
-                        	                                            <option value="15">15</option>
-                            	                                        <option value="20">20</option>
+            	                                                	style="width: 140px; padding-right:0px;" id="changeRowNum" name="changeRowNum">
+                	                                        		<option value="5" th:selected="${vo.rowNumToShow eq 5}">5</option>
+                    	                                            <option value="10" th:selected="${vo.rowNumToShow eq 10}">10</option>
+                        	                                        <option value="15" th:selected="${vo.rowNumToShow eq 15}">15</option>
+                            	                                    <option value="20" th:selected="${vo.rowNumToShow eq 20}">20</option>
                                     	                        </select>
                                     	                    </th>
                                                 		</tr>
@@ -818,22 +818,23 @@
 	<script>
 		
 		window.addEventListener('load', function(){
-			
 			$.datetimepicker.setLocale('ko');
-
 			$("#sh_DateStart, #sh_DateEnd").datetimepicker({
 				timepicker:false,
 				format: 'Y-m-d'
 			});
 		});
 		
-		
 		goList = function (thisPage) {
-			console.log("goList called with thisPage:", thisPage);
-			
 		    document.querySelector("input[name=thisPage]").value = thisPage;
 		    document.querySelector("form[name=formList]").action = "/xdm/v1/infra/codegroup/codeGroupXdmList";
 		    document.querySelector("form[name=formList]").submit();
+		}
+		
+		document.getElementById("changeRowNum").onchange = function () {
+		    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
+		    form.action = "/xdm/v1/infra/codegroup/codeGroupXdmList";
+		    form.submit();
 		}
 		
 	</script>
