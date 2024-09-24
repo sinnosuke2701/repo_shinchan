@@ -830,6 +830,7 @@
 		
 		goList = function (thisPage) {
 			console.log("goList called with thisPage:", thisPage);
+			
 		    document.querySelector("input[name=thisPage]").value = thisPage;
 		    document.querySelector("form[name=formList]").action = "/xdm/v1/infra/codegroup/codeGroupXdmList";
 		    document.querySelector("form[name=formList]").submit();
