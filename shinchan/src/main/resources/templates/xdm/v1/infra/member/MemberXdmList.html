@@ -566,34 +566,35 @@
                                         <tr>
                                             <th>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name="shDelNY">
-                                                    <option value="">삭제여부</option>
-                                                    <option value="0">N</option>
-                                                    <option value="1">Y</option>
+                                                    style="width: 200px;" name="shDelNY" id="shDelNY">
+                                                    <option value="" th:selected="${vo.shDelNY == null}">삭제여부</option>
+                                                    <option value="0" th:selected="${vo.shDelNY == 0}">N</option>
+                                                    <option value="1" th:selected="${vo.shDelNY == 1}">Y</option>
                                                 </select>
                                             </th>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name="shGender">
-                                                    <option value="">성별</option>
-                                                    <option value="0">남</option>
-                                                    <option value="1">여</option>
+                                                    style="width: 200px;" name="shGender" id="shGender">
+                                                    <option value="" th:selected="${vo.shGender == null}">성별</option>
+                                                    <option value="4" th:selected="${vo.shGender == 4}">남</option>
+                                                    <option value="5" th:selected="${vo.shGender == 5}">여</option>
+                                                    <option value="6" th:selected="${vo.shGender == 6}">기타</option>
                                                 </select>
                                             </td>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name="shOptionDate">
-                                                    <option value="">날짜</option>
-                                                    <option value="1">등록일</option>
-                                                    <option value="2">수정일</option>
+                                                    style="width: 200px;" name="shOptionDate" id="shOptionDate">
+                                                    <option value="" th:selected="${vo.shOptionDate == null}">날짜</option>
+                                                    <option value="1" th:selected="${vo.shOptionDate == 1}">등록일</option>
+                                                    <option value="2" th:selected="${vo.shOptionDate == 2}">수정일</option>
                                                 </select>
                                             </td>
                                             <td>
-                                                <input type="text" placeholder="시작일" id="shStartDate" name="shStartDate" autocomplete="off"
+                                                <input type="text" placeholder="시작일" id="shStartDate" name="shStartDate" autocomplete="off" th:value="${#strings.substring(vo.shStartDate, 0, 10)}"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td>
-                                                <input type="text" placeholder="마감일" id="shEndDate" name="shEndDate" autocomplete="off"
+                                                <input type="text" placeholder="마감일" id="shEndDate" name="shEndDate" autocomplete="off" th:value="${#strings.substring(vo.shEndDate, 0, 10)}"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                         </tr>
@@ -602,21 +603,21 @@
                                         <tr>
                                             <th>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name="shOption">
-                                                    <option value="">검색구분</option>
-                                                    <option value="1">seq</option>
-                                                    <option value="2">이름</option>
-                                                    <option value="3">아이디</option>
-                                                    <option value="4">이메일</option>
-                                                    <option value="5">전화번호</option>
+                                                    style="width: 200px;" name="shOption" id="shOption">
+                                                    <option value="" th:selected="${vo.shOption == null}">검색구분</option>
+                                                    <option value="1" th:selected="${vo.shOption == 1}">seq</option>
+                                                    <option value="2" th:selected="${vo.shOption == 2}">이름</option>
+                                                    <option value="3" th:selected="${vo.shOption == 3}">아이디</option>
+                                                    <option value="4" th:selected="${vo.shOption == 4}">이메일</option>
+                                                    <option value="5" th:selected="${vo.shOption == 5}">전화번호</option>
                                                 </select>
                                             </th>
                                             <td>
-                                                <input type="text" placeholder="검색어" autocomplete="off" name="shValue"
+                                                <input type="text" placeholder="검색어" autocomplete="off" name="shValue" id="shValue" th:value="${vo.shValue}"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
-                                            <td><button>🔍</button>
-                                                <button onclick="window.location.href='http://localhost:8080/xdm/v1/infra/member/MemberXdmList';">🔄</button>
+                                            <td><button type="submit">🔍</button>
+                                                <button type="button" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/member/MemberXdmList';">🔄</button>
                                             </td>
 
                                         </tr>
@@ -642,12 +643,11 @@
                                                                 <span style="float: right;">
                                                                     <select class="form-select"
                                                                         aria-label="Default select example"
-                                                                        style="width: 150px;">
-                                                                        <option selected>5</option>
-                                                                        <option value="2">4</option>
-                                                                        <option value="3">3</option>
-                                                                        <option value="4">2</option>
-                                                                        <option value="5">1</option>
+                                                                        style="width: 150px;" id="changeRowNum" name="changeRowNum" >
+                                                                        <option value="5" th:selected="${vo.rowNumToShow eq 5}">5</option>
+                                                                        <option value="10" th:selected="${vo.rowNumToShow eq 10}">10</option>
+                                                                        <option value="15" th:selected="${vo.rowNumToShow eq 15}">15</option>
+                                                                        <option value="20" th:selected="${vo.rowNumToShow eq 20}">20</option>
                                                                     </select>
                                                                 </span>
                                                             </th>
@@ -678,8 +678,10 @@
                                                             <td></td>
                                                             <td th:text="${list.memseq}"></td>
                                                             <td><a th:href="@{/xdm/v1/infra/member/MemberXdmMfom(memseq=${list.memseq})}" th:text="${list.memName}"></a></td>
-                                                            <td th:if="${list.memGender eq 0}">0</td>
-                                                            <td th:unless="${list.memGender eq 0}">1</td>
+                                                            <!-- <td th:if="${list.memGender eq 0}">0</td>
+                                                            <td th:unless="${list.memGender eq 0}">1</td> -->
+                                                            <td th:if="${list.memGender != null}" th:text="${@codeService.selectOneCachedCode(list.memGender)}" class="memGender align-middle"></td>
+															<td th:unless="${list.memGender != null}" class="memGender align-middle"></td>
                                                             <td th:text="${list.memId}"></td>
                                                             <td th:text="${list.memPassword}"></td>
                                                             <td th:text="${list.memEmail}"></td>
@@ -834,6 +836,13 @@
 		    document.querySelector("form[name=formList]").action = "/xdm/v1/infra/member/MemberXdmList";
 		    document.querySelector("form[name=formList]").submit();
 		}
+		
+		document.getElementById("changeRowNum").onchange = function () {
+		    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
+		    formList.action = "/xdm/v1/infra/member/MemberXdmList";
+		    formList.submit();
+		}
+		
 		
 	</script>
 

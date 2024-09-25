@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.shinnosuke.common.util.UtilDateTime;
+
 @Controller
 public class MemberController {
 	
@@ -17,8 +19,11 @@ public class MemberController {
 	@RequestMapping(value = "/xdm/v1/infra/member/MemberXdmList")
 	public String MemberXdmList(Model model ,@ModelAttribute("vo")  MemberVo memberVo) {
 		
-		memberVo.setShStartDate(memberVo.getShStartDate()+ " 00:00:00");
-		memberVo.setShEndDate(memberVo.getShEndDate()+ " 23:59:59");
+//		memberVo.setShStartDate(memberVo.getShStartDate()+ " 00:00:00");
+//		memberVo.setShEndDate(memberVo.getShEndDate()+ " 23:59:59");
+		/* 초기값 세팅이 없는 경우 사용 */
+		memberVo.setShStartDate(memberVo.getShStartDate() == null || memberVo.getShStartDate() == "" ? null : UtilDateTime.add00TimeString(memberVo.getShStartDate()));
+		memberVo.setShEndDate(memberVo.getShEndDate() == null || memberVo.getShEndDate() == "" ? null : UtilDateTime.add59TimeString(memberVo.getShEndDate()));
 		
 		memberVo.setParamsPaging(MemberService.selectOneCount(memberVo));
 		
