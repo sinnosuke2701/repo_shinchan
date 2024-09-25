@@ -1,6 +1,8 @@
 package com.shinnosuke.infra.code;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class CodeDto {
 	
@@ -17,6 +19,10 @@ public class CodeDto {
 	private String cg_Name;
 	//-------------
 	
+	//for cache 캐시
+	public static List<CodeDto> cachedCodeArrayList = new ArrayList<CodeDto>();
+	
+	//get ,set
 	public String getCdseq() {
 		return cdseq;
 	}
@@ -77,7 +83,11 @@ public class CodeDto {
 	public void setCg_Name(String cg_Name) {
 		this.cg_Name = cg_Name;
 	}
-	
-	
+	public static List<CodeDto> getCachedCodeArrayList() {
+		return cachedCodeArrayList;
+	}
+	public static void setCachedCodeArrayList(List<CodeDto> cachedCodeArrayList) {
+		CodeDto.cachedCodeArrayList = cachedCodeArrayList;
+	}
 	
 }

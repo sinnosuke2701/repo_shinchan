@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.shinnosuke.common.util.UtilDateTime;
+
 @Controller
 public class CodeController {
 
@@ -17,8 +19,11 @@ public class CodeController {
 	@RequestMapping(value = "/xdm/v1/infra/code/codeXdmList")
 	public String codeXdmList(Model model ,@ModelAttribute("vo")  CodeVo codeVo) {
 		
-		codeVo.setSh_DateStart(codeVo.getSh_DateStart()+ " 00:00:00");
-		codeVo.setSh_DateEnd(codeVo.getSh_DateEnd()+ " 23:59:59");
+//		codeVo.setSh_DateStart(codeVo.getSh_DateStart()+ " 00:00:00");
+//		codeVo.setSh_DateEnd(codeVo.getSh_DateEnd()+ " 23:59:59");
+		/* 초기값 세팅이 없는 경우 사용 */
+		codeVo.setSh_DateStart(codeVo.getSh_DateStart() == null || codeVo.getSh_DateStart() == "" ? null : UtilDateTime.add00TimeString(codeVo.getSh_DateStart()));
+		codeVo.setSh_DateEnd(codeVo.getSh_DateEnd() == null || codeVo.getSh_DateEnd() == "" ? null : UtilDateTime.add59TimeString(codeVo.getSh_DateEnd()));
 		
 		codeVo.setParamsPaging(CodeService.selectOneCount(codeVo));
 		
