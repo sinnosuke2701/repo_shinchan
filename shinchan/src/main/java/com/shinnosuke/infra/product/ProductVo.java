@@ -60,8 +60,16 @@ public class ProductVo {
 	} else {
 		setStartRnumForMysql((getRowNumToShow() * (getThisPage()-1)));
 	}
-		
-	}
+	System.out.println("thispage: " + getThisPage());
+	System.out.println("rowNumToShow: " + getRowNumToShow());
+	System.out.println("pageNumToShow: " + getPageNumToShow());
+	System.out.println("totalRows: " + getTotalRows());
+	System.out.println("totalPages: " + getTotalPages());
+	System.out.println("startPage: " + getStartPage());
+	System.out.println("endPage: " + getEndPage());
+	System.out.println("startRnumForMysql: " + getStartRnumForMysql());
+	System.out.println("df" + getStartRnumForMysql());	
+}
 	
 	// get , set
 	public Integer getShDelNY() {
