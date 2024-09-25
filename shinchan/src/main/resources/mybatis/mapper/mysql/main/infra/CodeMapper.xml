@@ -134,4 +134,17 @@
 			and cdseq = #{cdseq}
 	</delete>
 	
+	<select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
+		SELECT 
+			cdSeq
+			,cd_Name
+			,CodeGroup_seq
+		FROM
+			Code
+		WHERE 1=1
+			AND cd_DelNY = 0
+		    AND cd_UseNY = 1
+   </select>
+	
+	
 </mapper>
