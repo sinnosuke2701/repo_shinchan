@@ -52,6 +52,7 @@
 	
 	<select id="selectOneCount" resultType="Integer">
 		SELECT COUNT(*)
+		<include refid="selectCommon"></include>
 	</select>	
 	
 	<insert id="insert">
@@ -78,6 +79,9 @@
 			,now()
 			,0
 		)
+		<selectKey resultType="String" keyProperty="prseq" order="AFTER">
+			SELECT last_Insert_id()
+		</selectKey>
 	</insert>
 	
 	<select id = "selectOne" resultMap="resultMapObj">

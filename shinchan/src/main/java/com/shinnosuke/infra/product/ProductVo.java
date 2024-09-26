@@ -14,16 +14,16 @@ public class ProductVo {
 	private String shEndDate;
 	
 	//페이징
-	private int thisPage = 1;				//현재 페이지
-	private int rowNumToShow = 5;			//화면에 보여질 데이터 갯수
-	private int pageNumToShow = 5;			//화면에 보여질 페이지 갯수
-	
-	private int totalRows;					//전체 데이터 수
-	private int totalPages;					//전체 페이지 번호
-	private int startPage;					//시작 페이지 번호
-	private int endPage;					//마지막 페이지 번호
-	
-	private int startRnumForMysql = 0;		//쿼리 시작 row
+	private int thisPage = 1;					//현재 페이지
+	private int rowNumToShow = 5; 				//화면에 보여질 데이터 줄 갯수
+	private int pageNumToShow = 5;				//화면에 보여질 페이지 번호 갯수
+		
+	private int totalRows;						//총 데이터 갯수	
+	private int totalPages;						//총 페이지 갯수
+	private int startPage;						//시작 페이지 번호
+	private int endPage;						//마지막 페이지 번호
+		
+	private int startRnumForMysql = 0; 			//시작 쿼리 row
 	
 	//----------
 	

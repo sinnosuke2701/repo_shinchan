@@ -566,27 +566,27 @@
                                         <tr>
                                             <th>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name="shDelNY">
-                                                    <option value="">삭제여부</option>
-                                                    <option value="0">N</option>
-                                                    <option value="1">Y</option>
+                                                    style="width: 200px;" name="shDelNY" id="shDelNY">
+                                                    <option value="" th:selected="${vo.shDelNY == null}">삭제여부</option>
+                                                    <option value="0" th:selected="${vo.shDelNY == 0}">N</option>
+                                                    <option value="1" th:selected="${vo.shDelNY == 1}">Y</option>
                                                 </select>
                                             </th>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name="shUseNY">
-                                                    <option value="">사용여부</option>
-                                                    <option value="0">N</option>
-                                                    <option value="1">Y</option>
+                                                    style="width: 200px;" name="shUseNY" id="shUseNY">
+                                                    <option value="" th:selected="${vo.shUseNY == null}">사용여부</option>
+                                                    <option value="0" th:selected="${vo.shUseNY == 0}">N</option>
+                                                    <option value="1" th:selected="${vo.shUseNY == 1}">Y</option>
                                                 </select>
                                             </td>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name="shSort">
-                                                    <option value="">분류</option>
-                                                    <option value="0">상의</option>
-                                                    <option value="1">하의</option>
-                                                    <option value="2">신발</option>
+                                                    style="width: 200px;" name="shSort" id="shSort">
+                                                    <option value="" th:selected="${vo.shSort == null}">분류</option>
+                                                    <option value="0" th:selected="${vo.shSort == 0}">상의</option>
+                                                    <option value="1" th:selected="${vo.shSort == 1}">하의</option>
+                                                    <option value="2" th:selected="${vo.shSort == 2}">신발</option>
                                                 </select>
                                             </td>
                                             <td>
@@ -607,18 +607,18 @@
                                             </td>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name="shOptionDate">
-                                                    <option value="">날짜</option>
-                                                    <option value="1">시작일</option>
-                                                    <option value="2">마감일</option>
+                                                    style="width: 200px;" name="shOptionDate" id="shOptionDate">
+                                                    <option value="" th:selected="${vo.shOptionDate == null}">날짜</option>
+                                                    <option value="1" th:selected="${vo.shOptionDate == 1}">시작일</option>
+                                                    <option value="2" th:selected="${vo.shOptionDate == 2}">마감일</option>
                                                 </select>
                                             </td>
                                             <td>
-                                                <input type="text" autocomplete="off" id="shStartDate" name="shStartDate" placeholder="시작일" 
+                                                <input type="text" autocomplete="off" id="shStartDate" name="shStartDate" placeholder="시작일" th:value="${#strings.substring(vo.shStartDate, 0, 10)}"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td>
-                                                <input type="text" autocomplete="off" id="shEndDate" name="shEndDate" placeholder="마감일"
+                                                <input type="text" autocomplete="off" id="shEndDate" name="shEndDate" placeholder="마감일" th:value="${#strings.substring(vo.shEndDate, 0, 10)}"
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                         </tr>
@@ -627,21 +627,21 @@
                                         <tr>
                                             <th>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name="shOption">
-                                                    <option value="">검색구분</option>
-                                                    <option value="1">seq</option>
-                                                    <option value="2">상품 이름</option>
-                                                    <option value="3">상품 원가</option>
-                                                    <option value="4">상품 할인가</option>                                                    
-                                                    <option value="5">재고</option>
+                                                    style="width: 200px;" name="shOption" id="shOption">
+                                                    <option value="" th:selected="${vo.shOption == null}">검색구분</option>
+                                                    <option value="1" th:selected="${vo.shOption == 1}">seq</option>
+                                                    <option value="2" th:selected="${vo.shOption == 2}">상품 이름</option>
+                                                    <option value="3" th:selected="${vo.shOption == 3}">상품 원가</option>
+                                                    <option value="4" th:selected="${vo.shOption == 4}">상품 할인가</option>                                                    
+                                                    <option value="5" th:selected="${vo.shOption == 5}">재고</option>
                                                 </select>
                                             </th>
                                             <td>
-                                                <input type="text" placeholder="검색어" name="shValue" autocomplete="off"
+                                                <input type="text" placeholder="검색어" name="shValue" autocomplete="off" 
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td><button type="submit">🔍</button>
-                                                <button onclick="window.location.href='http://localhost:8080/xdm/v1/infra/product/ProductXdmList';">🔄</button>
+                                                <button type="button" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/product/ProductXdmList';">🔄</button>
                                             </td>
 
                                         </tr>
@@ -661,17 +661,16 @@
                                                     <thead>
                                                         <tr>
                                                             <th colspan="13">
-                                                                <span class="fs-5" th:text="'Total: ' +${vo.totalRows}"></h5>
+                                                                <span class="fs-5" th:text="'Total: '+${vo.totalRows}"></span>
                                                             </th>
                                                             <th>
 																<span style="float: right;">
                                                                     <select class="form-select" aria-label="Default select example"
-                                                                        style="width: 150px;">
-                                                                        <option selected>5</option>
-                                                                        <option value="2">4</option>
-                                                                        <option value="3">3</option>
-                                                                        <option value="4">2</option>
-                                                                        <option value="5">1</option>
+                                                                        style="width: 150px;" id="changeRowNum" name="changeRowNum">
+                                                                        <option value="5" th:selected="${vo.rowNumToShow eq 5}">5</option>
+                                                                        <option value="10" th:selected="${vo.rowNumToShow eq 10}">10</option>
+                                                                        <option value="15" th:selected="${vo.rowNumToShow eq 15}">15</option>
+                                                                        <option value="20" th:selected="${vo.rowNumToShow eq 20}">20</option>
                                                                     </select>
                                                                 </span>
                                                             </th>
@@ -701,7 +700,7 @@
                                                         </tr>
                                                         <tr th:each="List : ${list}">
                                                             <td><input type="checkbox"></td>
-                                                            <td></td>
+                                                            <td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + ListStat.index)}"></td>
                                                             <td th:text="${List.prseq}"></td>
                                                             <td><a th:href="@{/xdm/v1/infra/product/ProductXdmMfom(prseq=${List.prseq})}" th:text="${List.prProdName}"></a></td>
                                                             <td th:if="${List.prUseNY eq 0}">N</td>
@@ -724,16 +723,13 @@
                                             </div>
 
                                             <!--페이지네이션 시작-->
-                                            <nav aria-label="...">
-                                                <ul class="pagination pagination-sm justify-content-center ">
-                                                    <li class="page-item active" aria-current="page">
-                                                        <span class="page-link">1</span>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">></a></li>
+                                             <div aria-label="...">
+                                                <ul class="pagination justify-content-center ">
+                                                    <li th:if="${vo.startPage gt vo.pageNumToShow}" class="page-item" style="cursor: pointer;"><a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|"><i class="fa-solid fa-angle-left"></i></a></li>
+                                                    <li th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}">${i.index}</a></li>
+                                                    <li th:if="${vo.endPage ne vo.totalPages}" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|"><i class="fa-solid fa-angle-right"></i></a></li>
                                                 </ul>
-                                            </nav>
+                                            </div>
                                             <!--페이지네이션 끝-->
 
                                             <div class="row">
@@ -862,6 +858,19 @@
 				format: 'Y-m-d'
 			});
 		});
+		
+		goList = function (thisPage) {
+		    document.querySelector("input[name=thisPage]").value = thisPage;
+		    document.querySelector("form[name=formList]").action = "/xdm/v1/infra/product/ProductXdmList";
+		    document.querySelector("form[name=formList]").submit();
+		}
+
+		document.getElementById("changeRowNum").onchange = function () {
+		    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
+		    formList.action = "/xdm/v1/infra/product/ProductXdmList";
+		    formList.submit();
+		}
+		
 	</script>
 	
 </body>

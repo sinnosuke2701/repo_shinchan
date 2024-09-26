@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.shinnosuke.common.util.UtilDateTime;
+
 @Controller
 public class ProductController {
 	
@@ -17,8 +19,11 @@ public class ProductController {
 	@RequestMapping(value="/xdm/v1/infra/product/ProductXdmList")
 	public String ProductXdmList(Model model , @ModelAttribute("vo") ProductVo productVo) {
 		
-		productVo.setShStartDate(productVo.getShStartDate()+ " 00:00:00");
-		productVo.setShEndDate(productVo.getShEndDate()+ " 23:59:59");
+//		productVo.setShStartDate(productVo.getShStartDate()+ " 00:00:00");
+//		productVo.setShEndDate(productVo.getShEndDate()+ " 23:59:59");
+		/* 초기값 세팅이 없는 경우 사용 */
+		productVo.setShStartDate(productVo.getShStartDate() == null || productVo.getShStartDate() == "" ? null : UtilDateTime.add00TimeString(productVo.getShStartDate()));
+		productVo.setShEndDate(productVo.getShEndDate() == null || productVo.getShEndDate() == "" ? null : UtilDateTime.add59TimeString(productVo.getShEndDate()));
 		
 		productVo.setParamsPaging(ProductService.selectOneCount(productVo));
 		
