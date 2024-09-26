@@ -584,8 +584,8 @@
                                             <td>
                                             	<select class="form-select" aria-label="Default select example"
                                                     style="width: 200px;" name="shGender" id="shGender">
-													<option value="">성별</option>
-													<option th:each="list : ${@codeService.selectListCachedCode(2)}" th:value="${list.cdseq}" th:text="${list.cd_Name}" th:selected="${list.cdseq} == ${item?.memGender}"></option>
+													<option value="" th:selected="${vo.shGender == null}">성별</option>
+													<option th:each="list : ${@codeService.selectListCachedCode(2)}" th:value="${list.cdseq}" th:text="${list.cd_Name}" th:selected="${list.cdseq} == ${vo.shGender}"></option>
 												</select>
                                             </td>
                                             <td>
