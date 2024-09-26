@@ -86,6 +86,9 @@
     		,now()
     		,0
 		)
+		<selectKey resultType="String" keyProperty="cgseq" order="AFTER">
+			SELECT last_Insert_id()
+		</selectKey>
 	</insert>
 		
 		
