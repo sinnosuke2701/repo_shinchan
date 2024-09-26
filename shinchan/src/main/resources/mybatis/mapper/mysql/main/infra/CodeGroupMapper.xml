@@ -40,9 +40,10 @@
 				,a.cg_DelNY
 				,(select count(b.CodeGroup_seq) from code b where 1 = 1 and b.CodeGroup_seq = a.cgseq) as codeGroupCount
 		<include refid="selectCommon"></include>
-
+		Order By a.cgseq desc
 		) aa
 		limit #{rowNumToShow} offset #{startRnumForMysql}
+		
 	</select>
 		
 		
