@@ -47,7 +47,7 @@
 				,b.cg_Name
 				,b.cgseq
 		<include refid="selectCommon"></include>
-
+		Order By a.cdseq desc
 		) aa
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
@@ -115,7 +115,7 @@
 	
 	<select id="selectListCodeGroup" resultMap="resultMapObj">
 		select
-			a.seq as CodeGroup_seq
+			a.cgseq as CodeGroup_seq
 			,a.cg_Name
 		from
 			CodeGroup a
