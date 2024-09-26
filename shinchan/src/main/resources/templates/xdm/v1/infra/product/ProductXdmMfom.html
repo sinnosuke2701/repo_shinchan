@@ -614,6 +614,17 @@
 													</div>
 												</div>
 												<div class="col-md-3">
+													<div class="card">
+														<div class="card-body">
+															<label for="prColor" class="form-label fs--1">색상<span class="text-danger fs-0">*</span></label>
+															<select id="prColor" name="prColor" class="form-select">
+																<option value="">선택하세요</option>
+																<option th:each="list : ${@codeService.selectListCachedCode(4)}" th:value="${list.cdseq}" th:text="${list.cd_Name}" th:selected="${list.cdseq} == ${item?.prColor}"></option>
+															</select>	
+														</div>						
+													</div>
+												</div>
+												<div class="col-md-3">
 													<div class	="card">
 														<div class="card-body">
 															<label for="cg_Order" class="form-label">원가<span

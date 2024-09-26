@@ -15,6 +15,7 @@
 		<if test="shDelNY != null and !shDelNY.equals('')">AND prDelNY = #{shDelNY}</if>
 		<if test="shUseNY != null and !shUseNY.equals('')">AND prUseNY = #{shUseNY}</if>
 		<if test="shSort != null and !shSort.equals('')">AND prSort = #{shSort}</if>
+		<if test="shColor != null and !shColor.equals('')">AND prColor = #{shColor}</if>
 		
 		<choose>
 			<when test="shOption == 1 ">AND a.prseq = #{shValue}</when>
@@ -37,6 +38,7 @@
 				,a.prProdName
 				,a.prUseNY
 				,a.prSort
+				,a.prColor
 				,a.prProdDesc
 				,a.prReguPrice
 				,a.prSalePrice
@@ -45,7 +47,7 @@
 				,a.prMoDate
 				,a.prDelNY
 		<include refid="selectCommon"></include>
-		
+		Order By a.prseq desc
 		) aa
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
@@ -60,6 +62,7 @@
 			prProdName
 			,prUseNY
 			,prSort
+			,prColor
 			,prProdDesc
 			,prReguPrice
 			,prSalePrice
@@ -71,6 +74,7 @@
 			#{prProdName}
 			,#{prUseNY}
 			,#{prSort}
+			,#{prColor}
 			,#{prProdDesc}
 			,#{prReguPrice}
 			,#{prSalePrice}
@@ -90,6 +94,7 @@
 			,a.prProdName
 			,a.prUseNY
 			,a.prSort
+			,a.prColor
 			,a.prProdDesc
 			,a.prReguPrice
 			,a.prSalePrice
@@ -109,6 +114,7 @@
 		prProdName = #{prProdName}
 		,prUseNY = #{prUseNY}
 		,prSort = #{prSort}
+		,prColor = #{prColor}
 		,prProdDesc = #{prProdDesc}
 		,prReguPrice = #{prReguPrice}
 		,prSalePrice = #{prSalePrice}

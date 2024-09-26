@@ -1,11 +1,12 @@
 package com.shinnosuke.infra.product;
 
 public class ProductVo {
-	
+
 	//검색조
 	private Integer shDelNY;
 	private Integer shUseNY;
 	private Integer shSort;
+	private Integer shColor;
 	private String shValue;
 	private Integer shOption;
 	
@@ -95,7 +96,13 @@ public class ProductVo {
 	public void setShSort(Integer shSort) {
 		this.shSort = shSort;
 	}
+	public Integer getShColor() {
+		return shColor;
+	}
 
+	public void setShColor(Integer shColor) {
+		this.shColor = shColor;
+	}
 	public String getShValue() {
 		return shValue;
 	}

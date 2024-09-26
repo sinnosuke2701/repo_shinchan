@@ -591,19 +591,10 @@
                                             </td>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name="shColor">
-                                                    <option value="">색상</option>
-                                                    <option value="0">빨강</option>
-                                                    <option value="1">주황</option>
-                                                    <option value="2">노랑</option>
-                                                    <option value="3">초록</option>
-                                                    <option value="4">카키</option>
-                                                    <option value="5">파랑</option>
-                                                    <option value="6">남색</option>
-                                                    <option value="7">보라</option>
-                                                    <option value="8">검정</option>
-                                                    <option value="9">흰색</option>
-                                                </select>
+                                                    style="width: 200px;" id="shColor" name="shColor">
+													<option value="">색상</option>
+													<option th:each="list : ${@codeService.selectListCachedCode(4)}" th:value="${list.cdseq}" th:text="${list.cd_Name}" th:selected="${list.cdseq} == ${item?.prColor}"></option>
+												</select>
                                             </td>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
@@ -698,25 +689,26 @@
                                                         		<p class="fs-5" >there are no data!</p>
                                                         	</td>
                                                         </tr>
-                                                        <tr th:each="List : ${list}">
+                                                        <tr th:each="list : ${list}">
                                                             <td><input type="checkbox"></td>
-                                                            <td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + ListStat.index)}"></td>
-                                                            <td th:text="${List.prseq}"></td>
-                                                            <td><a th:href="@{/xdm/v1/infra/product/ProductXdmMfom(prseq=${List.prseq})}" th:text="${List.prProdName}"></a></td>
-                                                            <td th:if="${List.prUseNY eq 0}">N</td>
-                                                            <td th:unless="${List.prUseNY eq 0}">Y</td>
-                                                            <td th:if="${List.prSort == 0}">7</td>
-															<td th:if="${List.prSort == 1}">8</td>
-															<td th:if="${List.prSort == 2}">9</td>
-															<td></td>
-                                                            <td th:text="${List.prProdDesc}"></td>
-                                                            <td th:text="${List.prReguPrice}"></td>
-                                                            <td th:text="${List.prSalePrice}"></td>
-                                                            <td th:text="${List.prInventory}"></td>
-                                                            <td th:text="${#dates.format(List.prReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
-                                                            <td th:text="${#dates.format(List.prMoDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
-                                                            <td th:if="${List.prDelNY eq 0}">N</td>
-                                                            <td th:unless="${List.prDelNY eq 0}">Y</td>
+                                                            <td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}"></td>
+                                                            <td th:text="${list.prseq}"></td>
+                                                            <td><a th:href="@{/xdm/v1/infra/product/ProductXdmMfom(prseq=${list.prseq})}" th:text="${list.prProdName}"></a></td>
+                                                            <td th:if="${list.prUseNY eq 0}">N</td>
+                                                            <td th:unless="${list.prUseNY eq 0}">Y</td>
+                                                            <td th:if="${list.prSort == 0}">7</td>
+															<td th:if="${list.prSort == 1}">8</td>
+															<td th:if="${list.prSort == 2}">9</td>
+															<td th:if="${list.prColor != null}" th:text="${@codeService.selectOneCachedCode(list.prColor)}" class="prColor align-middle"></td>
+															<td th:unless="${list.prColor != null}" class="prColor align-middle"></td>
+                                                            <td th:text="${list.prProdDesc}"></td>
+                                                            <td th:text="${list.prReguPrice}"></td>
+                                                            <td th:text="${list.prSalePrice}"></td>
+                                                            <td th:text="${list.prInventory}"></td>
+                                                            <td th:text="${#dates.format(list.prReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                            <td th:text="${#dates.format(list.prMoDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                            <td th:if="${list.prDelNY eq 0}">N</td>
+                                                            <td th:unless="${list.prDelNY eq 0}">Y</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>

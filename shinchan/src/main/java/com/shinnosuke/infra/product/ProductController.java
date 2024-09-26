@@ -21,6 +21,7 @@ public class ProductController {
 		
 //		productVo.setShStartDate(productVo.getShStartDate()+ " 00:00:00");
 //		productVo.setShEndDate(productVo.getShEndDate()+ " 23:59:59");
+		
 		/* 초기값 세팅이 없는 경우 사용 */
 		productVo.setShStartDate(productVo.getShStartDate() == null || productVo.getShStartDate() == "" ? null : UtilDateTime.add00TimeString(productVo.getShStartDate()));
 		productVo.setShEndDate(productVo.getShEndDate() == null || productVo.getShEndDate() == "" ? null : UtilDateTime.add59TimeString(productVo.getShEndDate()));
@@ -53,7 +54,7 @@ public class ProductController {
 	@RequestMapping(value="/xdm/v1/infra/product/ProductXdmPdt")
 	public String ProductXdmPdt(ProductDto productDto) {
 		ProductService.update(productDto);
-		return "/xdm/v1/infra/product/ProductXdmList";
+		return "redirect:/xdm/v1/infra/product/ProductXdmList";
 	}
 	
 	@RequestMapping(value = "/xdm/v1/infra/product/ProductXdmDele")
