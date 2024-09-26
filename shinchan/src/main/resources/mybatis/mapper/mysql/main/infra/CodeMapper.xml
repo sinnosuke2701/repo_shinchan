@@ -94,6 +94,9 @@
     		,0
 			,#{CodeGroup_seq}			
 		)
+		<selectKey resultType="String" keyProperty="cdseq" order="AFTER">
+			SELECT last_Insert_id()
+		</selectKey>
 	</insert>
 	
 		

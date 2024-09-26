@@ -670,7 +670,7 @@
                                                         
                                                         <tr th:each="List : ${list1}">
                                                         	<td><input type="checkbox"></td>
-                                                        	<td></td>
+                                                        	<td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + ListStat.index)}"></td>
                                                             <td th:text = "${List.CodeGroup_seq}"></td>
                                                             <td th:text = "${List.cg_Name}"></td>
                                                             <td th:text = "${List.cdseq}"><input type="checkbox"></td>
