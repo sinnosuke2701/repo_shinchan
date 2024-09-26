@@ -68,4 +68,9 @@ public class MemberController {
 		return "redirect:/xdm/v1/infra/member/MemberXdmList";
 	}
 	
+	@RequestMapping(value = "/xdm/v1/infra/member/signinXdmForm")
+	public String signinXdmForm() {
+		return "/xdm/v1/infra/member/signinXdmForm";
+	}
+	
 }

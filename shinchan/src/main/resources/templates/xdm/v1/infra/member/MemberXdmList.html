@@ -572,7 +572,7 @@
                                                     <option value="1" th:selected="${vo.shDelNY == 1}">Y</option>
                                                 </select>
                                             </th>
-                                            <td>
+                                            <!-- <td>
                                                 <select class="form-select" aria-label="Default select example"
                                                     style="width: 200px;" name="shGender" id="shGender">
                                                     <option value="" th:selected="${vo.shGender == null}">성별</option>
@@ -580,6 +580,13 @@
                                                     <option value="5" th:selected="${vo.shGender == 5}">여</option>
                                                     <option value="6" th:selected="${vo.shGender == 6}">기타</option>
                                                 </select>
+                                            </td> -->
+                                            <td>
+                                            	<select class="form-select" aria-label="Default select example"
+                                                    style="width: 200px;" name="shGender" id="shGender">
+													<option value="">성별</option>
+													<option th:each="list : ${@codeService.selectListCachedCode(2)}" th:value="${list.cdseq}" th:text="${list.cd_Name}" th:selected="${list.cdseq} == ${item?.memGender}"></option>
+												</select>
                                             </td>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"

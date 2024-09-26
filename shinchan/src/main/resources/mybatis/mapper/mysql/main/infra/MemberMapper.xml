@@ -43,7 +43,7 @@
    				,a.memMoDate
 				,a.memDelNY
 		<include refid="selectCommon"></include>
-
+		Order By a.memseq desc
 		) aa
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
