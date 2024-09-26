@@ -675,7 +675,7 @@
                                                         </tr>
                                                         <tr th:each="list : ${list3}">
                                                             <td><input type="checkbox"></td>
-                                                            <td></td>
+                                                            <td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}"></td>
                                                             <td th:text="${list.memseq}"></td>
                                                             <td><a th:href="@{/xdm/v1/infra/member/MemberXdmMfom(memseq=${list.memseq})}" th:text="${list.memName}"></a></td>
                                                             <!-- <td th:if="${list.memGender eq 0}">0</td>
