@@ -582,20 +582,27 @@
                                             </td>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name="shSort" id="shSort">
-                                                    <option value="" th:selected="${vo.shSort == null}">분류</option>
-                                                    <option value="0" th:selected="${vo.shSort == 0}">상의</option>
-                                                    <option value="1" th:selected="${vo.shSort == 1}">하의</option>
-                                                    <option value="2" th:selected="${vo.shSort == 2}">신발</option>
-                                                </select>
+                                                    style="width: 200px;" id="shSort" name="shSort">
+													<option value="" th:selected="${vo.shSort == null}">분류</option>
+													<option th:each="list : ${@codeService.selectListCachedCode(3)}" th:value="${list.cdseq}" th:text="${list.cd_Name}" th:selected="${list.cdseq} == ${vo.shSort}"></option>	
+												</select>
+                                            </td>
+                                            <td>
+                                                <select class="form-select" aria-label="Default select example"
+                                                    style="width: 200px;" id="shSize" name="shSize">
+													<option value="" th:selected="${vo.shSize == null}">사이즈</option>
+													<option th:each="list : ${@codeService.selectListCachedCode(5)}" th:value="${list.cdseq}" th:text="${list.cd_Name}" th:selected="${list.cdseq} == ${vo.shSize}"></option>	
+												</select>
                                             </td>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
                                                     style="width: 200px;" id="shColor" name="shColor">
-													<option value="">색상</option>
-													<option th:each="list : ${@codeService.selectListCachedCode(4)}" th:value="${list.cdseq}" th:text="${list.cd_Name}" th:selected="${list.cdseq} == ${item?.prColor}"></option>
+													<option value="" th:selected="${vo.shColor == null}">색상</option>
+													<option th:each="list : ${@codeService.selectListCachedCode(4)}" th:value="${list.cdseq}" th:text="${list.cd_Name}" th:selected="${list.cdseq} == ${vo.shColor}"></option>	
 												</select>
                                             </td>
+										</tr>
+										<tr>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example"
                                                     style="width: 200px;" name="shOptionDate" id="shOptionDate">
@@ -651,7 +658,7 @@
                                                 <table class="table m-0">
                                                     <thead>
                                                         <tr>
-                                                            <th colspan="13">
+                                                            <th colspan="14">
                                                                 <span class="fs-5" th:text="'Total: '+${vo.totalRows}"></span>
                                                             </th>
                                                             <th>
@@ -675,6 +682,7 @@
                                                             <td>상품 이름</td>
                                                             <td>사용 여부</td>
                                                             <td>분류</td>
+                                                            <td>사이즈</td>
                                                             <td>색상</td>
                                                             <td>상품 설명</td>
                                                             <td>상품 원가</td>
@@ -685,7 +693,7 @@
                                                             <td>삭제여부</td>
                                                         </tr>
                                                         <tr th:if="${#lists.isEmpty(list)}">
-                                                        	<td colspan="14" style="text-align: center;">
+                                                        	<td colspan="15" style="text-align: center;">
                                                         		<p class="fs-5" >there are no data!</p>
                                                         	</td>
                                                         </tr>
@@ -695,10 +703,11 @@
                                                             <td th:text="${list.prseq}"></td>
                                                             <td><a th:href="@{/xdm/v1/infra/product/ProductXdmMfom(prseq=${list.prseq})}" th:text="${list.prProdName}"></a></td>
                                                             <td th:if="${list.prUseNY eq 0}">N</td>
-                                                            <td th:unless="${list.prUseNY eq 0}">Y</td>
-                                                            <td th:if="${list.prSort == 0}">7</td>
-															<td th:if="${list.prSort == 1}">8</td>
-															<td th:if="${list.prSort == 2}">9</td>
+                                                            <td th:unless="${list.prUseNY eq 0}">Y</td>                                                            
+															<td th:if="${list.prSort != null}" th:text="${@codeService.selectOneCachedCode(list.prSort)}" class="prSort align-middle"></td>
+															<td th:unless="${list.prSort != null}" class="prSort align-middle"></td>
+															<td th:if="${list.prSize != null}" th:text="${@codeService.selectOneCachedCode(list.prSize)}" class="prSize align-middle"></td>
+															<td th:unless="${list.prSize != null}" class="prSize align-middle"></td>
 															<td th:if="${list.prColor != null}" th:text="${@codeService.selectOneCachedCode(list.prColor)}" class="prColor align-middle"></td>
 															<td th:unless="${list.prColor != null}" class="prColor align-middle"></td>
                                                             <td th:text="${list.prProdDesc}"></td>

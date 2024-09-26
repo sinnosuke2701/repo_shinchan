@@ -3,11 +3,12 @@ package com.shinnosuke.infra.product;
 import java.util.Date;
 
 public class ProductDto {
-
+	
 	private String prseq;
 	private String prProdName;
 	private Integer prUseNY;
 	private Integer prSort;
+	private Integer prSize;
 	private Integer prColor;
 	private String prProdDesc;
 	private String prReguPrice;
@@ -42,6 +43,12 @@ public class ProductDto {
 	}
 	public void setPrSort(Integer prSort) {
 		this.prSort = prSort;
+	}
+	public Integer getPrSize() {
+		return prSize;
+	}
+	public void setPrSize(Integer prSize) {
+		this.prSize = prSize;
 	}
 	public Integer getPrColor() {
 		return prColor;

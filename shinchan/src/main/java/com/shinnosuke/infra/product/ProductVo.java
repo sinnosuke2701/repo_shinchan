@@ -6,6 +6,7 @@ public class ProductVo {
 	private Integer shDelNY;
 	private Integer shUseNY;
 	private Integer shSort;
+	private Integer shSize;
 	private Integer shColor;
 	private String shValue;
 	private Integer shOption;
@@ -95,6 +96,13 @@ public class ProductVo {
 
 	public void setShSort(Integer shSort) {
 		this.shSort = shSort;
+	}
+	public Integer getShSize() {
+		return shSize;
+	}
+
+	public void setShSize(Integer shSize) {
+		this.shSize = shSize;
 	}
 	public Integer getShColor() {
 		return shColor;

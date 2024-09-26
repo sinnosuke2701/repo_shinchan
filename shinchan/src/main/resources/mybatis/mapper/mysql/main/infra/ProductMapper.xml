@@ -15,6 +15,7 @@
 		<if test="shDelNY != null and !shDelNY.equals('')">AND prDelNY = #{shDelNY}</if>
 		<if test="shUseNY != null and !shUseNY.equals('')">AND prUseNY = #{shUseNY}</if>
 		<if test="shSort != null and !shSort.equals('')">AND prSort = #{shSort}</if>
+		<if test="shSize != null and !shSize.equals('')">AND prSize = #{shSize}</if>
 		<if test="shColor != null and !shColor.equals('')">AND prColor = #{shColor}</if>
 		
 		<choose>
@@ -38,6 +39,7 @@
 				,a.prProdName
 				,a.prUseNY
 				,a.prSort
+				,a.prSize
 				,a.prColor
 				,a.prProdDesc
 				,a.prReguPrice
@@ -62,6 +64,7 @@
 			prProdName
 			,prUseNY
 			,prSort
+			,prSize
 			,prColor
 			,prProdDesc
 			,prReguPrice
@@ -74,6 +77,7 @@
 			#{prProdName}
 			,#{prUseNY}
 			,#{prSort}
+			,#{prSize}
 			,#{prColor}
 			,#{prProdDesc}
 			,#{prReguPrice}
@@ -94,6 +98,7 @@
 			,a.prProdName
 			,a.prUseNY
 			,a.prSort
+			,a.prSize
 			,a.prColor
 			,a.prProdDesc
 			,a.prReguPrice
@@ -114,6 +119,7 @@
 		prProdName = #{prProdName}
 		,prUseNY = #{prUseNY}
 		,prSort = #{prSort}
+		,prSize = #{prSize}
 		,prColor = #{prColor}
 		,prProdDesc = #{prProdDesc}
 		,prReguPrice = #{prReguPrice}
