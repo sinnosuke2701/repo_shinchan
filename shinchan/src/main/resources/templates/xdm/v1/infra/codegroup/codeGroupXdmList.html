@@ -612,7 +612,7 @@
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td><button type="submit">🔍</button>
-                                                <button onclick="window.location.href='http://localhost:8080/xdm/v1/infra/codegroup/codeGroupXdmList';" type="button">🔄</button>
+                                                <button type="button" id="btnReload">🔄</button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -738,8 +738,8 @@
                                                                 d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
                                                         </svg>
                                                     </button>
-                                                    <button type="button" id='seobin' class="btn btn-white"
-                                                        style="background-color: blue;" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/codegroup/codeGroupXdmForm';">
+                                                    <button type="button" id='btnInsert' class="btn btn-white"
+                                                        style="background-color: blue;">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                             fill="white" class="bi bi-plus-square" viewBox="0 0 16 16">
                                                             <path
@@ -817,7 +817,7 @@
  	<script src="/xdm/v1/js/datetimepicker/jquery.datetimepicker.full.min.js"></script>
 
 	<script>
-		
+		//검색조건 달력
 		window.addEventListener('load', function(){
 			$.datetimepicker.setLocale('ko');
 			$("#sh_DateStart, #sh_DateEnd").datetimepicker({
@@ -825,20 +825,27 @@
 				format: 'Y-m-d'
 			});
 		});
-		
+		// 페이징
 		goList = function (thisPage) {
 		    document.querySelector("input[name=thisPage]").value = thisPage;
 		    document.querySelector("form[name=formList]").action = "/xdm/v1/infra/codegroup/codeGroupXdmList";
 		    document.querySelector("form[name=formList]").submit();
 		}
-		
+		//데이터 행
 		document.getElementById("changeRowNum").onchange = function () {
 		    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
 		    formList.action = "/xdm/v1/infra/codegroup/codeGroupXdmList";
 		    formList.submit();
 		}
 		
-		
+		//인서트 버튼
+		document.getElementById("btnInsert").onclick = function (){
+			window.location = "/xdm/v1/infra/codegroup/codeGroupXdmForm";
+		}
+		//새로고침 버튼
+		document.getElementById("btnReload").onclick = function (){
+			window.location = "/xdm/v1/infra/codegroup/codeGroupXdmList";
+		}
 	</script>
 	
 </body>

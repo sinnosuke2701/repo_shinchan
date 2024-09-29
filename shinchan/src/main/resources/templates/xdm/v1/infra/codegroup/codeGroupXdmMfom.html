@@ -488,7 +488,7 @@
 													</div>
 													<div class="row">
 														<div class="col">
-															<button type="button" id='seobin' class="btn btn-white" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/codegroup/codeGroupXdmList';">
+															<button type="button" id='btnList' class="btn btn-white">
 																<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
 																	style="background-color: white;" class="bi bi-list-ul"
 																	viewBox="0 0 16 16">
@@ -514,7 +514,7 @@
 														</div>
 														<div class="col-md-8"></div>
 														<div class="col-md-1">
-															<button type="submit" id='seobin' class="btn btn-white"
+															<button type="button" id='btnPdt' class="btn btn-white"
 																style="float: right;">
 																<svg xmlns="http://www.w3.org/2000/svg" width="10"
 																	height="10" fill="white" style="background-color: blue;"
@@ -585,18 +585,29 @@
 	<script src="/xdm/v1/template/vivo/assets/js/main.js"></script>
 	
 	<script>
+	
+	document.getElementById("btnList").onclick = function(){
+		window.location = "/xdm/v1/infra/codegroup/codeGroupXdmList";
+	}
+	
 	document.getElementById("btnDelete").onclick = function() {
 		let form = document.querySelector("form[name='form']");
 		form.action = "/xdm/v1/infra/codegroup/codeGroupXdmDele";
 		form.submit();
-	};
-
+	}
 	
 	document.getElementById("btnUelete").onclick = function() {
 		let form = document.querySelector("form[name='form']");
 		form.action = "/xdm/v1/infra/codegroup/codeGroupXdmUele";
 		form.submit();
 	}
+	
+	document.getElementById("btnPdt").onclick = function(){
+		let form = document.querySelector("form[name=form]");
+		form.action = "/xdm/v1/infra/codegroup/codeGroupXdmPdt";
+		form.submit();
+	}
+	
 	</script>
 	
 </body>
