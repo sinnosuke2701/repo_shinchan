@@ -513,8 +513,7 @@
 
 												<div class="row">
 													<div class="col-md-3" style="padding-right: 0px;">
-														<button type="button" id='seobin' class="btn btn-white"
-															onclick="window.location.href='http://localhost:8080/xdm/v1/infra/code/codeXdmList';">
+														<button type="button" id='btnList' class="btn btn-white">
 															<svg xmlns="http://www.w3.org/2000/svg" width="16"
 																height="16" fill="black"
 																style="background-color: white;" class="bi bi-list-ul"
@@ -546,7 +545,7 @@
 													</div>
 													<div class="col-md-8"></div>
 														<div class="col-md-1" style="margin-right: 0; margin-left: 0;">
-															<button type="submit" id='seobin4' class="btn btn-white" style="float: right;">
+															<button type="button" id='btnPdt' class="btn btn-white" style="float: right;">
 																<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" style="background-color: blue;"
 																	class="bi bi-plus-square" viewBox="0 0 16 16">
 																	<path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
@@ -646,16 +645,25 @@
 	<script src="/xdm/v1/template/vivo/assets/js/main.js"></script>
 
 	<script>
+		document.getElementById("btnList").onclick = function (){
+			window.location = "/xdm/v1/infra/code/codeXdmList";
+		}
+		
 		document.getElementById("btnDelete").onclick = function() {
 			let form = document.querySelector("form[name='form']");
 			form.action = "/xdm/v1/infra/code/codeXdmDele";
 			form.submit();
 		};
-
 		
 		document.getElementById("btnUelete").onclick = function() {
 			let form = document.querySelector("form[name='form']");
 			form.action = "/xdm/v1/infra/code/codeXdmUele";
+			form.submit();
+		}
+		
+		document.getElementById("btnPdt").onclick = function(){
+			let form = document.querySelector("form[name=form]");
+			form.action = "/xdm/v1/infra/code/codeXdmPdt";
 			form.submit();
 		}
 	</script>

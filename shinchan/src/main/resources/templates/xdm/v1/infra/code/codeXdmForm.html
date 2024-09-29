@@ -433,6 +433,7 @@
 																<label for="cd_UseNY" class="form-label">사용여부<span
 																	style="color: red;">*</span></label>
 																<select class="form-select" id="cd_UseNY" name="cd_UseNY">
+																	<option value="">선택</option>
 																	<option value="0" th:selected="${item?.cd_UseNY == 0}">미사용</option>
 																	<option value="1" th:selected="${item?.cd_UseNY == 1}" >사용</option>
 																</select>
@@ -472,7 +473,7 @@
 												</div>
 												<div class="row mb-3">
 													<div class="col">
-														<button type="button" id='seobin' class="btn btn-white" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/code/codeXdmList';">
+														<button type="button" id='btnList' class="btn btn-white">
 															<svg xmlns="http://www.w3.org/2000/svg" width="16"
 																height="16" fill="black" style="background-color: white;"
 																class="bi bi-list-ul" viewBox="0 0 16 16">
@@ -484,7 +485,7 @@
 													<div class="col"></div>
 													<div class="col"></div>
 													<div class="col">
-														<button type="submit" id='seobin' class="btn btn-white"
+														<button type="button" id='btnSubmit' class="btn btn-white"
 															style="float: right;">
 															<svg xmlns="http://www.w3.org/2000/svg" width="10"
 																height="10" fill="white" style="background-color: blue;"
@@ -559,7 +560,74 @@
 
 	<!-- Main Js Required -->
 	<script src="/xdm/v1/template/vivo/assets/js/main.js"></script>
-
+	
+	<script>
+		document.getElementById("btnList").onclick = function (){
+			window.location = "/xdm/v1/infra/code/codeXdmList";
+		}
+		
+		document.getElementById("btnSubmit").onclick = function (){
+			
+			var CodeGroup_seq = document.getElementById("CodeGroup_seq");
+		    var CodeGroup_seqValue = document.getElementById("CodeGroup_seq").value;
+		    
+		    if (CodeGroup_seqValue == "" || CodeGroup_seqValue == null) {
+				alert("코드그룹을 선택해주세요.");
+				CodeGroup_seq.focus();
+				return false;
+		    } else {
+//	 			by pass
+		    }
+		    
+		    var cd_Name = document.getElementById("cd_Name");
+		    var cd_NameValue = document.getElementById("cd_Name").value.trim();
+		    
+		    if(cd_NameValue == "" || cd_NameValue == null){
+		    	alert("이름을 입력해주세요.");
+		    	cd_Name.focus();
+		    	return false;
+		    } else{
+// 		    	by pass
+		    }
+		    
+		    var cd_UseNY = document.getElementById("cd_UseNY");
+		    var cd_UseNYValue = document.getElementById("cd_UseNY").value;
+		    
+		    if(cd_UseNYValue == "" || cd_UseNYValue == null){
+		    	alert("사용여부를 선택해주세요.");
+		    	cd_UseNY.focus();
+		    	return false;
+		    } else{
+// 		    	by pass
+		    }
+		    
+		    var cd_Order = document.getElementById("cd_Order");
+		    var cd_OrderValue = document.getElementById("cd_Order").value.trim();
+		    
+		    if(cd_OrderValue == "" || cd_OrderValue == null){
+		    	alert("순서를 입력해주세요.");
+		    	cd_Order.focus();
+		    	return false;
+		    } else {
+		    	//by pass
+		    }
+		    
+		    var cd_Desc = document.getElementById("cd_Desc");
+		    var cd_DescValue = document.getElementById("cd_Desc").value;
+		    
+		    if(cd_DescValue == "" || cd_DescValue == null){
+		    	alert("설명을 입력해주세요.");
+		    	cd_Desc.focus();
+		    	return false;
+		    } else {
+		    	//by pass
+		    }
+			let form = document.querySelector("form[name=form]");
+			form.action = "/xdm/v1/infra/code/codeXdmInst";
+			form.submit(); 
+		}
+	</script>
+	
 </body>
 
 </html>
