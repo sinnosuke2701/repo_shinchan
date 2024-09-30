@@ -79,6 +79,7 @@
 	margin-bottom: 10px;
 	/* 폼 그룹의 아래쪽 여백을 줄임 */
 }
+
 </style>
 <!-- validation  css -->
 <style>
@@ -88,7 +89,7 @@
 
 .is-invalid {
     display: block;
-    color: red;
+    color: black;
 }
 </style>
 </head>
@@ -420,42 +421,32 @@
 													<div class="col-md-3">
 														<div class="card">
 															<div class="card-body">
-																<div id= "cg_Name_Div" class="was-validated">
-																	<label for="cg_Name" class="form-label">이름<span
-																		style="color: red;">*</span></label>
-																	<input type="text" class="form-control" id="cg_Name" name="cg_Name" th:value="${item?.cg_Name}" autocomplete="off" required="">
-																	<div id="cg_Name_error" class="text-danger" style="display: none;">이름을 입력해 주세요.</div>
-																</div>
+																<label for="cg_Name" class="form-label">이름<span
+																	style="color: red;">*</span></label>
+																<input type="text" class="form-control" id="cg_Name" name="cg_Name" th:value="${item?.cg_Name}" autocomplete="off" required="">
+																<div id="cg_NameError" class="text-danger" style="display: none;"></div>
 															</div>
 														</div>
 													</div>
 													<div class="col-md-3">
 														<div class="card">
 															<div class="card-body">
-																<label for="cg_UseNY" class="form-label">사용여부<span
-																	style="color: red;">*</span></label>
-																<select class="form-select" id="cg_UseNY" name="cg_UseNY">
-																	<option value="">선택</option>
-																	<option value="0" th:selected="${item?.cg_UseNY == 0}">미사용</option>
-																	<option value="1" th:selected="${item?.cg_UseNY == 1}" >사용</option>
-																</select>
+																<label for="cg_UseNY" class="form-label">사용여부<span style="color: red;">*</span></label>
+																	<select class="form-select" id="cg_UseNY" name="cg_UseNY" required="">
+																		<option value="" >선택</option>
+																		<option value="0" th:selected="${item?.cg_UseNY == 0}">미사용</option>
+																		<option value="1" th:selected="${item?.cg_UseNY == 1}" >사용</option>
+																	</select>
+																<div id="cg_UseNYError" class="text-danger" style="display: none;">사용여부를 선택해주세요.</div>
 															</div>
 														</div>
 													</div>
 													<div class="col-md-3">
 														<div class	="card">
 															<div class="card-body">
-																<label for="cg_Order" class="form-label">순서<span
-																	style="color: red;">*</span></label>
-																<input type="text" class="form-control" id="cg_Order" name="cg_Order" th:value="${item?.cg_Order}" autocomplete="off">
-															</div>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="">
-															<div class="">
-																<label for="validationCustom04"
-																	class="form-label"><span style="color: red;"></span></label>
+																<label for="cg_Order" class="form-label">순서<span style="color: red;">*</span></label>
+																<input type="text" class="form-control" id="cg_Order" name="cg_Order" th:value="${item?.cg_Order}" autocomplete="off" required="">
+																<div id="cg_OrderError" class="text-danger" style="display: none;"></div>
 															</div>
 														</div>
 													</div>
@@ -580,43 +571,59 @@
 		
 		const cg_Name =document.getElementById("cg_Name");
 	    const cg_NameValue = document.getElementById("cg_Name").value.trim();
-	    const cg_NameError = document.getElementById("cg_Name_error");
-	    const cg_NameDiv = document.getElementById("cg_Name_Div");
-	    
-	    if (cg_NameValue == "" || cg_NameValue == null) {
-	    	cg_NameError.innerText = "이름을 입력해주세요.";
+	    const cg_NameError = document.getElementById("cg_NameError");
+	
+	    var cg_NameRegExp = /^[a-zA-Z][0-9a-zA-Z]{7,11}$/;
+		if (!cg_NameRegExp.test(cg_NameValue)) {
+	    	cg_NameError.innerText = "영문,숫자 포함 8~12자 사이에 입력해주세요.";
 	    	cg_NameError.style.display="";
-	    	cg_NameDiv.classList.add("was-validated");
+	    	cg_Name.classList.add("is-invalid");
+	    	cg_Name.classList.remove("is-valid");
 			cg_Name.focus();
 			return false;
 	    } else {
-	    	cg_NameError.remove() = "이름을 입력해주세요.";
+	    	cg_NameError.style.display = "none";
+	    	cg_Name.classList.remove("is-invalid");
+	    	cg_Name.classList.add("is-valid");
 	    }
-	    
 	    
 		const cg_UseNY = document.getElementById("cg_UseNY");
 		const cg_UseNYValue = document.getElementById("cg_UseNY").value.trim();
-		const cg_UseNYError = document.getElementById("cg_UseNY_error");
-		const cg_UseNYDiv = document.getElementById("cg_UseNY_Div");
+		const cg_UseNYError = document.getElementById("cg_UseNYError");
 		
-		if (cg_UseNYValue == "" || cg_UseNYValue == null){
+		var cg_UseNYRegExp =  /[0-1]/;		
+		if (cg_UseNYValue === "" || cg_UseNYValue === null || !cg_UseNYRegExp.test(cg_UseNYValue)){
+			cg_UseNYError.innerText = "사용여부를 선택해주세요.";
+			cg_UseNYError.style.display = "";
+			cg_UseNY.classList.add("is-invalid");
+	    	cg_UseNY.classList.remove("is-valid");
 			
 			cg_UseNY.focus();
 			return false;
 		} else {
+			 cg_UseNYError.style.display = "none";
+			 cg_UseNY.classList.remove("is-invalid");
+		     cg_UseNY.classList.add("is-valid");
 // 			by pass
 		}
+	
+		const cg_Order =document.getElementById("cg_Order");
+	    const cg_OrderValue = document.getElementById("cg_Order").value.trim();
+	    const cg_OrderError = document.getElementById("cg_OrderError");
 		
-		var cg_Order = document.getElementById("cg_Order");
-		var cg_OrderValue = document.getElementById("cg_Order").value.trim();
-		
-		if (cg_OrderValue == "" || cg_OrderValue == null){
-			alert("순서를 입력해주세요.");
+	    var cg_OrderRegExp = /^[0-9]+$/;
+		if (!cg_OrderRegExp.test(cg_OrderValue)) {
+	    	cg_OrderError.innerText = "숫자만 입력해주세요.";
+	    	cg_OrderError.style.display="";
+	    	cg_Order.classList.add("is-invalid");
+	    	cg_Order.classList.remove("is-valid");
 			cg_Order.focus();
 			return false;
-		} else{
-//  		by pass
-		}
+	    } else {
+	    	 cg_OrderError.style.display = "none";
+	    	 cg_Order.classList.remove("is-invalid");
+	    	 cg_Order.classList.add("is-valid");
+	    }
 		
 		var cg_Desc = document.getElementById("cg_Desc");
 		var cg_DescValue = document.getElementById("cg_Desc").value.trim();
@@ -637,26 +644,6 @@
 		document.getElementById("btnList").onclick = function(){
 			window.location = "/xdm/v1/infra/codegroup/codeGroupXdmList";
 		}
-	
-		
-		/* document.getElementById("btnSubmit").onclick = function () {
-		    const cg_NameValue = document.getElementById("cg_Name").value.trim();
-		    const errorMessageDiv = document.getElementById("cg_Name_error");
-
-		    // 오류 메시지 초기화
-		    cg_NameError.style.display = 'none';
-		    cg_NameError.innerText = '';
-
-		    if (cg_NameValue == "") {
-		    	cg_NameError.innerText = "이름을 입력해 주세요.";
-		        cg_NameError.style.display = 'block';
-		        cg_Name.focus();
-		        return false;
-		    } else {
-		        //by pass
-		    }
-		}; */
-
 		
 	</script>
 	
