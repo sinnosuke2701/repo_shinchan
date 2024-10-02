@@ -126,4 +126,25 @@
 			and memseq = #{memseq}
 	</update>
 	
+	<select id="selectOneId" resultMap="resultMapObj">
+		select
+			a.memId
+		from 
+			member a
+		where 1 = 1
+			and memId = #{memId}
+	</select>
+	
+	<select id="selectOneLogin" resultMap="resultMapObj">
+		select
+			a.memseq
+			,a.memId
+			,a.memName
+		from 
+			member a
+		where 1 = 1
+			and memId = #{memId}
+			and memPassword = #{memPassword}
+	</select>
+	
 </mapper>

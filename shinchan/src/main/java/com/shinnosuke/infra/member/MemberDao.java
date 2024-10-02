@@ -21,5 +21,9 @@ public interface MemberDao {
 
 	public int uelete(MemberDto memberDto);
 	
+	public MemberDto selectOneId(MemberDto memberDto);
 	
+	public MemberDto selectOneLogin(MemberDto memberDto);
+	
+	public int insertLogLogin(MemberDto memberDto);
 }

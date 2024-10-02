@@ -51,4 +51,17 @@ public class MemberService {
 		return MemberDao.uelete(memberDto);
 	}
 	
+	public MemberDto selectOneId(MemberDto memberDto) {
+		return MemberDao.selectOneId(memberDto);
+	}
+	
+	public MemberDto selectOneLogin(MemberDto memberDto) {
+		return MemberDao.selectOneLogin(memberDto);
+	}
+	
+	public int insertLogLogin(MemberDto memberDto) {
+		return MemberDao.insertLogLogin(memberDto);
+		
+	}
+	
 }

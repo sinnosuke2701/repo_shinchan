@@ -1,14 +1,21 @@
 package com.shinnosuke.infra.member;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.mysql.cj.Session;
+import com.shinnosuke.common.constants.Constants;
 import com.shinnosuke.common.util.UtilDateTime;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class MemberController {
@@ -17,7 +24,7 @@ public class MemberController {
 	MemberService MemberService;
 	
 	@RequestMapping(value = "/xdm/v1/infra/member/MemberXdmList")
-	public String MemberXdmList(Model model ,@ModelAttribute("vo")  MemberVo memberVo) {
+	public String MemberXdmList(Model model ,@ModelAttribute("vo")  MemberVo memberVo ,HttpSession httpSession) {
 		
 //		memberVo.setShStartDate(memberVo.getShStartDate()+ " 00:00:00");
 //		memberVo.setShEndDate(memberVo.getShEndDate()+ " 23:59:59");
@@ -30,7 +37,11 @@ public class MemberController {
 		List<MemberDto> members = MemberService.selectList(memberVo);
 		
 		model.addAttribute("list3", members);
-	
+		
+		System.out.println("sessSeqXdm: " + httpSession.getAttribute("sessSeqXdm"));
+		System.out.println("sessIdXdm: " + httpSession.getAttribute("sessIdXdm"));
+		System.out.println("sessNameXdm: " + httpSession.getAttribute("sessNameXdm"));
+		
 			return "/xdm/v1/infra/member/MemberXdmList";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/member/MemberXdmForm")
@@ -71,6 +82,77 @@ public class MemberController {
 	@RequestMapping(value = "/xdm/v1/infra/member/signinXdmForm")
 	public String signinXdmForm() {
 		return "/xdm/v1/infra/member/signinXdmForm";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/xdm/v1/infra/member/signinXdmProc")
+	public Map<String, Object> signinXdmProc(MemberDto memberDto, HttpSession httpSession) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+
+		MemberDto rtMember = MemberService.selectOneId(memberDto);
+
+		if (rtMember != null) {
+//			dto.setIfmmPassword(UtilSecurity.encryptSha256(dto.getIfmmPassword()));
+			MemberDto rtMember2 = MemberService.selectOneLogin(memberDto);
+
+			if (rtMember2 != null) {
+				
+//				if(dto.getAutoLogin() == true) {
+//					UtilCookie.createCookie(
+//							Constants.COOKIE_SEQ_NAME_XDM, 
+//							rtMember2.getIfmmSeq(), 
+//							Constants.COOKIE_DOMAIN_XDM, 
+//							Constants.COOKIE_PATH_XDM, 
+//							Constants.COOKIE_MAXAGE_XDM);
+//				} else {
+//					// by pass
+//				}
+//	
+				
+				httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE_XDM); // 60second * 30 = 30minute
+				httpSession.setAttribute("sessSeqXdm", rtMember2.getMemseq());
+				httpSession.setAttribute("sessIdXdm", rtMember2.getMemId());
+				httpSession.setAttribute("sessNameXdm", rtMember2.getMemName());
+//
+//				rtMember2.setMemSocialLoginCd(103);
+//				rtMember2.setlgResultNy(1);
+//				MemberService.insertLogLogin(rtMember2);
+
+				returnMap.put("rt", "success");
+			} else {
+//				memberDto.setMemSocialLoginCd(103);
+//				memberDto.setMemseq(rtMember.getMemseq());
+//				memberDto.setlgResultNY(0);
+//				MemberService.insertLogLogin(memberDto);
+
+				returnMap.put("rt", "fail");
+			}
+		} else {
+//			memberDto.setMemSocialLoginCd(103);
+//			memberDto.setlgResultNY(0);
+//			MemberService.insertLogLogin(memberDto);
+
+			returnMap.put("rt", "fail");
+		}
+		System.out.println("sessSeqXdm: " + httpSession.getAttribute("sessSeqXdm"));
+		System.out.println("sessIdXdm: " + httpSession.getAttribute("sessIdXdm"));
+		System.out.println("sessNameXdm: " + httpSession.getAttribute("sessNameXdm"));
+		return returnMap;
+		
+	}
+	
+	@RequestMapping(value = "/xdm/v1/infra/index/indexXdmView")
+	public String indexXdmView() {
+		return "/xdm/v1/infra/index/indexXdmView";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/signoutXdmProc")
+	public Map<String, Object> signoutXdmProc(HttpSession httpSession) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		httpSession.invalidate();
+		returnMap.put("rt", "success");
+		return returnMap;
 	}
 	
 }
