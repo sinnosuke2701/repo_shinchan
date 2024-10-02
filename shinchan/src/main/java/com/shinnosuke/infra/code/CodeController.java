@@ -74,6 +74,9 @@ public class CodeController {
 		return "redirect:/xdm/v1/infra/code/codeXdmList";
 	}
 	
-
+	@RequestMapping(value = "/usr/v1/infra/code/codeUsrInde")
+	public String codeUsrInde () {
+		return "/usr/v1/infra/code/codeUsrIndex";
+	}
 	
 }
