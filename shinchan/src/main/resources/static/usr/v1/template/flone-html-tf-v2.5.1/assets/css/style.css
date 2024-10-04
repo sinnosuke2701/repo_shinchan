@@ -2217,7 +2217,7 @@ a.default-btn {
   background-color: #fff;
   display: block;
   left: 0;
-  padding: 40px 40px 0px 40px;
+  padding: 40px 40px 0px 80px;
   position: absolute;
   text-align: left;
   top: 100%;
@@ -2313,7 +2313,8 @@ a.default-btn {
   padding-left: 12px;
 }
 .main-menu nav ul li ul.mega-menu.mega-menu-padding {
-  padding: 40px 40px 36px 40px;
+  padding: 40px 0px 36px 40px;
+  width: 467%;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .main-menu nav ul li ul.mega-menu.mega-menu-padding {
@@ -10103,8 +10104,9 @@ a.default-btn {
 
 /*-------- 8. Footer style  -----*/
 .copyright .footer-logo {
+  margin-left: -15px;
   margin-bottom: 12px;
-  margin-top: 41px;
+  margin-top: 15px;
 }
 @media only screen and (max-width: 767px) {
   .copyright .footer-logo {
@@ -10142,41 +10144,49 @@ a.default-btn {
 }
 
 .footer-widget .footer-title h3 {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
   color: #313131;
   margin: 0 0 16px;
   line-height: 1;
 }
 .footer-widget .footer-list ul li {
+  font-size: 13px;
   margin: 0 0 11px;
 }
 .footer-widget .footer-list ul li:last-child {
   margin: 0 0 0px;
+  
 }
 .footer-widget .footer-list ul li a {
   color: #5d5d5d;
   letter-spacing: 0.3px;
+  
 }
 .footer-widget .footer-list ul li a:hover {
   color: #a749ff;
+  
 }
 .footer-widget.footer-widget-white .footer-title h3 {
   color: #fff;
+  
 }
 .footer-widget.footer-widget-white .footer-list ul li a {
   color: #e6e6e6;
+  
 }
 .footer-widget.footer-widget-white .footer-list ul li a:hover {
   color: #a749ff;
+  
 }
 .footer-widget .subscribe-style p {
   color: #7a7a7a;
   margin: 0 0 20px;
+  line-height: 3;
 }
 .footer-widget .subscribe-style .subscribe-form form input {
   background: transparent;
-  font-size: 13px;
+  font-size: 15px;
   color: #333;
   border: none;
   border-bottom: 2px solid #ebebeb;
@@ -10214,6 +10224,33 @@ a.default-btn {
 .footer-widget .subscribe-style.subscribe-style-white .subscribe-form form .clear input:hover {
   color: #a749ff;
   border-bottom: 2px solid #a749ff;
+}
+.ec-base-button {
+  margin-top: 20px; /* 원하는 위치에 맞게 여백을 조정하세요 */
+  text-align: left; /* 버튼을 왼쪽에 정렬 */
+}
+
+.ec-base-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f7f7f7;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: normal;
+  transition: background-color 0.3s ease;
+}
+
+.ec-base-button a:hover {
+  background-color: #eaeaea;
+  border-color: #ccc;
+}
+
+.ec-base-button a:active {
+  background-color: #ddd;
+  border-color: #bbb;
 }
 @media only screen and (min-width: 1366px) and (max-width: 1600px) {
   .footer-widget.ml-95 {
