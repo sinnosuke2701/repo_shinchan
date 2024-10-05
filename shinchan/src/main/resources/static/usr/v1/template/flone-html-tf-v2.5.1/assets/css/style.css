@@ -68,6 +68,7 @@ body {
   font-weight: 400;
   font-family: "Poppins", sans-serif;
   color: #000;
+  
 }
 
 h1,
@@ -15558,6 +15559,7 @@ h3.cart-page-title {
 
 /*------ 24. login register Page  --------*/
 .login-register-wrapper .login-register-tab-list {
+	
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15565,6 +15567,7 @@ h3.cart-page-title {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 40px;
+  
 }
 .login-register-wrapper .login-register-tab-list a {
   position: relative;
@@ -15598,20 +15601,24 @@ h3.cart-page-title {
   color: #a749ff;
 }
 .login-register-wrapper .login-form-container {
+	
   background: transparent none repeat scroll 0 0;
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   padding: 80px;
   text-align: left;
+  
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .login-register-wrapper .login-form-container {
+  
     padding: 80px 50px;
   }
 }
 @media only screen and (max-width: 767px) {
   .login-register-wrapper .login-form-container {
     padding: 40px 15px;
+    
   }
 }
 .login-register-wrapper .login-form-container .login-register-form form input {
@@ -15660,6 +15667,7 @@ h3.cart-page-title {
   color: #a749ff;
 }
 .login-register-wrapper .login-form-container .login-register-form form .button-box button {
+	
   background-color: #f2f2f2;
   border: medium none;
   color: #333;
@@ -15674,6 +15682,7 @@ h3.cart-page-title {
   transition: all 0.3s ease 0s;
 }
 .login-register-wrapper .login-form-container .login-register-form form .button-box button:hover {
+	
   background-color: #a749ff;
   color: #fff;
 }
@@ -15681,6 +15690,7 @@ h3.cart-page-title {
 @media only screen and (max-width: 767px) {
   .login-register-area.pb-100 {
     padding-bottom: 60px;
+    margin-left: 20px !important;
   }
 }
 
