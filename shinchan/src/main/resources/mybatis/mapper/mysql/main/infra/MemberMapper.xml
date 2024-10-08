@@ -13,7 +13,10 @@
 			member a
 		where 1 = 1
 		<if test="shDelNY != null and !shDelNY.equals('')">AND memDelNY = #{shDelNY}</if>
-		<if test="shGender != null and !shGender.equals('')">AND memGender = #{shGender}</if>	
+		<if test="shGender != null and !shGender.equals('')">AND memGender = #{shGender}</if>
+			
+		<if test="shDelNY != null and !shDelNY.equals('')">AND memDelNY = #{shDelNY}</if>
+		<if test="shCarrier != null and !shCarrier.equals('')">AND memCarrier = #{shCarrier}</if>	
 	
 		<choose>
 			<when test="shOption == 1">AND a.memseq = #{shValue}</when>
@@ -38,6 +41,7 @@
 				,a.memId
 				,a.memPassword
    				,a.memEmail
+   				,a.memCarrier
    				,a.memPhoneNum
    				,a.memReDate
    				,a.memMoDate
@@ -60,6 +64,7 @@
     		,memId
     		,memPassword
             ,memEmail
+            ,memCarrier
             ,memPhoneNum
             ,memReDate
             ,memMoDate
@@ -70,6 +75,7 @@
     		,#{memId}
     		,#{memPassword}
             ,#{memEmail}
+            ,#{memCarrier}
             ,#{memPhoneNum}
             ,now()
     		,now()
@@ -88,6 +94,7 @@
    			,a.memId
     		,a.memPassword
    		 	,a.memEmail
+   		 	,a.memCarrier
    		 	,a.memPhoneNum
     		,a.memReDate
     		,a.memMoDate
@@ -106,6 +113,7 @@
 			,memId = #{memId}
 			,memPassword = #{memPassword}
 			,memEmail = #{memEmail}
+			,memCarrier = #{memCarrier}
 			,memPhoneNum = #{memPhoneNum}
 			,memDelNY = #{memDelNY}
 		where 1 = 1

@@ -4,9 +4,12 @@ import com.shinnosuke.common.constants.Constants;
 
 public class MemberVo {
 	
+	
+
 	//검색조건
 	private Integer shDelNY;
 	private Integer shGender;
+	private Integer shCarrier;
 	private String shValue;
 	private Integer shOption;
 		
@@ -86,7 +89,15 @@ public class MemberVo {
 	public void setShGender(Integer shGender) {
 		this.shGender = shGender;
 	}
+	
+	public Integer getShCarrier() {
+		return shCarrier;
+	}
 
+	public void setShCarrier(Integer shCarrier) {
+		this.shCarrier = shCarrier;
+	}
+	
 	public String getShValue() {
 		return shValue;
 	}

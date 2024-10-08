@@ -589,6 +589,13 @@
 												</select>
                                             </td>
                                             <td>
+                                            	<select class="form-select" aria-label="Default select example"
+                                                    style="width: 200px;" name="shCarrier" id="shCarrier">
+													<option value="" th:selected="${vo.shCarrier == null}">통신사</option>
+													<option th:each="list : ${@codeService.selectListCachedCode(1)}" th:value="${list.cdseq}" th:text="${list.cd_Name}" th:selected="${list.cdseq} == ${vo.shCarrier}"></option>
+												</select>
+                                            </td>
+                                            <td>
                                                 <select class="form-select" aria-label="Default select example"
                                                     style="width: 200px;" name="shOptionDate" id="shOptionDate">
                                                     <option value="" th:selected="${vo.shOptionDate == null}">날짜</option>
@@ -643,7 +650,7 @@
                                                 <table class="table m-0">
                                                     <thead>
                                                         <tr>
-                                                            <th colspan="11">
+                                                            <th colspan="12">
                                                                 <span class="fs-5" th:text="'Total: '+${vo.totalRows}"></span>
                                                             </th>
                                                             <th>
@@ -670,13 +677,14 @@
                                                             <td>아이디</td>
                                                             <td>비밀번호</td>
                                                             <td>이메일</td>
+                                                            <td>통신사</td>
                                                             <td>전화번호</td>
                                                             <td>등록일</td>
                                                             <td>수정일</td>
                                                             <td>삭제여부</td>
                                                         </tr>
                                                         <tr th:if="${#lists.isEmpty(list3)}">
-                                                        	<td colspan="13" style="text-align: center;">
+                                                        	<td colspan="14" style="text-align: center;">
                                                         		<p class="fs-5" >there are no data!</p>
                                                         	</td>
                                                         </tr>
@@ -692,6 +700,8 @@
                                                             <td th:text="${list.memId}"></td>
                                                             <td th:text="${list.memPassword}"></td>
                                                             <td th:text="${list.memEmail}"></td>
+                                                            <td th:if="${list.memCarrier != null}" th:text="${@codeService.selectOneCachedCode(list.memCarrier)}" class="memCarrier align-middle"></td>
+															<td th:unless="${list.memCarrier != null}" class="memCarrier align-middle"></td>
                                                             <td th:text="${list.memPhoneNum}"></td>
                                                             <td th:text="${#dates.format(list.memReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                                             <td th:text="${#dates.format(list.memMoDate, 'yyyy-MM-dd HH:mm:ss')}"></td>

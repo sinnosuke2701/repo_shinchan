@@ -155,4 +155,10 @@ public class MemberController {
 		return returnMap;
 	}
 	
+	@RequestMapping (value = "/xdm/v1/infra/member/MemberUsrInst")
+	public String MemberUsrInst(MemberDto memberDto){//함수 선언
+		MemberService.insert(memberDto); //함수 사용
+		return "redirect:/usr/v1/infra/code/signinUsrForm";
+	}
+	
 }

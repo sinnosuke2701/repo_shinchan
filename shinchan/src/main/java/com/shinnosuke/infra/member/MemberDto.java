@@ -4,12 +4,14 @@ import java.util.Date;
 
 public class MemberDto {
 	
+	
 	private String memseq;
 	private String memName;
 	private Integer memGender;
 	private String memId;
 	private String memPassword;
 	private String memEmail;
+	private Integer memCarrier;
 	private String memPhoneNum;
 	private Date memReDate;
 	private Date memMoDate;
@@ -52,6 +54,12 @@ public class MemberDto {
 	}
 	public void setMemEmail(String memEmail) {
 		this.memEmail = memEmail;
+	}
+	public Integer getMemCarrier() {
+		return memCarrier;
+	}
+	public void setMemCarrier(Integer memCarrier) {
+		this.memCarrier = memCarrier;
 	}
 	public String getMemPhoneNum() {
 		return memPhoneNum;
