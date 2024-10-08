@@ -4,7 +4,12 @@
 <!-- head strat -->
 <div th:replace="~{usr/v1/infra/include/head :: head}"></div>
 <!-- head end -->
-
+<style>
+.modal-dialog {
+    max-width: 500px; /* 원하는 가로 넓이로 설정 */
+    margin-top: 270px; /* 원하는 세로 높이로 설정 */
+}
+</style>
 <body>
 <!-- header start -->
 
@@ -23,14 +28,14 @@
         </div>
     </div>
 </div>
-<div class="login-register-area pt-100 pb-100" style="margin-left: 500px;">
+<div class="login-register-area pt-100 pb-100">
     <div class="container">
         <div class="row">
-            <div class="col-lg-7 col-md-12 ms-auto me-auto">
+            <div class="col-lg-6 col-md-12 ms-auto me-auto">
                 <div class="login-register-wrapper">
                     <div class="login-register-tab-list nav">
                         <a class="active" data-bs-toggle="tab" href="#lg1">
-                            <h4> 로그인 </h4>
+                            <h4> 로그인  </h4>
                         </a>
                     </div>
                     <div class="tab-content">
@@ -49,12 +54,16 @@
 											<div id="memPasswordError" class="text-danger" style="display: none;"></div>
 										</div>
                                         <div class="button-box">
-<!--                                             <div class="login-toggle-btn"> -->
+                                            <div class="login-toggle-btn">
 <!--                                                 <input type="checkbox"> -->
-<!--                                                 <label>아이디 저장</label> -->
-<!--                                                 <a href="#">비밀번호를 잊어버리셨나요?</a> -->
-<!--                                             </div> -->
+                                                <label></label>
+                                                <a href="/usr/v1/infra/code/signupUsrForm">회원가입</a>
+                                            </div>
                                             <button type="button" id="btnLogin"><span>로그인</span></button>
+                                            <a id="kakao-login-btn" href="javascript:loginWithKakao()">
+											  <img src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="150"  alt="카카오 로그인 버튼" />
+											</a>
+											<p id="token-result"></p>
                                         </div>
                                     </form>
                                 </div>
@@ -67,31 +76,30 @@
     </div>
 </div>
 <!-- Modal start -->
-		<div class="modal" id="modalAlert" tabindex="-1">
-			<div class="modal-dialog">
-		    	<div class="modal-content">
-		     		<div class="modal-header">
-		     			<h5 class="modal-title" id="modalAlertTitle">Modal title</h5>
-		        		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		      		</div>
-		      		<div class="modal-body" id="modalAlertBody">
-		        		<p>Modal body text goes here.</p>
-		      		</div>
-		      		<div class="modal-footer">
-		        		<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-<!-- 		        		<button type="button" class="btn btn-primary">Save changes</button> -->
-		      		</div>
-		    	</div>
-		  	</div>
+<div class="modal" id="modalAlert" tabindex="-1">
+	<div class="modal-dialog">
+	 	<div class="modal-content">
+			<div class="modal-header">
+		     	<h5 class="modal-title" id="modalAlertTitle">Modal title</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		    </div>
+		    <div class="modal-body" id="modalAlertBody">
+		       	<p>Modal body text goes here.</p>
+		    </div>
+		    <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+		    </div>
 		</div>
-		<!-- Modal end -->
+	</div>
+</div>
+<!-- Modal end -->
 
 <!-- footer start -->
 <div th:replace="~{usr/v1/infra/include/footer :: footer}"></div>
 <!-- footer end -->
 
 <!-- Modal start-->
-<div th:replace="~{usr/v1/infra/include/modal :: modal}"></div>
+<!-- <div th:replace="~{usr/v1/infra/include/modal :: modal}"></div> -->
 <!-- Modal end -->
 
 
@@ -115,6 +123,10 @@
 <script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/ajax-mail.js"></script>
 <!-- Main JS -->
 <script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/main.js"></script>
+<!--Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<!-- kakao login -->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
 <script>
 	document.getElementById("btnLogin").onclick = function(){
@@ -164,7 +176,6 @@
 				if(response.rt == "success") {
 						location.href = "/usr/v1/infra/index/indexUsrView";
 				} else {
-					alert("뭐");
 			 		document.getElementById("modalAlertTitle").innerText = "확 인";
 			 		document.getElementById("modalAlertBody").innerText = "일치하는 회원이 존재 하지 않습니다!";
 			 		$("#modalAlert").modal("show");
@@ -177,7 +188,45 @@
 		
 	}
 </script>
+<script>
+	Kakao.init('9a79b228465df4faa6a10e4225e1beec');
+    console.log( Kakao.isInitialized() );
+  function loginWithKakao() {
+    Kakao.Auth.authorize({
+      redirectUri: 'http://localhost:8080/usr/v1/infra/code/signinUsrForm',
+    });
+  }
 
+  // 아래는 데모를 위한 UI 코드입니다.
+  displayToken()
+  function displayToken() {
+    var token = getCookie('authorize-access-token');
+
+    if(token) {
+      Kakao.Auth.setAccessToken(token);
+      Kakao.Auth.getStatusInfo()
+        .then(function(res) {
+          if (res.status === 'connected') {
+            document.getElementById('token-result').innerText
+              = 'login success, token: ' + Kakao.Auth.getAccessToken();
+          }
+        })
+        .catch(function(err) {
+          Kakao.Auth.setAccessToken(null);
+        });
+    }
+  }
+
+  function getCookie(name) {
+    var parts = document.cookie.split(name + '=');
+    if (parts.length === 2) { return parts[1].split(';')[0]; }
+  }
+</script>
+
+
+<!-- kakao login start -->
+
+<!-- kakao login end -->
 
 </body>
 
