@@ -71,7 +71,7 @@
 					<div class="mb-3">
 						<div class="d-flex justify-content-between">
 							<label class="form-label">비밀번호</label>
-							<a href="forgot-password.html" class="btn-link ml-auto">비밀번호를 잊어버리셨나요?</a>
+<!-- 							<a href="forgot-password.html" class="btn-link ml-auto">비밀번호를 잊어버리셨나요?</a> -->
 						</div>
 						<input type="password" class="form-control" id="memPassword" name="memPassword">
 							<div id="memPasswordError" class="text-danger" style="display: none;"></div>
@@ -182,24 +182,16 @@
 		    	memPassword.classList.add("is-valid");
 		    }
 			
-			
 			$.ajax({
 				async: true 
 				,cache: false
 				,type: "post"
-				/* ,dataType:"json" */
 				,url: "/xdm/v1/infra/member/signinXdmProc"
-				/* ,data : $("#formLogin").serialize() */
 				,data : { "memId" : $("#memId").val(), "memPassword" : $("#memPassword").val()}
 				,success: function(response) {
 					if(response.rt == "success") {
-// 						if(response.changePwd == "true") {
-// 							/* location.href = "/xdm/v1/infra/member/expiredPwdUsrForm"; */
-// 						} else {
 							location.href = "/xdm/v1/infra/index/indexXdmView";
-// 						}
 					} else {
-						
 				 		document.getElementById("modalAlertTitle").innerText = "확 인";
 				 		document.getElementById("modalAlertBody").innerText = "일치하는 회원이 존재 하지 않습니다!";
 				 		$("#modalAlert").modal("show");
