@@ -17,7 +17,7 @@
                                 <ul class="mega-menu mega-menu-padding">
                                     <li>
                                         <ul>
-                                            <li class="mega-menu-title"><a href="#">상의</a></li>
+                                            <li class="mega-menu-title"><a href="/usr/v1/infra/product/topUsrList">상의</a></li>
                                             <li><a href="index.html">반팔 & 민소매</a></li>
                                             <li><a href="index-2.html">긴팔</a></li>
                                             <li><a href="index-3.html">맨투맨 & 후드</a></li>
@@ -76,10 +76,16 @@
                             <ul>
                             	<h6 class="mt-2 text-black" th:text="${session.sessNameXdm}"></h6>
 <!--                                 <li><a href="">Login</a></li> -->
-                                <li><a href="login-register.html">회원가입</a></li>
-                                <li><a href="wishlist.html">위시리스트 </a></li>
-                                <li><a href="my-account.html">내정보</a></li>
-                                <a th:if="${session.sessNameXdm == null}" th:href="@{/usr/v1/infra/code/signinUsrForm}" >로그인</a>
+                                <a th:if="${session.sessNameXdm == null}" th:href="@{/usr/v1/infra/product/signupUsrForm}">회원가입</a>
+                                <a th:unless="${session.sessNameXdm == null}" th:href="@{/usr/v1/infra/product/signupUsrForm}"></a>
+                                <li></li>
+                                <a th:if="${session.sessNameXdm == null}" th:href="@{/usr/v1/infra/product/signupUsrForm}"></a>
+                                <a th:unless="${session.sessNameXdm == null}" th:href="@{/usr/v1/infra/product/signupUsrForm}">위시리스트</a>
+                                <li></li>
+                                <a th:if="${session.sessNameXdm == null}" th:href="@{/usr/v1/infra/product/signupUsrForm}"></a>
+                                <a th:unless="${session.sessNameXdm == null}" th:href="@{/usr/v1/infra/product/signupUsrForm}">내정보</a>
+                                <li></li>
+                                <a th:if="${session.sessNameXdm == null}" th:href="@{/usr/v1/infra/product/signinUsrForm}" >로그인</a>
                                 <a th:unless="${session.sessNameXdm == null}" id="btnLogout" href="">로그아웃</a>
                             </ul>
                         </div>
