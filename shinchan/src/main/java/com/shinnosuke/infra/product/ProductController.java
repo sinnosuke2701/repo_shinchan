@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.shinnosuke.common.util.UtilDateTime;
+import com.shinnosuke.infra.code.CodeDto;
 
 @Controller
 public class ProductController {
@@ -69,5 +70,31 @@ public class ProductController {
 		return "redirect:/xdm/v1/infra/product/ProductXdmList";
 	}
 	
+	@RequestMapping(value = "/usr/v1/infra/index/indexUsrView")
+	public String ProductUsrInde () {
+		return "/usr/v1/infra/index/indexUsrView";
+	}
+	
+	@RequestMapping(value = "/usr/v1/infra/product/signupUsrForm")
+	public String signupUsrForm() {
+		return "/usr/v1/infra/product/signupUsrForm";
+	}
+	
+	@RequestMapping(value = "/usr/v1/infra/product/signinUsrForm")
+	public String signinUsrForm() {
+		return "/usr/v1/infra/product/signinUsrForm";
+	}
+	
+	@RequestMapping(value = "/usr/v1/infra/product/topUsrList")
+	public String topUsrList(Model model ,ProductVo productVo) {
+		model.addAttribute("list", ProductService.selectList(productVo));
+		return "/usr/v1/infra/product/topUsrList";
+	}
+	
+	@RequestMapping(value = "/usr/v1/infra/product/detailUsrView")
+	public String detailUsrForm(Model model , ProductDto productDto) {
+		model.addAttribute("item", ProductService.selectOne(productDto));
+		return "/usr/v1/infra/product/detailUsrView";
+	}
 	
 }

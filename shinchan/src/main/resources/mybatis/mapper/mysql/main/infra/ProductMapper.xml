@@ -49,7 +49,7 @@
 				,a.prMoDate
 				,a.prDelNY
 		<include refid="selectCommon"></include>
-		Order By a.prseq desc
+		Order By a.prseq asc
 		) aa
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
