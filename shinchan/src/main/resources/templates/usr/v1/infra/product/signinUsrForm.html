@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="en">
 
 <!-- head strat -->
 <div th:replace="~{usr/v1/infra/include/head :: head}"></div>
@@ -57,7 +57,7 @@
                                             <div class="login-toggle-btn">
 <!--                                                 <input type="checkbox"> -->
                                                 <label></label>
-                                                <a href="/usr/v1/infra/code/signupUsrForm">회원가입</a>
+                                                <a href="/usr/v1/infra/Product/signupUsrForm">회원가입</a>
                                             </div>
                                             <button type="button" id="btnLogin"><span>로그인</span></button>
                                             <a id="kakao-login-btn" href="javascript:loginWithKakao()">
@@ -193,7 +193,7 @@
     console.log( Kakao.isInitialized() );
   function loginWithKakao() {
     Kakao.Auth.authorize({
-      redirectUri: 'http://localhost:8080/usr/v1/infra/code/signinUsrForm',
+      redirectUri: 'http://localhost:8080/usr/v1/infra/index/indexUsrView',
     });
   }
 
@@ -221,6 +221,13 @@
     var parts = document.cookie.split(name + '=');
     if (parts.length === 2) { return parts[1].split(';')[0]; }
   }
+  
+  /* 엔터시 로그인 버튼 활성화 */
+  document.addEventListener('keydown', function(event) {
+	    if (event.key == 'Enter') {
+	        document.getElementById("btnLogin").click();
+	    }
+	});
 </script>
 
 
