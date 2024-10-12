@@ -82,7 +82,7 @@
 											<label for="memId" class="form-label">아이디<span
 												style="color: red;">*</span></label> <input type="text"
 												class="form-control" name="memId"
-												placeholder="아이디를 입력해 주세요." id="memId" required=""
+												placeholder="아이디를 입력해 주세요. (영문,숫자 포함 8~12자 이내)" id="memId" required=""
 												autocomplete="off">
 											<div id="memIdError" class="text-danger"
 												style="display: none;"></div>
@@ -91,7 +91,7 @@
 											<label for="memPassword" class="form-label">비밀번호<span
 												style="color: red;">*</span></label> <input type="password"
 												class="form-control" name="memPassword"
-												placeholder="비밀번호를 입력해 주세요." id="memPassword" required=""
+												placeholder="비밀번호를 입력해 주세요. (영문,숫자 포함 8~12자 이내)" id="memPassword" required=""
 												autocomplete="off">
 											<div id="memPasswordError" class="text-danger"
 												style="display: none;"></div>
@@ -348,6 +348,22 @@
 			form.action = "/xdm/v1/infra/member/MemberUsrInst";
 			form.submit();
 		}
+	</script>
+	<script>
+	document.getElementById("btnLogout").onclick = function(){
+				$.ajax({
+					async: true 
+					,cache: false
+					,type: "post"
+					,url: "/signoutXdmProc"
+					,success: function(response) {
+								location.href = "/usr/v1/infra/index/indexUsrView";
+					}
+					,error : function(jqXHR, textStatus, errorThrown){
+						alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+					}
+				});
+			}
 	</script>
 
 </body>
