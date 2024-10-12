@@ -1,0 +1,201 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<!-- head Start -->
+<div th:replace="~{usr/v1/infra/include/head :: head}"></div>
+<!-- head End -->
+
+<body>
+<!-- header Start -->
+<div th:replace="~{usr/v1/infra/include/header :: header}"></div>
+<!-- header End -->
+<div class="breadcrumb-area pt-35 pb-35 bg-gray-3">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="/usr/v1/infra/index/indexUsrView">Home</a>
+                </li>
+                <li class="active">내정보</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="checkout-area pb-80 pt-100">
+    <div class="container">
+        <div class="row">
+            <div class="ml-auto mr-auto col-lg-9">
+                <div class="checkout-wrapper">
+                    <div id="faq" class="panel-group">
+                        <div class="panel panel-default single-my-account">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>1 .</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-1">내 정보 수정</a></h3>
+                            </div>
+                            <div id="my-account-1" class="panel-collapse collapse show">
+                                <div class="panel-body">
+                                    <div class="myaccount-info-wrapper">
+                                        <div class="account-info-wrapper">
+                                            <h4>내 정보</h4>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info">
+                                                    <label>이름</label>
+                                                    <input type="text" class="form-control" id="memName"  name="memName" th:value="${item?.memName}" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info">
+                                                    <label>이메일</label>
+                                                    <input type="email" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info">
+                                                    <label>전화번호</label>
+                                                    <input type="text" autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="billing-back-btn">
+                                            <div class="billing-back">
+                                                <a href="#"><i class="fa fa-arrow-up"></i>위로 가기</a>
+                                            </div>
+                                            <div class="billing-btn">
+                                                <button type="submit">저장</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default single-my-account">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>2 .</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-2">비밀번호 변경</a></h3>
+                            </div>
+                            <div id="my-account-2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="myaccount-info-wrapper">
+                                        <div class="account-info-wrapper">
+                                            <h4>비밀변호 변경(영문,숫자 포함 8~12자 이내)</h4>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12">
+                                                <div class="billing-info">
+                                                    <label>현재 비밀번호</label>
+                                                    <input type="password">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                <div class="billing-info">
+                                                    <label>변경 비밀번호</label>
+                                                    <input type="password">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="billing-back-btn">
+                                            <div class="billing-back">
+                                                <a href="#"><i class="fa fa-arrow-up"></i>위로 가기</a>
+                                            </div>
+                                            <div class="billing-btn">
+                                                <button type="submit">저장</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default single-my-account">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>3 .</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-3">Modify your address book entries   </a></h3>
+                            </div>
+                            <div id="my-account-3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="myaccount-info-wrapper">
+                                        <div class="account-info-wrapper">
+                                            <h4>Address Book Entries</h4>
+                                        </div>
+                                        <div class="entries-wrapper">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 d-flex align-items-center justify-content-center">
+                                                    <div class="entries-info text-center">
+                                                        <p>Farhana hayder (shuvo) </p>
+                                                        <p>hastech </p>
+                                                        <p> Road#1 , Block#c </p>
+                                                        <p> Rampura. </p>
+                                                        <p>Dhaka </p>
+                                                        <p>Bangladesh </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 d-flex align-items-center justify-content-center">
+                                                    <div class="entries-edit-delete text-center">
+                                                        <a class="edit" href="#">Edit</a>
+                                                        <a href="#">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="billing-back-btn">
+                                            <div class="billing-back">
+                                                <a href="#"><i class="fa fa-arrow-up"></i> back</a>
+                                            </div>
+                                            <div class="billing-btn">
+                                                <button type="submit">Continue</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<!--                         <div class="panel panel-default single-my-account"> -->
+<!--                             <div class="panel-heading my-account-title"> -->
+<!--                                 <h3 class="panel-title"><span>4 .</span> <a href="wishlist.html">Modify your wish list   </a></h3> -->
+<!--                             </div> -->
+<!--                         </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<!-- footer Start -->
+<div th:replace="~{usr/v1/infra/include/footer :: footer}"></div>
+<!-- footer End -->
+
+<!-- Modal Start -->
+<div th:replace="~{usr/v1/infra/include/modal :: modal}"></div>
+<!-- Modal End -->
+
+
+<!-- All JS is here
+============================================ -->
+
+<script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/vendor/modernizr-3.11.7.min.js"></script>
+<script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/vendor/jquery-v3.6.0.min.js"></script>
+<script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/vendor/jquery-migrate-v3.3.2.min.js"></script>
+<script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/plugins.js"></script>
+<!-- Ajax Mail -->
+<script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/ajax-mail.js"></script>
+<!-- Main JS -->
+<script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/main.js"></script>
+<script>
+	document.getElementById("btnLogout").onclick = function(){
+				$.ajax({
+					async: true 
+					,cache: false
+					,type: "post"
+					,url: "/signoutXdmProc"
+					,success: function(response) {
+								location.href = "/usr/v1/infra/index/indexUsrView";
+					}
+					,error : function(jqXHR, textStatus, errorThrown){
+						alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+					}
+				});
+			}
+</script>
+</body>
+
+</html>
