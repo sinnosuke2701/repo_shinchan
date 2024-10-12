@@ -75,24 +75,15 @@ public class ProductController {
 		return "/usr/v1/infra/index/indexUsrView";
 	}
 	
-	@RequestMapping(value = "/usr/v1/infra/product/signupUsrForm")
-	public String signupUsrForm() {
-		return "/usr/v1/infra/product/signupUsrForm";
-	}
-	
-	@RequestMapping(value = "/usr/v1/infra/product/signinUsrForm")
-	public String signinUsrForm() {
-		return "/usr/v1/infra/product/signinUsrForm";
-	}
-	
 	@RequestMapping(value = "/usr/v1/infra/product/topUsrList")
-	public String topUsrList(Model model ,ProductVo productVo) {
+	public String topUsrList(Model model ,@ModelAttribute("vo") ProductVo productVo) {
 		model.addAttribute("list", ProductService.selectList(productVo));
+		productVo.setParamsPaging(ProductService.selectOneCount(productVo));
 		return "/usr/v1/infra/product/topUsrList";
 	}
 	
 	@RequestMapping(value = "/usr/v1/infra/product/detailUsrView")
-	public String detailUsrForm(Model model , ProductDto productDto) {
+	public String detailUsrView(Model model , ProductDto productDto) {
 		model.addAttribute("item", ProductService.selectOne(productDto));
 		return "/usr/v1/infra/product/detailUsrView";
 	}
