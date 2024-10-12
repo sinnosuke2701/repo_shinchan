@@ -848,7 +848,7 @@
 <!-- footer end -->
 
 <!-- Modal strat-->
-	<div th:replace="~{usr/v1/infra/include/modal :: modal}"></div>
+<div th:replace="~{usr/v1/infra/include/modal :: modal}"></div>
 <!-- Modal end -->
 
 
@@ -870,7 +870,7 @@
 					async: true 
 					,cache: false
 					,type: "post"
-					,url: "/signoutXdmProc"
+					,url: "/signoutUsrProc"
 					,success: function(response) {
 								location.href = "/usr/v1/infra/index/indexUsrView";
 					}
