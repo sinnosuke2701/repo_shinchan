@@ -13,4 +13,6 @@ public class Constants {
 	//interceptor
 	public static final String URL_LOGINFORM = "/xdm/v1/infra/member/signinXdmForm";
 	
+	public static final String URL_LOGINFORMUSR = "/xdm/v1/infra/member/signinUsrForm";
+	
 }
