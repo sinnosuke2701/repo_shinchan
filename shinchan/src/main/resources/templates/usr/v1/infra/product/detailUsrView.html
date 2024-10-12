@@ -82,36 +82,9 @@
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
-                            <span><a href="#">3 리뷰</a></span>
+                            <a data-toggle="tab" href="#des-details3">후기 (2)</a>
                         </div>
                         <span th:text="${item?.prProdDesc}"></span>
-<!--                         <span th:text="${item?.prDesc}"></span> -->
-<!--                         <p>피그먼트 워싱 처리된 원단과 -->
-<!--                             유니크한 디자인이 -->
-<!--                             매력적인 반팔티입니다 -->
-
-<!--                             모델 착용 기준 -->
-<!--                             부담 없는 세미 오버핏으로 입어졌으며 -->
-
-<!--                             드롭 숄더 라인이 적용되어 -->
-<!--                             어깨가 넓어보이는 -->
-<!--                             실루엣이 만족스러웠어요 -->
-
-<!--                             텐타 덤블 워싱 가공 처리된 -->
-<!--                             고밀도 16수 싱글 면 소재로 제작되었고 -->
-<!--                             늘어남이 덜한 짱짱한 원단이 돋보였습니다 -->
-
-<!--                             청바지나 면바지 등 -->
-<!--                             다양한 팬츠에 매치하여 -->
-<!--                             트랜디한 코디를 완성하기 좋아서 -->
-<!--                             추천드리고 싶은 반팔티입니다(상의)</p> -->
-<!--                         <div class="pro-details-list"> -->
-<!--                             <ul> -->
-<!--                                 <li>- 늘어남이 적은 16수 싱글 면 소재</li> -->
-<!--                                 <li>- 유니크한 피그먼트 워싱 컬러감</li> -->
-<!--                                 <li>- 코디하기 좋은 트랜디한 디자인 </li> -->
-<!--                             </ul> -->
-<!--                         </div> -->
                         <div class="pro-details-size-color">
                             <div class="pro-details-color-wrap">
                                 <span>Color</span>
@@ -132,19 +105,12 @@
 										<option value="">선택하세요</option>
 										<option th:each="list : ${@codeService.selectListCachedCode(5)}" th:value="${list.cdseq}" th:text="${list.cd_Name}" th:selected="${list.cdseq} == ${item?.prSize}"></option>
 									</select>
-<!--                                     <ul> -->
-<!--                                         <li><a href="#">s</a></li> -->
-<!--                                         <li><a href="#">m</a></li> -->
-<!--                                         <li><a href="#">l</a></li> -->
-<!--                                         <li><a href="#">xl</a></li> -->
-<!--                                         <li><a href="#">xxl</a></li> -->
-<!--                                     </ul> -->
                                 </div>
                             </div>
                         </div>
                         <div class="pro-details-quality">
                             <div class="cart-plus-minus">
-                                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
+                                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1">
                             </div>
                             <div class="pro-details-cart btn-hover">
                                 <a href="#">Add To Cart</a>
@@ -156,31 +122,6 @@
                                 <a href="#"><i class="pe-7s-shuffle"></i></a>
                             </div>
                         </div>
-                        <!-- <div class="pro-details-meta">
-                            <span>Categories :</span>
-                            <ul>
-                                <li><a href="#">Minimal,</a></li>
-                                <li><a href="#">Furniture,</a></li>
-                                <li><a href="#">Fashion</a></li>
-                            </ul>
-                        </div>
-                        <div class="pro-details-meta">
-                            <span>Tag :</span>
-                            <ul>
-                                <li><a href="#">Fashion, </a></li>
-                                <li><a href="#">Furniture,</a></li>
-                                <li><a href="#">Electronic</a></li>
-                            </ul>
-                        </div> -->
-                        <!-- <div class="pro-details-social">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div> -->
                     </div>
                 </div>
             </div>
@@ -192,7 +133,7 @@
                 <div class="description-review-topbar nav">
                     <a data-toggle="tab" href="#des-details1">모델 정보</a>
                     <a class="active" data-toggle="tab" href="#des-details2">설명</a>
-                    <a data-toggle="tab" href="#des-details3">후기 (3)</a>
+                    <a data-toggle="tab" href="#des-details3">후기 (2)</a>
                 </div>
                 <div class="tab-content description-review-bottom">
                     <div id="des-details2" class="tab-pane active">
@@ -219,10 +160,6 @@
                             <br>
                             <br>
                             <strong></strong>
-                        </div>
-                    </div>
-                    <div id="des-details4" class="tab-pane active">
-                        <div class="product-description-wrapper" style="text-align: center;">
                             <b style="font-size: 16px; font-family: Georgia;">Comment</b>
                             <br>
                             <strong></strong>
@@ -323,8 +260,7 @@
                                 <br>
                                 <strong><span style="color: red;">* 빛이나 조명, 촬영 장비 등 환경에 따라</span></strong>
                                 <br>
-                                <strong><span style="color: red;">실제 색감과 약간의 차이가 발생할 수 있는 점 참고해주시기 바랍니다
-                                        !</span></strong>
+                                <strong><span style="color: red;">실제 색감과 약간의 차이가 발생할 수 있는 점 참고해주시기 바랍니다!</span></strong>
                             </div>
                         </div>
                     </div>
@@ -404,11 +340,11 @@
                             </div>
                             <div class="col-lg-5">
                                 <div class="ratting-form-wrapper pl-50">
-                                    <h3>Add a Review</h3>
+                                    <h3>리뷰 작성하기</h3>
                                     <div class="ratting-form">
                                         <form action="#">
                                             <div class="star-box">
-                                                <span>Your rating:</span>
+                                                <span>나의 별점:</span>
                                                 <div class="ratting-star">
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
@@ -646,7 +582,22 @@
     <script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/ajax-mail.js"></script>
     <!-- Main JS -->
     <script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/main.js"></script>
-
+<script>
+	document.getElementById("btnLogout").onclick = function(){
+				$.ajax({
+					async: true 
+					,cache: false
+					,type: "post"
+					,url: "/signoutXdmProc"
+					,success: function(response) {
+								location.href = "/usr/v1/infra/index/indexUsrView";
+					}
+					,error : function(jqXHR, textStatus, errorThrown){
+						alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+					}
+				});
+			}
+</script>
 </body>
 
 </html>
