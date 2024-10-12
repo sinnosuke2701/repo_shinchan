@@ -193,30 +193,30 @@
 				memPassword.classList.add("is-valid");
 			}
 
-			$
-					.ajax({
-						async : true,
-						cache : false,
-						type : "post",
-						url : "/xdm/v1/infra/member/signinXdmProc",
-						data : {
-							"memId" : $("#memId").val(),
-							"memPassword" : $("#memPassword").val()
-						},
-						success : function(response) {
-							if (response.rt == "success") {
-								location.href = "/xdm/v1/infra/index/indexXdmView";
-							} else {
-								document.getElementById("modalAlertTitle").innerText = "확 인";
-								document.getElementById("modalAlertBody").innerText = "일치하는 회원이 존재 하지 않습니다!";
-								$("#modalAlert").modal("show");
-							}
-						},
-						error : function(jqXHR, textStatus, errorThrown) {
-							alert("ajaxUpdate " + jqXHR.textStatus + " : "
-									+ jqXHR.errorThrown);
-						}
-					});
+			$.ajax({
+				async : true,
+				cache : false,
+				type : "post",
+				url : "/xdm/v1/infra/member/signinXdmProc",
+				data : {
+					"memId" : $("#memId").val(),
+					"memPassword" : $("#memPassword").val()
+				},
+				success : function(response) {
+					if (response.rt == "success") {
+						location.href = "/xdm/v1/infra/index/indexXdmView";
+					} else {
+						document.getElementById("modalAlertTitle").innerText = "확 인";
+						document.getElementById("modalAlertBody").innerText = "일치하는 회원이 존재 하지 않습니다!";
+						$("#modalAlert").modal("show");
+					}
+				},
+				error : function(jqXHR, textStatus, errorThrown) {
+					alert("ajaxUpdate " + jqXHR.textStatus + " : "
+							+ jqXHR.errorThrown);
+				}
+			});
+					
 		}
 		
 		document.addEventListener('keydown', function(event) {

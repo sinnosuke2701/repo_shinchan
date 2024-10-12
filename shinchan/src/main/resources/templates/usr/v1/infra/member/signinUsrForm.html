@@ -57,7 +57,7 @@
                                             <div class="login-toggle-btn">
 <!--                                                 <input type="checkbox"> -->
                                                 <label></label>
-                                                <a href="/usr/v1/infra/Product/signupUsrForm">회원가입</a>
+                                                <a href="/usr/v1/infra/member/signupUsrForm">회원가입</a>
                                             </div>
                                             <button type="button" id="btnLogin"><span>로그인</span></button>
                                             <a id="kakao-login-btn" href="javascript:loginWithKakao()">
@@ -170,7 +170,7 @@
 			async: true 
 			,cache: false
 			,type: "post"
-			,url: "/xdm/v1/infra/member/signinXdmProc"
+			,url: "/xdm/v1/infra/member/signinUsrProc"
 			,data : { "memId" : $("#memId").val(), "memPassword" : $("#memPassword").val()}
 			,success: function(response) {
 				if(response.rt == "success") {
@@ -228,6 +228,22 @@
 	        document.getElementById("btnLogin").click();
 	    }
 	});
+</script>
+<script>
+	document.getElementById("btnLogout").onclick = function(){
+				$.ajax({
+					async: true 
+					,cache: false
+					,type: "post"
+					,url: "/signoutUsrProc"
+					,success: function(response) {
+								location.href = "/usr/v1/infra/index/indexUsrView";
+					}
+					,error : function(jqXHR, textStatus, errorThrown){
+						alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+					}
+				});
+			}
 </script>
 
 
