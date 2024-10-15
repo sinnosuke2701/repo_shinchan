@@ -13718,6 +13718,11 @@ a.default-btn {
   background-color: #a749ff;
   color: #fff;
 }
+.page-item.active .pagination-link {
+    background-color: #a749ff; /* 현재 페이지 배경색 */
+    color: white; /* 현재 페이지 텍스트 색상 */
+    border-radius: 100%; /* 모서리 둥글게 */
+}
 
 @media only screen and (max-width: 767px) {
   .shop-area.pb-100 {
@@ -15985,4 +15990,9 @@ h3.cart-page-title {
   .searchform.mb-50 {
     margin-bottom: 20px;
   }
+  .page-item.active .page-link {
+    background-color: #007bff; /* 현재 페이지 배경색 */
+    color: white; /* 현재 페이지 텍스트 색상 */
+}
+  
 }
