@@ -79,13 +79,20 @@ public class ProductController {
 	public String topUsrList(Model model ,@ModelAttribute("vo") ProductVo productVo) {
 		model.addAttribute("list", ProductService.selectList(productVo));
 		productVo.setParamsPaging(ProductService.selectOneCount(productVo));
+		List<ProductDto> products = ProductService.selectList(productVo);
+		model.addAttribute("list", products);
 		return "/usr/v1/infra/product/topUsrList";
 	}
 	
 	@RequestMapping(value = "/usr/v1/infra/product/detailUsrView")
 	public String detailUsrView(Model model , ProductDto productDto) {
 		model.addAttribute("item", ProductService.selectOne(productDto));
+		
 		return "/usr/v1/infra/product/detailUsrView";
 	}
 	
+	@RequestMapping(value = "/usr/v1/infra/product/checkoutUsrView")
+	public String checkoutUsrView(Model model , ProductDto productDto) {
+		return "/usr/v1/infra/product/checkoutUsrView";
+	}
 }

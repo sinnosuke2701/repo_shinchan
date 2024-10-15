@@ -21,4 +21,6 @@ public interface ProductDao {
 	
 	public int uelete(ProductDto productDto);
 	
+	List<ProductDto> selectListReview(ProductDto productDto);
+	
 }

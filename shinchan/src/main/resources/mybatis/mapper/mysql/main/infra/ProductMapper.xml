@@ -144,4 +144,16 @@
 			and prseq = #{prseq}
 	</update>
 	
+	<select id="selectListReview" resultMap="resultMapObj">
+		select
+			a.reTitle
+		from
+			review a
+		left join
+			product b on b.prseq = a.Product_prseq
+		left join
+			member c on c.memseq = a.Member_memseq
+		where 1 = 1
+	</select>
+	
 </mapper>

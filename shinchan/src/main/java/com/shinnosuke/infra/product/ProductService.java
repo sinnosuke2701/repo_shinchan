@@ -41,4 +41,8 @@ public class ProductService {
 		return ProductDao.uelete(productDto);
 	}
 	
+	List<ProductDto> selectListReview(ProductDto productDto){
+		return ProductDao.selectListReview(productDto);
+	}
+	
 }
