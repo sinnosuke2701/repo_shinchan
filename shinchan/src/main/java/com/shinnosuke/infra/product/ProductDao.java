@@ -23,4 +23,6 @@ public interface ProductDao {
 	
 	List<ProductDto> selectListReview(ProductDto productDto);
 	
+	public int insertReview(ProductDto productDto);
+	
 }

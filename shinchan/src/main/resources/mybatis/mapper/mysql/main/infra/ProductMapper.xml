@@ -147,6 +147,8 @@
 	<select id="selectListReview" resultMap="resultMapObj">
 		select
 			a.reTitle
+			,a.reComment
+			,c.memId
 		from
 			review a
 		left join
@@ -155,5 +157,21 @@
 			member c on c.memseq = a.Member_memseq
 		where 1 = 1
 	</select>
+	
+<!-- 	<insert id="insertReview"> -->
+<!-- 		insert into review ( -->
+<!-- 			reTitle -->
+<!-- 			,reComment -->
+<!-- 			,reDelNY -->
+<!-- 			,Product_prseq -->
+<!-- 			,Member_memseq -->
+<!-- 		)values( -->
+<!-- 			#{reTitle} -->
+<!-- 			,#{reComment} -->
+<!-- 			,0 -->
+<!-- 			,#{prseq} -->
+<!-- 			,#{Member_memseq} 로그인된 세션 값으로 ㅇㅇ --> -->
+<!-- 		) -->
+<!-- 	</insert> -->
 	
 </mapper>

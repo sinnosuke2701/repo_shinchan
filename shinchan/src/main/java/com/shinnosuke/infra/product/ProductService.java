@@ -45,4 +45,8 @@ public class ProductService {
 		return ProductDao.selectListReview(productDto);
 	}
 	
+	public int insertReview(ProductDto productDto) {
+		return ProductDao.insertReview(productDto);
+	}
+	
 }

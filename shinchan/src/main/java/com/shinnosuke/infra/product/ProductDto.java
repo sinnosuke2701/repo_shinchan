@@ -18,8 +18,44 @@ public class ProductDto {
 	private Date prMoDate;
 	private Integer prDelNY;
 	
-	//------------------------------
+	private String Product_prseq;
+	private String Member_memseq;
+	private String reTitle;
+	private String reComment;
+	private String memId;
 	
+	//------------------------------
+	public String getProduct_prseq() {
+		return Product_prseq;
+	}
+	public void setProduct_prseq(String product_prseq) {
+		Product_prseq = product_prseq;
+	}
+	public String getMember_memseq() {
+		return Member_memseq;
+	}
+	public void setMember_memseq(String member_memseq) {
+		Member_memseq = member_memseq;
+	}
+	public String getReTitle() {
+		return reTitle;
+	}
+	public void setReTitle(String reTitle) {
+		this.reTitle = reTitle;
+	}
+	public String getReComment() {
+		return reComment;
+	}
+	public void setReComment(String reComment) {
+		this.reComment = reComment;
+	}
+	public String getMemId() {
+		return memId;
+	}
+	public void setMemId(String memId) {
+		this.memId = memId;
+	}
+	//--------
 	public String getPrseq() {
 		return prseq;
 	}

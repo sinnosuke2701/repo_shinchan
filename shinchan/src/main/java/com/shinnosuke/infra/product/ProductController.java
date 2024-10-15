@@ -87,7 +87,9 @@ public class ProductController {
 	@RequestMapping(value = "/usr/v1/infra/product/detailUsrView")
 	public String detailUsrView(Model model , ProductDto productDto) {
 		model.addAttribute("item", ProductService.selectOne(productDto));
-		
+		List<ProductDto> product = ProductService.selectListReview(productDto);
+		model.addAttribute("relist" , product);
+//		ProductService.insertReview(productDto);
 		return "/usr/v1/infra/product/detailUsrView";
 	}
 	
