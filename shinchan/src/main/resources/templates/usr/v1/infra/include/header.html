@@ -43,18 +43,18 @@
 										</li>
 									</ul></li>
 								<li><a href="shop.html">SHOES</a></li>
-								<li ><a th:if="${session.sessNameUsr != null}"> Pages <i class="fa fa-angle-down"></i></a>
-									<a th:unless="${session.sessNameUsr != null}"></a>
+								<li><a th:if="${session.sessNameUsr != null}"> Pages <i class="fa fa-angle-down"></i></a>
 									<ul class="submenu">
 										<li><a href="about.html">about us</a></li>
 										<li><a href="cart-page.html">cart page</a></li>
-										<li><a href="checkout.html">checkout </a></li>
+										<li><a href="/usr/v1/infra/product/checkoutUsrView">checkout </a></li>
 										<li><a href="wishlist.html">wishlist </a></li>
 										<li><a href="/usr/v1/infra/product/accountUsrMfom">my account</a></li>
 										<li><a href="login-register.html">login / register </a></li>
 										<li><a href="contact.html">contact us </a></li>
 										<li><a href="404.html">404 page </a></li>
 									</ul></li>
+									<a th:unless="${session.sessNameUsr != null}"></a>
 								<li><a href="about.html"> 당일배송 </a></li>
 								<li><a href="contact.html"> Contact</a></li>
 							</ul>
@@ -146,7 +146,7 @@
 								</div>
 								<div class="shopping-cart-btn btn-hover text-center">
 									<a class="default-btn" href="cart-page.html">view cart</a> <a
-										class="default-btn" href="checkout.html">checkout</a>
+										class="default-btn" href="/usr/v1/infra/product/checkoutUsrView">checkout</a>
 								</div>
 							</div>
 						</div>
