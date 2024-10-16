@@ -22,6 +22,7 @@
         </div>
     </div>
 </div>
+<form>
 <div class="checkout-area pt-95 pb-100">
     <div class="container">
         <div class="row">
@@ -70,97 +71,19 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="billing-info ">
                                 <label>이메일</label>
-                                <input type="text">
+                                <input type="text"placeholder="이메일">
                             </div>
                         </div>
                     </div>
                     <br>
-                    <div></div>
-                    <br>
-
-                    <div class="additional-info-wrap">
-                        <h3>추가 사항</h3>
+                    <div class="additional-info-wrap" style="margin-top:0px;">
+<!--                         <h3>추가 사항</h3> -->
                         <div class="additional-info">
                             <label>배송 요청사항</label>
                             <textarea placeholder="배송 요청사항을 적어주세요." name="message"></textarea>
                         </div>
-                    </div>
-<!--                     <div class="checkout-account mt-25"> -->
-<!--                         <input class="checkout-toggle" type="checkbox"> -->
-<!--                         <span>다른 주소로 보낼랭??</span> -->
-<!--                     </div> -->
-                    <div class="different-address open-toggle mt-30">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="billing-info mb-20">
-                                    <label>First Name</label>
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="billing-info mb-20">
-                                    <label>Last Name</label>
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="billing-info mb-20">
-                                    <label>Company Name</label>
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="billing-select mb-20">
-                                    <label>Country</label>
-                                    <select>
-                                        <option>Select a country</option>
-                                        <option>Azerbaijan</option>
-                                        <option>Bahamas</option>
-                                        <option>Bahrain</option>
-                                        <option>Bangladesh</option>
-                                        <option>Barbados</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="billing-info mb-20">
-                                    <label>Street Address</label>
-                                    <input class="billing-address" placeholder="House number and street name" type="text">
-                                    <input placeholder="Apartment, suite, unit etc." type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="billing-info mb-20">
-                                    <label>Town / City</label>
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="billing-info mb-20">
-                                    <label>State / County</label>
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="billing-info mb-20">
-                                    <label>Postcode / ZIP</label>
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="billing-info mb-20">
-                                    <label>Phone</label>
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="billing-info mb-20">
-                                    <label>Email Address</label>
-                                    <input type="text">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                	</div>
+                </form>
                 </div>
             </div>
             <div class="col-lg-5">
@@ -248,6 +171,9 @@
                     </div>
                 </div>
             </div>
+            <div id="map" style="width:56%;height:300px;margin-left:15px;"></div>
+			<p><em>지도를 클릭해주세요!</em></p> 
+			<div id="clickLatlng"></div>
         </div>
     </div>
 </div>
@@ -269,8 +195,9 @@
 <!-- Main JS -->
 <script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/main.js"></script>
 
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
+<!-- kakao 주소 Start -->
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
     function sample6_execDaumPostcode() {
         new daum.Postcode({
@@ -320,7 +247,46 @@
         }).open();
     }
 </script>
+<!-- kakao 주소 Start -->
 
+<!-- kakao map 위도경도 start-->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9a79b228465df4faa6a10e4225e1beec"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+// 지도를 클릭한 위치에 표출할 마커입니다
+var marker = new kakao.maps.Marker({ 
+    // 지도 중심좌표에 마커를 생성합니다 
+    position: map.getCenter() 
+}); 
+// 지도에 마커를 표시합니다
+marker.setMap(map);
+
+// 지도에 클릭 이벤트를 등록합니다
+// 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+    
+    // 클릭한 위도, 경도 정보를 가져옵니다 
+    var latlng = mouseEvent.latLng; 
+    
+    // 마커 위치를 클릭한 위치로 옮깁니다
+    marker.setPosition(latlng);
+    
+    var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
+    message += '경도는 ' + latlng.getLng() + ' 입니다';
+    
+    var resultDiv = document.getElementById('clickLatlng'); 
+    resultDiv.innerHTML = message;
+    
+});
+</script>
+<!-- kakao map 위도경도 end-->
 </body>
 
 </html>
