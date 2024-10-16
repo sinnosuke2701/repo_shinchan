@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class MemberDto {
 	
-	
 	private String memseq;
 	private String memName;
 	private Integer memGender;
@@ -13,6 +12,11 @@ public class MemberDto {
 	private String memEmail;
 	private Integer memCarrier;
 	private String memPhoneNum;
+	private String memZipcode;
+	private String memAddress;
+	private String memDtAddress;
+	private String memLati;
+	private String memLong;
 	private Date memReDate;
 	private Date memMoDate;
 	private Integer memDelNY;
@@ -66,6 +70,36 @@ public class MemberDto {
 	}
 	public void setMemPhoneNum(String memPhoneNum) {
 		this.memPhoneNum = memPhoneNum;
+	}
+	public String getMemZipcode() {
+		return memZipcode;
+	}
+	public void setMemZipcode(String memZipcode) {
+		this.memZipcode = memZipcode;
+	}
+	public String getMemAddress() {
+		return memAddress;
+	}
+	public void setMemAddress(String memAddress) {
+		this.memAddress = memAddress;
+	}
+	public String getMemDtAddress() {
+		return memDtAddress;
+	}
+	public void setMemDtAddress(String memDtAddress) {
+		this.memDtAddress = memDtAddress;
+	}
+	public String getMemLati() {
+		return memLati;
+	}
+	public void setMemLati(String memLati) {
+		this.memLati = memLati;
+	}
+	public String getMemLong() {
+		return memLong;
+	}
+	public void setMemLong(String memLong) {
+		this.memLong = memLong;
 	}
 	public Date getMemReDate() {
 		return memReDate;

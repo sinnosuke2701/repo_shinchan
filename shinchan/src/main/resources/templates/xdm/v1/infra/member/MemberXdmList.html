@@ -572,15 +572,6 @@
                                                     <option value="1" th:selected="${vo.shDelNY == 1}">Y</option>
                                                 </select>
                                             </th>
-                                            <!-- <td>
-                                                <select class="form-select" aria-label="Default select example"
-                                                    style="width: 200px;" name="shGender" id="shGender">
-                                                    <option value="" th:selected="${vo.shGender == null}">성별</option>
-                                                    <option value="4" th:selected="${vo.shGender == 4}">남</option>
-                                                    <option value="5" th:selected="${vo.shGender == 5}">여</option>
-                                                    <option value="6" th:selected="${vo.shGender == 6}">기타</option>
-                                                </select>
-                                            </td> -->
                                             <td>
                                             	<select class="form-select" aria-label="Default select example"
                                                     style="width: 200px;" name="shGender" id="shGender">
@@ -624,6 +615,9 @@
                                                     <option value="3" th:selected="${vo.shOption == 3}">아이디</option>
                                                     <option value="4" th:selected="${vo.shOption == 4}">이메일</option>
                                                     <option value="5" th:selected="${vo.shOption == 5}">전화번호</option>
+                                                    <option value="6" th:selected="${vo.shOption == 5}">우편번호</option>
+                                                    <option value="7" th:selected="${vo.shOption == 5}">주소</option>
+                                                    <option value="8" th:selected="${vo.shOption == 5}">상세주소</option>
                                                 </select>
                                             </th>
                                             <td>
@@ -650,7 +644,7 @@
                                                 <table class="table m-0">
                                                     <thead>
                                                         <tr>
-                                                            <th colspan="12">
+                                                            <th colspan="15">
                                                                 <span class="fs-5" th:text="'Total: '+${vo.totalRows}"></span>
                                                             </th>
                                                             <th>
@@ -679,12 +673,15 @@
                                                             <td>이메일</td>
                                                             <td>통신사</td>
                                                             <td>전화번호</td>
+                                                            <td>우편번호</td>
+                                                            <td>주소</td>
+                                                            <td>상세주소</td>
                                                             <td>등록일</td>
                                                             <td>수정일</td>
                                                             <td>삭제여부</td>
                                                         </tr>
                                                         <tr th:if="${#lists.isEmpty(list3)}">
-                                                        	<td colspan="14" style="text-align: center;">
+                                                        	<td colspan="16" style="text-align: center;">
                                                         		<p class="fs-5" >there are no data!</p>
                                                         	</td>
                                                         </tr>
@@ -693,8 +690,6 @@
                                                             <td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}"></td>
                                                             <td th:text="${list.memseq}"></td>
                                                             <td><a th:href="@{/xdm/v1/infra/member/MemberXdmMfom(memseq=${list.memseq})}" th:text="${list.memName}"></a></td>
-                                                            <!-- <td th:if="${list.memGender eq 0}">0</td>
-                                                            <td th:unless="${list.memGender eq 0}">1</td> -->
                                                             <td th:if="${list.memGender != null}" th:text="${@codeService.selectOneCachedCode(list.memGender)}" class="memGender align-middle"></td>
 															<td th:unless="${list.memGender != null}" class="memGender align-middle"></td>
                                                             <td th:text="${list.memId}"></td>
@@ -703,6 +698,9 @@
                                                             <td th:if="${list.memCarrier != null}" th:text="${@codeService.selectOneCachedCode(list.memCarrier)}" class="memCarrier align-middle"></td>
 															<td th:unless="${list.memCarrier != null}" class="memCarrier align-middle"></td>
                                                             <td th:text="${list.memPhoneNum}"></td>
+                                                            <td th:text="${list.memZipcode}"></td>
+                                                            <td th:text="${list.memAddress}"></td>
+                                                            <td th:text="${list.memDtAddress}"></td>
                                                             <td th:text="${#dates.format(list.memReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                                             <td th:text="${#dates.format(list.memMoDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                                             <td th:if="${list.memDelNY eq 0}">N</td>

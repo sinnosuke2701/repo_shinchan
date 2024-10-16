@@ -24,6 +24,9 @@
 			<when test="shOption == 3">AND a.memId LIKE CONCAT('%',#{shValue},'%')</when>
 			<when test="shOption == 4">AND a.memEmail LIKE CONCAT('%',#{shValue},'%')</when>
 			<when test="shOption == 5">AND a.memPhoneNum LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 6">AND a.memZipcode LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 7">AND a.memAddress LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 8">AND a.memDtAddress LIKE CONCAT('%',#{shValue},'%')</when>
 		</choose>
 	
 		<choose>
@@ -43,6 +46,11 @@
    				,a.memEmail
    				,a.memCarrier
    				,a.memPhoneNum
+   				,a.memZipcode
+   				,a.memAddress
+   				,a.memDtAddress
+   				,a.memLati
+   				,a.memLong
    				,a.memReDate
    				,a.memMoDate
 				,a.memDelNY
@@ -66,6 +74,11 @@
             ,memEmail
             ,memCarrier
             ,memPhoneNum
+            ,memZipcode
+            ,memAddress
+            ,memDtAddress
+            ,memLati
+            ,memLong
             ,memReDate
             ,memMoDate
     		,memDelNY
@@ -77,6 +90,11 @@
             ,#{memEmail}
             ,#{memCarrier}
             ,#{memPhoneNum}
+            ,#{memZipcode}
+            ,#{memAddress}
+            ,#{memDtAddress}
+            ,#{memLati}
+            ,#{memLong}
             ,now()
     		,now()
     		,0
@@ -96,6 +114,11 @@
    		 	,a.memEmail
    		 	,a.memCarrier
    		 	,a.memPhoneNum
+   		 	,a.memZipcode
+   		 	,a.memAddress
+   		 	,a.memDtAddress
+   		 	,a.memLati
+   		 	,a.memLong
     		,a.memReDate
     		,a.memMoDate
     		,a.memDelNY
@@ -115,6 +138,11 @@
 			,memEmail = #{memEmail}
 			,memCarrier = #{memCarrier}
 			,memPhoneNum = #{memPhoneNum}
+			,memZipcode= #{memZipcode}
+            ,memAddress = #{memAddress}
+            ,memDtAddress = #{memDtAddress}
+            ,memLati = #{memLati}
+            ,memLong = #{memLong}
 			,memDelNY = #{memDelNY}
 		where 1 = 1
 			and memseq = #{memseq} 
