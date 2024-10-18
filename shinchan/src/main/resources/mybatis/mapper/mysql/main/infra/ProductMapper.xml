@@ -174,4 +174,27 @@
 <!-- 		) -->
 <!-- 	</insert> -->
 	
+	<insert id="insertOrder">
+		insert into order (
+			orName
+			,orNum
+			,orZipNum
+			,orAdr
+			,orAdrDt
+			,orEmail
+			,orDelivery
+			,orDelNY
+		)values(
+			#{orName}
+			,#{orNum}
+			,#{orZipNum}
+			,#{orAdr}
+			,#{orAdrDt}
+			,#{orEmail}
+			,#{orDelivery}
+			,0
+		)
+	</insert>
+	
+	
 </mapper>

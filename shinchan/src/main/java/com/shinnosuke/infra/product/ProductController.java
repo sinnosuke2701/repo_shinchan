@@ -94,7 +94,8 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "/usr/v1/infra/product/checkoutUsrView")
-	public String checkoutUsrView(Model model , ProductDto productDto) {
+	public String checkoutUsrView(ProductDto productDto) {
+//		ProductService.inserOrder(productDto);
 		return "/usr/v1/infra/product/checkoutUsrView";
 	}
 	

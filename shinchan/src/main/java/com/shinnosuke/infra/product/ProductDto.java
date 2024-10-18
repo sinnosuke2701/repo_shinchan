@@ -24,6 +24,16 @@ public class ProductDto {
 	private String reComment;
 	private String memId;
 	
+	private String orseq;
+	private String orName;
+	private String orNum;
+	private String orZipNum;
+	private String orAdr;
+	private String orAdrDt;
+	private String orEmail;
+	private String orDelivery;
+	private Integer orDelNY;
+	
 	//------------------------------
 	public String getProduct_prseq() {
 		return Product_prseq;
@@ -134,11 +144,59 @@ public class ProductDto {
 	public void setPrDelNY(Integer prDelNY) {
 		this.prDelNY = prDelNY;
 	}
+	public String getOrseq() {
+		return orseq;
+	}
+	public void setOrseq(String orseq) {
+		this.orseq = orseq;
+	}
+	public String getOrName() {
+		return orName;
+	}
+	public void setOrName(String orName) {
+		this.orName = orName;
+	}
+	public String getOrNum() {
+		return orNum;
+	}
+	public void setOrNum(String orNum) {
+		this.orNum = orNum;
+	}
+	public String getOrZipNum() {
+		return orZipNum;
+	}
+	public void setOrZipNum(String orZipNum) {
+		this.orZipNum = orZipNum;
+	}
+	public String getOrAdr() {
+		return orAdr;
+	}
+	public void setOrAdr(String orAdr) {
+		this.orAdr = orAdr;
+	}
+	public String getOrAdrDt() {
+		return orAdrDt;
+	}
+	public void setOrAdrDt(String orAdrDt) {
+		this.orAdrDt = orAdrDt;
+	}
+	public String getOrEmail() {
+		return orEmail;
+	}
+	public void setOrEmail(String orEmail) {
+		this.orEmail = orEmail;
+	}
+	public String getOrDelivery() {
+		return orDelivery;
+	}
+	public void setOrDelivery(String orDelivery) {
+		this.orDelivery = orDelivery;
+	}
+	public Integer getOrDelNY() {
+		return orDelNY;
+	}
+	public void setOrDelNY(Integer orDelNY) {
+		this.orDelNY = orDelNY;
+	}
 
-	
-
-	
-
-	
-	
 }

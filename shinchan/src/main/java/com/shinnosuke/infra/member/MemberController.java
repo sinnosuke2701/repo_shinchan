@@ -89,56 +89,25 @@ public class MemberController {
 	@RequestMapping(value = "/xdm/v1/infra/member/signinXdmProc")
 	public Map<String, Object> signinXdmProc(MemberDto memberDto, HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
-		System.out.println("@@@@@@@@@@@@@@@@@@@@");
 		MemberDto rtMember = MemberService.selectOneId(memberDto);
 		if (rtMember != null) {
-//			dto.setIfmmPassword(UtilSecurity.encryptSha256(dto.getIfmmPassword()));
 			MemberDto rtMember2 = MemberService.selectOneLogin(memberDto);
-
 			if (rtMember2 != null) {
-				
-//				if(dto.getAutoLogin() == true) {
-//					UtilCookie.createCookie(
-//							Constants.COOKIE_SEQ_NAME_XDM, 
-//							rtMember2.getIfmmSeq(), 
-//							Constants.COOKIE_DOMAIN_XDM, 
-//							Constants.COOKIE_PATH_XDM, 
-//							Constants.COOKIE_MAXAGE_XDM);
-//				} else {
-//					// by pass
-//				}
-//	
-				
 				httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE_XDM); // 60second * 30 = 30minute
 				httpSession.setAttribute("sessSeqXdm", rtMember2.getMemseq());
 				httpSession.setAttribute("sessIdXdm", rtMember2.getMemId());
 				httpSession.setAttribute("sessNameXdm", rtMember2.getMemName());
-//
-//				rtMember2.setMemSocialLoginCd(103);
-//				rtMember2.setlgResultNy(1);
-//				MemberService.insertLogLogin(rtMember2);
-
 				returnMap.put("rt", "success");
 			} else {
-//				memberDto.setMemSocialLoginCd(103);
-//				memberDto.setMemseq(rtMember.getMemseq());
-//				memberDto.setlgResultNY(0);
-//				MemberService.insertLogLogin(memberDto);
-
 				returnMap.put("rt", "fail");
 			}
 		} else {
-//			memberDto.setMemSocialLoginCd(103);
-//			memberDto.setlgResultNY(0);
-//			MemberService.insertLogLogin(memberDto);
-
 			returnMap.put("rt", "fail");
 		}
 		System.out.println("sessSeqXdm: " + httpSession.getAttribute("sessSeqXdm"));
 		System.out.println("sessIdXdm: " + httpSession.getAttribute("sessIdXdm"));
 		System.out.println("sessNameXdm: " + httpSession.getAttribute("sessNameXdm"));
 		return returnMap;
-		
 	}
 	
 	@RequestMapping(value = "/xdm/v1/infra/index/indexXdmView")
@@ -184,49 +153,23 @@ public class MemberController {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		MemberDto rtMember = MemberService.selectOneId(memberDto);
 		if (rtMember != null) {
-//			dto.setIfmmPassword(UtilSecurity.encryptSha256(dto.getIfmmPassword()));
 			MemberDto rtMember2 = MemberService.selectOneLogin(memberDto);
 			if (rtMember2 != null) {
-				
-//				if(dto.getAutoLogin() == true) {
-//					UtilCookie.createCookie(
-//							Constants.COOKIE_SEQ_NAME_XDM, 
-//							rtMember2.getIfmmSeq(), 
-//							Constants.COOKIE_DOMAIN_XDM, 
-//							Constants.COOKIE_PATH_XDM, 
-//							Constants.COOKIE_MAXAGE_XDM);
-//				} else {
-//					// by pass
-//				}
-//	
-				
 				httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE_XDM); // 60second * 30 = 30minute
 				httpSession.setAttribute("sessSeqUsr", rtMember2.getMemseq());
 				httpSession.setAttribute("sessIdUsr", rtMember2.getMemId());
 				httpSession.setAttribute("sessNameUsr", rtMember2.getMemName());
-//
-//				rtMember2.setMemSocialLoginCd(103);
-//				rtMember2.setlgResultNy(1);
-//				MemberService.insertLogLogin(rtMember2);
 				returnMap.put("rt", "success");
 			} else {
-//				memberDto.setMemSocialLoginCd(103);
-//				memberDto.setMemseq(rtMember.getMemseq());
-//				memberDto.setlgResultNY(0);
-//				MemberService.insertLogLogin(memberDto);
 				returnMap.put("rt", "fail");
 			}
 		} else {
-//			memberDto.setMemSocialLoginCd(103);
-//			memberDto.setlgResultNY(0);
-//			MemberService.insertLogLogin(memberDto);
 			returnMap.put("rt", "fail");
 		}
 		System.out.println("sessSeqUsr: " + httpSession.getAttribute("sessSeqUsr"));
 		System.out.println("sessIdUsr: " + httpSession.getAttribute("sessIdUsr"));
 		System.out.println("sessNameUsr: " + httpSession.getAttribute("sessNameUsr"));
 		return returnMap;
-		
 	}
 	
 	@ResponseBody
