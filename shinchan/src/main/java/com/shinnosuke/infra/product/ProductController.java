@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.shinnosuke.common.util.UtilDateTime;
-import com.shinnosuke.infra.code.CodeDto;
+
+import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSessionAttributeListener;
 
 @Controller
 public class ProductController {
@@ -89,14 +91,19 @@ public class ProductController {
 		model.addAttribute("item", ProductService.selectOne(productDto));
 		List<ProductDto> product = ProductService.selectListReview(productDto);
 		model.addAttribute("relist" , product);
-//		ProductService.insertReview(productDto);
 		return "/usr/v1/infra/product/detailUsrView";
 	}
 	
 	@RequestMapping(value = "/usr/v1/infra/product/checkoutUsrView")
 	public String checkoutUsrView(ProductDto productDto) {
-//		ProductService.inserOrder(productDto);
 		return "/usr/v1/infra/product/checkoutUsrView";
+	}
+	
+	@RequestMapping(value ="/xdm/v1/infra/product/paymentXdmInst")
+	public String paymentXdmInst(ProductDto productDto) {
+		ProductService.insertPayment(productDto);
+		
+		return "redirect:/xdm/v1/infra/product/checkoutUsrView";
 	}
 	
 }

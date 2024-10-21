@@ -173,28 +173,32 @@
 <!-- 			,#{Member_memseq} 로그인된 세션 값으로 ㅇㅇ --> 
 <!-- 		) -->
 <!-- 	</insert> -->
-	
-	<insert id="insertOrder">
-		insert into order (
-			orName
-			,orNum
-			,orZipNum
-			,orAdr
-			,orAdrDt
-			,orEmail
-			,orDelivery
-			,orDelNY
+		
+	<insert id="insertPayment">
+		insert into payment(
+			pmName
+			,pmNum
+			,pmZipNum
+			,pmAdr
+			,pmAdrDt
+			,pmEmail
+			,pmDelivery
+			,pmDelNY
+			,Member_memseq
 		)values(
-			#{orName}
-			,#{orNum}
-			,#{orZipNum}
-			,#{orAdr}
-			,#{orAdrDt}
-			,#{orEmail}
-			,#{orDelivery}
+			#{pmName}
+			,#{pmNum}
+			,#{pmZipNum}
+			,#{pmAdr}
+			,#{pmAdrDt}
+			,#{pmEmail}
+			,#{pmDelivery}
 			,0
+			,#{Member_memseq}
 		)
+		<selectKey resultType="String" keyProperty="pmSeq" order="AFTER">
+			SELECT last_Insert_id()
+		</selectKey>
 	</insert>
-	
 	
 </mapper>
