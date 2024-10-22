@@ -97,6 +97,7 @@ public class MemberController {
 				httpSession.setAttribute("sessSeqXdm", rtMember2.getMemseq());
 				httpSession.setAttribute("sessIdXdm", rtMember2.getMemId());
 				httpSession.setAttribute("sessNameXdm", rtMember2.getMemName());
+				
 				returnMap.put("rt", "success");
 			} else {
 				returnMap.put("rt", "fail");
@@ -159,6 +160,8 @@ public class MemberController {
 				httpSession.setAttribute("sessSeqUsr", rtMember2.getMemseq());
 				httpSession.setAttribute("sessIdUsr", rtMember2.getMemId());
 				httpSession.setAttribute("sessNameUsr", rtMember2.getMemName());
+				httpSession.setAttribute("Member_memseq", rtMember2.getMemseq());
+				System.out.println("Member_memseq set in session: " + rtMember2.getMemseq());
 				returnMap.put("rt", "success");
 			} else {
 				returnMap.put("rt", "fail");
@@ -169,6 +172,7 @@ public class MemberController {
 		System.out.println("sessSeqUsr: " + httpSession.getAttribute("sessSeqUsr"));
 		System.out.println("sessIdUsr: " + httpSession.getAttribute("sessIdUsr"));
 		System.out.println("sessNameUsr: " + httpSession.getAttribute("sessNameUsr"));
+
 		return returnMap;
 	}
 	

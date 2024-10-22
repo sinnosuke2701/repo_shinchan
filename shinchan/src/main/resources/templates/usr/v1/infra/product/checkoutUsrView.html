@@ -22,7 +22,7 @@
         </div>
     </div>
 </div>
-<form action="/usr/v1/infra/product/checkoutUsrView" method="post">
+<form action="/usr/v1/infra/product/paymentUsrInst" method="post" name="form">
 <div class="checkout-area pt-95 pb-100">
     <div class="container">
         <div class="row">
@@ -32,14 +32,14 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="billing-info mb-20">
-                                <label>받으시는 분</label>
-                                <input type="text" id="pmName" name="pmName">
+                                <label>이름</label>
+                                <input type="text" id="pmName" name="pmName" placeholder="받으시는 분">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="billing-info mb-20">
-                                <label>휴대전화</label>
-                                <input type="text" id="pmNum" name="pmNum">
+                                <label>전화번호</label>
+                                <input type="text" id="pmNum" name="pmNum" placeholder="받으시는 분">
                             </div>
                         </div>
                         <label>주소</label>
@@ -78,8 +78,8 @@
                         </div>
                 	</div>
                 </form>
-                </div>
             </div>
+        </div>
             <div class="col-lg-5">
                 <div class="your-order-area">
                     <h3>주문 정보</h3>
@@ -161,7 +161,7 @@
                         </div>
                     </div>
                     <div class="Place-order mt-25">
-                        <a class="btn-hover" href="#">결제하기</a>
+                        <button class="btnPayment" type="button" id="btnPayment">결제하기</button>
                     </div>
                 </div>
             </div>
@@ -189,6 +189,13 @@
 <!-- Main JS -->
 <script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/main.js"></script>
 
+<script>
+	document.getElementById("btnPayment").onclick = function(){
+		let form = document.querySelector("form[name=form]");
+		form.action = "/usr/v1/infra/product/paymentUsrInst";
+		form.submit();
+	} 
+</script>
 
 <!-- kakao 주소 Start -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -241,8 +248,6 @@
         }).open();
     }
 </script>
-<!-- kakao 주소 Start -->
-
 <!-- kakao map 위도경도 start-->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9a79b228465df4faa6a10e4225e1beec"></script>
 <script>

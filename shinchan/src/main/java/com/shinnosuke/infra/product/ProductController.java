@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.shinnosuke.common.util.UtilDateTime;
+import com.shinnosuke.infra.member.MemberDto;
 
 import jakarta.servlet.http.HttpSession;
-import jakarta.servlet.http.HttpSessionAttributeListener;
 
 @Controller
 public class ProductController {
@@ -99,11 +99,13 @@ public class ProductController {
 		return "/usr/v1/infra/product/checkoutUsrView";
 	}
 	
-	@RequestMapping(value ="/xdm/v1/infra/product/paymentXdmInst")
-	public String paymentXdmInst(ProductDto productDto) {
+	@RequestMapping(value ="/usr/v1/infra/product/paymentUsrInst")
+	public String paymentXdmInst(ProductDto productDto , HttpSession httpSession) {
+		String memberMemseq = (String) httpSession.getAttribute("Member_memseq");
+		System.out.println("Member_memseq in session: " + memberMemseq);
+		productDto.setMember_memseq(memberMemseq);
 		ProductService.insertPayment(productDto);
-		
-		return "redirect:/xdm/v1/infra/product/checkoutUsrView";
+		return "redirect:/usr/v1/infra/product/checkoutUsrView";
 	}
 	
 }

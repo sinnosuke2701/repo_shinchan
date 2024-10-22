@@ -15034,6 +15034,21 @@ h3.cart-page-title {
     padding-bottom: 60px;
   }
 }
+.btnPayment {
+	background-color: #a749ff;
+  color: #fff;
+  display: block;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1;
+  padding: 18px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 50px;
+  z-index: 9;
+  border : none;
+  width : 370px;
+}
 
 /*------ 22. contact Page  ------*/
 .contact-map #map {
