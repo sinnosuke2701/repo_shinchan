@@ -80,39 +80,29 @@
 										</div>
 										<div clas="signup">
 											<label for="memId" class="form-label">아이디<span
-												style="color: red;">*</span></label> <input type="text"
-												class="form-control" name="memId"
-												placeholder="아이디를 입력해 주세요. (영문,숫자 포함 8~12자 이내)" id="memId" required=""
-												autocomplete="off">
-											<div id="memIdError" class="text-danger"
-												style="display: none;"></div>
+												style="color: red;">*</span></label> <input type="text" class="form-control" name="memId"
+												placeholder="아이디를 입력해 주세요. (영문,숫자 포함 8~12자 이내)" id="memId" required="" autocomplete="off">
+											<div id="memIdError" class="text-danger" style="display: none;"></div>
+											<button type="button" id="btnCheckId">중복 체크</button>
+        									<div id="idCheckResult" class="text-danger" style="display: none;"></div>
 										</div>
 										<div clas="signup">
 											<label for="memPassword" class="form-label">비밀번호<span
-												style="color: red;">*</span></label> <input type="password"
-												class="form-control" name="memPassword"
-												placeholder="비밀번호를 입력해 주세요. (영문,숫자 포함 8~12자 이내)" id="memPassword" required=""
-												autocomplete="off">
-											<div id="memPasswordError" class="text-danger"
-												style="display: none;"></div>
+												style="color: red;">*</span></label> <input type="password" class="form-control" name="memPassword"
+												placeholder="비밀번호를 입력해 주세요. (영문,숫자 포함 8~12자 이내)" id="memPassword" required="" autocomplete="off">
+											<div id="memPasswordError" class="text-danger" style="display: none;"></div>
 										</div>
 										<div clas="signup">
 											<label class="form-label">비밀번호 확인<span
-												style="color: red;">*</span></label> <input type="password"
-												class="form-control" placeholder="비밀번호를 입력해 주세요."
-												id="memPassword2" required="" autocomplete="off"
-												onKeyUp="fn_compare_pwd();">
-											<div id="memPassword2Error" class="text-danger"
-												style="display: none;"></div>
+												style="color: red;">*</span></label> <input type="password" class="form-control" placeholder="비밀번호를 입력해 주세요."
+												id="memPassword2" required="" autocomplete="off" onKeyUp="fn_compare_pwd();">
+											<div id="memPassword2Error" class="text-danger" style="display: none;"></div>
 										</div>
 										<div clas="signup">
-											<label for="memEmail" class="form-label">이메일<span
-												style="color: red;">*</span></label> <input type="text"
-												class="form-control" name="memEmail"
-												placeholder="이메일을 입력해 주세요." id="memEmail" required=""
-												autocomplete="off">
-											<div id="memEmailError" class="text-danger"
-												style="display: none;"></div>
+											<label for="memEmail" class="form-label">이메일<span 
+												style="color: red;">*</span></label> <input type="text" class="form-control" name="memEmail"
+												placeholder="이메일을 입력해 주세요." id="memEmail" required="" autocomplete="off">
+											<div id="memEmailError" class="text-danger" style="display: none;"></div>
 										</div>
 										<div class="signup">
 											<label for="memCarrier" class="form-label fs--1">통신사<span
@@ -124,19 +114,14 @@
 													th:value="${list.cdseq}" th:text="${list.cd_Name}"
 													th:selected="${list.cdseq} == ${item?.memCarrier}"></option>
 											</select>
-											<div id="memCarrierError" class="text-danger"
-												style="display: none;"></div>
+											<div id="memCarrierError" class="text-danger" style="display: none;"></div>
 										</div>
 										<div clas="signup">
 											<label for="memPhoneNum" class="form-label">전화번호<span
-												style="color: red;">*</span></label> <input type="text"
-												class="form-control" name="memPhoneNum"
-												placeholder="전화번호를 입력해 주세요." id="memPhoneNum" required=""
-												autocomplete="off">
-											<div id="memPhoneNumError" class="text-danger"
-												style="display: none;"></div>
+												style="color: red;">*</span></label> <input type="text" class="form-control" name="memPhoneNum"
+												placeholder="전화번호를 입력해 주세요." id="memPhoneNum" required="" autocomplete="off">
+											<div id="memPhoneNumError" class="text-danger" style="display: none;"></div>
 										</div>
-
 										<div class="button-box">
 											<button type="button" id="btnComplete">
 												<span>완료</span>
@@ -365,6 +350,39 @@
 				});
 			}
 	</script>
+	<script>
+$(document).ready(function() {
+    $('#btnCheckId').click(function() {
+        const memId = $('#memId').val();
+        
+        if (memId.length < 8 || memId.length > 12) {
+            $('#idCheckResult').text('아이디는 8~12자 이내여야 합니다.').show();
+            return;
+        }
+
+        $.ajax({
+            url: 'check_username.php', // 서버의 PHP 파일 경로
+            type: 'POST',
+            data: { memId: memId },
+            success: function(response) {
+                if (response === 'available') {
+                    $('#idCheckResult').text('사용 가능한 아이디입니다.').css('color', 'green').show();
+                } else {
+                    $('#idCheckResult').text('이미 사용 중인 아이디입니다.').css('color', 'red').show();
+                }
+            },
+            error: function() {
+                $('#idCheckResult').text('서버 오류가 발생했습니다.').show();
+            }
+        });
+    });
+
+    $('#btnComplete').click(function() {
+        // 회원가입 처리 로직
+        $('#form').submit();
+    });
+});
+</script>
 
 </body>
 
