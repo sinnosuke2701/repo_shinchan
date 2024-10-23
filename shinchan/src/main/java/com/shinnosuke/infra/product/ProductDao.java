@@ -26,4 +26,5 @@ public interface ProductDao {
 	public int insertReview(ProductDto productDto);
 	
 	public int insertPayment(ProductDto productDto);
+	
 }

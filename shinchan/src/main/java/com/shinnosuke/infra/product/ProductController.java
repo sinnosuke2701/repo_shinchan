@@ -96,16 +96,17 @@ public class ProductController {
 	
 	@RequestMapping(value = "/usr/v1/infra/product/checkoutUsrView")
 	public String checkoutUsrView(ProductDto productDto) {
+		
 		return "/usr/v1/infra/product/checkoutUsrView";
 	}
 	
 	@RequestMapping(value ="/usr/v1/infra/product/paymentUsrInst")
-	public String paymentXdmInst(ProductDto productDto , HttpSession httpSession) {
+	public String paymentXdmInst(ProductDto productDto , HttpSession httpSession,Model model) {
 		String memberMemseq = (String) httpSession.getAttribute("Member_memseq");
-		System.out.println("Member_memseq in session: " + memberMemseq);
 		productDto.setMember_memseq(memberMemseq);
+		
 		ProductService.insertPayment(productDto);
-		return "redirect:/usr/v1/infra/product/checkoutUsrView";
+		return "/usr/v1/infra/product/checkoutUsrView";
 	}
 	
 }

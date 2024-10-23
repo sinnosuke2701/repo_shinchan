@@ -197,5 +197,4 @@ public class ProductDto {
 	public void setPmDelNY(Integer pmDelNY) {
 		this.pmDelNY = pmDelNY;
 	}
-	
 }

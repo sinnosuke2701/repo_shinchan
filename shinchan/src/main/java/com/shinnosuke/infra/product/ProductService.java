@@ -52,5 +52,5 @@ public class ProductService {
 	public int insertPayment(ProductDto productDto) {
 		return ProductDao.insertPayment(productDto);
 	}
-	
+
 }

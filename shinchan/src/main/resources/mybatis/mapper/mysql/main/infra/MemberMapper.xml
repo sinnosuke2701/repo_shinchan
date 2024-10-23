@@ -176,6 +176,11 @@
 			a.memseq
 			,a.memId
 			,a.memName
+			,a.memPhoneNum
+			,a.memZipcode
+			,a.memAddress
+			,a.memDtAddress
+			,a.memEmail
 		from 
 			member a
 		where 1 = 1

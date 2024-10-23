@@ -160,8 +160,13 @@ public class MemberController {
 				httpSession.setAttribute("sessSeqUsr", rtMember2.getMemseq());
 				httpSession.setAttribute("sessIdUsr", rtMember2.getMemId());
 				httpSession.setAttribute("sessNameUsr", rtMember2.getMemName());
+				httpSession.setAttribute("sessEmailUsr", rtMember2.getMemEmail());
+				httpSession.setAttribute("sessPhoneNumUsr", rtMember2.getMemPhoneNum());
+				httpSession.setAttribute("sessZipcodeUsr", rtMember2.getMemZipcode());
+				httpSession.setAttribute("sessAddressUsr", rtMember2.getMemAddress());
+				httpSession.setAttribute("sessDtAddressUsr", rtMember2.getMemDtAddress());
 				httpSession.setAttribute("Member_memseq", rtMember2.getMemseq());
-				System.out.println("Member_memseq set in session: " + rtMember2.getMemseq());
+				System.out.println("Member_memseq set in session:" + rtMember2.getMemseq());
 				returnMap.put("rt", "success");
 			} else {
 				returnMap.put("rt", "fail");
@@ -172,6 +177,12 @@ public class MemberController {
 		System.out.println("sessSeqUsr: " + httpSession.getAttribute("sessSeqUsr"));
 		System.out.println("sessIdUsr: " + httpSession.getAttribute("sessIdUsr"));
 		System.out.println("sessNameUsr: " + httpSession.getAttribute("sessNameUsr"));
+		System.out.println("Member_memseq: " + httpSession.getAttribute("Member_memseq"));
+		System.out.println("sessEmailUsr: " + httpSession.getAttribute("sessEmailUsr"));
+		System.out.println("sessPhoneNumUsr: " + httpSession.getAttribute("sessPhoneNumUsr"));
+		System.out.println("sessZipcodeUsr: " + httpSession.getAttribute("sessZipcodeUsr"));
+		System.out.println("sessAddressUsr: " + httpSession.getAttribute("sessAddressUsr"));
+		System.out.println("sessDtAddressUsr: " + httpSession.getAttribute("sessDtAddressUsr"));
 
 		return returnMap;
 	}
