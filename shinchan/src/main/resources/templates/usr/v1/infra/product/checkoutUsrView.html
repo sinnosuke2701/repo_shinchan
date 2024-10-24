@@ -91,10 +91,9 @@
                                     <li>총액</li>
                                 </ul>
                             </div>
-                            <div class="your-order-middle">
-                                <ul>
-                                    <li><a class="order-middle-left" th:text="${item?.prProdName}"></a><span class="order-price">15800원</span></li>
-                                    <li><span class="order-middle-left">저쩌구어쩌구 x 1</span> <span class="order-price">32000원</span></li>
+                            <div class="your-order-middle" >
+                                <ul >
+                                    <li><span class="order-middle-left" th:text="${item?.prProdName}"></span><span class="order-price" th:text="${item?.prSalePrice}"></span></li>
                                 </ul>
                             </div>
                             <div class="your-order-bottom">
@@ -106,7 +105,7 @@
                             <div class="your-order-total">
                                 <ul>
                                     <li class="order-total">총액</li>
-                                    <li>47800원</li>
+                                    <li><a class="order-price" th:text="${item?.prSalePrice}"></a></li>
                                 </ul>
                             </div>
                         </div>

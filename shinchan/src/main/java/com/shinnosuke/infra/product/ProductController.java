@@ -95,8 +95,8 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "/usr/v1/infra/product/checkoutUsrView")
-	public String checkoutUsrView(ProductDto productDto) {
-		
+	public String checkoutUsrView(ProductDto productDto , Model model) {
+		model.addAttribute("item", ProductService.selectOne(productDto));
 		return "/usr/v1/infra/product/checkoutUsrView";
 	}
 	

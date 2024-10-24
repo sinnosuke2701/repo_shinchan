@@ -82,7 +82,8 @@
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
-                            <a data-toggle="tab" href="#des-details3">후기 (2)</a>
+<!--                             <a data-toggle="tab" href="#des-details3">후기 (${relist.size()})</a> -->
+                            <a data-toggle="tab" href="#des-details3">후기 (<span th:text="${#lists.size(relist)}"></span>)</a>
                         </div>
                         <span th:text="${item?.prProdDesc}"></span>
                         <div class="pro-details-size-color">
@@ -112,9 +113,9 @@
                             <div class="cart-plus-minus">
                                 <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1">
                             </div>
-                            <div class="pro-details-cart btn-hover">
-                                <a href="/usr/v1/infra/product/checkoutUsrView">Add To Cart</a>
-                            </div>
+                             <div class="pro-details-cart btn-hover">
+                                 <a th:href="@{/usr/v1/infra/product/checkoutUsrView(prseq=${item.prseq})}">Add To Cart</a>
+                             </div> 
                             <div class="pro-details-wishlist">
                                 <a href="#"><i class="fa fa-heart-o"></i></a>
                             </div>
@@ -122,6 +123,20 @@
                                 <a href="#"><i class="pe-7s-shuffle"></i></a>
                             </div>
                         </div>
+<!--                         <div class="pro-details-quality"> -->
+<!-- 						    <div class="cart-plus-minus"> -->
+<!-- 						        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1"> -->
+<!-- 						    </div> -->
+<!-- 						    <div class="pro-details-cart btn-hover"> -->
+<!-- 						        <a th:href="@{/Usr/v1/infra/product/checkoutUsrView(prseq=${item.prseq})}">Add To Cart</a> -->
+<!-- 						    </div> -->
+<!-- 						    <div class="pro-details-wishlist"> -->
+<!-- 						        <a href="#"><i class="fa fa-heart-o"></i></a> -->
+<!-- 						    </div> -->
+<!-- 						    <div class="pro-details-compare"> -->
+<!-- 						        <a href="#"><i class="pe-7s-shuffle"></i></a> -->
+<!-- 						    </div> -->
+<!-- 						</div> -->
                     </div>
                 </div>
             </div>
@@ -133,7 +148,7 @@
                 <div class="description-review-topbar nav">
                     <a data-toggle="tab" href="#des-details1">모델 정보</a>
                     <a class="active" data-toggle="tab" href="#des-details2">설명</a>
-                    <a data-toggle="tab" href="#des-details3">후기 (2)</a>
+                    <a data-toggle="tab" href="#des-details3">후기 (<span th:text="${#lists.size(relist)}"></span>)</a>
                 </div>
                 <div class="tab-content description-review-bottom">
                     <div id="des-details2" class="tab-pane active">
@@ -604,6 +619,9 @@ document.getElementById("btnReview").onclick = function(){
 	form.action = "/usr/v1/infra/product/detailUsrView";
 	form.submit();
 }
+</script>
+<script>
+	
 </script>
 </body>
 
