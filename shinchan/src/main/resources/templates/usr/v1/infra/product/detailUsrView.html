@@ -111,7 +111,7 @@
                         </div>
                         <div class="pro-details-quality">
                             <div class="cart-plus-minus">
-                                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1">
+                                <input class="cart-plus-minus-box"  type="text" name="qtybutton" value="1" readonly>
                             </div>
                              <div class="pro-details-cart btn-hover">
                                  <a th:href="@{/usr/v1/infra/product/checkoutUsrView(prseq=${item.prseq})}">Add To Cart</a>
@@ -123,20 +123,37 @@
                                 <a href="#"><i class="pe-7s-shuffle"></i></a>
                             </div>
                         </div>
-<!--                         <div class="pro-details-quality"> -->
-<!-- 						    <div class="cart-plus-minus"> -->
-<!-- 						        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1"> -->
-<!-- 						    </div> -->
-<!-- 						    <div class="pro-details-cart btn-hover"> -->
-<!-- 						        <a th:href="@{/Usr/v1/infra/product/checkoutUsrView(prseq=${item.prseq})}">Add To Cart</a> -->
-<!-- 						    </div> -->
-<!-- 						    <div class="pro-details-wishlist"> -->
-<!-- 						        <a href="#"><i class="fa fa-heart-o"></i></a> -->
-<!-- 						    </div> -->
-<!-- 						    <div class="pro-details-compare"> -->
-<!-- 						        <a href="#"><i class="pe-7s-shuffle"></i></a> -->
-<!-- 						    </div> -->
-<!-- 						</div> -->
+                        <div class="col-lg-11" style="padding-left: 0px;">
+			                <div class="your-order-area">
+            			        <div class="your-order-wrap gray-bg-4">
+                        			<div class="your-order-product-info">
+                            			<div class="your-order-top">
+                                			<ul>
+                                    			<li>상품</li>
+                                    			<li>총액</li>
+                                			</ul>
+                            			</div>
+                            			<div class="your-order-middle" >
+                                			<ul >
+                                    			<li><span class="order-middle-left" th:text="${item?.prProdName}"></span><span class="order-price" th:text="${item?.prSalePrice}"></span></li>
+                                			</ul>
+                            			</div>
+                            			<div class="your-order-bottom">
+                                			<ul>
+                                    			<li class="your-order-shipping">배송비</li>
+                                    			<li>무료 배송</li>
+                                			</ul>
+                            			</div>
+                            			<div class="your-order-total">
+                                			<ul>
+                                    			<li class="order-total">총액 :</li>
+			                                    <li><span class="order-price" th:text="${item?.prSalePrice}"></span></li>
+			                                </ul>
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>	
+			            </div>
                     </div>
                 </div>
             </div>
@@ -621,6 +638,14 @@ document.getElementById("btnReview").onclick = function(){
 }
 </script>
 <script>
+	const salePrice = document.querySelector('.sale-price');
+	const countInput = document.querySelector('.cart-plus-minus-box');
+	const orderPrice = document.querySelector('.order-price');
+	
+	const salePriceR = salePrice.repalce(/,/g,"").replace(/원/g,"").trim();
+	const salePriceI = Number(salePriveR);
+	
+	const totalPrice = salePriceI * countInput;
 	
 </script>
 </body>

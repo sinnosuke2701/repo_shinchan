@@ -14896,7 +14896,7 @@ h3.cart-page-title {
 }
 .your-order-area .your-order-wrap {
   padding: 38px 45px 44px;
-  background: #f6f6f6;
+  background: rgb(249, 249, 249);
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .your-order-area .your-order-wrap {
@@ -14958,10 +14958,11 @@ h3.cart-page-title {
   font-weight: 400;
 }
 .your-order-area .your-order-wrap .your-order-product-info .your-order-total {
-  border-bottom: 1px solid #dee0e4;
+/*   border-bottom: 1px solid #dee0e4; */
   border-top: 1px solid #dee0e4;
   margin: 18px 0 33px;
   padding: 17px 0 19px;
+  margin-bottom: 0px;
 }
 .your-order-area .your-order-wrap .your-order-product-info .your-order-total ul {
   -webkit-box-align: center;

@@ -412,6 +412,7 @@
     /*----------------------------
     	Cart Plus Minus Button
     ------------------------------ */
+	
     var CartPlusMinus = $('.cart-plus-minus');
     CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
     CartPlusMinus.append('<div class="inc qtybutton">+</div>');
@@ -420,6 +421,7 @@
         var oldValue = $button.parent().find("input").val();
         if ($button.text() === "+") {
             var newVal = parseFloat(oldValue) + 1;
+			alert(".....................");
         } else {
             // Don't allow decrementing below zero
             if (oldValue > 0) {

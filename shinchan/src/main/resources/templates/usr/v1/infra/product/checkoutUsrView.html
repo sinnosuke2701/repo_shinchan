@@ -104,60 +104,60 @@
                             </div>
                             <div class="your-order-total">
                                 <ul>
-                                    <li class="order-total">총액</li>
-                                    <li><a class="order-price" th:text="${item?.prSalePrice}"></a></li>
+                                    <li class="order-total">총액 :</li>
+                                    <li><span class="order-price" th:text="${item?.prSalePrice}"></span></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="payment-method">
-                            <div class="payment-accordion element-mrg">
-                                <div class="panel-group" id="accordion">
-                                    <div class="panel payment-accordion">
-                                        <div class="panel-heading" id="method-one">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#method1">
-                                                    Direct bank transfer
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="method1" class="panel-collapse collapse show">
-                                            <div class="panel-body">
-                                                <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel payment-accordion">
-                                        <div class="panel-heading" id="method-two">
-                                            <h4 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#method2">
-                                                    Check payments
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="method2" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
-                                            </div>
-                                        </div>
-                                    </div>
+<!--                         <div class="payment-method"> -->
+<!--                             <div class="payment-accordion element-mrg"> -->
+<!--                                 <div class="panel-group" id="accordion"> -->
+<!--                                     <div class="panel payment-accordion"> -->
+<!--                                         <div class="panel-heading" id="method-one"> -->
+<!--                                             <h4 class="panel-title"> -->
+<!--                                                 <a data-toggle="collapse" data-parent="#accordion" href="#method1"> -->
+<!--                                                     Direct bank transfer -->
+<!--                                                 </a> -->
+<!--                                             </h4> -->
+<!--                                         </div> -->
+<!--                                         <div id="method1" class="panel-collapse collapse show"> -->
+<!--                                             <div class="panel-body"> -->
+<!--                                                 <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                     <div class="panel payment-accordion"> -->
+<!--                                         <div class="panel-heading" id="method-two"> -->
+<!--                                             <h4 class="panel-title"> -->
+<!--                                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#method2"> -->
+<!--                                                     Check payments -->
+<!--                                                 </a> -->
+<!--                                             </h4> -->
+<!--                                         </div> -->
+<!--                                         <div id="method2" class="panel-collapse collapse"> -->
+<!--                                             <div class="panel-body"> -->
+<!--                                                 <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
 
-                                    <div class="panel payment-accordion">
-                                        <div class="panel-heading" id="method-three">
-                                            <h4 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#method3">
-                                                    Cash on delivery
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="method3" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<!--                                     <div class="panel payment-accordion"> -->
+<!--                                         <div class="panel-heading" id="method-three"> -->
+<!--                                             <h4 class="panel-title"> -->
+<!--                                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#method3"> -->
+<!--                                                     Cash on delivery -->
+<!--                                                 </a> -->
+<!--                                             </h4> -->
+<!--                                         </div> -->
+<!--                                         <div id="method3" class="panel-collapse collapse"> -->
+<!--                                             <div class="panel-body"> -->
+<!--                                                 <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                         </div> -->
                     </div>
                     <div class="Place-order mt-25">
                         <button class="btnPayment" type="button" id="btnPayment">결제하기</button>
