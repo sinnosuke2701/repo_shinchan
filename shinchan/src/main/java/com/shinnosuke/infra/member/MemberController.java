@@ -11,10 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.mysql.cj.Session;
 import com.shinnosuke.common.constants.Constants;
 import com.shinnosuke.common.util.UtilDateTime;
-import com.shinnosuke.infra.product.ProductDto;
+import com.shinnosuke.infra.mail.MailService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -23,6 +22,9 @@ public class MemberController {
 	
 	@Autowired
 	MemberService MemberService;
+	
+	@Autowired
+	MailService mailService;
 	
 	@RequestMapping(value = "/xdm/v1/infra/member/MemberXdmList")
 	public String MemberXdmList(Model model ,@ModelAttribute("vo")  MemberVo memberVo ,HttpSession httpSession) {
@@ -42,6 +44,19 @@ public class MemberController {
 		System.out.println("sessSeqXdm: " + httpSession.getAttribute("sessSeqXdm"));
 		System.out.println("sessIdXdm: " + httpSession.getAttribute("sessIdXdm"));
 		System.out.println("sessNameXdm: " + httpSession.getAttribute("sessNameXdm"));
+		
+		//이메일 발송
+//		mailService.sendMailSimple();
+		
+		//이메일 발송 thread
+		Thread thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				mailService.sendMailSimple();
+			}
+		});
+		
+		thread.start();
 		
 			return "/xdm/v1/infra/member/MemberXdmList";
 	}
@@ -128,6 +143,7 @@ public class MemberController {
 	@RequestMapping (value = "/xdm/v1/infra/member/MemberUsrInst")
 	public String MemberUsrInst(MemberDto memberDto){//함수 선언
 		MemberService.insert(memberDto); //함수 사용
+//		mailService.sendMailSimple();
 		return "redirect:/usr/v1/infra/code/signinUsrForm";
 	}
 	

@@ -148,6 +148,7 @@
 		select
 			a.reTitle
 			,a.reComment
+			,a.reStar
 			,c.memId
 		from
 			review a

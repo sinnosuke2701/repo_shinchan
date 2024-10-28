@@ -39,3 +39,7 @@ out/
 ### custom ###
 application.properties
 logs/
+
+### Custom ###
+application-external.properties
+logs/

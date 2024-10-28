@@ -1,5 +1,6 @@
 package com.shinnosuke.infra.product;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class ProductDto {
@@ -22,6 +23,7 @@ public class ProductDto {
 	private String Member_memseq;
 	private String reTitle;
 	private String reComment;
+	private Integer reStar;
 	private String memId;
 	
 	private String pmSeq;
@@ -196,5 +198,11 @@ public class ProductDto {
 	}
 	public void setPmDelNY(Integer pmDelNY) {
 		this.pmDelNY = pmDelNY;
+	}
+	public Integer getReStar() {
+		return reStar;
+	}
+	public void setReStar(Integer reStar) {
+		this.reStar = reStar;
 	}
 }
