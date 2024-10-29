@@ -320,12 +320,12 @@
                                                     <div class="review-name">
                                                         <span th:text="${relist.memId}"></span>
                                                         <br>
-                                                        <div class="review-rating" id="reStar" na>
-                                                        	<i class="fa fa-star"></i>
-                                                        	<i class="fa fa-star"></i>
-                                                        	<i class="fa fa-star"></i>
-                                                        	<i class="fa fa-star"></i>
-                                                        	<i class="fa fa-star"></i>
+                                                        <div class="review-rating" id="${relist.reStar}" name="reStar">
+<!--                                                         	<i class="fa fa-star"></i> -->
+<!--                                                         	<i class="fa fa-star"></i> -->
+<!--                                                         	<i class="fa fa-star"></i> -->
+<!--                                                         	<i class="fa fa-star"></i> -->
+<!--                                                         	<i class="fa fa-star"></i> -->
                                                     	</div>
                                                         <h4><span th:text="${relist.reTitle}"></span></h4>
                                                     </div>
@@ -384,7 +384,7 @@
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
                                                 </div>
-                                            </div>
+                                            </div> 
                                             <div class="row">
 <!--                                                 <div class="col-md-6"> -->
 <!--                                                     <div class="rating-form-style mb-10"> -->
@@ -648,17 +648,21 @@ document.getElementById("btnReview").onclick = function(){
 	const totalPrice = salePriceI * countInput;
 	
 </script>
-<script>
-	const rating = document.getElementById("reStar")
 
-// 	function ratingStar(rating) {
-// 		for(let i=0; i<5; i++){
-// 			if(){
-				
-// 			}
-// 		}
-	    
-// 	}
+<script>
+    function setStarRating(rating) {
+        const starContainer = document.getElementById('reStar');
+        starContainer.innerHTML = ''; //초기화
+
+        for (let i = 1; i <= 5; i++) {
+            if (i <= rating) {
+                starContainer.innerHTML += '<i class="fa fa-star"></i>'; //색
+            } else {
+                starContainer.innerHTML += '<i class="fa fa-star-o"></i>'; //빈
+            }
+        }
+    }
+
 </script>
 </body>
 

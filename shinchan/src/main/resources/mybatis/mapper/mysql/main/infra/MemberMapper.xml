@@ -165,6 +165,7 @@
 	<select id="selectOneId" resultMap="resultMapObj">
 		select
 			a.memId
+			,a.memPassword
 		from 
 			member a
 		where 1 = 1

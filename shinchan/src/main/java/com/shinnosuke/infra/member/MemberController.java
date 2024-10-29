@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,6 +26,16 @@ public class MemberController {
 	
 	@Autowired
 	MailService mailService;
+	
+	//암호화
+	public String encodeBcrypt(String planeText, int strength) {
+		  return new BCryptPasswordEncoder(strength).encode(planeText);
+	}
+			
+	public boolean matchesBcrypt(String planeText, String hashValue, int strength) {
+	  BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(strength);
+	  return passwordEncoder.matches(planeText, hashValue);
+	}
 	
 	@RequestMapping(value = "/xdm/v1/infra/member/MemberXdmList")
 	public String MemberXdmList(Model model ,@ModelAttribute("vo")  MemberVo memberVo ,HttpSession httpSession) {
@@ -96,7 +107,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "/xdm/v1/infra/member/signinXdmForm")
-	public String signinXdmForm() {
+	public String signinXdmForm(MemberDto memberDto) {
 		return "/xdm/v1/infra/member/signinXdmForm";
 	}
 	
@@ -104,18 +115,24 @@ public class MemberController {
 	@RequestMapping(value = "/xdm/v1/infra/member/signinXdmProc")
 	public Map<String, Object> signinXdmProc(MemberDto memberDto, HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
+		memberDto.setMemPassword(encodeBcrypt(memberDto.getMemPassword(), 10));//비밀번호 암호화
 		MemberDto rtMember = MemberService.selectOneId(memberDto);
 		if (rtMember != null) {
 			MemberDto rtMember2 = MemberService.selectOneLogin(memberDto);
-			if (rtMember2 != null) {
-				httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE_XDM); // 60second * 30 = 30minute
-				httpSession.setAttribute("sessSeqXdm", rtMember2.getMemseq());
-				httpSession.setAttribute("sessIdXdm", rtMember2.getMemId());
-				httpSession.setAttribute("sessNameXdm", rtMember2.getMemName());
-				
-				returnMap.put("rt", "success");
+			if(matchesBcrypt(memberDto.getMemPassword(), rtMember.getMemPassword(), 10)) {
+				if (rtMember2 != null) {
+					httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE_XDM); // 60second * 30 = 30minute
+					httpSession.setAttribute("sessSeqXdm", rtMember2.getMemseq());
+					httpSession.setAttribute("sessIdXdm", rtMember2.getMemId());
+					httpSession.setAttribute("sessNameXdm", rtMember2.getMemName());
+					returnMap.put("rt", "success");
+				} else {
+					returnMap.put("rt", "fail");
+				} 
 			} else {
-				returnMap.put("rt", "fail");
+				System.out.println("입력된 비밀번호: " + memberDto.getMemPassword());
+				System.out.println("저장된 비밀번호: " + rtMember.getMemPassword());
+				System.out.println("비밀번호 오류: " + memberDto.getMemPassword());
 			}
 		} else {
 			returnMap.put("rt", "fail");
@@ -140,11 +157,12 @@ public class MemberController {
 		return returnMap;
 	}
 	
-	@RequestMapping (value = "/xdm/v1/infra/member/MemberUsrInst")
-	public String MemberUsrInst(MemberDto memberDto){//함수 선언
+	@RequestMapping (value = "/usr/v1/infra/member/memberUsrInst")
+	public String memberUsrInst(MemberDto memberDto){//함수 선언
+		memberDto.setMemPassword(encodeBcrypt(memberDto.getMemPassword(), 10));//비밀번호 암호화
 		MemberService.insert(memberDto); //함수 사용
 //		mailService.sendMailSimple();
-		return "redirect:/usr/v1/infra/code/signinUsrForm";
+		return "redirect:/usr/v1/infra/member/signinUsrForm";
 	}
 	
 	@RequestMapping(value = "/usr/v1/infra/product/accountUsrMfom")
@@ -199,7 +217,6 @@ public class MemberController {
 		System.out.println("sessZipcodeUsr: " + httpSession.getAttribute("sessZipcodeUsr"));
 		System.out.println("sessAddressUsr: " + httpSession.getAttribute("sessAddressUsr"));
 		System.out.println("sessDtAddressUsr: " + httpSession.getAttribute("sessDtAddressUsr"));
-
 		return returnMap;
 	}
 	
