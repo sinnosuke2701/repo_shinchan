@@ -60,14 +60,14 @@ public class MemberController {
 //		mailService.sendMailSimple();
 		
 		//이메일 발송 thread
-		Thread thread = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				mailService.sendMailSimple();
-			}
-		});
-		
-		thread.start();
+//		Thread thread = new Thread(new Runnable() {
+//			@Override
+//			public void run() {
+//				mailService.sendMailSimple();
+//			}
+//		});
+//		
+//		thread.start();
 		
 			return "/xdm/v1/infra/member/MemberXdmList";
 	}
@@ -115,24 +115,23 @@ public class MemberController {
 	@RequestMapping(value = "/xdm/v1/infra/member/signinXdmProc")
 	public Map<String, Object> signinXdmProc(MemberDto memberDto, HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
-		memberDto.setMemPassword(encodeBcrypt(memberDto.getMemPassword(), 10));//비밀번호 암호화
+//		memberDto.setMemPassword(encodeBcrypt(memberDto.getMemPassword(), 10));//비밀번호 암호화
 		MemberDto rtMember = MemberService.selectOneId(memberDto);
 		if (rtMember != null) {
 			MemberDto rtMember2 = MemberService.selectOneLogin(memberDto);
-			if(matchesBcrypt(memberDto.getMemPassword(), rtMember.getMemPassword(), 10)) {
-				if (rtMember2 != null) {
+				if (rtMember2 != null) { //rtMember2가 null이 아니면
+//					if(matchesBcrypt(memberDto.getMemPassword(), rtMember2.getMemPassword(), 10)) {
 					httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE_XDM); // 60second * 30 = 30minute
 					httpSession.setAttribute("sessSeqXdm", rtMember2.getMemseq());
 					httpSession.setAttribute("sessIdXdm", rtMember2.getMemId());
 					httpSession.setAttribute("sessNameXdm", rtMember2.getMemName());
 					returnMap.put("rt", "success");
-				} else {
-					returnMap.put("rt", "fail");
-				} 
+//				} else { 
+//					System.out.println("저장된 비밀번호: " + rtMember2.getMemPassword());
+//					returnMap.put("rt", "fail");
+//				} 
 			} else {
 				System.out.println("입력된 비밀번호: " + memberDto.getMemPassword());
-				System.out.println("저장된 비밀번호: " + rtMember.getMemPassword());
-				System.out.println("비밀번호 오류: " + memberDto.getMemPassword());
 			}
 		} else {
 			returnMap.put("rt", "fail");
