@@ -115,30 +115,28 @@ public class MemberController {
 	@RequestMapping(value = "/xdm/v1/infra/member/signinXdmProc")
 	public Map<String, Object> signinXdmProc(MemberDto memberDto, HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
-//		memberDto.setMemPassword(encodeBcrypt(memberDto.getMemPassword(), 10));//비밀번호 암호화
+		
 		MemberDto rtMember = MemberService.selectOneId(memberDto);
 		if (rtMember != null) {
 			MemberDto rtMember2 = MemberService.selectOneLogin(memberDto);
 				if (rtMember2 != null) { //rtMember2가 null이 아니면
-//					if(matchesBcrypt(memberDto.getMemPassword(), rtMember2.getMemPassword(), 10)) {
+					if(matchesBcrypt(memberDto.getMemPassword(), rtMember2.getMemPassword(), 10)) {
 					httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE_XDM); // 60second * 30 = 30minute
 					httpSession.setAttribute("sessSeqXdm", rtMember2.getMemseq());
 					httpSession.setAttribute("sessIdXdm", rtMember2.getMemId());
 					httpSession.setAttribute("sessNameXdm", rtMember2.getMemName());
 					returnMap.put("rt", "success");
-//				} else { 
-//					System.out.println("저장된 비밀번호: " + rtMember2.getMemPassword());
-//					returnMap.put("rt", "fail");
-//				} 
+				} else { 
+					returnMap.put("rt", "fail");
+				} 
 			} else {
-				System.out.println("입력된 비밀번호: " + memberDto.getMemPassword());
+				returnMap.put("rt", "fail");
 			}
-		} else {
-			returnMap.put("rt", "fail");
-		}
-		System.out.println("sessSeqXdm: " + httpSession.getAttribute("sessSeqXdm"));
-		System.out.println("sessIdXdm: " + httpSession.getAttribute("sessIdXdm"));
-		System.out.println("sessNameXdm: " + httpSession.getAttribute("sessNameXdm"));
+			System.out.println("입력된 비밀번호: " + memberDto.getMemPassword());
+			System.out.println("sessSeqXdm: " + httpSession.getAttribute("sessSeqXdm"));
+			System.out.println("sessIdXdm: " + httpSession.getAttribute("sessIdXdm"));
+			System.out.println("sessNameXdm: " + httpSession.getAttribute("sessNameXdm"));
+			}
 		return returnMap;
 	}
 	
