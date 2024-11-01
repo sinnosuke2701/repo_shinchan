@@ -1,0 +1,57 @@
+<!-- <th:block th:replace="~{/xdm/v1/infra/include/nav :: nav}"></th:block> -->
+<th:block th:fragment="nav">
+	<nav class="sidebar-wrapper">
+	
+		<!-- Sidebar brand starts -->
+		<div class="sidebar-brand">
+			<a href="/xdm/v1/infra/index/indexXdmView" class="logo"> <img
+				src="/xdm/v1/template/vivo/assets/images/logo.svg"
+				alt="Melon Admin Dashboard" />
+			</a>
+		</div>
+		<!-- Sidebar brand starts -->
+	
+		<!-- Sidebar menu starts -->
+		<div class="sidebar-menu">
+			<div class="sidebarMenuScroll">
+				<ul>
+					<li class="sidebar-dropdown"><a href="#"> <i
+							class="bi bi-house"></i> <span class="menu-text">회원관리</span>
+					</a>
+						<div class="sidebar-submenu">
+							<ul>
+								<li><a href="/xdm/v1/infra/member/MemberXdmList">회원정보</a></li>
+							</ul>
+						</div></li>
+					<li class="sidebar-dropdown"><a href="#"> <i
+							class="bi bi-handbag"></i> <span class="menu-text">상품관리</span>
+					</a>
+						<div class="sidebar-submenu">
+							<ul>
+								<li><a href="/xdm/v1/infra/product/ProductXdmList">상품정보</a></li>
+							</ul>
+						</div></li>
+					<li class="sidebar-dropdown"><a href="#"> <i
+							class="bi bi-gem"></i> <span class="menu-text">코드 & 코드그룹관리</span>
+					</a>
+						<div class="sidebar-submenu">
+							<ul>
+								<li><a href="/xdm/v1/infra/code/codeXdmList">코드정보</a></li>
+								<li><a href="/xdm/v1/infra/codegroup/codeGroupXdmList">코드그룹정보</a></li>
+							</ul>
+						</div></li>
+<!-- 					<li class="sidebar-dropdown"><a href="#"> <i -->
+<!-- 							class="bi bi-window-split"></i> <span class="menu-text">Tables</span> -->
+<!-- 					</a> -->
+<!-- 						<div class="sidebar-submenu"> -->
+<!-- 							<ul> -->
+<!-- 								<li><a href="tables.html">Tables</a></li> -->
+<!-- 								<li><a href="data-tables.html">Data Tables</a></li> -->
+<!-- 							</ul> -->
+<!-- 						</div> -->
+<!-- 					</li> -->
+				</ul>
+			</div>
+		</div>
+	</nav>
+</th:block>

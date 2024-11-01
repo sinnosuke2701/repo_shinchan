@@ -11,11 +11,6 @@ public class CodeGroupService {
 	
 	
 	@Autowired
-//	private CodeGroupDao CodeGroupDao;
-//		List<CodeGroupDto> selectList(){
-//			List<CodeGroupDto> codegroups =  CodeGroupDao.selectList();
-//			return codegroups;
-//		}
 		private CodeGroupDao CodeGroupDao;
 	
 		public int selectOneCount(CodeGroupVo codeGroupVo) {
@@ -26,20 +21,11 @@ public class CodeGroupService {
 			return CodeGroupDao.selectList(codeGroupVo);
 		}
 		
-		
 		//단축형..
 		public int insert(CodeGroupDto codeGroupDto) {
 			return CodeGroupDao.insert(codeGroupDto);
 		}
 
-		
-		
-//		public int insert(CodeGroupDto codeGroupDto) {
-//			int result = CodeGroupDao.insert(codeGroupDto);
-//			return result;
-//		}
-		
-		
 		 public CodeGroupDto selectOne(CodeGroupDto codeGroupDto){
 			 CodeGroupDto dto = CodeGroupDao.selectOne(codeGroupDto);
 			return dto;
@@ -48,11 +34,6 @@ public class CodeGroupService {
 //		public CodeGroupDto selectOne(CodeGroupDto codeGroupDto) {
 //			return codeGroupDao.selectOne(codGroupDto);
 //		}
-		 
-//		 public int update(CodeGroupDto codeGroupDto) {
-//			 int a = CodeGroupDao.update(codeGroupDto);
-//			 return a;
-//		 }
 		 
 		 public int update(CodeGroupDto codeGroupDto) {
 			 CodeGroupDao.update(codeGroupDto);
@@ -68,8 +49,5 @@ public class CodeGroupService {
 			 return CodeGroupDao.uelete(codeGroupDto);
 		 }
 		 
-//		 public int reseq(CodeGroupDto codeGroupDto) {
-//			 return CodeGroupDao.reseq(CodeGroupDto);
-//		 }
-//		 
+		 
 }

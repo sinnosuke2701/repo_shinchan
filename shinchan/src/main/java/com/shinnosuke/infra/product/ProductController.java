@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.shinnosuke.common.util.UtilDateTime;
-import com.shinnosuke.infra.member.MemberDto;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -18,6 +17,7 @@ public class ProductController {
 	
 	@Autowired
 	ProductService ProductService;
+	
 	
 	@RequestMapping(value="/xdm/v1/infra/product/ProductXdmList")
 	public String ProductXdmList(Model model , @ModelAttribute("vo") ProductVo productVo) {

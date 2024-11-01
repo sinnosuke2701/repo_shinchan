@@ -1,7 +1,8 @@
 package com.shinnosuke.infra.product;
 
-import java.math.BigDecimal;
 import java.util.Date;
+
+import org.springframework.web.multipart.MultipartFile;
 
 public class ProductDto {
 	
@@ -35,6 +36,23 @@ public class ProductDto {
 	private String pmEmail;
 	private String pmDelivery;
 	private Integer pmDelNY;
+	
+	//파일첨부
+	private MultipartFile uploadFile;
+	private MultipartFile[] uploadFiles;
+	
+	private String pfSeq;
+	private String pfPath;
+	private String pfOriginalName;
+	private String pfUuidFileName;
+	private String pfExt;
+	private Long pfSize;
+	private String pfTableName;
+	private Integer pfType;
+	private Integer pfDefaultNY;
+	private Integer pfSort;
+	private String pfPseq;
+	private Integer pfDelNY;
 	
 	//------------------------------
 	public String getPrseq() {
@@ -204,5 +222,89 @@ public class ProductDto {
 	}
 	public void setReStar(Integer reStar) {
 		this.reStar = reStar;
+	}
+	public MultipartFile getUploadFile() {
+		return uploadFile;
+	}
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
+	}
+	public MultipartFile[] getUploadFiles() {
+		return uploadFiles;
+	}
+	public void setUploadFiles(MultipartFile[] uploadFiles) {
+		this.uploadFiles = uploadFiles;
+	}
+	public String getPfSeq() {
+		return pfSeq;
+	}
+	public void setPfSeq(String pfSeq) {
+		this.pfSeq = pfSeq;
+	}
+	public String getPfPath() {
+		return pfPath;
+	}
+	public void setPfPath(String pfPath) {
+		this.pfPath = pfPath;
+	}
+	public String getPfOriginalName() {
+		return pfOriginalName;
+	}
+	public void setPfOriginalName(String pfOriginalName) {
+		this.pfOriginalName = pfOriginalName;
+	}
+	public String getPfUuidFileName() {
+		return pfUuidFileName;
+	}
+	public void setPfUuidFileName(String pfUuidFileName) {
+		this.pfUuidFileName = pfUuidFileName;
+	}
+	public String getPfExt() {
+		return pfExt;
+	}
+	public void setPfExt(String pfExt) {
+		this.pfExt = pfExt;
+	}
+	public Long getPfSize() {
+		return pfSize;
+	}
+	public void setPfSize(Long pfSize) {
+		this.pfSize = pfSize;
+	}
+	public String getPfTableName() {
+		return pfTableName;
+	}
+	public void setPfTableName(String pfTableName) {
+		this.pfTableName = pfTableName;
+	}
+	public Integer getPfType() {
+		return pfType;
+	}
+	public void setPfType(Integer pfType) {
+		this.pfType = pfType;
+	}
+	public Integer getPfDefaultNY() {
+		return pfDefaultNY;
+	}
+	public void setPfDefaultNY(Integer pfDefaultNY) {
+		this.pfDefaultNY = pfDefaultNY;
+	}
+	public Integer getPfSort() {
+		return pfSort;
+	}
+	public void setPfSort(Integer pfSort) {
+		this.pfSort = pfSort;
+	}
+	public String getPfPseq() {
+		return pfPseq;
+	}
+	public void setPfPseq(String pfPseq) {
+		this.pfPseq = pfPseq;
+	}
+	public Integer getPfDelNY() {
+		return pfDelNY;
+	}
+	public void setPfDelNY(Integer pfDelNY) {
+		this.pfDelNY = pfDelNY;
 	}
 }

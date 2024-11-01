@@ -27,4 +27,6 @@ public interface ProductDao {
 	
 	public int insertPayment(ProductDto productDto);
 	
+	public int insertUploaded(ProductDto productDto);
+	
 }

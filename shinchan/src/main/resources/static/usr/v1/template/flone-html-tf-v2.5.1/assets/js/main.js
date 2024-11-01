@@ -421,7 +421,6 @@
         var oldValue = $button.parent().find("input").val();
         if ($button.text() === "+") {
             var newVal = parseFloat(oldValue) + 1;
-			alert(".....................");
         } else {
             // Don't allow decrementing below zero
             if (oldValue > 0) {

@@ -15,4 +15,6 @@ public class Constants {
 	
 	public static final String URL_LOGINFORMUSR = "/xdm/v1/infra/member/signinUsrForm";
 	
+	public static final String DATETIME_FORMAT_BASIC = "yyyy-MM-dd HH:mm:ss";
+	
 }

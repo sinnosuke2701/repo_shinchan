@@ -320,7 +320,7 @@
                                                     <div class="review-name">
                                                         <span th:text="${relist.memId}"></span>
                                                         <br>
-                                                        <div class="review-rating" id="${relist.reStar}" name="reStar">
+                                                        <div class="review-rating" id="reStar" th:text="${relist.reStar}" name="reStar">
 <!--                                                         	<i class="fa fa-star"></i> -->
 <!--                                                         	<i class="fa fa-star"></i> -->
 <!--                                                         	<i class="fa fa-star"></i> -->
@@ -637,7 +637,7 @@ document.getElementById("btnReview").onclick = function(){
 	form.submit();
 }
 </script>
-<script>
+<!-- <script>
 	const salePrice = document.querySelector('.sale-price');
 	const countInput = document.querySelector('.cart-plus-minus-box');
 	const orderPrice = document.querySelector('.order-price');
@@ -647,22 +647,48 @@ document.getElementById("btnReview").onclick = function(){
 	
 	const totalPrice = salePriceI * countInput;
 	
-</script>
+</script> -->
 
 <script>
-    function setStarRating(rating) {
-        const starContainer = document.getElementById('reStar');
-        starContainer.innerHTML = ''; //초기화
+// 	window.addEventListener('load', function(){
+// 		const reviewRatingDiv = document.getElementById('reStar').value;
+// 		const starCount = parseInt(reviewRatingDiv.innerText);
+		
+//         reviewRatingDiv.innerHTML = ''; // 기존 내용 지우기
+		
+		
+// 		for (let i = 1; i <= 5; i++) {
+// 		    const star = document.createElement('i');
+// 		    if (i <= starCount) {
+// 		        star.className = 'fa fa-star'; // 채워진 별
+// 		    } else {
+// 		        star.className = 'fa fa-star-o'; // 빈 별
+// 		    }
+// 		    reviewRatingDiv.appendChild(star);
+// 		}
+		
+// 	});
+window.addEventListener('load', function() {
+    const reviewRatingDiv = document.getElementById('reStar'); // 요소 가져오기
+    const starCount = parseInt(reviewRatingDiv.innerText); // innerText로 별점 수 가져오기
 
-        for (let i = 1; i <= 5; i++) {
-            if (i <= rating) {
-                starContainer.innerHTML += '<i class="fa fa-star"></i>'; //색
-            } else {
-                starContainer.innerHTML += '<i class="fa fa-star-o"></i>'; //빈
-            }
+    reviewRatingDiv.innerHTML = ''; // 기존 내용 지우기
+    
+    
+
+    for (let i = 1; i <= 5; i++) {
+        const star = document.createElement('i'); // 새로운 <i> 태그 생성
+        if (i <= starCount) {
+            star.className = 'fa fa-star'; // 채워진 별
+        } else {
+            star.className = 'fa fa-star-o'; // 빈 별
         }
+        reviewRatingDiv.appendChild(star); // <div>에 별 아이콘 추가
     }
-
+});
+    //f/*  */or 문을도는데 i=1;부터 시작하고 i는 5보다 작거나 같고 i++ i 는 증감해 
+    //그리고 if문을 통과하는데 reStar값을 불러오는데 i가 reStar값이랑  같아질때까지 <i class="fa fa-star"></i> 을 생성하고 
+    //reStar값보다 커질때는 <i class="fa fa-star-o"></i> 이걸 생성해 i는 5를 넘을 수 없어
 </script>
 </body>
 
