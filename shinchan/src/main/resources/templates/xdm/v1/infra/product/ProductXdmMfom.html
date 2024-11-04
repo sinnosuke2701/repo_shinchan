@@ -151,7 +151,7 @@
 									<div class="card-title">기본정보</div>
 								</div>
 								<form class="needs-validation" novalidate name="form" id="form" 
-									method="post" action="/xdm/v1/infra/product/ProductXdmPdt">
+									method="post" action="/xdm/v1/infra/product/ProductXdmPdt" enctype="multipart/form-data">
 									<div class="card-body">
 										<div class="container-fluid">
 											<div class="row mb-3">
@@ -281,6 +281,15 @@
 																<option value = "0" th:selected="${item?.prDelNY == 0}">미삭제</option>
 																<option value = "1" th:selected="${item?.prDelNY == 1}">삭제</option>
 															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4">
+													<div class="card">
+													    <div class="card-body">
+															<label for="uploadFiles" class="form-label fs--1">파일</label>
+															<input type="file" id="uploadFiles" name="uploadFiles" th:text="${item?.uploadFiles}" multiple class="form-control"/>
+															<div class="invalid-feedback" id="uploadFilesFeedback"></div>
 														</div>
 													</div>
 												</div>

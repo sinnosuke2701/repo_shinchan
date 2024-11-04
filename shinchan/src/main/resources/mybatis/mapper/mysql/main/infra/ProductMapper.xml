@@ -203,7 +203,34 @@
 	</insert>
 	
 	<insert id="insertUploaded">
-		
+		insert into productfile(
+			pfPath,
+			pfOriginalName,
+			pfUuidFileName,
+			pfExt,
+			pfSize,
+			pfTableName,
+			pfType,
+			pfDefaultNY,
+			pfSort,
+			pfPseq,
+			pfDelNY
+		)values(
+			#{pfPath},
+			#{pfOriginalName},
+			#{pfUuidFileName},
+			#{pfExt},
+			#{pfSize},
+			#{pfTableName},
+			#{pfType},
+			#{pfDefaultNY},
+			#{pfSort},
+			#{pfPseq},
+			0
+		)
+		<selectKey resultType="String" keyProperty="pfSeq" order="AFTER">
+			SELECT last_Insert_id()
+		</selectKey>
 	</insert>
 	
 </mapper>
