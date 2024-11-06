@@ -78,7 +78,7 @@
                             <div class="pro-details-rating">
 <!--                             	<i class="fa" th:classappend="${relist.reStar >= 1 ? 'fa fa-star-o yellow' : 'fa-star-o'}"></i> -->
                                 <i class="fa fa-star yellow"></i>
-                        	<span th:text="${'평점: ' + #numbers.formatDecimal(#aggregates.sum(relist.![reStar])*1.0 / #lists.size(relist), 1, 1)}"> </span>
+                        	<span th:text="${#numbers.formatDecimal(#aggregates.sum(relist.![reStar])*1.0 / #lists.size(relist), 1, 1)}"> </span>
 <!--                                 <i class="fa fa-star-o yellow"></i> -->
 <!--                                 <i class="fa fa-star-o yellow"></i> -->
 <!--                                 <i class="fa fa-star-o"></i> -->
@@ -119,10 +119,7 @@
                                  <a th:href="@{/usr/v1/infra/product/checkoutUsrView(prseq=${item.prseq})}">Add To Cart</a>
                              </div> 
                             <div class="pro-details-wishlist">
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                            </div>
-                            <div class="pro-details-compare">
-                                <a href="#"><i class="pe-7s-shuffle"></i></a>
+                                <a href="#"><i class="fa fa-heart-o" style="font-size: 20px;"></i></a>
                             </div>
                         </div>
                         <div class="col-lg-11" style="padding-left: 0px;">
@@ -310,12 +307,9 @@
                     </div>
                     <div id="des-details3" class="tab-pane">
                         <div class="row">
-                            <div class="col-lg-7" th:each="relist : ${relist}">
-                                <div class="review-wrapper">
+                            <div class="col-lg-6">
+                                <div class="review-wrapper"  th:each="relist : ${relist}">
                                     <div class="single-review">
-<!--                                         <div class="review-img"> -->
-<!--                                             <img src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/testimonial/1.jpg" alt=""> -->
-<!--                                         </div> -->
                                         <div class="review-content">
                                             <div class="review-top-wrap">
                                                 <div class="review-left">
@@ -340,19 +334,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-5">
+                            <div class="col-lg-6">
                                 <div class="ratting-form-wrapper pl-50">
-                                    <h3>리뷰 작성하기</h3>
+                                    <h3>후기 작성</h3>
                                     <div class="ratting-form">
-                                        <form name="form" method="post" action="/usr/v1/infra/product/detailUsrView">
+                                        <form id="form" name="form" method="post" action="/usr/v1/infra/product/detailUsrView">
                                             <div class="star-box">
-                                                <span>나의 별점:</span>
                                                 <div class="ratting-star" >
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star" value="1"></i>
+                                                    <i class="fa fa-star" value="2"></i>
+                                                    <i class="fa fa-star" value="3"></i>
+                                                    <i class="fa fa-star" value="4"></i>
+                                                    <i class="fa fa-star" value="5"></i>
                                                 </div>
                                             </div> 
                                             <div class="row">
@@ -434,7 +427,7 @@
                             </div>
                             <div class="pro-same-action pro-quickview">
                                 <a title="Quick View" href="#" data-toggle="modal" data-target="#exampleModal"><i
-                                        class="pe-7s-look"></i></a>
+                                   class="pe-7s-look"></i></a>
                             </div>
                         </div>
                     </div>
@@ -613,6 +606,34 @@ document.getElementById("btnReview").onclick = function(){
 	const totalPrice = salePriceI * countInput;
 	
 </script> -->
+<script>
+	const stars = document.querySelectorAll('.ratting-star i'); // 모든 별 아이콘
+	const ratingValue = document.getElementById('star-rating-value'); // 선택된 별점 값 표시하는 부분
+	
+	// 별 클릭 시 동작
+	stars.forEach(star => {
+	    star.addEventListener('click', function() {
+	        const value = this.getAttribute('value'); // 클릭한 별의 value 속성 값
+	        updateStars(value); // 별 상태 업데이트
+	        ratingValue.textContent = value; // 선택된 별점 값 표시
+	    });
+	});
+	function updateStars(value) {
+	    stars.forEach(star => {
+	        const starValue = parseInt(star.getAttribute('value'));
+	
+	        if (starValue <= value) {
+	            // 클릭된 별점 이하의 별은 채워진 별 (fa-star)
+	            star.classList.remove('fa-star-o'); // 빈 별을 제거
+	            star.classList.add('fa-star');     // 채워진 별 추가
+	        } else {
+	            // 클릭된 별점 이상은 빈 별 (fa-star-o)
+	            star.classList.remove('fa-star');  // 채워진 별을 제거
+	            star.classList.add('fa-star-o');    // 빈 별 추가
+	        }
+	    });
+	}
+</script>
 </body>
 
 </html>

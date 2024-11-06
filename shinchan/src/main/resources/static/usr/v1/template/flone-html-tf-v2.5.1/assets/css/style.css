@@ -13947,7 +13947,7 @@ a.default-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 50px;
+  margin: 0 0 20px;
 }
 @media only screen and (max-width: 767px) {
   .single-review {
