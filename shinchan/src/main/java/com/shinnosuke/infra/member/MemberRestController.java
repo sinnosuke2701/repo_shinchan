@@ -22,7 +22,6 @@ public class MemberRestController {
 		return list;
 	}
 	
-	
 	@GetMapping("/{memseq}")
 	public MemberDto selectOne(MemberDto memberDto) throws Exception {
 		MemberDto item = memberService.selectOne(memberDto);
