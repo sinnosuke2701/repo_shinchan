@@ -76,11 +76,13 @@
                         </div>
                         <div class="pro-details-rating-wrap">
                             <div class="pro-details-rating">
-                                <i class="fa fa-star-o yellow"></i>
-                                <i class="fa fa-star-o yellow"></i>
-                                <i class="fa fa-star-o yellow"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
+<!--                             	<i class="fa" th:classappend="${relist.reStar >= 1 ? 'fa fa-star-o yellow' : 'fa-star-o'}"></i> -->
+                                <i class="fa fa-star yellow"></i>
+                        	<span th:text="${'평점: ' + #numbers.formatDecimal(#aggregates.sum(relist.![reStar])*1.0 / #lists.size(relist), 1, 1)}"> </span>
+<!--                                 <i class="fa fa-star-o yellow"></i> -->
+<!--                                 <i class="fa fa-star-o yellow"></i> -->
+<!--                                 <i class="fa fa-star-o"></i> -->
+<!--                                 <i class="fa fa-star-o"></i> -->
                             </div>
 <!--                             <a data-toggle="tab" href="#des-details3">후기 (${relist.size()})</a> -->
                             <a data-toggle="tab" href="#des-details3">후기 (<span th:text="${#lists.size(relist)}"></span>)</a>
@@ -321,7 +323,6 @@
                                                         <span th:text="${relist.memId}"></span>
                                                         <br>
                                                         <div class="review-rating" id="reStar" name="reStar">
-					                                        <!-- 별점 출력 -->
 					                                        <i class="fa" th:classappend="${relist.reStar >= 1 ? 'fa-star' : 'fa-star-o'}"></i>
 					                                        <i class="fa" th:classappend="${relist.reStar >= 2 ? 'fa-star' : 'fa-star-o'}"></i>
 					                                        <i class="fa" th:classappend="${relist.reStar >= 3 ? 'fa-star' : 'fa-star-o'}"></i>
