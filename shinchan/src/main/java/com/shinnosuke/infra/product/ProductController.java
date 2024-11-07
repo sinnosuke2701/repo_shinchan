@@ -56,8 +56,9 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="/xdm/v1/infra/product/ProductXdmPdt")
-	public String ProductXdmPdt(ProductDto productDto) {
-		ProductService.update(productDto);
+	public String ProductXdmPdt(ProductDto productDto) throws Exception {
+		ProductService.update(productDto, 0);
+		ProductService.insertUploaded(productDto);
 		return "redirect:/xdm/v1/infra/product/ProductXdmList";
 	}
 	

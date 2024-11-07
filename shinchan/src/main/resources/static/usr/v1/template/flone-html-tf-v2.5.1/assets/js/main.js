@@ -416,20 +416,33 @@
     var CartPlusMinus = $('.cart-plus-minus');
     CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
     CartPlusMinus.append('<div class="inc qtybutton">+</div>');
+	
+	$('.cart-plus-minus-box').val(1);
+	$('#selectCount').text(1);
     $(".qtybutton").on("click", function() {
         var $button = $(this);
         var oldValue = $button.parent().find("input").val();
+		
+		// 빈 칸이거나 잘못된 값이면 기본값으로 설정
+		if (oldValue === "" || isNaN(oldValue)) {
+        oldValue = 1;  // 처음에 빈칸이거나 잘못된 값이면 1로 설정
+	    }
+		
         if ($button.text() === "+") {
             var newVal = parseFloat(oldValue) + 1;
+			
         } else {
             // Don't allow decrementing below zero
-            if (oldValue > 0) {
+            if (oldValue > 1) {
                 var newVal = parseFloat(oldValue) - 1;
             } else {
                 newVal = 1;
             }
         }
         $button.parent().find("input").val(newVal);
+		
+		// orderQty 부분에 수량 동기화
+		$('#selectCount').text(newVal);
     });
     
     

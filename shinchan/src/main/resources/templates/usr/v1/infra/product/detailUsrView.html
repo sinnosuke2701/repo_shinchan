@@ -61,7 +61,7 @@
                                     <img src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top222.png" alt="">
                                 </a>
                                 <a class="shop-details-overly" href="#shop-details-3" data-toggle="tab">
-                                    <img src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top2.png" alt="">
+                                    <img src="https://shinnosuke.s3.ap-northeast-2.amazonaws.com/productdto/0/2024/11/07/bf794c3f-5914-48a7-8f60-44608117d41c.png" alt="">
                                 </a>
                             </div>
                         </div>
@@ -76,15 +76,9 @@
                         </div>
                         <div class="pro-details-rating-wrap">
                             <div class="pro-details-rating">
-<!--                             	<i class="fa" th:classappend="${relist.reStar >= 1 ? 'fa fa-star-o yellow' : 'fa-star-o'}"></i> -->
                                 <i class="fa fa-star yellow"></i>
                         	<span th:text="${#numbers.formatDecimal(#aggregates.sum(relist.![reStar])*1.0 / #lists.size(relist), 1, 1)}"> </span>
-<!--                                 <i class="fa fa-star-o yellow"></i> -->
-<!--                                 <i class="fa fa-star-o yellow"></i> -->
-<!--                                 <i class="fa fa-star-o"></i> -->
-<!--                                 <i class="fa fa-star-o"></i> -->
                             </div>
-<!--                             <a data-toggle="tab" href="#des-details3">후기 (${relist.size()})</a> -->
                             <a data-toggle="tab" href="#des-details3">후기 (<span th:text="${#lists.size(relist)}"></span>)</a>
                         </div>
                         <span th:text="${item?.prProdDesc}"></span>
@@ -102,7 +96,7 @@
                                 </div>
                             </div>
                             <div class="pro-details-size">
-                                <span>Size</span>
+                                <span>사이즈</span>
                                 <div class="pro-details-size-content">
                                		<select id="prSize" name="prSize" class="form-select">
 										<option value="">선택하세요</option>
@@ -113,7 +107,7 @@
                         </div>
                         <div class="pro-details-quality">
                             <div class="cart-plus-minus">
-                                <input class="cart-plus-minus-box"  type="text" name="qtybutton" value="1" readonly>
+                                <input class="cart-plus-minus-box"  type="text" name="qtybutton" readonly>
                             </div>
                              <div class="pro-details-cart btn-hover">
                                  <a th:href="@{/usr/v1/infra/product/checkoutUsrView(prseq=${item.prseq})}">Add To Cart</a>
@@ -132,11 +126,13 @@
                                     			<li>총액</li>
                                 			</ul>
                             			</div>
-                            			<div class="your-order-middle" >
-                                			<ul >
-                                    			<li><span class="order-middle-left" th:text="${item?.prProdName}"></span><span class="order-price" th:text="${item?.prSalePrice}"></span></li>
-                                			</ul>
-                            			</div>
+                            			<div class="your-order-middle">
+										    <ul>
+										        <li><span class="order-middle-left" th:text="${item?.prProdName}"></span><span class="order-price" th:text="${item?.prSalePrice}"></span></li>
+										        <li><span>사이즈 :</span><span id="selecteSize"></span></li>
+										        <li><span>개수 :</span ></li>
+										    </ul>
+										</div>
                             			<div class="your-order-bottom">
                                 			<ul>
                                     			<li class="your-order-shipping">배송비</li>
@@ -255,7 +251,7 @@
                             </div>
                             <br>
                             <div style="text-align: center;">
-                                <img src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top1ex3.png" style="width: 800px; height: 900px;">
+                                <img src="https://shinnosuke.s3.ap-northeast-2.amazonaws.com/productdto/0/2024/11/07/8b2d1501-cc5f-404a-87f5-8796b3eceded.png" style="width: 800px; height: 900px;">
                             </div>
                             <br>
                             <div style="text-align: center;">
@@ -606,7 +602,7 @@ document.getElementById("btnReview").onclick = function(){
 	const totalPrice = salePriceI * countInput;
 	
 </script> -->
-<script>
+<!-- <script>
 	const stars = document.querySelectorAll('.ratting-star i'); // 모든 별 아이콘
 	const ratingValue = document.getElementById('star-rating-value'); // 선택된 별점 값 표시하는 부분
 	
@@ -633,6 +629,16 @@ document.getElementById("btnReview").onclick = function(){
 	        }
 	    });
 	}
+</script> -->
+x<script>
+    document.getElementById("prSize").addEventListener("change", function() {
+    	if("prSize"== ""){
+    		
+    	}
+    	
+        var selecteSize = this.options[this.selectedIndex].text;
+        document.getElementById("selecteSize").textContent = selecteSize;
+    });
 </script>
 </body>
 
