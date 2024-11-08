@@ -127,11 +127,11 @@
                                 			</ul>
                             			</div>
                             			<div class="your-order-middle">
-										    <ul>
-										        <li><span class="order-middle-left" th:text="${item?.prProdName}"></span><span class="order-price" th:text="${item?.prSalePrice}"></span></li>
-										        <li><span>사이즈 :</span><span id="selecteSize"></span></li>
-										        <li><span>개수 :</span ></li>
-										    </ul>
+											<ul>
+											    <li><span class="order-middle-left" th:text="${item?.prProdName}"></span><span class="order-price" th:text="${item?.prSalePrice}"></span></li>
+											    <li><span>사이즈 :</span><span id="selecteSize"></span></li>
+											    <li><span>개수 :</span><span class="cart-plus-minus-box"  type="text" id="qtybutton" name="qtybutton"></span></li>
+											</ul>
 										</div>
                             			<div class="your-order-bottom">
                                 			<ul>
@@ -630,12 +630,13 @@ document.getElementById("btnReview").onclick = function(){
 	    });
 	}
 </script> -->
-x<script>
+<script>
+    window.onload = function() {
+        var prSizeSelect = document.getElementById("prSize");
+        var selectedSize = prSizeSelect.options[prSizeSelect.selectedIndex].text;
+        document.getElementById("selecteSize").textContent = selectedSize;
+    };
     document.getElementById("prSize").addEventListener("change", function() {
-    	if("prSize"== ""){
-    		
-    	}
-    	
         var selecteSize = this.options[this.selectedIndex].text;
         document.getElementById("selecteSize").textContent = selecteSize;
     });

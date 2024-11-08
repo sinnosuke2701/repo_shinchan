@@ -417,6 +417,7 @@
     CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
     CartPlusMinus.append('<div class="inc qtybutton">+</div>');
 	
+	$('qtybutton').text(1);
 	$('.cart-plus-minus-box').val(1);
 	$('#selectCount').text(1);
     $(".qtybutton").on("click", function() {
@@ -441,8 +442,8 @@
         }
         $button.parent().find("input").val(newVal);
 		
-		// orderQty 부분에 수량 동기화
-		$('#selectCount').text(newVal);
+		    // your-order-middle 부분의 개수 텍스트도 동기화
+		    $(".your-order-middle .cart-plus-minus-box").text(newVal);  // 여기서 '개수' 부분 텍스트도 업데이트
     });
     
     

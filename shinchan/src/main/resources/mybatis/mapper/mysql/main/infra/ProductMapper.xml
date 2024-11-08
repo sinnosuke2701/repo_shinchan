@@ -48,6 +48,7 @@
 				,a.prReDate
 				,a.prMoDate
 				,a.prDelNY
+				,(select count(reSeq) from review as q where 1 = 1  and product b on b.prseq = q.Product_prseq and member c on c.memseq = q.Member_memseq)
 		<include refid="selectCommon"></include>
 		Order By a.prseq asc
 		) aa

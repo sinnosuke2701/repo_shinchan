@@ -76,16 +76,16 @@
                                         </div>
                                         <div class="product-content text-center">
                                             <h3><a th:href="@{/usr/v1/infra/product/detailUsrView(prseq=${list.prseq})}" th:text="${list.prProdName}"></a></h3>
-                                            <div class="product-rating">
-                                                <i class="fa fa-star-o yellow"></i>
-                                                <i class="fa fa-star-o yellow"></i>
-                                                <i class="fa fa-star-o yellow"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </div>
+                                            <div class="pro-details-rating-wrap">
+					                            <div class="pro-details-rating">
+					                                <i style="color: gold;" class="fa fa-star yellow"></i>
+					                        		<span th:text="${#numbers.formatDecimal(#aggregates.sum(relist.![reStar])*1.0 / #lists.size(relist), 1, 1)}"> </span>
+					                            </div>
+					                            <span data-toggle="tab" href="#des-details3">후기 (<span th:text="${#lists.size(relist)}"></span>)</span>
+					                        </div>
                                             <div class="product-price">
                                                 <span class="old" th:text="${list.prReguPrice}"></span>
-                                                <span th:text="${list.prSalePrice}"></span>
+                                                <span style="color: red;" th:text="${list.prSalePrice}"></span>
                                             </div>
                                         </div>
                                     </div>

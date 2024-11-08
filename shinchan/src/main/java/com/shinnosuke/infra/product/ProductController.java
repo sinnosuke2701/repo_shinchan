@@ -80,11 +80,13 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "/usr/v1/infra/product/topUsrList")
-	public String topUsrList(Model model ,@ModelAttribute("vo") ProductVo productVo) {
+	public String topUsrList(Model model ,@ModelAttribute("vo") ProductVo productVo ,ProductDto productDto) {
 		model.addAttribute("list", ProductService.selectList(productVo));
 		productVo.setParamsPaging(ProductService.selectOneCount(productVo));
 		List<ProductDto> products = ProductService.selectList(productVo);
 		model.addAttribute("list", products);
+		List<ProductDto> product = ProductService.selectListReview(productDto);
+		model.addAttribute("relist" , product);
 		return "/usr/v1/infra/product/topUsrList";
 	}
 	
