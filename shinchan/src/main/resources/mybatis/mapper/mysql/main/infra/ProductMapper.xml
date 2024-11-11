@@ -48,7 +48,8 @@
 				,a.prReDate
 				,a.prMoDate
 				,a.prDelNY
-				,(select count(reSeq) from review as q where 1 = 1  and product b on b.prseq = q.Product_prseq and member c on c.memseq = q.Member_memseq)
+				,(select count(r.reSeq) from review r where 1 = 1 and r.Product_prseq = a.prseq) as reviewCount
+				,(select avg(r.reSeq) from review r where 1 = 1 and r.Product_prseq = a.prseq) as reviewAvg
 		<include refid="selectCommon"></include>
 		Order By a.prseq asc
 		) aa
@@ -107,7 +108,8 @@
 			,a.prInventory
 			,a.prReDate
 			,a.prMoDate
-			,a.prDelNY	
+			,a.prDelNY
+			,(select count(*) from review r where r.Product_prseq = a.prseq) as reviewCount
 		from
 			Product a
 		where 1 =1
@@ -158,6 +160,7 @@
 		left join
 			member c on c.memseq = a.Member_memseq
 		where 1 = 1
+		 and b.prseq = #{prseq}
 	</select>
 	
 <!-- 	<insert id="insertReview"> -->

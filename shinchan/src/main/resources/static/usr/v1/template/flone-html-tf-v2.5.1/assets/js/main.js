@@ -413,38 +413,41 @@
     	Cart Plus Minus Button
     ------------------------------ */
 	
-    var CartPlusMinus = $('.cart-plus-minus');
-    CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
-    CartPlusMinus.append('<div class="inc qtybutton">+</div>');
-	
-	$('qtybutton').text(1);
-	$('.cart-plus-minus-box').val(1);
-	$('#selectCount').text(1);
-    $(".qtybutton").on("click", function() {
-        var $button = $(this);
-        var oldValue = $button.parent().find("input").val();
-		
-		// 빈 칸이거나 잘못된 값이면 기본값으로 설정
-		if (oldValue === "" || isNaN(oldValue)) {
-        oldValue = 1;  // 처음에 빈칸이거나 잘못된 값이면 1로 설정
-	    }
-		
-        if ($button.text() === "+") {
-            var newVal = parseFloat(oldValue) + 1;
-			
-        } else {
-            // Don't allow decrementing below zero
-            if (oldValue > 1) {
-                var newVal = parseFloat(oldValue) - 1;
-            } else {
-                newVal = 1;
-            }
-        }
-        $button.parent().find("input").val(newVal);
-		
-		    // your-order-middle 부분의 개수 텍스트도 동기화
-		    $(".your-order-middle .cart-plus-minus-box").text(newVal);  // 여기서 '개수' 부분 텍스트도 업데이트
-    });
+	$(document).ready(function() {
+	    // 수량 증가/감소 버튼
+	    var CartPlusMinus = $('.cart-plus-minus');
+	    CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
+	    CartPlusMinus.append('<div class="inc qtybutton">+</div>');
+
+	    // 페이지 로드 시 기본값 설정
+	    $('.cart-plus-minus-box').val(1);  // 수량 입력 필드에 1을 기본값으로 설정
+	    $('#selectedQty').text(1);  // 개수 텍스트에 1을 기본값으로 설정
+
+	    // 수량 증가/감소 버튼 클릭 이벤트 처리
+	    $(".qtybutton").on("click", function() {
+	        var $button = $(this);
+	        var oldValue = $button.parent().find("input").val();
+
+	        // 빈 칸이거나 잘못된 값이면 기본값으로 설정
+	        if (oldValue === "" || isNaN(oldValue)) {
+	            oldValue = 1;  // 잘못된 값이면 기본값 1로 설정
+	        }
+
+	        var newVal;
+	        if ($button.text() === "+") {
+	            newVal = parseFloat(oldValue) + 1;
+	        } else {
+	            // 1 미만으로 감소하지 않도록 설정
+	            newVal = (oldValue > 1) ? parseFloat(oldValue) - 1 : 1;
+	        }
+
+	        // 새로 계산된 수량을 input 필드와 화면에 표시
+	        $button.parent().find("input").val(newVal);
+	        $('#selectedQty').text(newVal);  // 개수 텍스트 업데이트
+	        $(".your-order-middle .cart-plus-minus-box").text(newVal);  // 화면 상의 수량 업데이트
+	    });
+	});
+
     
     
     /*--

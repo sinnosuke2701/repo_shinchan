@@ -271,8 +271,9 @@
 															<td th:if="${list.prColor != null}" th:text="${@codeService.selectOneCachedCode(list.prColor)}" class="prColor align-middle"></td>
 															<td th:unless="${list.prColor != null}" class="prColor align-middle"></td>
 <!--                                                             <td th:text="${list.prProdDesc}"></td> -->
-                                                            <td th:text="${list.prReguPrice}"></td>
-                                                            <td th:text="${list.prSalePrice}"></td>
+<!--                                                             <td th:text="${list.prReguPrice}"></td> -->
+															<td data-th-text="${#numbers.formatInteger(list.prReguPrice, 3, 'COMMA') + '원'}"></td>
+                                                            <td th:text="${#numbers.formatInteger(list.prSalePrice, 3, 'COMMA') + '원' }"></td>
                                                             <td th:text="${list.prInventory}"></td>
                                                             <td th:text="${#dates.format(list.prReDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                                             <td th:text="${#dates.format(list.prMoDate, 'yyyy-MM-dd HH:mm:ss')}"></td>

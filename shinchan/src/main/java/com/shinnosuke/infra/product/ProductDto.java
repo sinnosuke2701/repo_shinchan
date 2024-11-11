@@ -20,6 +20,9 @@ public class ProductDto {
 	private Date prMoDate;
 	private Integer prDelNY;
 	
+	private Integer reviewCount;
+	private Double reviewAvg;
+	
 	private String Product_prseq;
 	private String Member_memseq;
 	private String reTitle;
@@ -306,5 +309,17 @@ public class ProductDto {
 	}
 	public void setPfDelNY(Integer pfDelNY) {
 		this.pfDelNY = pfDelNY;
+	}
+	public Integer getReviewCount() {
+		return reviewCount;
+	}
+	public void setReviewCount(Integer reviewCount) {
+		this.reviewCount = reviewCount;
+	}
+	public Double getReviewAvg() {
+		return reviewAvg;
+	}
+	public void setReviewAvg(Double reviewAvg) {
+		this.reviewAvg = reviewAvg;
 	}
 }

@@ -71,15 +71,15 @@
                     <div class="product-details-content ml-70">
                         <h2 th:text="${item?.prProdName}"></h2>
                         <div class="product-details-price">
-                            <span class="old" style="margin-right: 30px; margin-left: 0px;" th:text="${item?.prReguPrice}"></span>
-                            <span th:text="${item?.prSalePrice}"></span>
+                            <span class="old" style="margin-right: 30px; margin-left: 0px;" th:text="${#numbers.formatInteger(item?.prReguPrice, 3, 'COMMA') + '원'}"></span>
+                            <span th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}"></span>
                         </div>
                         <div class="pro-details-rating-wrap">
                             <div class="pro-details-rating">
                                 <i class="fa fa-star yellow"></i>
                         	<span th:text="${#numbers.formatDecimal(#aggregates.sum(relist.![reStar])*1.0 / #lists.size(relist), 1, 1)}"> </span>
                             </div>
-                            <a data-toggle="tab" href="#des-details3">후기 (<span th:text="${#lists.size(relist)}"></span>)</a>
+                            <a data-toggle="tab" href="#des-details3">후기 (<span th:text="${item?.reviewCount}"></span>)</a>
                         </div>
                         <span th:text="${item?.prProdDesc}"></span>
                         <div class="pro-details-size-color">
@@ -123,14 +123,14 @@
                             			<div class="your-order-top">
                                 			<ul>
                                     			<li>상품</li>
-                                    			<li>총액</li>
+                                    			<li>가격</li>
                                 			</ul>
                             			</div>
                             			<div class="your-order-middle">
 											<ul>
-											    <li><span class="order-middle-left" th:text="${item?.prProdName}"></span><span class="order-price" th:text="${item?.prSalePrice}"></span></li>
-											    <li><span>사이즈 :</span><span id="selecteSize"></span></li>
-											    <li><span>개수 :</span><span class="cart-plus-minus-box"  type="text" id="qtybutton" name="qtybutton"></span></li>
+											    <li><span class="order-middle-left" th:text="${item?.prProdName}"></span><span class="order-price" th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}"></span></li>
+											    <li><span>사이즈 :</span><span id="selecteSize" name="selecteSize"></span></li>
+											    <li><span>개수 :</span><span class="cart-plus-minus-box"  type="text" id="selectedQty" name="qtybutton"></span></li>
 											</ul>
 										</div>
                             			<div class="your-order-bottom">
@@ -142,7 +142,7 @@
                             			<div class="your-order-total">
                                 			<ul>
                                     			<li class="order-total">총액 :</li>
-			                                    <li><span class="order-price" th:text="${item?.prSalePrice}"></span></li>
+			                                    <li><span class="order-price" id="totalPrice" name="totalPrice"></span></li>
 			                                </ul>
 			                            </div>
 			                        </div>
@@ -160,7 +160,7 @@
                 <div class="description-review-topbar nav">
                     <a data-toggle="tab" href="#des-details1">모델 정보</a>
                     <a class="active" data-toggle="tab" href="#des-details2">설명</a>
-                    <a data-toggle="tab" href="#des-details3">후기 (<span th:text="${#lists.size(relist)}"></span>)</a>
+                    <a data-toggle="tab" href="#des-details3">후기 (<span th:text="${item?.reviewCount}"></span>)</a>
                 </div>
                 <div class="tab-content description-review-bottom">
                     <div id="des-details2" class="tab-pane active">
@@ -592,17 +592,6 @@ document.getElementById("btnReview").onclick = function(){
 }
 </script>
 <!-- <script>
-	const salePrice = document.querySelector('.sale-price');
-	const countInput = document.querySelector('.cart-plus-minus-box');
-	const orderPrice = document.querySelector('.order-price');
-	
-	const salePriceR = salePrice.repalce(/,/g,"").replace(/원/g,"").trim();
-	const salePriceI = Number(salePriveR);
-	
-	const totalPrice = salePriceI * countInput;
-	
-</script> -->
-<!-- <script>
 	const stars = document.querySelectorAll('.ratting-star i'); // 모든 별 아이콘
 	const ratingValue = document.getElementById('star-rating-value'); // 선택된 별점 값 표시하는 부분
 	
@@ -639,8 +628,32 @@ document.getElementById("btnReview").onclick = function(){
     document.getElementById("prSize").addEventListener("change", function() {
         var selecteSize = this.options[this.selectedIndex].text;
         document.getElementById("selecteSize").textContent = selecteSize;
+        
+        
     });
 </script>
+<!-- <script>
+	window.onload = function(){
+		var totalPrice = document.getElementById("totalPrice");
+		var qtybutton = documnet.getElementById("qtybutton");
+		var salePrice = document.getElementById("prSalePrice")
+		
+		var salePriceR = salePrice.replace
+		
+	}
+</script> -->
+<!-- <script>
+	const salePrice = document.querySelector('.sale-price');
+	const countInput = document.querySelector('.cart-plus-minus-box');
+	const orderPrice = document.querySelector('.order-price');
+	
+	const salePriceR = salePrice.repalce(/,/g,"").replace(/원/g,"").trim();
+	const salePriceI = Number(salePriveR);
+	
+	const totalPrice = salePriceI * countInput;
+	
+</script> -->
+
 </body>
 
 </html>
