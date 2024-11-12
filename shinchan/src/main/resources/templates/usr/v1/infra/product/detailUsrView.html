@@ -77,7 +77,7 @@
                         <div class="pro-details-rating-wrap">
                             <div class="pro-details-rating">
                                 <i class="fa fa-star yellow"></i>
-                        	<span th:text="${#numbers.formatDecimal(#aggregates.sum(relist.![reStar])*1.0 / #lists.size(relist), 1, 1)}"> </span>
+                        	<span th:text="${#numbers.formatDecimal(item?.reviewAvg, 1 ,1)}"></span>
                             </div>
                             <a data-toggle="tab" href="#des-details3">후기 (<span th:text="${item?.reviewCount}"></span>)</a>
                         </div>
@@ -635,25 +635,13 @@ document.getElementById("btnReview").onclick = function(){
 <!-- <script>
 	window.onload = function(){
 		var totalPrice = document.getElementById("totalPrice");
-		var qtybutton = documnet.getElementById("qtybutton");
-		var salePrice = document.getElementById("prSalePrice")
+		var salePrice = document.getElementById("prSalePrice");
+		var selectedQty = document.getElementById("selectedQty");
 		
-		var salePriceR = salePrice.replace
-		
+				
 	}
-</script> -->
-<!-- <script>
-	const salePrice = document.querySelector('.sale-price');
-	const countInput = document.querySelector('.cart-plus-minus-box');
-	const orderPrice = document.querySelector('.order-price');
-	
-	const salePriceR = salePrice.repalce(/,/g,"").replace(/원/g,"").trim();
-	const salePriceI = Number(salePriveR);
-	
-	const totalPrice = salePriceI * countInput;
-	
-</script> -->
-
+</script>
+ -->
 </body>
 
 </html>

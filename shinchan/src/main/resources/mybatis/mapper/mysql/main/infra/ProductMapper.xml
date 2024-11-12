@@ -110,6 +110,7 @@
 			,a.prMoDate
 			,a.prDelNY
 			,(select count(*) from review r where r.Product_prseq = a.prseq) as reviewCount
+			,(select avg(r.reSeq) from review r where 1 = 1 and r.Product_prseq = a.prseq) as reviewAvg
 		from
 			Product a
 		where 1 =1

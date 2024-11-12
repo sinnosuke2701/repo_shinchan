@@ -79,7 +79,6 @@
                                             <div class="pro-details-rating-wrap">
 					                            <div class="pro-details-rating">
 					                                <i style="color: gold;" class="fa fa-star yellow"></i>
-<!-- 					                        		<span th:text="${#numbers.formatDecimal(#aggregates.sum(relist.![reStar])*1.0 / #lists.size(relist), 1, 1)}"> </span> -->
 					                        		<span th:text="${#numbers.formatDecimal(list.reviewAvg, 1 ,1)}"></span>
 					                            </div>
 					                            <span data-toggle="tab" href="#des-details3">후기 (<span th:text="${list.reviewCount}"></span>)</span>
