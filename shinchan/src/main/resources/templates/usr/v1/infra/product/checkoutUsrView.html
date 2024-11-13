@@ -93,7 +93,7 @@
                             </div>
                             <div class="your-order-middle" >
                                 <ul >
-                                    <li><span class="order-middle-left" th:text="${item?.prProdName}"></span><span class="order-price" th:text="${item?.prSalePrice}"></span></li>
+                                    <li><span class="order-middle-left" th:text="${item?.prProdName}"></span><span class="order-price" th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}"></span></li>
                                 </ul>
                             </div>
                             <div class="your-order-bottom">
@@ -105,7 +105,7 @@
                             <div class="your-order-total">
                                 <ul>
                                     <li class="order-total">총액 :</li>
-                                    <li><span class="order-price" th:text="${item?.prSalePrice}"></span></li>
+                                    <li><span class="order-price" th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}"></span></li>
                                 </ul>
                             </div>
                         </div>
