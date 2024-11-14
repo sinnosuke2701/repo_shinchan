@@ -92,8 +92,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="shop-2" class="tab-pane">
-                            <div class="shop-list-wrap mb-30">
+                        <div id="shop-2" class="tab-pane" >
+                            <div class="shop-list-wrap mb-30" th:each="list : ${list}">
                                 <div class="row">
                                     <div class="col-xl-4 col-lg-5 col-md-5 col-sm-6">
                                         <div class="product-wrap">
@@ -108,22 +108,19 @@
                                     </div>
                                     <div class="col-xl-8 col-lg-7 col-md-7 col-sm-6">
                                         <div class="shop-list-content">
-                                            <h3><a href="#">Products Name Here</a></h3>
+                                            <h3><a th:href="@{/usr/v1/infra/product/detailUsrView(prseq=${list.prseq})}" th:text="${list.prProdName}">Products Name Here</a></h3>
                                             <div class="product-list-price">
-                                                <span>$ 60.00</span>
-                                                <span class="old">$ 90.00</span>
+                                                <span class="old" th:text="${#numbers.formatInteger(list.prReguPrice, 3, 'COMMA') + '원'}"></span>
+                                                <span style="color: red; margin-left:15px;" th:text="${#numbers.formatInteger(list.prSalePrice, 3, 'COMMA') + '원'}"></span>
                                             </div>
                                             <div class="rating-review">
-                                                <div class="product-list-rating">
-                                                    <i class="fa fa-star-o yellow"></i>
-                                                    <i class="fa fa-star-o yellow"></i>
-                                                    <i class="fa fa-star-o yellow"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                                <a href="#">3 Reviews</a>
+                                                <div class="pro-details-rating">
+					                                <i style="color: gold;" class="fa fa-star yellow"></i>
+					                        		<span th:text="${#numbers.formatDecimal(list.reviewAvg, 1 ,1)}"></span>
+					                        		<span data-toggle="tab" href="#des-details3">후기 (<span th:text="${list.reviewCount}"></span>)</span>
+					                            </div>
                                             </div>
-                                            <p>Lorem ipsum dolor sit amet, consecteto adipisic elit eiusm tempor incidid ut labore et dolore magna aliqua Ut enim ad minim </p>
+                                            <p th:text="${list.prProdDesc}"></p>
                                             <div class="shop-list-btn btn-hover">
                                                 <a href="#">ADD TO CART</a>
                                             </div>
@@ -135,11 +132,11 @@
                     </div>
                     <!-- 페이지네이션 시작 -->
                     <div class="pro-pagination-style text-center mt-30">
-                            <ul>
-                                <li th:if="${vo.startPage gt vo.pageNumToShow}" class="page-item" style="cursor: pointer;"><a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|"><i class="fa-solid fa-angle-left"></i></a></li>
-                                <li th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" class="page-item" style="cursor: pointer;"><a class="pagination-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"></a></li>
-                            	<li th:if="${vo.endPage ne vo.totalPages}" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|"><i class="fa-solid fa-angle-right"></i></a></li>
-                        	</ul>
+                   		<ul>
+                            <li th:if="${vo.startPage gt vo.pageNumToShow}" class="page-item" style="cursor: pointer;"><a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|"><i class="fa-solid fa-angle-left"></i></a></li>
+                            <li th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" class="page-item" style="cursor: pointer;"><a class="pagination-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"></a></li>
+                        	<li th:if="${vo.endPage ne vo.totalPages}" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|"><i class="fa-solid fa-angle-right"></i></a></li>
+                        </ul>
                     </div>
 <!--                     <div class="pro-pagination-style text-center mt-30"> -->
 <!--                         <ul> -->
@@ -150,111 +147,10 @@
 <!--                         </ul> -->
 <!--                     </div> -->
                     <!-- 페이지네이션 끝 -->
-                </div>
-            </div>
-        </form>
-            <div class="col-lg-3">
-                <div class="sidebar-style mr-30">
-                    <div class="sidebar-widget">
-                        <h4 class="pro-sidebar-title">검색 </h4>
-                        <div class="pro-sidebar-search mb-50 mt-25">
-                            <form class="pro-sidebar-search-form" action="#">
-                                <input type="text" placeholder="검색어를 입력해주세요.">
-                                <button>
-                                    <i class="pe-7s-search"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="sidebar-widget">
-                        <h4 class="pro-sidebar-title">분류 </h4>
-                        <div class="sidebar-widget-list mt-30">
-                            <ul>
-                                <li>
-                                    <div class="sidebar-widget-list-left">
-                                        <input type="checkbox"> <a href="#">상의 <span>4</span> </a> 
-                                        <span class="checkmark"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar-widget-list-left">
-                                        <input type="checkbox" value=""> <a href="#">하의<span>4</span></a> 
-                                        <span class="checkmark"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar-widget-list-left">
-                                        <input type="checkbox" value=""> <a href="#">신발 <span>4</span> </a>
-                                        <span class="checkmark"></span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="sidebar-widget mt-50">
-                        <h4 class="pro-sidebar-title">Color </h4>
-                        <div class="sidebar-widget-list mt-20">
-                            <ul>
-                                <li>
-                                    <div class="sidebar-widget-list-left">
-                                        <input type="checkbox" value=""> <a href="#">그린 <span>4</span> </a>
-                                        <span class="checkmark"></span> 
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar-widget-list-left">
-                                        <input type="checkbox" value=""> <a href="#">화이트 <span>4</span> </a>
-                                        <span class="checkmark"></span> 
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar-widget-list-left">
-                                        <input type="checkbox" value=""> <a href="#">블루 <span>4</span> </a>
-                                        <span class="checkmark"></span> 
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar-widget-list-left">
-                                        <input type="checkbox" value=""> <a href="#">블랙 <span>4</span> </a>
-                                        <span class="checkmark"></span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="sidebar-widget mt-40">
-                        <h4 class="pro-sidebar-title">사이즈 </h4>
-                        <div class="sidebar-widget-list mt-20">
-                            <ul>
-                                <li>
-                                    <div class="sidebar-widget-list-left">
-                                        <input type="checkbox" value=""> <a href="#">XL</a>
-                                        <span class="checkmark"></span> 
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar-widget-list-left">
-                                        <input type="checkbox" value=""> <a href="#">L</a>
-                                        <span class="checkmark"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar-widget-list-left">
-                                        <input type="checkbox" value=""> <a href="#">SM</a>
-                                        <span class="checkmark"></span> 
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar-widget-list-left">
-                                        <input type="checkbox" value=""> <a href="#">XXL</a>
-                                        <span class="checkmark"></span> 
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+               		</div>
+            	</div>
+        	</form>
+            <div th:replace="~{usr/v1/infra/include/aside :: aside}"></div>
         </div>
     </div>
 </div>

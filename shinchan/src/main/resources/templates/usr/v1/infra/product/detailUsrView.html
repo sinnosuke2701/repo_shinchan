@@ -72,7 +72,7 @@
                         <h2 th:text="${item?.prProdName}"></h2>
                         <div class="product-details-price">
                             <span class="old" style="margin-right: 30px; margin-left: 0px;" th:text="${#numbers.formatInteger(item?.prReguPrice, 3, 'COMMA') + '원'}"></span>
-                            <span th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}"></span>
+                            <span th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}" id="prSalePrice"></span>
                         </div>
                         <div class="pro-details-rating-wrap">
                             <div class="pro-details-rating">
@@ -128,7 +128,7 @@
                             			</div>
                             			<div class="your-order-middle">
 											<ul>
-											    <li><span class="order-middle-left" th:text="${item?.prProdName}"></span><span class="order-price" th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}" ></span></li>
+											    <li><span class="order-middle-left" th:text="${item?.prProdName}"></span><span class="order-price" th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}" data-price="${item?.prSalePrice}"></span></li>
 											    <li><span>사이즈 :</span><span id="selecteSize" name="selecteSize"></span></li>
 											    <li><span>개수 :</span><span class="cart-plus-minus-box"  type="text" id="selectedQty" name="qtybutton"></span></li>
 											</ul>
@@ -624,9 +624,10 @@ document.getElementById("btnReview").onclick = function(){
         var prSizeSelect = document.getElementById("prSize");
         var selectedSize = prSizeSelect.options[prSizeSelect.selectedIndex].text;
         document.getElementById("selecteSize").textContent = selectedSize;
+        
     };
     document.getElementById("prSize").addEventListener("change", function() {
-        var selecteSize = this.options[this.selectedIndex].text;
+        var selecteSize = this.options[this.selectedIndex].text.trim();
         document.getElementById("selecteSize").textContent = selecteSize;
     });
 </script>

@@ -20,6 +20,8 @@ public class ProductDto {
 	private Date prMoDate;
 	private Integer prDelNY;
 	
+	private Integer sizeCount;
+	
 	private Integer reviewCount;
 	private Double reviewAvg;
 	
@@ -39,6 +41,8 @@ public class ProductDto {
 	private String pmEmail;
 	private String pmDelivery;
 	private Integer pmDelNY;
+	
+	private String cd_Name;
 	
 	//파일첨부
 	private MultipartFile uploadFile;
@@ -321,5 +325,17 @@ public class ProductDto {
 	}
 	public void setReviewAvg(Double reviewAvg) {
 		this.reviewAvg = reviewAvg;
+	}
+	public String getCd_Name() {
+		return cd_Name;
+	}
+	public void setCd_Name(String cd_Name) {
+		this.cd_Name = cd_Name;
+	}
+	public Integer getSizeCount() {
+		return sizeCount;
+	}
+	public void setSizeCount(Integer sizeCount) {
+		this.sizeCount = sizeCount;
 	}
 }

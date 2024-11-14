@@ -1,0 +1,120 @@
+<!-- <div th:replace="~{usr/v1/infra/include/aside :: aside}"></div> -->
+<th:block th:fragment="aside">
+	<div class="col-lg-3">
+		<div class="sidebar-style mr-30">
+			<div class="sidebar-widget">
+				<h4 class="pro-sidebar-title">검색</h4>
+				<div class="pro-sidebar-search mb-50 mt-25">
+					<form class="pro-sidebar-search-form" action="#">
+						<input type="text" placeholder="검색어를 입력해주세요.">
+						<button>
+							<i class="pe-7s-search"></i>
+						</button>
+					</form>
+				</div>
+			</div>
+			<div class="sidebar-widget">
+				<h4 class="pro-sidebar-title" >분류</h4>
+				<div class="sidebar-widget-list mt-30">
+					<ul>
+						<li>
+							<div class="sidebar-widget-list-left">
+								<input type="checkbox"> <a href="#">상의 <span>4</span>
+								</a> <span class="checkmark"></span>
+							</div>
+						</li>
+						<li>
+							<div class="sidebar-widget-list-left">
+								<input type="checkbox" value=""> <a href="#">하의<span>4</span></a>
+								<span class="checkmark"></span>
+							</div>
+						</li>
+						<li>
+							<div class="sidebar-widget-list-left">
+								<input type="checkbox" value=""> <a href="#">신발 <span>4</span>
+								</a> <span class="checkmark"></span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="sidebar-widget mt-50">
+				<h4 class="pro-sidebar-title">Color</h4>
+				<div class="sidebar-widget-list mt-20">
+					<ul>
+						<li>
+							<div class="sidebar-widget-list-left">
+								<input type="checkbox" value=""> <a href="#">그린 <span>4</span>
+								</a> <span class="checkmark"></span>
+							</div>
+						</li>
+						<li>
+							<div class="sidebar-widget-list-left">
+								<input type="checkbox" value=""> <a href="#">화이트 <span>4</span>
+								</a> <span class="checkmark"></span>
+							</div>
+						</li>
+						<li>
+							<div class="sidebar-widget-list-left">
+								<input type="checkbox" value=""> <a href="#">블루 <span>4</span>
+								</a> <span class="checkmark"></span>
+							</div>
+						</li>
+						<li>
+							<div class="sidebar-widget-list-left">
+								<input type="checkbox" value=""> <a href="#">블랙 <span>4</span>
+								</a> <span class="checkmark"></span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="sidebar-widget mt-40" >
+			    <h4 class="pro-sidebar-title">사이즈</h4>
+			    <div class="sidebar-widget-list mt-20" th:each="code : ${@codeService.selectListCachedCode(5)}">
+			        <ul>
+			            <li >
+			                <div class="sidebar-widget-list-left" >
+			                    <input type="checkbox"> 
+			                    <a href="#" th:text="${code.cd_Name}"></a> 
+			                    <span class="checkmark" ></span>
+			                </div>
+			            </li>
+			        </ul>
+			    </div>
+			</div>
+			
+<!-- 			<div class="sidebar-widget mt-40"> -->
+<!-- 				<h4 class="pro-sidebar-title">사이즈</h4> -->
+<!-- 				<div class="sidebar-widget-list mt-20"> -->
+<!-- 					<ul> -->
+<!-- 						<li> -->
+<!-- 							<div class="sidebar-widget-list-left"> -->
+<!-- 								<input type="checkbox" value=""> <a href="#">XL</a> <span -->
+<!-- 									class="checkmark"></span> -->
+<!-- 							</div> -->
+<!-- 						</li> -->
+<!-- 						<li> -->
+<!-- 							<div class="sidebar-widget-list-left"> -->
+<!-- 								<input type="checkbox" value=""> <a href="#">L</a> <span -->
+<!-- 									class="checkmark"></span> -->
+<!-- 							</div> -->
+<!-- 						</li> -->
+<!-- 						<li> -->
+<!-- 							<div class="sidebar-widget-list-left"> -->
+<!-- 								<input type="checkbox" value=""> <a href="#">SM</a> <span -->
+<!-- 									class="checkmark"></span> -->
+<!-- 							</div> -->
+<!-- 						</li> -->
+<!-- 						<li> -->
+<!-- 							<div class="sidebar-widget-list-left"> -->
+<!-- 								<input type="checkbox" value=""> <a href="#">XXL</a> <span -->
+<!-- 									class="checkmark"></span> -->
+<!-- 							</div> -->
+<!-- 						</li> -->
+<!-- 					</ul> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+		</div>
+	</div>
+</th:block>

@@ -423,32 +423,50 @@
 	    $('.cart-plus-minus-box').val(1);  // 수량 입력 필드에 1을 기본값으로 설정
 	    $('#selectedQty').text(1);  // 개수 텍스트에 1을 기본값으로 설정
 
+	    // 가격 초기화 (HTML에서 가져오기)
+	    var prSalePriceText = document.getElementById("prSalePrice").innerText;
+	    var prSalePrice = parseInt(prSalePriceText.replace('원', '').replace(/,/g, ''), 10);
+
 	    // 수량 증가/감소 버튼 클릭 이벤트 처리
 	    $(".qtybutton").on("click", function() {
 	        var $button = $(this);
-	        var oldValue = $button.parent().find("input").val();
+	        var $input = $button.parent().find("input");
+	        var oldValue = parseInt($input.val(), 10);  // 문자열을 숫자로 변환
 
 	        // 빈 칸이거나 잘못된 값이면 기본값으로 설정
-	        if (oldValue === "" || isNaN(oldValue)) {
+	        if (isNaN(oldValue) || oldValue < 1) {
 	            oldValue = 1;  // 잘못된 값이면 기본값 1로 설정
 	        }
 
 	        var newVal;
 	        if ($button.text() === "+") {
-	            newVal = parseFloat(oldValue) + 1;
+	            newVal = oldValue + 1;
 	        } else {
 	            // 1 미만으로 감소하지 않도록 설정
-	            newVal = (oldValue > 1) ? parseFloat(oldValue) - 1 : 1;
+	            newVal = (oldValue > 1) ? oldValue - 1 : 1;
 	        }
 
 	        // 새로 계산된 수량을 input 필드와 화면에 표시
-	        $button.parent().find("input").val(newVal);
+	        $input.val(newVal);  // 숫자 값을 그대로 설정
 	        $('#selectedQty').text(newVal);  // 개수 텍스트 업데이트
 	        $(".your-order-middle .cart-plus-minus-box").text(newVal);  // 화면 상의 수량 업데이트
+
+	        // 수량과 가격을 곱해서 총 가격 계산
+	        var totalPrice = newVal * prSalePrice;
+	        $('#totalPrice').text(totalPrice.toLocaleString() + '원');  // 가격을 원화로 표시 (천 단위 쉼표 추가)
+	        console.log("totalPrice: ", totalPrice);  // 총 가격 출력
 	    });
+
+	    // 페이지 로드 시 초기 수량 상태 확인
+	    var initialQty = document.getElementById("selectedQty").innerText.trim();
+	    console.log("초기 수량: ", initialQty);  // 여기에서도 1이 출력되어야 함
+
+	    // 페이지 로드 시 초기 총 가격 계산
+	    var initialTotalPrice = prSalePrice * 1;  // 초기 수량이 1일 때의 총 가격
+	    $('#totalPrice').text(initialTotalPrice.toLocaleString() + '원');  // 가격을 원화로 표시
+	    console.log("초기 총 가격: ", initialTotalPrice);
 	});
 
-    
     
     /*--
     Menu Stick
