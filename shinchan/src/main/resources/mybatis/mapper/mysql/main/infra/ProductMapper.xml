@@ -48,7 +48,7 @@
 				,a.prReDate
 				,a.prMoDate
 				,a.prDelNY
-				,(select count(b.cdseq) from code b where 1 = 1 and b.cd_Name = a.prSize) as sizeCount
+				,(select count(c.cdseq) from code c where 1 = 1 and c.cdseq = a.prSize) as sizeCount
 				,(select count(r.reSeq) from review r where 1 = 1 and r.Product_prseq = a.prseq) as reviewCount
 				,(select avg(r.reSeq) from review r where 1 = 1 and r.Product_prseq = a.prseq) as reviewAvg
 		<include refid="selectCommon"></include>

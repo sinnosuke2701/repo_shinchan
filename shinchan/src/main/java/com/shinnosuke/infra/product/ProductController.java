@@ -85,6 +85,7 @@ public class ProductController {
 		productVo.setParamsPaging(ProductService.selectOneCount(productVo));
 		List<ProductDto> products = ProductService.selectList(productVo);
 		model.addAttribute("list", products);
+		System.out.println("Product sizeCount????????????????: " + productDto.getSizeCount());
 		List<ProductDto> product = ProductService.selectListReview(productDto);
 		model.addAttribute("relist" , product);
 		return "/usr/v1/infra/product/topUsrList";
