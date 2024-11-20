@@ -114,4 +114,10 @@ public class ProductController {
 		return "/usr/v1/infra/product/checkoutUsrView";
 	}
 	
+	@RequestMapping(value="/usr/v1/infra/review/reviewUsrInst")
+	public String reviewUsrInst(ProductDto productDto) {
+		ProductService.insertReview(productDto);
+		return "redirect:/usr/v1/infra/product/detailUsrView";
+	}
+	
 }

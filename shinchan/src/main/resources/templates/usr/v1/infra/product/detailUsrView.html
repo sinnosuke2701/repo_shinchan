@@ -330,37 +330,38 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="ratting-form-wrapper pl-50">
-                                    <h3>후기 작성</h3>
-                                    <div class="ratting-form">
-                                        <form id="form" name="form" method="post" action="/usr/v1/infra/product/detailUsrView">
-                                            <div class="star-box">
-                                                <div class="ratting-star" >
-                                                    <i class="fa fa-star" value="1"></i>
-                                                    <i class="fa fa-star" value="2"></i>
-                                                    <i class="fa fa-star" value="3"></i>
-                                                    <i class="fa fa-star" value="4"></i>
-                                                    <i class="fa fa-star" value="5"></i>
-                                                </div>
-                                            </div> 
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="rating-form-style mb-10">
-                                                        <input type="text" id="reTitle" name="reTitle" placeholder="제목" autocomplete="off">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="rating-form-style form-submit">
-                                                        <textarea name="reComment" id="reComment" placeholder="후기 내용" autocomplete="off"></textarea>
-                                                        <input type="button" id="btnReview" value="확인">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+	                        <div class="col-lg-6">
+	                            <div class="ratting-form-wrapper pl-50">
+	                                <h3>후기 작성</h3>
+	                                <div class="ratting-form">
+	                                    <form id="reviewform" name="reviewform" method="post" action="/usr/v1/infra/review/reviewUsrInst">
+	                                        <div class="star-box">
+	                                            <div class="ratting-star" >
+	                                                <i class="fa fa-star" value="1"></i>
+	                                                <i class="fa fa-star" value="2"></i>
+	                                                <i class="fa fa-star" value="3"></i>
+	                                                <i class="fa fa-star" value="4"></i>
+	                                                <i class="fa fa-star" value="5"></i>
+	                                            </div>
+	                                        </div> 
+	                                        <div class="row">
+	            	                            <div class="col-md-6">
+	                                                <div class="rating-form-style mb-10">
+	                                                    <input type="text" id="reTitle" name="reTitle" placeholder="제목" autocomplete="off">
+	                                                </div>
+	                                            </div>
+	                                            <div class="col-md-12">
+	                                                <div class="rating-form-style form-submit">
+	                                                    <textarea name="reComment" id="reComment" placeholder="후기 내용" autocomplete="off"></textarea>
+	                                                    <input type="button" id="btnReview" value="확인" th:if="${session.sessUsrSeq != null}">
+	                                                    <input type="button" id="btnLogin" value="로그인을 해주세요." th:unless="${session.sessUsrSeq != null}">
+	                                                </div>
+	                                            </div>
+	                                        </div>
+	                                    </form>
+	                                </div>
+	                            </div>
+	                        </div>
                         </div>
                     </div>
                 </div>
@@ -586,8 +587,8 @@
 </script>
 <script>
 document.getElementById("btnReview").onclick = function(){
-	let form = document.querySelector("form[name = form]");
-	form.action = "/usr/v1/infra/product/detailUsrView";
+	let form = document.querySelector("form[name = reviewform]");
+	form.action = "/usr/v1/infra/review/reviewUsrInst";
 	form.submit();
 }
 </script>
@@ -631,6 +632,13 @@ document.getElementById("btnReview").onclick = function(){
         document.getElementById("selecteSize").textContent = selecteSize;
     });
 </script>
+<!-- <script>
+	document.getElementById("btnReview").onclick = function(){
+		let form = document.querySelector("form[name=reviewfrom]");
+		form.action = "/usr/v1/infra/review/reviewUsrInst";
+		form.submit();
+	}
+</script> -->
 </body>
 
 </html>

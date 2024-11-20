@@ -10,7 +10,7 @@
 	
 	<sql id="selectCommon">
 		from
-			Code a
+			code a
 		left join
 			codegroup b
 		on
@@ -31,7 +31,7 @@
 			<when test="sh_OptionDate == 2">AND a.cd_MoDate BETWEEN #{sh_DateStart} AND #{sh_DateEnd}</when>
 		</choose>
 	</sql>
-	
+	 
 	<select id="selectList" resultMap="resultMapObj">
 		select aa.* from (
 			select
@@ -69,7 +69,7 @@
 			,a.cd_DelNY
 			,a.CodeGroup_seq	
 		from
-			Code a
+			code a
 		where 1 =1
 			and a.cdseq = #{cdseq}		
 	</select>
@@ -101,7 +101,7 @@
 	
 		
 	<update id="update">
-		update Code
+		update code
 		set
 			cd_Name = #{cd_Name}
 			,cd_UseNY = #{cd_UseNY}
@@ -118,12 +118,12 @@
 			a.cgseq as CodeGroup_seq
 			,a.cg_Name
 		from
-			CodeGroup a
+			codegroup a
 		where 1=1
 	</select>
 	
 	<update id="uelete">
-		update Code
+		update code
 		set
 			cd_DelNY = 1
 		where 1 = 1
@@ -142,7 +142,7 @@
 			,cd_Name
 			,CodeGroup_seq
 		FROM
-			Code
+			code
 		WHERE 1=1
 			AND cd_DelNY = 0
 		    AND cd_UseNY = 1

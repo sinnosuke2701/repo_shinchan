@@ -109,58 +109,10 @@
                                 </ul>
                             </div>
                         </div>
-<!--                         <div class="payment-method"> -->
-<!--                             <div class="payment-accordion element-mrg"> -->
-<!--                                 <div class="panel-group" id="accordion"> -->
-<!--                                     <div class="panel payment-accordion"> -->
-<!--                                         <div class="panel-heading" id="method-one"> -->
-<!--                                             <h4 class="panel-title"> -->
-<!--                                                 <a data-toggle="collapse" data-parent="#accordion" href="#method1"> -->
-<!--                                                     Direct bank transfer -->
-<!--                                                 </a> -->
-<!--                                             </h4> -->
-<!--                                         </div> -->
-<!--                                         <div id="method1" class="panel-collapse collapse show"> -->
-<!--                                             <div class="panel-body"> -->
-<!--                                                 <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p> -->
-<!--                                             </div> -->
-<!--                                         </div> -->
-<!--                                     </div> -->
-<!--                                     <div class="panel payment-accordion"> -->
-<!--                                         <div class="panel-heading" id="method-two"> -->
-<!--                                             <h4 class="panel-title"> -->
-<!--                                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#method2"> -->
-<!--                                                     Check payments -->
-<!--                                                 </a> -->
-<!--                                             </h4> -->
-<!--                                         </div> -->
-<!--                                         <div id="method2" class="panel-collapse collapse"> -->
-<!--                                             <div class="panel-body"> -->
-<!--                                                 <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p> -->
-<!--                                             </div> -->
-<!--                                         </div> -->
-<!--                                     </div> -->
-
-<!--                                     <div class="panel payment-accordion"> -->
-<!--                                         <div class="panel-heading" id="method-three"> -->
-<!--                                             <h4 class="panel-title"> -->
-<!--                                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#method3"> -->
-<!--                                                     Cash on delivery -->
-<!--                                                 </a> -->
-<!--                                             </h4> -->
-<!--                                         </div> -->
-<!--                                         <div id="method3" class="panel-collapse collapse"> -->
-<!--                                             <div class="panel-body"> -->
-<!--                                                 <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p> -->
-<!--                                             </div> -->
-<!--                                         </div> -->
-<!--                                     </div> -->
-<!--                                 </div> -->
-<!--                             </div> -->
-<!--                         </div> -->
                     </div>
                     <div class="Place-order mt-25">
-                        <button class="btnPayment" type="button" id="btnPayment">결제하기</button>
+                        <button class="btnPayment" type="button" id="btnPayment" th:if="${session.sessSeqUsr != null}">결제하기</button>
+                        <button class="btnPayment" type="button" id="btnLogin" th:unless="${session.sessSeqUsr != null}">로그인을 해주세요.</button>
                     </div>
                 </div>
             </div>
@@ -188,6 +140,22 @@
 <!-- Main JS -->
 <script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/main.js"></script>
 
+<script>
+	document.getElementById("btnLogout").onclick = function(){
+				$.ajax({
+					async: true 
+					,cache: false
+					,type: "post"
+					,url: "/signoutXdmProc"
+					,success: function(response) {
+								location.href = "/usr/v1/infra/index/indexUsrView";
+					}
+					,error : function(jqXHR, textStatus, errorThrown){
+						alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+					}
+				});
+			}
+</script>
 <script>
 	document.getElementById("btnPayment").onclick = function(){
 		let form = document.querySelector("form[name=form]");
@@ -285,6 +253,11 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
 });
 </script>
 <!-- kakao map 위도경도 end-->
+<script>
+	document.getElementById("btnLogin").onclick = function(){
+		window.location = "/usr/v1/infra/member/signinUsrForm";
+	}
+</script>
 </body>
 
 </html>

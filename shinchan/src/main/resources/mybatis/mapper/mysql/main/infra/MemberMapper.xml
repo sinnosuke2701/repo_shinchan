@@ -10,7 +10,7 @@
 	
 	<sql id="selectCommon">
 		from
-			member a
+			Member a
 		where 1 = 1
 		<if test="shDelNY != null and !shDelNY.equals('')">AND memDelNY = #{shDelNY}</if>
 		<if test="shGender != null and !shGender.equals('')">AND memGender = #{shGender}</if>
@@ -66,7 +66,7 @@
 	</select>
 	
 	<insert id="insert">
-		insert into member(
+		insert into Member(
     		memName
     		,memGender
     		,memId
@@ -123,13 +123,13 @@
     		,a.memMoDate
     		,a.memDelNY
 		from
-			member a
+			Member a
  		where 1 = 1
  			and a.memseq = #{memseq}
 	</select>
 	
 	<update id = "update">
-		update member
+		update Member
 		set
 			memName = #{memName}
 			,memGender = #{memGender}
@@ -149,13 +149,13 @@
 	</update>
 	
 	<delete id="delete">
-		delete from member
+		delete from Member
 		where 1=1
 			and memseq = #{memseq}
 	</delete>
 	
 	<update id="uelete">
-		update member
+		update Member
 		set
 			memDelNY = 1
 		where 1 = 1
@@ -166,9 +166,9 @@
 		select
 			a.memId
 		from 
-			member a
+			Member a
 		where 1 = 1
-			and memId = #{memId}
+			and memId = #{memId} 
 	</select>
 	
 	<select id="selectOneLogin" resultMap="resultMapObj">
@@ -183,7 +183,7 @@
 			,a.memDtAddress
 			,a.memEmail
 		from 
-			member a
+			Member a
 		where 1 = 1
 			and memId = #{memId}
 	</select>

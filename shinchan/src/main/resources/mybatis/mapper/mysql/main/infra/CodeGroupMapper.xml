@@ -10,7 +10,7 @@
 	
 	<sql id="selectCommon">
 		from
-			CodeGroup a
+			codegroup a
 		where 1 = 1
 		<if test="sh_DelNY != null and !sh_DelNY.equals('')">And cg_DelNY = #{sh_DelNY}</if>
 		<if test="sh_UseNY != null and !sh_UseNY.equals('')">And cg_UseNY = #{sh_UseNY}</if>
@@ -64,7 +64,7 @@
 			,a.cg_MoDate
 			,a.cg_DelNY
 		from
-			CodeGroup a
+			codegroup a
 		where 1 =1
 			and a.cgseq = #{cgseq}		
 	</select>
@@ -94,7 +94,7 @@
 		
 		
 	<update id="update">
-		update CodeGroup
+		update codegroup
 		set
 			cg_Name = #{cg_Name}
 			,cg_UseNY = #{cg_UseNY}

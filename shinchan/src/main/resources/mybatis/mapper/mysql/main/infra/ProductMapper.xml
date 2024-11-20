@@ -10,7 +10,7 @@
 
 	<sql id="selectCommon">
 		from 
-			product a
+			Product a
 		where 1 = 1
 		<if test="shDelNY != null and !shDelNY.equals('')">AND prDelNY = #{shDelNY}</if>
 		<if test="shUseNY != null and !shUseNY.equals('')">AND prUseNY = #{shUseNY}</if>
@@ -63,7 +63,7 @@
 	</select>	
 	
 	<insert id="insert">
-		insert into product(
+		insert into Product(
 			prProdName
 			,prUseNY
 			,prSort
@@ -119,7 +119,7 @@
 	</select>
 	
 	<update id="update">
-		update product
+		update Product
 		set
 		prProdName = #{prProdName}
 		,prUseNY = #{prUseNY}
@@ -130,19 +130,20 @@
 		,prReguPrice = #{prReguPrice}
 		,prSalePrice = #{prSalePrice}
 		,prInventory = #{prInventory}
+		,prMoDate = now()
 		,prDelNY = #{prDelNY}
 	where 1=1
 		and prseq = #{prseq}
 	</update>
 	
 	<delete id="delete">
-		delete from product
+		delete from Product
 		where 1 = 1
 			and prseq = #{prseq}
 	</delete>
 	
 	<update id="uelete">
-		update product
+		update Product
 		set
 			prDelNY = 1
 		where 1 = 1
@@ -158,28 +159,28 @@
 		from
 			review a
 		left join
-			product b on b.prseq = a.Product_prseq
+			Product b on b.prseq = a.Product_prseq
 		left join
-			member c on c.memseq = a.Member_memseq
+			Member c on c.memseq = a.Member_memseq
 		where 1 = 1
 		 and b.prseq = #{prseq}
 	</select>
 	
-<!-- 	<insert id="insertReview"> -->
-<!-- 		insert into review ( -->
-<!-- 			reTitle -->
-<!-- 			,reComment -->
-<!-- 			,reDelNY -->
-<!-- 			,Product_prseq -->
-<!-- 			,Member_memseq -->
-<!-- 		)values( -->
-<!-- 			#{reTitle} -->
-<!-- 			,#{reComment} -->
-<!-- 			,0 -->
-<!-- 			,#{prseq} -->
-<!-- 			,#{Member_memseq} 로그인된 세션 값으로 ㅇㅇ --> 
-<!-- 		) -->
-<!-- 	</insert> -->
+	<insert id="insertReview">
+		insert into review (
+			reTitle
+			,reComment
+			,reDelNY
+			,Product_prseq
+			,Member_memseq
+		)values(
+			#{reTitle}
+			,#{reComment}
+			,0
+			,#{prseq}
+			,#{Member_memseq}
+		)
+	</insert>
 		
 	<insert id="insertPayment">
 		insert into payment(
@@ -209,7 +210,7 @@
 	</insert>
 	
 	<insert id="insertUploaded">
-		insert into productfile(
+		insert into productFile(
 			pfPath,
 			pfOriginalName,
 			pfUuidFileName,

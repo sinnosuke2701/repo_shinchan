@@ -15048,7 +15048,8 @@ h3.cart-page-title {
   border-radius: 50px;
   z-index: 9;
   border : none;
-  width : 370px;
+  width : 400px;
+  margin-left: 37px;
 }
 
 /*------ 22. contact Page  ------*/
