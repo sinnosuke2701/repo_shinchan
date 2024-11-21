@@ -16011,5 +16011,14 @@ h3.cart-page-title {
     background-color: #007bff; /* 현재 페이지 배경색 */
     color: white; /* 현재 페이지 텍스트 색상 */
 }
-  
+}
+.btnReview {
+  border: none;
+  font-size: 17px;
+  border-radius: 15px;
+  background-color: #a749ff;
+  width: 170px;
+  color: #fff;
+  cursor: pointer;
+  height: 60px;
 }

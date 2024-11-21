@@ -335,13 +335,15 @@
 	                                <h3>후기 작성</h3>
 	                                <div class="ratting-form">
 	                                    <form id="reviewform" name="reviewform" method="post" action="/usr/v1/infra/review/reviewUsrInst">
+	                                    	<input type="hidden" id="Product_prseq" name="Product_prseq" th:value="${item?.prseq}">
+	                                    	<input type="hidden" id="memId" name="Member_memseq" th:value="${session.sessSeqUsr}">
 	                                        <div class="star-box">
 	                                            <div class="ratting-star" >
-	                                                <i class="fa fa-star" value="1"></i>
-	                                                <i class="fa fa-star" value="2"></i>
-	                                                <i class="fa fa-star" value="3"></i>
-	                                                <i class="fa fa-star" value="4"></i>
-	                                                <i class="fa fa-star" value="5"></i>
+	                                                <i type="radio" class="fa fa-star" value="1"></i>
+	                                                <i type="radio" class="fa fa-star" value="2"></i>
+	                                                <i type="radio" class="fa fa-star" value="3"></i>
+	                                                <i type="radio" class="fa fa-star" value="4"></i>
+	                                                <i type="radio" class="fa fa-star" value="5"></i>
 	                                            </div>
 	                                        </div> 
 	                                        <div class="row">
@@ -353,8 +355,8 @@
 	                                            <div class="col-md-12">
 	                                                <div class="rating-form-style form-submit">
 	                                                    <textarea name="reComment" id="reComment" placeholder="후기 내용" autocomplete="off"></textarea>
-	                                                    <input type="button" id="btnReview" value="확인" th:if="${session.sessUsrSeq != null}">
-	                                                    <input type="button" id="btnLogin" value="로그인을 해주세요." th:unless="${session.sessUsrSeq != null}">
+	                                                    <button class="btnReview" type="button" id="btnReview" th:if="${session.sessSeqUsr != null}">확인</button>
+	                                                    <button class="btnReview" type="button" id="btnLogin" th:unless="${session.sessSeqUsr != null}">로그인을 해주세요.</button>
 	                                                </div>
 	                                            </div>
 	                                        </div>
@@ -632,13 +634,35 @@ document.getElementById("btnReview").onclick = function(){
         document.getElementById("selecteSize").textContent = selecteSize;
     });
 </script>
-<!-- <script>
+<script>
 	document.getElementById("btnReview").onclick = function(){
-		let form = document.querySelector("form[name=reviewfrom]");
+		let form = document.querySelector("form[name=reviewform]");
 		form.action = "/usr/v1/infra/review/reviewUsrInst";
 		form.submit();
 	}
+</script>
+<!-- <script>
+	document.getElementById("btnReview").onclick = function(){
+		$.ajax({
+			async: true 
+			,cache: false
+			,type: "post"
+			,url: "/usr/v1/infra/review/reviewUsrInst"
+			,success: function(response) {
+						location.href = "/usr/v1/infra/index/indexUsrView";
+// 						window.location.reload();
+			}
+			,error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+			}
+		});
+	}
 </script> -->
+<script>
+	document.getElementById("btnLogin").onclick = function(){
+		window.location = "/usr/v1/infra/member/signinUsrForm";
+	}
+</script>
 </body>
 
 </html>

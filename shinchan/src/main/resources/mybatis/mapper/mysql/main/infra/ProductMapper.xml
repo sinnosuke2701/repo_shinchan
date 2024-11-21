@@ -177,7 +177,7 @@
 			#{reTitle}
 			,#{reComment}
 			,0
-			,#{prseq}
+			,#{Product_prseq}
 			,#{Member_memseq}
 		)
 	</insert>
