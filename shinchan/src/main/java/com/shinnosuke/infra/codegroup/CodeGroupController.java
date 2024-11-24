@@ -109,13 +109,13 @@ public class CodeGroupController {
 		System.out.println("node.get(\"header\").get(\"resultCode\").asText(): " + node.get("header").get("resultCode").asText());
 		System.out.println("node.get(\"header\").get(\"resultMsg\").asText(): " + node.get("header").get("resultMsg").asText());
 		System.out.println("node.get(\"header\").get(\"resultMsg\").asText(): " + node.get("body").get("items").get(1).get("KIT_EXPRT_QTY").asText());
-		return "/xdm/v1/infra/codegroup/codeGroupXdmList";
+		return "xdm/v1/infra/codegroup/codeGroupXdmList";
 
 	}
 	@RequestMapping(value = "/xdm/v1/infra/codegroup/codeGroupXdmForm")
 	public String codeGroupXdmForm() {
 		
-		return "/xdm/v1/infra/codegroup/codeGroupXdmForm";
+		return "xdm/v1/infra/codegroup/codeGroupXdmForm";
 	}
 	
 	@RequestMapping(value = "/xdm/v1/infra/codegroup/codeGroupXdmInst")
@@ -138,7 +138,7 @@ public class CodeGroupController {
 	@RequestMapping(value = "/xdm/v1/infra/codegroup/codeGroupXdmMfom")
 	public String codeGroupXdmMfom(CodeGroupDto codeGroupDto, Model model) {
 		model.addAttribute("item",CodeGroupService.selectOne(codeGroupDto));
-		return "/xdm/v1/infra/codegroup/codeGroupXdmMfom";
+		return "xdm/v1/infra/codegroup/codeGroupXdmMfom";
 	}
 	
 	@RequestMapping(value = "/xdm/v1/infra/codegroup/codeGroupXdmPdt")

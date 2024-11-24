@@ -69,11 +69,11 @@ public class MemberController {
 //		
 //		thread.start();
 		
-			return "/xdm/v1/infra/member/MemberXdmList";
+			return "xdm/v1/infra/member/MemberXdmList";
 	}
 	@RequestMapping(value = "/xdm/v1/infra/member/MemberXdmForm")
 	public String MemberXdmFrom(){
-		return "/xdm/v1/infra/member/MemberXdmForm";
+		return "xdm/v1/infra/member/MemberXdmForm";
 	}
 	
 	@RequestMapping (value = "/xdm/v1/infra/member/MemberXdmInst")
@@ -85,7 +85,7 @@ public class MemberController {
 	@RequestMapping(value = "/xdm/v1/infra/member/MemberXdmMfom")
 	public String MemberXdmMfom(MemberDto memberDto,Model model) {
 		model.addAttribute("item",MemberService.selectOne(memberDto));
-		return "/xdm/v1/infra/member/MemberXdmMfom";
+		return "xdm/v1/infra/member/MemberXdmMfom";
 	}
 	
 	@RequestMapping(value = "/xdm/v1/infra/member/MemberXdmPdt")
@@ -108,7 +108,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "/xdm/v1/infra/member/signinXdmForm")
 	public String signinXdmForm(MemberDto memberDto) {
-		return "/xdm/v1/infra/member/signinXdmForm";
+		return "xdm/v1/infra/member/signinXdmForm";
 	}
 	
 	@ResponseBody
@@ -142,7 +142,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "/xdm/v1/infra/index/indexXdmView")
 	public String indexXdmView() {
-		return "/xdm/v1/infra/index/indexXdmView";
+		return "xdm/v1/infra/index/indexXdmView";
 	}
 	
 	@ResponseBody
@@ -166,17 +166,17 @@ public class MemberController {
 	public String accountUsrMfom(Model model , MemberDto memberDto,HttpSession httpSession) {
 //		memberDto.setMemseq(httpSession.getAttribute(""));
 		model.addAttribute("item",MemberService.selectOne(memberDto));
-		return "/usr/v1/infra/product/accountUsrMfom";
+		return "usr/v1/infra/product/accountUsrMfom";
 	}
 	
 	@RequestMapping(value = "/usr/v1/infra/member/signupUsrForm")
 	public String signupUsrForm() {
-		return "/usr/v1/infra/member/signupUsrForm";
+		return "usr/v1/infra/member/signupUsrForm";
 	}
 	
 	@RequestMapping(value = "/usr/v1/infra/member/signinUsrForm")
 	public String signinUsrForm() {
-		return "/usr/v1/infra/member/signinUsrForm";
+		return "usr/v1/infra/member/signinUsrForm";
 	}
 	
 	@ResponseBody

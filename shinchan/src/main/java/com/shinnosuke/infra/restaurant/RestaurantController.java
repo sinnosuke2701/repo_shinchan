@@ -29,13 +29,13 @@ public class RestaurantController {
 //					+ restaurantdto.getRes_MoDate() + " | " + restaurantdto.getRes_DelNY());
 //		}
 
-		return "/xdm/v1/infra/restaurant/RestaurantXdmList";
+		return "xdm/v1/infra/restaurant/RestaurantXdmList";
 	}
 
 	@RequestMapping(value = "/xdm/v1/infra/restaurant/RestaurantXdmForm")
 	public String RestaurantXdmForm() {
 		
-		return "/xdm/v1/infra/restaurant/RestaurantXdmForm";
+		return "xdm/v1/infra/restaurant/RestaurantXdmForm";
 	}
 
 	
@@ -58,7 +58,7 @@ public class RestaurantController {
 	@RequestMapping(value = "/xdm/v1/infra/restaurant/RestaurantXdmMfom")
 	public String RestaurantXdmMfom(RestaurantDto restaurantDto,Model model) {
 		model.addAttribute("item",RestaurantService.selectOne(restaurantDto));
-		return "/xdm/v1/infra/restaurant/RestaurantXdmMfom";
+		return "xdm/v1/infra/restaurant/RestaurantXdmMfom";
 	}
 	
 }

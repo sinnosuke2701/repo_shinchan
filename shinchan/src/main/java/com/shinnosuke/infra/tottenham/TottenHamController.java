@@ -9,7 +9,7 @@ public class TottenHamController {
 	@RequestMapping(value = "/xdm/v1/infra/tottenham/TottenHamXdm")
 		public String TottenHamXdm() {
 		
-		return "/xdm/v1/infra/tottenham/TottenHamXdm";
+		return "xdm/v1/infra/tottenham/TottenHamXdm";
 	}
 	
 }

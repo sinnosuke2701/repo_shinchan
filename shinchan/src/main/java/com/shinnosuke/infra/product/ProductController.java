@@ -34,12 +34,12 @@ public class ProductController {
 		List<ProductDto> products = ProductService.selectList(productVo);
 		model.addAttribute("list", products);
 		
-		return "/xdm/v1/infra/product/ProductXdmList";
+		return "xdm/v1/infra/product/ProductXdmList";
 	}
 	
 	@RequestMapping(value ="/xdm/v1/infra/product/ProductXdmForm")
 	public String ProductXdmForm() {
-		return "/xdm/v1/infra/product/ProductXdmForm";
+		return "xdm/v1/infra/product/ProductXdmForm";
 	}
 	
 	@RequestMapping(value ="/xdm/v1/infra/product/ProductXdmInst")
@@ -52,7 +52,7 @@ public class ProductController {
 	@RequestMapping(value="/xdm/v1/infra/product/ProductXdmMfom")
 	public String ProductXdmMfom(ProductDto productDto,Model model) {
 		model.addAttribute("item", ProductService.selectOne(productDto));
-		return "/xdm/v1/infra/product/ProductXdmMfom";
+		return "xdm/v1/infra/product/ProductXdmMfom";
 	}
 	
 	@RequestMapping(value="/xdm/v1/infra/product/ProductXdmPdt")
@@ -76,7 +76,7 @@ public class ProductController {
 	
 	@RequestMapping(value = "/usr/v1/infra/index/indexUsrView")
 	public String ProductUsrInde () {
-		return "/usr/v1/infra/index/indexUsrView";
+		return "usr/v1/infra/index/indexUsrView";
 	}
 	
 	@RequestMapping(value = "/usr/v1/infra/product/topUsrList")
@@ -88,7 +88,7 @@ public class ProductController {
 		System.out.println("Product sizeCount????????????????: " + productDto.getSizeCount());
 		List<ProductDto> product = ProductService.selectListReview(productDto);
 		model.addAttribute("relist" , product);
-		return "/usr/v1/infra/product/topUsrList";
+		return "usr/v1/infra/product/topUsrList";
 	}
 	
 	@RequestMapping(value = "/usr/v1/infra/product/detailUsrView")
@@ -96,13 +96,13 @@ public class ProductController {
 		model.addAttribute("item", ProductService.selectOne(productDto));
 		List<ProductDto> product = ProductService.selectListReview(productDto);
 		model.addAttribute("relist" , product);
-		return "/usr/v1/infra/product/detailUsrView";
+		return "usr/v1/infra/product/detailUsrView";
 	}
 	
 	@RequestMapping(value = "/usr/v1/infra/product/checkoutUsrView")
 	public String checkoutUsrView(ProductDto productDto , Model model) {
 		model.addAttribute("item", ProductService.selectOne(productDto));
-		return "/usr/v1/infra/product/checkoutUsrView";
+		return "usr/v1/infra/product/checkoutUsrView";
 	}
 	
 	@RequestMapping(value ="/usr/v1/infra/product/paymentUsrInst")
@@ -111,7 +111,7 @@ public class ProductController {
 		productDto.setMember_memseq(memberMemseq);
 		
 		ProductService.insertPayment(productDto);
-		return "/usr/v1/infra/product/checkoutUsrView";
+		return "usr/v1/infra/product/checkoutUsrView";
 	}
 	
 	@RequestMapping(value="/usr/v1/infra/review/reviewUsrInst")
