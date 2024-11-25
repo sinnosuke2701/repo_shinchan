@@ -61,6 +61,13 @@ public class ProductDto {
 	private String pfPseq;
 	private Integer pfDelNY;
 	
+	//카카오페이
+	private String tid;  // 거래 고유번호
+    private String nextRedirectMobileUrl;  // 모바일 결제 리다이렉트 URL
+    private String nextRedirectPcUrl;  // PC 결제 리다이렉트 URL
+    private String approvalUrl;  // 결제 승인 URL
+    private String cancelUrl;  // 결제 취소 URL
+    private String failUrl;  // 결제 실패 URL
 	//------------------------------
 	public String getPrseq() {
 		return prseq;
@@ -337,5 +344,41 @@ public class ProductDto {
 	}
 	public void setSizeCount(Integer sizeCount) {
 		this.sizeCount = sizeCount;
+	}
+	public String getTid() {
+		return tid;
+	}
+	public void setTid(String tid) {
+		this.tid = tid;
+	}
+	public String getNextRedirectMobileUrl() {
+		return nextRedirectMobileUrl;
+	}
+	public void setNextRedirectMobileUrl(String nextRedirectMobileUrl) {
+		this.nextRedirectMobileUrl = nextRedirectMobileUrl;
+	}
+	public String getNextRedirectPcUrl() {
+		return nextRedirectPcUrl;
+	}
+	public void setNextRedirectPcUrl(String nextRedirectPcUrl) {
+		this.nextRedirectPcUrl = nextRedirectPcUrl;
+	}
+	public String getApprovalUrl() {
+		return approvalUrl;
+	}
+	public void setApprovalUrl(String approvalUrl) {
+		this.approvalUrl = approvalUrl;
+	}
+	public String getCancelUrl() {
+		return cancelUrl;
+	}
+	public void setCancelUrl(String cancelUrl) {
+		this.cancelUrl = cancelUrl;
+	}
+	public String getFailUrl() {
+		return failUrl;
+	}
+	public void setFailUrl(String failUrl) {
+		this.failUrl = failUrl;
 	}
 }

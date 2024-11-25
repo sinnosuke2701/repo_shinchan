@@ -44,8 +44,9 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-aws
 	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws', version: '2.2.6.RELEASE'
 	
-	
-	
+	// 카카오페이 결제를 위한 RestTemplate 및 JSON 파싱 라이브러리
+    implementation 'org.springframework.boot:spring-boot-starter-web' // RestTemplate 의존성
+    implementation 'com.fasterxml.jackson.core:jackson-databind' // JSON 파싱
 }
 
 tasks.named('test') {

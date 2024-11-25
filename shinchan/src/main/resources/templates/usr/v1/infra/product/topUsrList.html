@@ -189,6 +189,22 @@ document.getElementById("changeRowNum").onchange = function () {
     formList.submit();
 }
 </script>
+<script>
+	document.getElementById("btnLogout").onclick = function(){
+				$.ajax({
+					async: true 
+					,cache: false
+					,type: "post"
+					,url: "/signoutXdmProc"
+					,success: function(response) {
+								location.href = "/usr/v1/infra/index/indexUsrView";
+					}
+					,error : function(jqXHR, textStatus, errorThrown){
+						alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+					}
+				});
+			}
+</script>
 </body>
 
 </html>

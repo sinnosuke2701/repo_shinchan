@@ -240,4 +240,25 @@
 		</selectKey>
 	</insert>
 	
+	<select id="selectListPayment" resultMap="resultMapObj">
+		select
+			a.pmSeq,
+			a.pmName,
+			a.pmNum,
+			a.pmZipNum,
+			a.pmAdr,
+			a.pmAdrDt,
+			a.pmEmail,
+			a.pmDelivery
+		from
+			payment a
+<!-- 		left join -->
+<!-- 			Product b on b.prseq = a.Product_prseq -->
+		left join
+			Member c on c.memseq = a.Member_memseq
+		where 1 = 1
+<!-- 		and b.prseq = #{prseq} -->
+	</select>
+	
+	
 </mapper>
