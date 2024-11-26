@@ -115,7 +115,7 @@
 		from
 			Product a
 		where 1 =1
-			and a.prseq = #{prseq}		
+			and a.prseq = #{prseq}
 	</select>
 	
 	<update id="update">

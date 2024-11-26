@@ -22,7 +22,7 @@
         </div>
     </div>
 </div>
-<form action="/usr/v1/infra/product/paymentUsrInst" method="post" name="form">
+<!-- <form action="/usr/v1/infra/product/paymentUsrInst" method="post" name="form"> -->
 <div class="checkout-area pt-95 pb-100">
     <div class="container">
         <div class="row">
@@ -114,7 +114,7 @@
                         <button class="btnPayment" type="button" id="btnPayment" th:if="${session.sessSeqUsr != null}">결제하기</button>
                         <button class="btnPayment" type="button" id="btnLogin" th:unless="${session.sessSeqUsr != null}">로그인을 해주세요.</button>
                     </div>
-                    <button id="kaobtn" style="background: #fee500; color:#000; border-radius: 12px; padding: 10px 20px;">
+                    <button type="button" id="btnKao" style="background: #fee500; color:#000; border-radius: 12px; padding: 10px 20px;">
                         카카오페이</button>
                 </div>
             </div>
@@ -158,13 +158,13 @@
 				});
 			}
 </script>
-<script>
+<!-- <script>
 	document.getElementById("btnPayment").onclick = function(){
 		let form = document.querySelector("form[name=form]");
 		form.action = "/usr/v1/infra/product/paymentUsrInst";
 		form.submit();
 	} 
-</script>
+</script> -->
 
 <!-- kakao 주소 Start -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -259,18 +259,6 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
 	document.getElementById("btnLogin").onclick = function(){
 		window.location = "/usr/v1/infra/member/signinUsrForm";
 	}
-</script>
-<script>
-$("#kaobtn").click(function() {
-    $.ajax({
-        type: 'get',
-        url: '/usr/v1/infra/product/checkoutUsrView', // 결제 준비 API가 포함된 URL
-        success: function(res) {
-            // 카카오페이 결제 준비 결과로 받은 리다이렉트 URL로 이동
-            location.href = res.nextRedirectMobileUrl;  // mobile URL로 이동
-        }
-    });
-});
 </script>
 </body>
 

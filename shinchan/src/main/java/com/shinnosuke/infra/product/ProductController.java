@@ -1,8 +1,6 @@
 package com.shinnosuke.infra.product;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +17,7 @@ public class ProductController {
     
     @Autowired
     ProductService ProductService;
+    
     
     // 기존 ProductXdmList 메서드
     @RequestMapping(value="/xdm/v1/infra/product/ProductXdmList")
@@ -95,26 +94,14 @@ public class ProductController {
     }
     
     @RequestMapping(value = "/usr/v1/infra/product/checkoutUsrView")
-    public String checkoutUsrView(ProductDto productDto, Model model) {
-        model.addAttribute("item", ProductService.selectOne(productDto));
-     // 결제 준비를 위한 카카오페이 API 호출
-        Map<String, Object> params = new HashMap<>();
-        params.put("item_name", "아이폰 14 Pro");
-        params.put("quantity", 1);
-        params.put("total_amount", 1400000);
-        
-        // 카카오페이 준비 API 호출
-        ProductDto productDto1 = ProductService.kakaoPay(params);
-
-        // 결제 관련 정보를 모델에 추가
-        model.addAttribute("product", productDto1);
-        return "usr/v1/infra/product/checkoutUsrView"; // 결제 URL을 전달하고 checkoutUsrView 페이지로 이동
+    public String checkoutUsrView(ProductDto productDto) {
+    	ProductService.selectOne(productDto);
+        return "usr/v1/infra/product/checkoutUsrView";
     }
-    
     @RequestMapping(value ="/usr/v1/infra/product/paymentUsrInst")
     public String paymentXdmInst(ProductDto productDto , HttpSession httpSession,Model model) {
         String memberMemseq = (String) httpSession.getAttribute("Member_memseq");
-        productDto.setMember_memseq(memberMemseq);
+        productDto.setMember_memseq(memberMemseq); 
         ProductService.insertPayment(productDto);
         return "usr/v1/infra/product/cartUsrList";
     }
