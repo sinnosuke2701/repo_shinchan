@@ -199,7 +199,7 @@
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td><button type="submit">🔍</button>
-                                                <button type="button" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/product/ProductXdmList';">🔄</button>
+                                                <button type="button" id="btnReload">🔄</button>
                                             </td>
 
                                         </tr>
@@ -432,7 +432,12 @@
 		    formList.action = "/xdm/v1/infra/product/ProductXdmList";
 		    formList.submit();
 		}
-		
+	</script>
+	<script>
+	//새로고침 버튼
+		document.getElementById("btnReload").onclick = function (){
+			window.location = "/xdm/v1/infra/product/ProductXdmList";
+		}
 	</script>
 	
 </body>

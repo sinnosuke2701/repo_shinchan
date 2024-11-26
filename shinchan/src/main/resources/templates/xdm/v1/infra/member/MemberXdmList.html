@@ -16,20 +16,6 @@
         }
     </style>
 
-    <script>
-        function deleteSelectedRows() {
-            //테이블 요소를 가져옵니다.
-            var table = document.getElementById('basicExample');
-            var checkboxes = table.querySelectorAll('tbody input[type="checkbox"]:checked');
-
-            // 체크된 각 행을 삭제합니다.
-            checkboxes.forEach(function (checkbox) {
-                var row = checkbox.closest('tr');
-                row.remove();
-            });
-        }
-    </script>
-
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -199,9 +185,8 @@
                                                     style="border-radius: 5px; border: 1px solid rgb(170, 176, 187);padding: 5px; box-sizing: border-box; width: 200px; height: 40px;">
                                             </td>
                                             <td><button type="submit">🔍</button>
-                                                <button type="button" onclick="window.location.href='http://localhost:8080/xdm/v1/infra/member/MemberXdmList';">🔄</button>
+                                                <button type="button" id="btnReload">🔄</button>
                                             </td>
-
                                         </tr>
                                     </tbody>
                                 </table>
@@ -431,8 +416,12 @@
 		    formList.action = "/xdm/v1/infra/member/MemberXdmList";
 		    formList.submit();
 		}
-		
-		
+	</script>
+	<script>
+		//새로고침 버튼
+		document.getElementById("btnReload").onclick = function (){
+			window.location = "/xdm/v1/infra/member/MemberXdmList";
+		}
 	</script>
 
 </body>

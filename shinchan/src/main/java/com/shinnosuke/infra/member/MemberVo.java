@@ -3,8 +3,6 @@ package com.shinnosuke.infra.member;
 import com.shinnosuke.common.constants.Constants;
 
 public class MemberVo {
-	
-	
 
 	//검색조건
 	private Integer shDelNY;
