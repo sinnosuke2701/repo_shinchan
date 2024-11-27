@@ -1,0 +1,210 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<!-- head start -->
+<div th:replace="~{usr/v1/infra/include/head :: head}"></div>
+<!-- head end -->
+
+<body>
+<!-- header start -->
+<div th:replace="~{usr/v1/infra/include/header :: header}"></div>
+<!-- header end -->
+<div class="breadcrumb-area pt-35 pb-35 bg-gray-3">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="/usr/v1/infra/index/indexUsrView">Home</a>
+                </li>
+                <li class="active">Shop </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="shop-area pt-95 pb-100">
+    <div class="container">
+        <div class="row flex-row-reverse">
+            <div class="col-lg-9">
+                <div class="shop-top-bar">
+                    <div class="select-shoing-wrap">
+                        <div class="shop-select">
+                            <select>
+                                <option value="">최신순</option>
+                                <option value="">내림차순</option>
+                                <option value="">오름차순</option>
+                                <option value="">In stock</option>
+                            </select>
+                        </div>
+                        <!-- <p>Showing 1–12 of 20 result</p> -->
+                    </div>
+                    <div class="shop-tab nav">
+                        <a class="active" href="#shop-1" data-toggle="tab">
+                            <i class="fa fa-table"></i>
+                        </a>
+                        <a href="#shop-2" data-toggle="tab">
+                            <i class="fa fa-list-ul"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- product list -->
+                <form method ="post" id="formList" name="formList">
+					<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/>
+					<input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}"/>
+                <div class="shop-bottom-area mt-35">
+                    <div class="tab-content jump">
+                        <div id="shop-1" class="tab-pane active">
+                            <div class="row">
+                                <div class="col-xl-4 col-md-6 col-lg-6 col-sm-6" th:each="list : ${list}">
+                                    <div class="product-wrap mb-25 scroll-zoom">
+                                        <div class="product-img">
+                                            <a th:href="@{/usr/v1/infra/product/detailUsrView(prseq=${list.prseq})}">
+                                                <img class="default-img" src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top22.png" alt="">
+                                                <img class="hover-img" src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top2.png" alt="">
+                                            </a>
+                                            <span class="pink">-10%</span>
+                                            <div class="product-action">
+                                                <div class="pro-same-action pro-wishlist">
+                                                    <a title="Wishlist" href="#"><i class="pe-7s-like"></i></a>
+                                                </div>
+                                                <div class="pro-same-action pro-cart">
+                                                    <a title="Add To Cart" href="#"><i class="pe-7s-cart"></i> Add to cart</a>
+                                                </div>
+                                                <div class="pro-same-action pro-quickview">
+                                                    <a title="Quick View" href="#" data-toggle="modal" data-target="#exampleModal"><i class="pe-7s-look"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-content text-center">
+                                            <h3><a th:href="@{/usr/v1/infra/product/detailUsrView(prseq=${list.prseq})}" th:text="${list.prProdName}"></a></h3>
+                                            <div class="pro-details-rating-wrap">
+					                            <div class="pro-details-rating">
+					                                <i style="color: gold;" class="fa fa-star yellow"></i>
+					                        		<span th:text="${#numbers.formatDecimal(list.reviewAvg, 1 ,1)}" style="font-size: 12pt;"></span>
+						                            <span data-toggle="tab" href="#des-details3" style="font-size: 12pt;">후기 (<span th:text="${list.reviewCount}"></span>)</span>
+					                            </div>
+					                        </div>
+                                            <div class="product-price">
+                                                <span class="old" th:text="${#numbers.formatInteger(list.prReguPrice, 3, 'COMMA') + '원'}"></span>
+                                                <span style="color: red;" th:text="${#numbers.formatInteger(list.prSalePrice, 3, 'COMMA') + '원'}"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="shop-2" class="tab-pane" >
+                            <div class="shop-list-wrap mb-30" th:each="list : ${list}">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-5 col-md-5 col-sm-6">
+                                        <div class="product-wrap">
+                                            <div class="product-img">
+                                                <a href="product-details.html">
+                                                    <img class="default-img" src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/product/pro-1.jpg" alt="">
+                                                    <img class="hover-img" src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/product/pro-1-1.jpg" alt="">
+                                                </a>
+                                                <span class="pink">-10%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8 col-lg-7 col-md-7 col-sm-6">
+                                        <div class="shop-list-content">
+                                            <h3><a th:href="@{/usr/v1/infra/product/detailUsrView(prseq=${list.prseq})}" th:text="${list.prProdName}">Products Name Here</a></h3>
+                                            <div class="product-list-price">
+                                                <span class="old" th:text="${#numbers.formatInteger(list.prReguPrice, 3, 'COMMA') + '원'}"></span>
+                                                <span style="color: red; margin-left:15px;" th:text="${#numbers.formatInteger(list.prSalePrice, 3, 'COMMA') + '원'}"></span>
+                                            </div>
+                                            <div class="rating-review">
+                                                <div class="pro-details-rating">
+					                                <i style="color: gold;" class="fa fa-star yellow"></i>
+					                        		<span th:text="${#numbers.formatDecimal(list.reviewAvg, 1 ,1)}"></span>
+					                        		<span data-toggle="tab" href="#des-details3">후기 (<span th:text="${list.reviewCount}"></span>)</span>
+					                            </div>
+                                            </div>
+                                            <p th:text="${list.prProdDesc}"></p>
+                                            <div class="shop-list-btn btn-hover">
+                                                <a href="#">ADD TO CART</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 페이지네이션 시작 -->
+                    <div class="pro-pagination-style text-center mt-30">
+                   		<ul>
+                            <li th:if="${vo.startPage gt vo.pageNumToShow}" class="page-item" style="cursor: pointer;"><a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|"><i class="fa-solid fa-angle-left"></i></a></li>
+                            <li th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" class="page-item" style="cursor: pointer;"><a class="pagination-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"></a></li>
+                        	<li th:if="${vo.endPage ne vo.totalPages}" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|"><i class="fa-solid fa-angle-right"></i></a></li>
+                        </ul>
+                    </div>
+<!--                     <div class="pro-pagination-style text-center mt-30"> -->
+<!--                         <ul> -->
+<!--                             <li><a class="prev" href="#"><i class="fa fa-angle-double-left"></i></a></li> -->
+<!--                             <li><a class="active" href="#">1</a></li> -->
+<!--                             <li><a href="#">2</a></li> -->
+<!--                             <li><a class="next" href="#"><i class="fa fa-angle-double-right"></i></a></li> -->
+<!--                         </ul> -->
+<!--                     </div> -->
+                    <!-- 페이지네이션 끝 -->
+               		</div>
+            	</div>
+        	</form>
+            <div th:replace="~{usr/v1/infra/include/aside :: aside}"></div>
+        </div>
+    </div>
+</div>
+<!-- footer start -->
+<div th:replace="~{usr/v1/infra/include/footer :: footer}"></div>
+<!-- footer end -->
+
+<!-- Modal strat-->
+<div th:replace="~{usr/v1/infra/include/modal :: modal}"></div>
+<!-- Modal end -->
+
+
+<!-- All JS is here
+============================================ -->
+
+<script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/vendor/modernizr-3.11.7.min.js"></script>
+<script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/vendor/jquery-v3.6.0.min.js"></script>
+<script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/vendor/jquery-migrate-v3.3.2.min.js"></script>
+<script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/plugins.js"></script>
+<!-- Ajax Mail -->
+<script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/ajax-mail.js"></script>
+<!-- Main JS -->
+<script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/main.js"></script>
+<script>
+//페이징
+goList = function (thisPage) {
+    document.querySelector("input[name=thisPage]").value = thisPage;
+    document.querySelector("form[name=formList]").action = "/usr/v1/infra/product/topUsrList";
+    document.querySelector("form[name=formList]").submit();
+}
+//데이터 행
+document.getElementById("changeRowNum").onchange = function () {
+    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
+    formList.action = "/usr/v1/infra/product/topUsrList";
+    formList.submit();
+}
+</script>
+<script>
+	document.getElementById("btnLogout").onclick = function(){
+				$.ajax({
+					async: true 
+					,cache: false
+					,type: "post"
+					,url: "/signoutXdmProc"
+					,success: function(response) {
+								location.href = "/usr/v1/infra/index/indexUsrView";
+					}
+					,error : function(jqXHR, textStatus, errorThrown){
+						alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+					}
+				});
+			}
+</script>
+</body>
+
+</html>

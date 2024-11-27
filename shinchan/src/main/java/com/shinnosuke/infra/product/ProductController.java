@@ -118,4 +118,20 @@ public class ProductController {
         model.addAttribute("list" , payment);
         return "usr/v1/infra/product/cartUsrList";
     }
+    
+    @RequestMapping(value="/usr/v1/infra/index/deliveryUsrView")
+    public String deliveryUsrView() {
+        return "usr/v1/infra/index/deliveryUsrView";
+    }
+   
+    @RequestMapping(value="/usr/v1/infra/product/bottomUsrList")
+    public String bottomUsrList() {
+        return "usr/v1/infra/product/bottomUsrList";
+    }
+    
+    @RequestMapping(value="/usr/v1/infra/product/shoeUsrList")
+    public String shoeUsrList() {
+        return "usr/v1/infra/product/shoeUsrList";
+    }
+    
 }

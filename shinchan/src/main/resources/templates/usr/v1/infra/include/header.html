@@ -20,29 +20,30 @@
 											<ul>
 												<li class="mega-menu-title"><a
 													href="/usr/v1/infra/product/topUsrList">상의</a></li>
-												<li><a href="index.html">반팔 & 민소매</a></li>
+												<li><a href="index.html">반팔</a></li>
 												<li><a href="index-2.html">긴팔</a></li>
-												<li><a href="index-3.html">맨투맨 & 후드</a></li>
+												<li><a href="index-3.html">후드티</a></li>
 												<li><a href="index-4.html">셔츠</a></li>
 											</ul>
 										</li>
 									</ul></li>
-								<li><a href="shop.html"> BOTTOM <i
+								<li><a href="/usr/v1/infra/product/bottomUsrList"> BOTTOM <i
 										class="fa fa-angle-down"></i>
 								</a>
 									<ul class="mega-menu mega-menu-padding">
 										<li>
 											<ul>
-												<li class="mega-menu-title"><a href="#">하의</a></li>
+												<li class="mega-menu-title"><a href="/usr/v1/infra/product/bottomUsrList">하의</a></li>
 												<li><a href="shop.html">슬랙스</a></li>
 												<li><a href="shop-filter.html">청바지</a></li>
 												<li><a href="shop-grid-2-col.html">트레이닝</a></li>
-												<li><a href="shop-no-sidebar.html">반바지</a></li>
-												<li><a href="shop-grid-fw.html">면바지..?</a></li>
+<!-- 												<li><a href="shop-no-sidebar.html">반바지</a></li> -->
 											</ul>
 										</li>
 									</ul></li>
-								<li><a href="shop.html">SHOES</a></li>
+								<li><a href="/usr/v1/infra/product/shoeUsrList">SHOES</a></li>
+									<a th:unless="${session.sessNameUsr != null}"></a>
+								<li><a href="/usr/v1/infra/index/deliveryUsrView"> 당일배송 </a></li>
 								<li><a th:if="${session.sessNameUsr != null}"> Pages <i class="fa fa-angle-down"></i></a>
 									<ul class="submenu">
 										<li><a href="about.html">about us</a></li>
@@ -54,9 +55,7 @@
 										<li><a href="contact.html">contact us </a></li>
 										<li><a href="404.html">404 page </a></li>
 									</ul></li>
-									<a th:unless="${session.sessNameUsr != null}"></a>
-								<li><a href="about.html"> 당일배송 </a></li>
-								<li><a href="contact.html"> Contact</a></li>
+<!-- 								<li><a href="contact.html"> Contact</a></li> -->
 							</ul>
 						</nav>
 					</div>
@@ -64,7 +63,7 @@
 				<div class="col-xl-2 col-lg-2 col-md-6 col-8">
 					<div class="header-right-wrap">
 						<div class="same-style header-search">
-							<a class="search-active" href="#"><i class="pe-7s-search"></i></a>
+<!-- 							<a class="search-active" href="#"><i class="pe-7s-search"></i></a> -->
 							<div class="search-content">
 								<form action="#">
 									<input type="text" placeholder="Search" />
@@ -94,62 +93,62 @@
 								</ul>
 							</div>
 						</div>
-						<div class="same-style header-wishlist">
-							<a href="wishlist.html"><i class="pe-7s-like"></i></a>
-						</div>
-						<div class="same-style cart-wrap">
-							<button class="icon-cart">
-								<i class="pe-7s-shopbag"></i> <span class="count-style">02</span>
-							</button>
-							<div class="shopping-cart-content">
-								<ul>
-									<li class="single-shopping-cart">
-										<div class="shopping-cart-img">
-											<a href="#"><img alt=""
-												src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/cart/cart-1.png"></a>
-										</div>
-										<div class="shopping-cart-title">
-											<h4>
-												<a href="#">T- Shart & Jeans </a>
-											</h4>
-											<h6>Qty: 02</h6>
-											<span>$260.00</span>
-										</div>
-										<div class="shopping-cart-delete">
-											<a href="#"><i class="fa fa-times-circle"></i></a>
-										</div>
-									</li>
-									<li class="single-shopping-cart">
-										<div class="shopping-cart-img">
-											<a href="#"><img alt=""
-												src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/cart/cart-2.png"></a>
-										</div>
-										<div class="shopping-cart-title">
-											<h4>
-												<a href="#">T- Shart & Jeans </a>
-											</h4>
-											<h6>Qty: 02</h6>
-											<span>$260.00</span>
-										</div>
-										<div class="shopping-cart-delete">
-											<a href="#"><i class="fa fa-times-circle"></i></a>
-										</div>
-									</li>
-								</ul>
-								<div class="shopping-cart-total">
-									<h4>
-										Shipping : <span>$20.00</span>
-									</h4>
-									<h4>
-										Total : <span class="shop-total">$260.00</span>
-									</h4>
-								</div>
-								<div class="shopping-cart-btn btn-hover text-center">
-									<a class="default-btn" href="cart-page.html">view cart</a> <a
-										class="default-btn" href="/usr/v1/infra/product/checkoutUsrView">checkout</a>
-								</div>
-							</div>
-						</div>
+<!-- 						<div class="same-style header-wishlist"> -->
+<!-- 							<a href="wishlist.html"><i class="pe-7s-like"></i></a> -->
+<!-- 						</div> -->
+<!-- 						<div class="same-style cart-wrap"> -->
+<!-- 							<button class="icon-cart"> -->
+<!-- 								<i class="pe-7s-shopbag"></i> <span class="count-style">02</span> -->
+<!-- 							</button> -->
+<!-- 							<div class="shopping-cart-content"> -->
+<!-- 								<ul> -->
+<!-- 									<li class="single-shopping-cart"> -->
+<!-- 										<div class="shopping-cart-img"> -->
+<!-- 											<a href="#"><img alt="" -->
+<!-- 												src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/cart/cart-1.png"></a> -->
+<!-- 										</div> -->
+<!-- 										<div class="shopping-cart-title"> -->
+<!-- 											<h4> -->
+<!-- 												<a href="#">T- Shart & Jeans </a> -->
+<!-- 											</h4> -->
+<!-- 											<h6>Qty: 02</h6> -->
+<!-- 											<span>$260.00</span> -->
+<!-- 										</div> -->
+<!-- 										<div class="shopping-cart-delete"> -->
+<!-- 											<a href="#"><i class="fa fa-times-circle"></i></a> -->
+<!-- 										</div> -->
+<!-- 									</li> -->
+<!-- 									<li class="single-shopping-cart"> -->
+<!-- 										<div class="shopping-cart-img"> -->
+<!-- 											<a href="#"><img alt="" -->
+<!-- 												src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/cart/cart-2.png"></a> -->
+<!-- 										</div> -->
+<!-- 										<div class="shopping-cart-title"> -->
+<!-- 											<h4> -->
+<!-- 												<a href="#">T- Shart & Jeans </a> -->
+<!-- 											</h4> -->
+<!-- 											<h6>Qty: 02</h6> -->
+<!-- 											<span>$260.00</span> -->
+<!-- 										</div> -->
+<!-- 										<div class="shopping-cart-delete"> -->
+<!-- 											<a href="#"><i class="fa fa-times-circle"></i></a> -->
+<!-- 										</div> -->
+<!-- 									</li> -->
+<!-- 								</ul> -->
+<!-- 								<div class="shopping-cart-total"> -->
+<!-- 									<h4> -->
+<!-- 										Shipping : <span>$20.00</span> -->
+<!-- 									</h4> -->
+<!-- 									<h4> -->
+<!-- 										Total : <span class="shop-total">$260.00</span> -->
+<!-- 									</h4> -->
+<!-- 								</div> -->
+<!-- 								<div class="shopping-cart-btn btn-hover text-center"> -->
+<!-- 									<a class="default-btn" href="cart-page.html">view cart</a> <a -->
+<!-- 										class="default-btn" href="/usr/v1/infra/product/checkoutUsrView">checkout</a> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
 					</div>
 				</div>
 			</div>
