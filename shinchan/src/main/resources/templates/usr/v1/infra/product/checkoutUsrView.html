@@ -22,7 +22,7 @@
         </div>
     </div>
 </div>
-<!-- <form action="/usr/v1/infra/product/paymentUsrInst" method="post" name="form"> -->
+<form action="/usr/v1/infra/product/paymentUsrInst" method="post" name="form">
 <div class="checkout-area pt-95 pb-100">
     <div class="container">
         <div class="row">
@@ -59,7 +59,6 @@
 								<br>
 								<br>
 								<input type="text" id="sample6_detailAddress" placeholder="상세주소" name ="pmAdrDt" th:value="${session.sessDtAddressUsr}" autocomplete="off">
-								                   
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
@@ -77,9 +76,8 @@
                             <textarea placeholder="배송 요청사항을 적어주세요." name="pmDelivery" id="pmDelivery" autocomplete="off"></textarea>
                         </div>
                 	</div>
-                </form>
-            </div>
-        </div>
+	            </div>
+	        </div>
             <div class="col-lg-5">
                 <div class="your-order-area">
                     <h3>주문 정보</h3>
@@ -88,14 +86,17 @@
                             <div class="your-order-top">
                                 <ul>
                                     <li>상품 :</li>
-                                    <li th:text="${dto.poName}"></li>
+                                    <li th:text="${dto.pmProd}" name="pmProd"></li>
+<input type="hidden" id="pmProd" name="pmProd" th:value="${dto.pmProd}">
                                 </ul>
                             </div>
                             <div class="your-order-middle" >
                                 <ul >
-<!--                                     <li><span>사이즈 :</span><span th:text=${dto.poSize}></span></li> -->
-                                    <li><span>가격 :</span><span class="order-price" th:text="${dto.poPrice}"></span></li>
-                                    <li><span>개수 :</span><span th:text="${dto.poQty}"></span></li>
+<!--                                     <li><span>사이즈 :</span><span th:text=${dto.pmSize}></span></li> -->
+                                    <li><span>가격 :</span><span class="order-price" th:text="${dto.pmPrice}" name="pmPrice"></span></li>
+<input type="text" id="pmPrice" name="pmPrice" th:value="${dto.pmPrice}">                                    
+                                    <li><span>개수 :</span><span th:text="${dto.pmQty}" name="pmQty"></span></li>
+<input type="hidden" id="pmQty" name="pmQty" th:value="${dto.pmQty}">                                    
                                 </ul>
                             </div>
                             <div class="your-order-bottom">
@@ -107,11 +108,13 @@
                             <div class="your-order-total">
                                 <ul>
                                     <li class="order-total">총액 :</li>
-                                    <li><span class="order-price" th:text="${#numbers.formatInteger(dto.poToPrice, 3, 'COMMA')}+'원'"></span></li>
+                                    <li><span class="order-price" th:text="${#numbers.formatInteger(dto.pmToPrice, 3, 'COMMA')}+'원'" name="pmToPrice"></span></li>
+<input type="text" id="pmToPrice" name="pmToPrice" th:value="${dto.pmToPrice}">                                    
                                 </ul>
                             </div>
                         </div>
                     </div>
+                </form>
                     <div class="Place-order mt-25">
                         <button class="btnPayment" type="button" id="btnPayment" th:if="${session.sessSeqUsr != null}">결제하기</button>
                         <button class="btnPayment" type="button" id="btnLogin" th:unless="${session.sessSeqUsr != null}">로그인을 해주세요.</button>
@@ -160,13 +163,13 @@
 				});
 			}
 </script>
-<!-- <script>
+<script>
 	document.getElementById("btnPayment").onclick = function(){
 		let form = document.querySelector("form[name=form]");
 		form.action = "/usr/v1/infra/product/paymentUsrInst";
 		form.submit();
 	} 
-</script> -->
+</script>
 
 <!-- kakao 주소 Start -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

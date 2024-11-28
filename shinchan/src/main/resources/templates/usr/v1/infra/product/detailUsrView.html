@@ -70,7 +70,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product-details-content ml-70">
-                        <h2 th:text="${item?.prProdName}" id="poName" name="poName"></h2>
+                        <h2 th:text="${item?.prProdName}" id="pmProdName" name="pmProdName"></h2>
                         <div class="product-details-price">
                             <span class="old" style="margin-right: 30px; margin-left: 0px;" th:text="${#numbers.formatInteger(item?.prReguPrice, 3, 'COMMA') + '원'}"></span>
                             <span th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}" id="prSalePrice"></span>
@@ -108,7 +108,7 @@
                         </div>
                         <div class="pro-details-quality">
                             <div class="cart-plus-minus">
-                                <input class="cart-plus-minus-box"  type="text" id="poQty" name="poQty" >
+                                <input class="cart-plus-minus-box"  type="text" id="pmQty" name="pmQty" >
                             </div>
                             <div class="pro-details-cart btn-hover">
                                  <a th:if="${session.sessSeqUsr != null}" onclick="aaa()">Add To Cart</a>
@@ -126,15 +126,15 @@
                                 			<ul>
                                     			<li>상품</li>
 											    <li><span class="order-middle-left" th:text="${item?.prProdName}"></span></li>
-											    <input type="hidden" id="poName" name="poName" th:value="${item?.prProdName}">
+<input type="hidden" id="pmProd" name="pmProd" th:value="${item?.prProdName}">
                                 			</ul>
                             			</div>
                             			<div class="your-order-middle">
 											<ul>
                                     			<li>가격 :<span class="order-price" th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}"></span></li>
-                                    			<input type="hidden" id="poPrice" name="poPrice" th:value="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}">
-											    <li><span>사이즈 :</span><span id="selecteSize" name="poSize"></span></li>
-											    <li><span>개수 :</span><span class="cart-plus-minus-box"></span></li>
+<input type="hidden" id="pmPrice" name="pmPrice" th:value="${item?.prSalePrice}">
+											    <li><span>사이즈 :</span><span id="selecteSize" name="pmSize"></span></li>
+											    <li><span>개수 :</span><span class="cart-plus-minus-box">1</span></li>
 											</ul>
 										</div>
                             			<div class="your-order-bottom">
@@ -146,8 +146,8 @@
                             			<div class="your-order-total">
                                 			<ul>
                                     			<li class="order-total">총액 :</li>
-			                                    <li><span class="order-price" id="totalPrice"></span></li>
-<input type="hidden" id="poToPrice" name="poToPrice">
+			                                    <li><span class="order-price" id="totalPrice"th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA')+ '원'}"></span></li>
+<input type="hidden" id="pmToPrice" name="pmToPrice" th:value="${item?.prSalePrice}">
 			                                </ul>
 			                            </div>
 			                        </div>
@@ -341,8 +341,8 @@
 	                                <h3>후기 작성</h3>
 	                                <div class="ratting-form">
 	                                    <form id="reviewform" name="reviewform" method="post" action="/usr/v1/infra/review/reviewUsrInst">
-	                                    	<input type="hidden" id="Product_prseq" name="Product_prseq" th:value="${item?.prseq}">
-	                                    	<input type="hidden" id="memId" name="Member_memseq" th:value="${session.sessSeqUsr}">
+<input type="hidden" id="Product_prseq" name="Product_prseq" th:value="${item?.prseq}">
+<input type="hidden" id="memId" name="Member_memseq" th:value="${session.sessSeqUsr}">
 	                                        <div class="star-box">
 	                                            <div class="ratting-star" >
 	                                                <i type="radio" class="fa fa-star" value="1"></i>

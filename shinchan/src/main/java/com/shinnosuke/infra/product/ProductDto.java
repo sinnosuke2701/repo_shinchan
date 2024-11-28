@@ -44,7 +44,8 @@ public class ProductDto {
 	private String pmProd;
 	private String pmSize;
 	private Integer pmQty;
-	private Integer pmToPrice;
+	private String pmPrice;
+	private String pmToPrice;
 	
 	private String cd_Name;
 	
@@ -64,14 +65,6 @@ public class ProductDto {
 	private Integer pfSort;
 	private String pfPseq;
 	private Integer pfDelNY;
-	
-	private String poSeq;
-	private String poName;
-	private String poSize;
-	private Integer poQty;
-	private String poPrice;
-	private String poToPrice;
-	private Integer poDelNy;
 	
 	//------------------------------
 	public String getPrseq() {
@@ -152,6 +145,24 @@ public class ProductDto {
 	public void setPrDelNY(Integer prDelNY) {
 		this.prDelNY = prDelNY;
 	}
+	public Integer getSizeCount() {
+		return sizeCount;
+	}
+	public void setSizeCount(Integer sizeCount) {
+		this.sizeCount = sizeCount;
+	}
+	public Integer getReviewCount() {
+		return reviewCount;
+	}
+	public void setReviewCount(Integer reviewCount) {
+		this.reviewCount = reviewCount;
+	}
+	public Double getReviewAvg() {
+		return reviewAvg;
+	}
+	public void setReviewAvg(Double reviewAvg) {
+		this.reviewAvg = reviewAvg;
+	}
 	public String getProduct_prseq() {
 		return Product_prseq;
 	}
@@ -175,6 +186,12 @@ public class ProductDto {
 	}
 	public void setReComment(String reComment) {
 		this.reComment = reComment;
+	}
+	public Integer getReStar() {
+		return reStar;
+	}
+	public void setReStar(Integer reStar) {
+		this.reStar = reStar;
 	}
 	public String getMemId() {
 		return memId;
@@ -236,11 +253,41 @@ public class ProductDto {
 	public void setPmDelNY(Integer pmDelNY) {
 		this.pmDelNY = pmDelNY;
 	}
-	public Integer getReStar() {
-		return reStar;
+	public String getPmProd() {
+		return pmProd;
 	}
-	public void setReStar(Integer reStar) {
-		this.reStar = reStar;
+	public void setPmProd(String pmProd) {
+		this.pmProd = pmProd;
+	}
+	public String getPmSize() {
+		return pmSize;
+	}
+	public void setPmSize(String pmSize) {
+		this.pmSize = pmSize;
+	}
+	public Integer getPmQty() {
+		return pmQty;
+	}
+	public void setPmQty(Integer pmQty) {
+		this.pmQty = pmQty;
+	}
+	public String getPmPrice() {
+		return pmPrice;
+	}
+	public void setPmPrice(String pmPrice) {
+		this.pmPrice = pmPrice;
+	}
+	public String getPmToPrice() {
+		return pmToPrice;
+	}
+	public void setPmToPrice(String pmToPrice) {
+		this.pmToPrice = pmToPrice;
+	}
+	public String getCd_Name() {
+		return cd_Name;
+	}
+	public void setCd_Name(String cd_Name) {
+		this.cd_Name = cd_Name;
 	}
 	public MultipartFile getUploadFile() {
 		return uploadFile;
@@ -326,94 +373,5 @@ public class ProductDto {
 	public void setPfDelNY(Integer pfDelNY) {
 		this.pfDelNY = pfDelNY;
 	}
-	public Integer getReviewCount() {
-		return reviewCount;
-	}
-	public void setReviewCount(Integer reviewCount) {
-		this.reviewCount = reviewCount;
-	}
-	public Double getReviewAvg() {
-		return reviewAvg;
-	}
-	public void setReviewAvg(Double reviewAvg) {
-		this.reviewAvg = reviewAvg;
-	}
-	public String getCd_Name() {
-		return cd_Name;
-	}
-	public void setCd_Name(String cd_Name) {
-		this.cd_Name = cd_Name;
-	}
-	public Integer getSizeCount() {
-		return sizeCount;
-	}
-	public void setSizeCount(Integer sizeCount) {
-		this.sizeCount = sizeCount;
-	}
-	public String getPmProd() {
-		return pmProd;
-	}
-	public void setPmProd(String pmProd) {
-		this.pmProd = pmProd;
-	}
-	public String getPmSize() {
-		return pmSize;
-	}
-	public void setPmSize(String pmSize) {
-		this.pmSize = pmSize;
-	}
-	public Integer getPmQty() {
-		return pmQty;
-	}
-	public void setPmQty(Integer pmQty) {
-		this.pmQty = pmQty;
-	}
-	public Integer getPmToPrice() {
-		return pmToPrice;
-	}
-	public void setPmToPrice(Integer pmToPrice) {
-		this.pmToPrice = pmToPrice;
-	}
-	public String getPoSeq() {
-		return poSeq;
-	}
-	public void setPoSeq(String poSeq) {
-		this.poSeq = poSeq;
-	}
-	public String getPoName() {
-		return poName;
-	}
-	public void setPoName(String poName) {
-		this.poName = poName;
-	}
-	public String getPoSize() {
-		return poSize;
-	}
-	public void setPoSize(String poSize) {
-		this.poSize = poSize;
-	}
-	public Integer getPoQty() {
-		return poQty;
-	}
-	public void setPoQty(Integer poQty) {
-		this.poQty = poQty;
-	}
-	public String getPoToPrice() {
-		return poToPrice;
-	}
-	public void setPoToPrice(String poToPrice) {
-		this.poToPrice = poToPrice;
-	}
-	public Integer getPoDelNy() {
-		return poDelNy;
-	}
-	public void setPoDelNy(Integer poDelNy) {
-		this.poDelNy = poDelNy;
-	}
-	public String getPoPrice() {
-		return poPrice;
-	}
-	public void setPoPrice(String poPrice) {
-		this.poPrice = poPrice;
-	}
+	
 }
