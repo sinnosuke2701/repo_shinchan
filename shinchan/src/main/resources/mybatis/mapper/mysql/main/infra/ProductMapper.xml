@@ -17,6 +17,7 @@
 		<if test="shSort != null and !shSort.equals('')">AND prSort = #{shSort}</if>
 		<if test="shSize != null and !shSize.equals('')">AND prSize = #{shSize}</if>
 		<if test="shColor != null and !shColor.equals('')">AND prColor = #{shColor}</if>
+		<if test="shValue != null and !shValue.equals('')">AND a.ifqnaTitle LIKE CONCAT('%', #{shValue}, '%')</if>
 		
 		<choose>
 			<when test="shOption == 1 ">AND a.prseq = #{shValue}</when>
@@ -41,6 +42,7 @@
 				,a.prSort
 				,a.prSize
 				,a.prColor
+				,a.prBestNY
 				,a.prProdDesc
 				,a.prReguPrice
 				,a.prSalePrice
@@ -192,6 +194,10 @@
 			,pmEmail
 			,pmDelivery
 			,pmDelNY
+			,pmProd
+			,pmSize
+			,pmQty
+			,pmToPrice
 			,Member_memseq
 		)values(
 			#{pmName}
@@ -202,6 +208,10 @@
 			,#{pmEmail}
 			,#{pmDelivery}
 			,0
+			,#{pmProd}
+			,#{pmSize}
+			,#{pmQty}
+			,#{pmToPrice}
 			,#{Member_memseq}
 		)
 		<selectKey resultType="String" keyProperty="pmSeq" order="AFTER">
@@ -260,5 +270,47 @@
 <!-- 		and b.prseq = #{prseq} -->
 	</select>
 	
+	<select id="selectListBest">
+		select
+			a.prseq,
+			a.prProdName,
+			a.prUseNY,
+			a.prSort,
+			a.prSize,
+			a.prColor,
+			a.prBestNY,
+			a.prProdDesc,
+			a.prReguPrice,
+			a.prSalePrice,
+			a.prInventory,
+			a.prReDate,
+			a.prMoDate,
+			a.prDelNY
+			,(select count(r.reSeq) from review r where 1 = 1 and r.Product_prseq = a.prseq) as reviewCount
+			,(select avg(r.reSeq) from review r where 1 = 1 and r.Product_prseq = a.prseq) as reviewAvg
+		from 
+			Product a
+		where 1 = 1
+			and a.prBestNY = 1
+	</select>
+	
+	<insert id="insertProdOrder">
+		insert into prodOrder(
+			poName,
+			poQty,
+			poPrice,
+			poToPrice,
+			poDelNy
+		)values(
+			#{poName},
+			#{poQty},
+			#{poPrice},
+			#{poToPrice},
+			0
+		)
+		<selectKey resultType="String" keyProperty="poSeq" order="AFTER">
+			SELECT last_Insert_id()
+		</selectKey>
+	</insert>
 	
 </mapper>

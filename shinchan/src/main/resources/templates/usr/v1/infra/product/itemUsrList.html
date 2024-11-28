@@ -14,9 +14,12 @@
         <div class="breadcrumb-content text-center">
             <ul>
                 <li>
-                    <a href="/usr/v1/infra/index/indexUsrView">Home</a>
+                    <a href="/usr/v1/infra/index/indexUsrView">메인 화면</a>
                 </li>
-                <li class="active">Shop </li>
+                <li th:if="${dto.prInventory == 1}" class="active">상의 -> 반팔</li>
+                <li th:if="${dto.prInventory == 2}" class="active">상의 -> 긴팔</li>
+                <li th:if="${dto.prInventory == 3}" class="active">상의 -> 후드티</li>
+                <li th:if="${dto.prInventory == 4}" class="active">상의 -> 셔츠</li>
             </ul>
         </div>
     </div>
@@ -28,12 +31,12 @@
                 <div class="shop-top-bar">
                     <div class="select-shoing-wrap">
                         <div class="shop-select">
-                            <select>
-                                <option value="">최신순</option>
-                                <option value="">내림차순</option>
-                                <option value="">오름차순</option>
-                                <option value="">In stock</option>
-                            </select>
+<!--                             <select> -->
+<!--                                 <option value="">최신순</option> -->
+<!--                                 <option value="">내림차순</option> -->
+<!--                                 <option value="">오름차순</option> -->
+<!--                                 <option value="">In stock</option> -->
+<!--                             </select> -->
                         </div>
                         <!-- <p>Showing 1–12 of 20 result</p> -->
                     </div>
@@ -61,7 +64,7 @@
                                                 <img class="default-img" src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top22.png" alt="">
                                                 <img class="hover-img" src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top2.png" alt="">
                                             </a>
-                                            <span class="pink">-10%</span>
+<!--                                             <span class="pink">-10%</span> -->
                                             <div class="product-action">
                                                 <div class="pro-same-action pro-wishlist">
                                                     <a title="Wishlist" href="#"><i class="pe-7s-like"></i></a>
@@ -133,9 +136,9 @@
                     <!-- 페이지네이션 시작 -->
                     <div class="pro-pagination-style text-center mt-30">
                    		<ul>
-                            <li th:if="${vo.startPage gt vo.pageNumToShow}" class="page-item" style="cursor: pointer;"><a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|"><i class="fa-solid fa-angle-left"></i></a></li>
+                            <li th:if="${vo.startPage gt vo.pageNumToShow}" class="page-item" style="cursor: pointer;"><a  href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|"><i class="fa-solid fa-angle-left"></i></a></li>
                             <li th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" class="page-item" style="cursor: pointer;"><a class="pagination-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"></a></li>
-                        	<li th:if="${vo.endPage ne vo.totalPages}" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|"><i class="fa-solid fa-angle-right"></i></a></li>
+                        	<li th:if="${vo.endPage ne vo.totalPages}" class="page-item" style="cursor: pointer;"><a th:attr="onclick=|goList('${vo.endPage + 1}')|"><i class="fa-solid fa-angle-right" style="color:#a749ff;"></i></a></li>
                         </ul>
                     </div>
 <!--                     <div class="pro-pagination-style text-center mt-30"> -->
@@ -179,13 +182,13 @@
 //페이징
 goList = function (thisPage) {
     document.querySelector("input[name=thisPage]").value = thisPage;
-    document.querySelector("form[name=formList]").action = "/usr/v1/infra/product/topUsrList";
+    document.querySelector("form[name=formList]").action = "/usr/v1/infra/product/itemUsrList";
     document.querySelector("form[name=formList]").submit();
 }
 //데이터 행
 document.getElementById("changeRowNum").onchange = function () {
     document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
-    formList.action = "/usr/v1/infra/product/topUsrList";
+    formList.action = "/usr/v1/infra/product/itemUsrList";
     formList.submit();
 }
 </script>

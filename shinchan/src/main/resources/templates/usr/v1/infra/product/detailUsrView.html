@@ -14,13 +14,14 @@
             <div class="breadcrumb-content text-center">
                 <ul>
                     <li>
-                        <a href="/usr/v1/infra/product/topUsrList">목록</a>
+                        <a href="/usr/v1/infra/product/itemUsrList">목록</a>
                     </li>
                     <li class="active">상세 페이지</li>
                 </ul>
             </div>
         </div>
     </div>
+<form id="forms" name="forms">    
     <div class="shop-area pt-100 pb-100">
         <div class="container">
             <div class="row">
@@ -69,7 +70,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product-details-content ml-70">
-                        <h2 th:text="${item?.prProdName}"></h2>
+                        <h2 th:text="${item?.prProdName}" id="poName" name="poName"></h2>
                         <div class="product-details-price">
                             <span class="old" style="margin-right: 30px; margin-left: 0px;" th:text="${#numbers.formatInteger(item?.prReguPrice, 3, 'COMMA') + '원'}"></span>
                             <span th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}" id="prSalePrice"></span>
@@ -99,7 +100,7 @@
                                 <span>사이즈</span>
                                 <div class="pro-details-size-content">
                                		<select id="prSize" name="prSize" class="form-select">
-										<option value="">선택하세요</option>
+										<option value=""readonly>선택하세요</option>
 										<option th:each="list : ${@codeService.selectListCachedCode(5)}" th:value="${list.cdseq}" th:text="${list.cd_Name}" th:selected="${list.cdseq} == ${item?.prSize}"></option>
 									</select>
                                 </div>
@@ -107,14 +108,15 @@
                         </div>
                         <div class="pro-details-quality">
                             <div class="cart-plus-minus">
-                                <input class="cart-plus-minus-box"  type="text" name="qtybutton" readonly>
+                                <input class="cart-plus-minus-box"  type="text" id="poQty" name="poQty" >
                             </div>
-                             <div class="pro-details-cart btn-hover">
-                                 <a th:href="@{/usr/v1/infra/product/checkoutUsrView(prseq=${item.prseq})}">Add To Cart</a>
-                             </div> 
-                            <div class="pro-details-wishlist">
-                                <a href="#"><i class="fa fa-heart-o" style="font-size: 20px;"></i></a>
-                            </div>
+                            <div class="pro-details-cart btn-hover">
+                                 <a th:if="${session.sessSeqUsr != null}" onclick="aaa()">Add To Cart</a>
+                                 <a th:unless="${session.sessSeqUsr != null}" href="/usr/v1/infra/member/signinUsrForm">로그인</a>
+                            </div> 
+<!--                             <div class="pro-details-wishlist"> -->
+<!--                                 <a href="#"><i class="fa fa-heart-o" style="font-size: 20px;"></i></a> -->
+<!--                             </div> -->
                         </div>
                         <div class="col-lg-11" style="padding-left: 0px;">
 			                <div class="your-order-area">
@@ -123,14 +125,16 @@
                             			<div class="your-order-top">
                                 			<ul>
                                     			<li>상품</li>
-                                    			<li>가격</li>
+											    <li><span class="order-middle-left" th:text="${item?.prProdName}"></span></li>
+											    <input type="hidden" id="poName" name="poName" th:value="${item?.prProdName}">
                                 			</ul>
                             			</div>
                             			<div class="your-order-middle">
 											<ul>
-											    <li><span class="order-middle-left" th:text="${item?.prProdName}"></span><span class="order-price" th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}" data-price="${item?.prSalePrice}"></span></li>
-											    <li><span>사이즈 :</span><span id="selecteSize" name="selecteSize"></span></li>
-											    <li><span>개수 :</span><span class="cart-plus-minus-box"  type="text" id="selectedQty" name="qtybutton"></span></li>
+                                    			<li>가격 :<span class="order-price" th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}"></span></li>
+                                    			<input type="hidden" id="poPrice" name="poPrice" th:value="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}">
+											    <li><span>사이즈 :</span><span id="selecteSize" name="poSize"></span></li>
+											    <li><span>개수 :</span><span class="cart-plus-minus-box"></span></li>
 											</ul>
 										</div>
                             			<div class="your-order-bottom">
@@ -142,7 +146,8 @@
                             			<div class="your-order-total">
                                 			<ul>
                                     			<li class="order-total">총액 :</li>
-			                                    <li><span class="order-price" id="totalPrice" name="totalPrice"></span></li>
+			                                    <li><span class="order-price" id="totalPrice"></span></li>
+<input type="hidden" id="poToPrice" name="poToPrice">
 			                                </ul>
 			                            </div>
 			                        </div>
@@ -154,6 +159,7 @@
             </div>
         </div>
     </div>
+</form>    
     <div class="description-review-area pb-90">
         <div class="container">
             <div class="description-review-wrapper">
@@ -623,6 +629,11 @@ document.getElementById("btnReview").onclick = function(){
 	}
 </script> -->
 <script>
+	let forms = document.getElementById("forms");
+	function aaa(){
+		forms.action = "/usr/v1/infra/product/checkoutUsrView";
+		forms.submit();
+	}
     window.onload = function() {
         var prSizeSelect = document.getElementById("prSize");
         var selectedSize = prSizeSelect.options[prSizeSelect.selectedIndex].text;
@@ -662,6 +673,7 @@ document.getElementById("btnReview").onclick = function(){
 	document.getElementById("btnLogin").onclick = function(){
 		window.location = "/usr/v1/infra/member/signinUsrForm";
 	}
+	
 </script>
 </body>
 

@@ -14,26 +14,23 @@
 					<div class="main-menu">
 						<nav>
 							<ul>
-								<li><a href="/usr/v1/infra/product/topUsrList">TOP<i class="fa fa-angle-down"></i></a>
+								<li><a style="font-size:13pt;">상의<i class="fa fa-angle-down"></i></a>
 									<ul class="mega-menu mega-menu-padding">
 										<li>
 											<ul>
-												<li class="mega-menu-title"><a
-													href="/usr/v1/infra/product/topUsrList">상의</a></li>
-												<li><a href="index.html">반팔</a></li>
-												<li><a href="index-2.html">긴팔</a></li>
-												<li><a href="index-3.html">후드티</a></li>
-												<li><a href="index-4.html">셔츠</a></li>
+												<li><a th:href="@{/usr/v1/infra/product/itemUsrList(prInventory=1)}">반팔</a></li>
+												<li><a th:href="@{/usr/v1/infra/product/itemUsrList(prInventory=2)}">긴팔</a></li>
+												<li><a th:href="@{/usr/v1/infra/product/itemUsrList(prInventory=3)}">후드티</a></li>
+												<li><a th:href="@{/usr/v1/infra/product/itemUsrList(prInventory=4)}">셔츠</a></li>
 											</ul>
 										</li>
 									</ul></li>
-								<li><a href="/usr/v1/infra/product/bottomUsrList"> BOTTOM <i
+								<li><a  style="font-size:13pt;">하의<i
 										class="fa fa-angle-down"></i>
 								</a>
 									<ul class="mega-menu mega-menu-padding">
 										<li>
 											<ul>
-												<li class="mega-menu-title"><a href="/usr/v1/infra/product/bottomUsrList">하의</a></li>
 												<li><a href="shop.html">슬랙스</a></li>
 												<li><a href="shop-filter.html">청바지</a></li>
 												<li><a href="shop-grid-2-col.html">트레이닝</a></li>
@@ -41,20 +38,19 @@
 											</ul>
 										</li>
 									</ul></li>
-								<li><a href="/usr/v1/infra/product/shoeUsrList">SHOES</a></li>
-									<a th:unless="${session.sessNameUsr != null}"></a>
-								<li><a href="/usr/v1/infra/index/deliveryUsrView"> 당일배송 </a></li>
-								<li><a th:if="${session.sessNameUsr != null}"> Pages <i class="fa fa-angle-down"></i></a>
-									<ul class="submenu">
-										<li><a href="about.html">about us</a></li>
-										<li><a href="cart-page.html">cart page</a></li>
-										<li><a href="/usr/v1/infra/product/checkoutUsrView">checkout </a></li>
-										<li><a href="wishlist.html">wishlist </a></li>
-										<li><a href="/usr/v1/infra/product/accountUsrMfom">my account</a></li>
-										<li><a href="login-register.html">login / register </a></li>
-										<li><a href="contact.html">contact us </a></li>
-										<li><a href="404.html">404 page </a></li>
-									</ul></li>
+								<li><a href="/usr/v1/infra/product/shoeUsrList" style="font-size:13pt;">신발</a></li>
+								<li><a href="/usr/v1/infra/index/deliveryUsrView" style="font-size:13pt;"> 당일배송 </a></li>
+<!-- 								<li><a th:if="${session.sessNameUsr != null}"> Pages <i class="fa fa-angle-down"></i></a> -->
+<!-- 									<ul class="submenu"> -->
+<!-- 										<li><a href="about.html">about us</a></li> -->
+<!-- 										<li><a href="cart-page.html">cart page</a></li> -->
+<!-- 										<li><a href="/usr/v1/infra/product/checkoutUsrView">checkout </a></li> -->
+<!-- 										<li><a href="wishlist.html">wishlist </a></li> -->
+<!-- 										<li><a href="/usr/v1/infra/product/accountUsrMfom">my account</a></li> -->
+<!-- 										<li><a href="login-register.html">login / register </a></li> -->
+<!-- 										<li><a href="contact.html">contact us </a></li> -->
+<!-- 										<li><a href="404.html">404 page </a></li> -->
+<!-- 									</ul></li> -->
 <!-- 								<li><a href="contact.html"> Contact</a></li> -->
 							</ul>
 						</nav>

@@ -179,13 +179,13 @@
 //페이징
 goList = function (thisPage) {
     document.querySelector("input[name=thisPage]").value = thisPage;
-    document.querySelector("form[name=formList]").action = "/usr/v1/infra/product/topUsrList";
+    document.querySelector("form[name=formList]").action = "/usr/v1/infra/product/itemUsrList";
     document.querySelector("form[name=formList]").submit();
 }
 //데이터 행
 document.getElementById("changeRowNum").onchange = function () {
     document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
-    formList.action = "/usr/v1/infra/product/topUsrList";
+    formList.action = "/usr/v1/infra/product/itemUsrList";
     formList.submit();
 }
 </script>

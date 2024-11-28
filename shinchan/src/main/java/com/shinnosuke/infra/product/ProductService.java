@@ -146,4 +146,12 @@ public class ProductService {
 		return ProductDao.selectListPayment(productDto);
 	}
 	
+	List<ProductDto> selectListBest(ProductDto productDto){
+		return ProductDao.selectListBest(productDto);
+	}
+	
+	public int insertProdOrder(ProductDto productDto) {
+		return ProductDao.insertProdOrder(productDto);
+	}
+	
 }

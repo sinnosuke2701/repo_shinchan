@@ -30,7 +30,6 @@ public class ProductController {
         return "xdm/v1/infra/product/ProductXdmList";
     }
 
-
     @RequestMapping(value ="/xdm/v1/infra/product/ProductXdmForm")
     public String ProductXdmForm() {
         return "xdm/v1/infra/product/ProductXdmForm";
@@ -69,20 +68,24 @@ public class ProductController {
     }
     
     @RequestMapping(value = "/usr/v1/infra/index/indexUsrView")
-    public String ProductUsrInde () {
+    public String indexUsrView (ProductDto productDto , Model model) {
+    	List<ProductDto> best = ProductService.selectListBest(productDto);
+    	model.addAttribute("bestList" , best);
         return "usr/v1/infra/index/indexUsrView";
     }
     
-    @RequestMapping(value = "/usr/v1/infra/product/topUsrList")
-    public String topUsrList(Model model ,@ModelAttribute("vo") ProductVo productVo ,ProductDto productDto) {
+    @RequestMapping(value = "/usr/v1/infra/product/itemUsrList")
+    public String itemUsrList(Model model ,@ModelAttribute("vo") ProductVo productVo ,@ModelAttribute("dto") ProductDto productDto) {
         model.addAttribute("list", ProductService.selectList(productVo));
         productVo.setParamsPaging(ProductService.selectOneCount(productVo));
         List<ProductDto> products = ProductService.selectList(productVo);
         model.addAttribute("list", products);
-        System.out.println("Product sizeCount????????????????: " + productDto.getSizeCount());
+        System.out.println("Product sizeCount??????????: " + productDto.getSizeCount());
         List<ProductDto> product = ProductService.selectListReview(productDto);
         model.addAttribute("relist" , product);
-        return "usr/v1/infra/product/topUsrList";
+        
+        model.addAttribute("prInventory", productDto);
+        return "usr/v1/infra/product/itemUsrList";
     }
     
     @RequestMapping(value = "/usr/v1/infra/product/detailUsrView")
@@ -90,18 +93,26 @@ public class ProductController {
         model.addAttribute("item", ProductService.selectOne(productDto));
         List<ProductDto> product = ProductService.selectListReview(productDto);
         model.addAttribute("relist" , product);
+//        ProductService.insertPayment(productDto);
         return "usr/v1/infra/product/detailUsrView";
     }
     
+    @RequestMapping(value = "/usr/v1/infra/product/poUsrInst")
+    public String poUsrInst(ProductDto productDto) {
+    	ProductService.insertProdOrder(productDto);
+        return "redirect:/usr/v1/infra/product/checkoutUsrView";
+    }
+    
     @RequestMapping(value = "/usr/v1/infra/product/checkoutUsrView")
-    public String checkoutUsrView(ProductDto productDto) {
+    public String checkoutUsrView(@ModelAttribute("dto") ProductDto productDto , Model model) {
     	ProductService.selectOne(productDto);
+    	model.addAttribute("item",ProductService.selectOne(productDto));
         return "usr/v1/infra/product/checkoutUsrView";
     }
     @RequestMapping(value ="/usr/v1/infra/product/paymentUsrInst")
     public String paymentXdmInst(ProductDto productDto , HttpSession httpSession,Model model) {
         String memberMemseq = (String) httpSession.getAttribute("Member_memseq");
-        productDto.setMember_memseq(memberMemseq); 
+        productDto.setMember_memseq(memberMemseq);
         ProductService.insertPayment(productDto);
         return "usr/v1/infra/product/cartUsrList";
     }

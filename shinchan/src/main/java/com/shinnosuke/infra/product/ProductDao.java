@@ -31,4 +31,7 @@ public interface ProductDao {
 	
 	List<ProductDto> selectListPayment(ProductDto productDto);
 	
+	List<ProductDto> selectListBest(ProductDto productDto);
+	
+	public int insertProdOrder(ProductDto productDto);
 }

@@ -25,7 +25,7 @@
     <meta name="description" content="Vivo - Responsive Bootstrap 5 Dashboard Template">
     <meta name="author" content="Bootstrap Gallery">
     <link rel="shortcut icon" href="/xdm/v1/template/vivo/assets/images/favicon.svg">
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Title -->
     <title>Vivo Admin Template - Admin Dashboard</title>
 
@@ -286,12 +286,38 @@
 
                                             <!--페이지네이션 시작-->
                                              <div aria-label="...">
-                                                <ul class="pagination justify-content-center ">
-                                                    <li th:if="${vo.startPage gt vo.pageNumToShow}" class="page-item" style="cursor: pointer;"><a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|"><i class="fa-solid fa-angle-left"></i></a></li>
-                                                    <li th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}">${i.index}</a></li>
-                                                    <li th:if="${vo.endPage ne vo.totalPages}" class="page-item" style="cursor: pointer;"><a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|"><i class="fa-solid fa-angle-right"></i></a></li>
-                                                </ul>
-                                            </div>
+    <ul class="pagination justify-content-center">
+        <!-- 왼쪽 화살표 -->
+        <li class="page-item" th:classappend="${vo.startPage gt vo.pageNumToShow} ? '' : 'disabled'" style="cursor: pointer;">
+            <a class="page-link" href="javascript:void(0)" th:if="${vo.startPage gt vo.pageNumToShow}" 
+               th:attr="onclick=|goList('${vo.startPage - 1}')|">
+                <i class="fa-solid fa-angle-left"></i>
+            </a>
+            <a class="page-link" th:if="${vo.startPage le vo.pageNumToShow}">
+                <i class="fa-solid fa-angle-left"></i>
+            </a>
+        </li>
+
+        <!-- 페이지 번호 -->
+        <li th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" 
+            th:classappend="${num eq vo.thisPage} ? 'active' : ''" 
+            class="page-item" style="cursor: pointer;">
+            <a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}">${i.index}</a>
+        </li>
+
+        <!-- 오른쪽 화살표 -->
+        <li class="page-item" th:classappend="${vo.endPage lt vo.totalPages} ? '' : 'disabled'" style="cursor: pointer;">
+            <a class="page-link" href="javascript:void(0)" th:if="${vo.endPage lt vo.totalPages}" 
+               th:attr="onclick=|goList('${vo.endPage + 1}')|">
+                <i class="fa-solid fa-angle-right"></i>
+            </a>
+            <a class="page-link" th:if="${vo.endPage ge vo.totalPages}">
+                <i class="fa-solid fa-angle-right"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
                                             <!--페이지네이션 끝-->
 
                                             <div class="row">

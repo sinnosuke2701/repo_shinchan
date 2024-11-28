@@ -454,6 +454,7 @@
 	        // 수량과 가격을 곱해서 총 가격 계산
 	        var totalPrice = newVal * prSalePrice;
 	        $('#totalPrice').text(totalPrice.toLocaleString() + '원');  // 가격을 원화로 표시 (천 단위 쉼표 추가)
+			document.getElementById("poToPrice").value = totalPrice;
 	        console.log("totalPrice: ", totalPrice);  // 총 가격 출력
 	    });
 
