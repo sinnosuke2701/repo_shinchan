@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-<form id="forms" name="forms">    
+<form id="forms" name="forms" method="post">    
     <div class="shop-area pt-100 pb-100">
         <div class="container">
             <div class="row">
@@ -131,9 +131,10 @@
                             			</div>
                             			<div class="your-order-middle">
 											<ul>
+											    <li><span>사이즈 :</span><span id="selecteSize" name="pmSize"></span></li>
+<input type="hidden" id="pmPrice" name="pmSize">
                                     			<li>가격 :<span class="order-price" th:text="${#numbers.formatInteger(item?.prSalePrice, 3, 'COMMA') + '원'}"></span></li>
 <input type="hidden" id="pmPrice" name="pmPrice" th:value="${item?.prSalePrice}">
-											    <li><span>사이즈 :</span><span id="selecteSize" name="pmSize"></span></li>
 											    <li><span>개수 :</span><span class="cart-plus-minus-box">1</span></li>
 											</ul>
 										</div>
@@ -638,11 +639,13 @@ document.getElementById("btnReview").onclick = function(){
         var prSizeSelect = document.getElementById("prSize");
         var selectedSize = prSizeSelect.options[prSizeSelect.selectedIndex].text;
         document.getElementById("selecteSize").textContent = selectedSize;
+        document.getElementById("pmPrice").value = selectedSize;
         
     };
     document.getElementById("prSize").addEventListener("change", function() {
         var selecteSize = this.options[this.selectedIndex].text.trim();
         document.getElementById("selecteSize").textContent = selecteSize;
+        document.getElementById("pmPrice").value = selecteSize;
     });
 </script>
 <script>
@@ -673,7 +676,6 @@ document.getElementById("btnReview").onclick = function(){
 	document.getElementById("btnLogin").onclick = function(){
 		window.location = "/usr/v1/infra/member/signinUsrForm";
 	}
-	
 </script>
 </body>
 

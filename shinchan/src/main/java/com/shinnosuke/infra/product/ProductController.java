@@ -114,7 +114,7 @@ public class ProductController {
         String memberMemseq = (String) httpSession.getAttribute("Member_memseq");
         productDto.setMember_memseq(memberMemseq);
         ProductService.insertPayment(productDto);
-        return "usr/v1/infra/product/cartUsrList";
+        return "redirect:/usr/v1/infra/product/cartUsrList";
     }
     
     @RequestMapping(value="/usr/v1/infra/review/reviewUsrInst")
