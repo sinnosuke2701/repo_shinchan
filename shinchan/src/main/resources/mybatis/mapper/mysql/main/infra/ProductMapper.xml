@@ -197,6 +197,7 @@
 			,pmProd
 			,pmSize
 			,pmQty
+			,pmPrice
 			,pmToPrice
 			,Member_memseq
 		)values(
@@ -211,6 +212,7 @@
 			,#{pmProd}
 			,#{pmSize}
 			,#{pmQty}
+			,#{pmPrice}
 			,#{pmToPrice}
 			,#{Member_memseq}
 		)
@@ -263,6 +265,7 @@
 			a.pmProd,
 			a.pmSize,
 			a.pmQty,
+			a.pmPrice,
 			a.pmToPrice
 		from
 			payment a

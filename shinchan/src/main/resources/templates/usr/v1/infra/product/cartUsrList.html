@@ -33,40 +33,18 @@
                                 <tr>
                                     <th>상품 이름</th>
                                     <th>상품 가격</th>
+                                    <th>상품 사이즈</th>
                                     <th>수량</th>
                                     <th>상품 총액</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="product-name"><a href="#">Product Name</a></td>
-                                    <td class="product-price-cart"><span class="amount">$260.00</span></td>
-                                    <td class="product-quantity">
-                                        <div class="cart-plus-minus">
-                                            <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal">$110.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="product-name"><a href="#">Product Name</a></td>
-                                    <td class="product-price-cart"><span class="amount">$150.00</span></td>
-                                    <td class="product-quantity">
-                                        <div class="cart-plus-minus">
-                                            <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal">$150.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="product-name"><a href="#">Product Name </a></td>
-                                    <td class="product-price-cart"><span class="amount">$170.00</span></td>
-                                    <td class="product-quantity">
-                                        <div class="cart-plus-minus">
-                                            <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal">$170.00</td>
+                                <tr th:each="list : ${list}">
+                                    <td class="product-name" th:text="${list.pmProd}"></td>
+                                    <td class="product-name" th:text="${#numbers.formatInteger(list.pmPrice , 3, 'COMMA') + '원'}"></td>
+                                    <td class="product-price-cart" th:text="${list.pmSize}"></td>
+                                    <td class="product-quantity" th:text="${list.pmQty}"></td>
+                                    <td class="product-subtotal" th:text="${#numbers.formatInteger(list.pmToPrice, 3, 'COMMA') + '원'}"></td>
                                 </tr>
                             </tbody>
                         </table>

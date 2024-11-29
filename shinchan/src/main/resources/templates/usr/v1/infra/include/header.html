@@ -25,20 +25,18 @@
 											</ul>
 										</li>
 									</ul></li>
-								<li><a  style="font-size:13pt;">하의<i
-										class="fa fa-angle-down"></i>
-								</a>
+								<li><a style="font-size:13pt;">하의<i class="fa fa-angle-down"></i></a>
 									<ul class="mega-menu mega-menu-padding">
 										<li>
 											<ul>
-												<li><a href="shop.html">슬랙스</a></li>
-												<li><a href="shop-filter.html">청바지</a></li>
-												<li><a href="shop-grid-2-col.html">트레이닝</a></li>
+												<li><a th:href="@{/usr/v1/infra/product/itemUsrList(prInventory=5)}">슬랙스</a></li>
+												<li><a th:href="@{/usr/v1/infra/product/itemUsrList(prInventory=6)}">청바지</a></li>
+												<li><a th:href="@{/usr/v1/infra/product/itemUsrList(prInventory=7)}">트레이닝</a></li>
 <!-- 												<li><a href="shop-no-sidebar.html">반바지</a></li> -->
 											</ul>
 										</li>
 									</ul></li>
-								<li><a href="/usr/v1/infra/product/shoeUsrList" style="font-size:13pt;">신발</a></li>
+								<li><a th:href="@{/usr/v1/infra/product/itemUsrList(prInventory=8)}" style="font-size:13pt;">신발</a></li>
 								<li><a href="/usr/v1/infra/index/deliveryUsrView" style="font-size:13pt;"> 당일배송 </a></li>
 <!-- 								<li><a th:if="${session.sessNameUsr != null}"> Pages <i class="fa fa-angle-down"></i></a> -->
 <!-- 									<ul class="submenu"> -->

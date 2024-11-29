@@ -44,8 +44,8 @@ public class ProductDto {
 	private String pmProd;
 	private String pmSize;
 	private Integer pmQty;
-	private String pmPrice;
-	private String pmToPrice;
+	private Integer pmPrice;
+	private Integer pmToPrice;
 	
 	private String cd_Name;
 	
@@ -271,16 +271,16 @@ public class ProductDto {
 	public void setPmQty(Integer pmQty) {
 		this.pmQty = pmQty;
 	}
-	public String getPmPrice() {
+	public Integer getPmPrice() {
 		return pmPrice;
 	}
-	public void setPmPrice(String pmPrice) {
+	public void setPmPrice(Integer pmPrice) {
 		this.pmPrice = pmPrice;
 	}
-	public String getPmToPrice() {
+	public Integer getPmToPrice() {
 		return pmToPrice;
 	}
-	public void setPmToPrice(String pmToPrice) {
+	public void setPmToPrice(Integer pmToPrice) {
 		this.pmToPrice = pmToPrice;
 	}
 	public String getCd_Name() {
