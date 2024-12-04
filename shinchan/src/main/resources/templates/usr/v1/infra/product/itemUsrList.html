@@ -48,9 +48,9 @@
                         <a class="active" href="#shop-1" data-toggle="tab">
                             <i class="fa fa-table"></i>
                         </a>
-                        <a href="#shop-2" data-toggle="tab">
-                            <i class="fa fa-list-ul"></i>
-                        </a>
+<!--                         <a href="#shop-2" data-toggle="tab"> -->
+<!--                             <i class="fa fa-list-ul"></i> -->
+<!--                         </a> -->
                     </div>
                 </div>
                 <!-- product list -->
@@ -65,8 +65,8 @@
                                     <div class="product-wrap mb-25 scroll-zoom">
                                         <div class="product-img">
                                             <a th:href="@{/usr/v1/infra/product/detailUsrView(prseq=${list.prseq})}">
-                                                <img class="default-img" src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top22.png" alt="">
-                                                <img class="hover-img" src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top2.png" alt="">
+                                                <img class="default-img" th:src="${list.mainImg}" alt="">
+                                                <img class="hover-img" th:src="${list.subImg1}" alt="">
                                             </a>
 <!--                                             <span class="pink">-10%</span> -->
                                             <div class="product-action">

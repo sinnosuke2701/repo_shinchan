@@ -76,7 +76,7 @@ public class ProductController {
     
     @RequestMapping(value = "/usr/v1/infra/product/itemUsrList")
     public String itemUsrList(Model model ,@ModelAttribute("vo") ProductVo productVo ,@ModelAttribute("dto") ProductDto productDto) {
-        model.addAttribute("list", ProductService.selectList(productVo));
+    	model.addAttribute("list", ProductService.selectList(productVo));
         productVo.setParamsPaging(ProductService.selectOneCount(productVo));
         List<ProductDto> products = ProductService.selectList(productVo);
         model.addAttribute("list", products);

@@ -16022,3 +16022,38 @@ h3.cart-page-title {
   cursor: pointer;
   height: 60px;
 }
+#reviewform .star-box {
+    display: inline-block;
+}
+
+#reviewform .ratting-star input[type=radio] {
+    display: none;
+}
+
+#reviewform .ratting-star label {
+    font-size: 3em;
+    color: transparent;
+    text-shadow: 0 0 0 #f0f0f0;
+    cursor: pointer;
+}
+
+#reviewform .ratting-star label:hover,
+#reviewform .ratting-star input[type=radio]:checked ~ label {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+#reviewform .ratting-star input[type=radio]:checked ~ label {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+#reviewContents {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 1.5px #D3D3D3;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+

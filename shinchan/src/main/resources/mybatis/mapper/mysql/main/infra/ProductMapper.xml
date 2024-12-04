@@ -12,12 +12,13 @@
 		from 
 			Product a
 		where 1 = 1
+			and a.prDelNY = 0
 		<if test="shDelNY != null and !shDelNY.equals('')">AND prDelNY = #{shDelNY}</if>
 		<if test="shUseNY != null and !shUseNY.equals('')">AND prUseNY = #{shUseNY}</if>
 		<if test="shSort != null and !shSort.equals('')">AND prSort = #{shSort}</if>
 		<if test="shSize != null and !shSize.equals('')">AND prSize = #{shSize}</if>
 		<if test="shColor != null and !shColor.equals('')">AND prColor = #{shColor}</if>
-		<if test="shValue != null and !shValue.equals('')">AND a.ifqnaTitle LIKE CONCAT('%', #{shValue}, '%')</if>
+<!-- 		<if test="shValue != null and !shValue.equals('')">AND a.ifqnaTitle LIKE CONCAT('%', #{shValue}, '%')</if> -->
 		
 		<choose>
 			<when test="shOption == 1 ">AND a.prseq = #{shValue}</when>
@@ -53,6 +54,11 @@
 				,(select count(c.cdseq) from code c where 1 = 1 and c.cdseq = a.prSize) as sizeCount
 				,(select count(r.reSeq) from review r where 1 = 1 and r.Product_prseq = a.prseq) as reviewCount
 				,(select avg(r.reSeq) from review r where 1 = 1 and r.Product_prseq = a.prseq) as reviewAvg
+				,(select aa.pfPath from productFile aa where 1=1 and aa.pfPseq = a.prseq and aa.pfDefaultNY = 1) as mainImg
+				, (select aa.pfPath from productFile aa where 1=1 and aa.pfPseq = a.prseq and aa.pfDefaultNY = 2) as subImg1
+				, (select aa.pfPath from productFile aa where 1=1 and aa.pfPseq = a.prseq and aa.pfDefaultNY = 3) as subImg2
+				, (select aa.pfPath from productFile aa where 1=1 and aa.pfPseq = a.prseq and aa.pfDefaultNY = 4) as subImg3
+				, (select aa.pfPath from productFile aa where 1=1 and aa.pfPseq = a.prseq and aa.pfDefaultNY = 5) as subImg4
 		<include refid="selectCommon"></include>
 		Order By a.prseq asc
 		) aa
@@ -114,6 +120,11 @@
 			,a.prDelNY
 			,(select count(*) from review r where r.Product_prseq = a.prseq) as reviewCount
 			,(select avg(r.reSeq) from review r where 1 = 1 and r.Product_prseq = a.prseq) as reviewAvg
+			,(select aa.pfPath from productFile aa where 1=1 and aa.pfPseq = a.prseq and aa.pfDefaultNY = 1) as mainImg
+			, (select aa.pfPath from productFile aa where 1=1 and aa.pfPseq = a.prseq and aa.pfDefaultNY = 2) as subImg1
+			, (select aa.pfPath from productFile aa where 1=1 and aa.pfPseq = a.prseq and aa.pfDefaultNY = 3) as subImg2
+			, (select aa.pfPath from productFile aa where 1=1 and aa.pfPseq = a.prseq and aa.pfDefaultNY = 4) as subImg3
+			, (select aa.pfPath from productFile aa where 1=1 and aa.pfPseq = a.prseq and aa.pfDefaultNY = 5) as subImg4
 		from
 			Product a
 		where 1 =1

@@ -30,7 +30,7 @@
                         <div class="product-details-img">
                             <div class="tab-content jump">
                                 <div id="shop-details-1" class="tab-pane large-img-style">
-                                    <img src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top22.png" alt="">
+<!--                                     <img src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top22.png" alt=""> -->
                                     <span class="dec-price">-10%</span>
                                     <div class="img-popup-wrap">
                                         <a class="img-popup" href="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top22.png"><i
@@ -601,34 +601,7 @@ document.getElementById("btnReview").onclick = function(){
 	form.submit();
 }
 </script>
-<!-- <script>
-	const stars = document.querySelectorAll('.ratting-star i'); // 모든 별 아이콘
-	const ratingValue = document.getElementById('star-rating-value'); // 선택된 별점 값 표시하는 부분
-	
-	// 별 클릭 시 동작
-	stars.forEach(star => {
-	    star.addEventListener('click', function() {
-	        const value = this.getAttribute('value'); // 클릭한 별의 value 속성 값
-	        updateStars(value); // 별 상태 업데이트
-	        ratingValue.textContent = value; // 선택된 별점 값 표시
-	    });
-	});
-	function updateStars(value) {
-	    stars.forEach(star => {
-	        const starValue = parseInt(star.getAttribute('value'));
-	
-	        if (starValue <= value) {
-	            // 클릭된 별점 이하의 별은 채워진 별 (fa-star)
-	            star.classList.remove('fa-star-o'); // 빈 별을 제거
-	            star.classList.add('fa-star');     // 채워진 별 추가
-	        } else {
-	            // 클릭된 별점 이상은 빈 별 (fa-star-o)
-	            star.classList.remove('fa-star');  // 채워진 별을 제거
-	            star.classList.add('fa-star-o');    // 빈 별 추가
-	        }
-	    });
-	}
-</script> -->
+
 <script>
 	let forms = document.getElementById("forms");
 	function aaa(){
