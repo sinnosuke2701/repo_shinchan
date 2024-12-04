@@ -27,6 +27,7 @@ public class ProductVo {
 	
 	private int startRnumForMysql = 0; 			//시작 쿼리 row
 	
+	private Integer prInventory;
 	//----------
 	
 	public void setParamsPaging(int totalRows) {
@@ -213,6 +214,14 @@ public class ProductVo {
 
 	public void setStartRnumForMysql(int startRnumForMysql) {
 		this.startRnumForMysql = startRnumForMysql;
+	}
+
+	public Integer getPrInventory() {
+		return prInventory;
+	}
+
+	public void setPrInventory(Integer prInventory) {
+		this.prInventory = prInventory;
 	}
 
 

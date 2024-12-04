@@ -48,9 +48,9 @@
                         <a class="active" href="#shop-1" data-toggle="tab">
                             <i class="fa fa-table"></i>
                         </a>
-<!--                         <a href="#shop-2" data-toggle="tab"> -->
-<!--                             <i class="fa fa-list-ul"></i> -->
-<!--                         </a> -->
+                        <a href="#shop-2" data-toggle="tab">
+                            <i class="fa fa-list-ul"></i>
+                        </a>
                     </div>
                 </div>
                 <!-- product list -->
@@ -105,11 +105,10 @@
                                     <div class="col-xl-4 col-lg-5 col-md-5 col-sm-6">
                                         <div class="product-wrap">
                                             <div class="product-img">
-                                                <a href="product-details.html">
-                                                    <img class="default-img" src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/product/pro-1.jpg" alt="">
-                                                    <img class="hover-img" src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/product/pro-1-1.jpg" alt="">
+                                                <a th:href="@{/usr/v1/infra/product/detailUsrView(prseq=${list.prseq})}">
+                                                    <img class="default-img" th:src="${list.mainImg}" alt="">
+                                                    <img class="hover-img" th:src="${list.subImg2}" alt="">
                                                 </a>
-                                                <span class="pink">-10%</span>
                                             </div>
                                         </div>
                                     </div>
@@ -129,7 +128,7 @@
                                             </div>
                                             <p th:text="${list.prProdDesc}"></p>
                                             <div class="shop-list-btn btn-hover">
-                                                <a href="#">ADD TO CART</a>
+                                                <a th:href="@{/usr/v1/infra/product/detailUsrView(prseq=${list.prseq})}">상품보기</a>
                                             </div>
                                         </div>
                                     </div>
@@ -182,18 +181,12 @@
 <script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/ajax-mail.js"></script>
 <!-- Main JS -->
 <script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/main.js"></script>
-<script>
+<script th:inline="javascript">
 //페이징
 goList = function (thisPage) {
     document.querySelector("input[name=thisPage]").value = thisPage;
-    document.querySelector("form[name=formList]").action = "/usr/v1/infra/product/itemUsrList";
+    document.querySelector("form[name=formList]").action = "/usr/v1/infra/product/itemUsrList?prInventory="+[[${vo.prInventory}]];
     document.querySelector("form[name=formList]").submit();
-}
-//데이터 행
-document.getElementById("changeRowNum").onchange = function () {
-    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
-    formList.action = "/usr/v1/infra/product/itemUsrList";
-    formList.submit();
 }
 </script>
 <script>

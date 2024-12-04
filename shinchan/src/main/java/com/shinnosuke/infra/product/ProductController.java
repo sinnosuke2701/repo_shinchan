@@ -77,6 +77,7 @@ public class ProductController {
     @RequestMapping(value = "/usr/v1/infra/product/itemUsrList")
     public String itemUsrList(Model model ,@ModelAttribute("vo") ProductVo productVo ,@ModelAttribute("dto") ProductDto productDto) {
     	model.addAttribute("list", ProductService.selectList(productVo));
+    	productVo.setRowNumToShow(6);
         productVo.setParamsPaging(ProductService.selectOneCount(productVo));
         List<ProductDto> products = ProductService.selectList(productVo);
         model.addAttribute("list", products);
@@ -89,7 +90,8 @@ public class ProductController {
     }
     
     @RequestMapping(value = "/usr/v1/infra/product/detailUsrView")
-    public String detailUsrView(Model model , ProductDto productDto) {
+    public String detailUsrView(Model model , ProductDto productDto , ProductVo productVo) {
+    	model.addAttribute("list", ProductService.selectList(productVo));
         model.addAttribute("item", ProductService.selectOne(productDto));
         List<ProductDto> product = ProductService.selectListReview(productDto);
         model.addAttribute("relist" , product);

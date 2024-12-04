@@ -29,40 +29,37 @@
                     <div class="product-details">
                         <div class="product-details-img">
                             <div class="tab-content jump">
-                                <div id="shop-details-1" class="tab-pane large-img-style">
-<!--                                     <img src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top22.png" alt=""> -->
-                                    <span class="dec-price">-10%</span>
+                                <div id="shop-details-1" class="tab-pane active large-img-style">
+                                    <img th:src="${item.mainImg}" alt="">
                                     <div class="img-popup-wrap">
-                                        <a class="img-popup" href="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top22.png"><i
+                                        <a class="img-popup" th:href="${item.mainImg}"><i
                                                 class="pe-7s-expand1"></i></a>
                                     </div>
                                 </div>
-                                <div id="shop-details-2" class="tab-pane active large-img-style">
-                                    <img src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top222.png" alt="">
-                                    <span class="dec-price">-10%</span>
+                                <div id="shop-details-2" class="tab-pane large-img-style">
+                                    <img th:src="${item.subImg1}" alt="">
                                     <div class="img-popup-wrap">
-                                        <a class="img-popup" href="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top222.png"><i
+                                        <a class="img-popup" th:href="${item.subImg1}"><i
                                                 class="pe-7s-expand1"></i></a>
                                     </div>
                                 </div>
                                 <div id="shop-details-3" class="tab-pane large-img-style">
-                                    <img src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top2.png" alt="">
-                                    <span class="dec-price">-10%</span>
+                                    <img th:src="${item.subImg2}" alt="">
                                     <div class="img-popup-wrap">
-                                        <a class="img-popup" href="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top2.png"><i
+                                        <a class="img-popup" th:href="${item.subImg2}"><i
                                                 class="pe-7s-expand1"></i></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="shop-details-tab nav">
                                 <a class="shop-details-overly" href="#shop-details-1" data-toggle="tab">
-                                    <img src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top22.png" alt="">
+                                    <img th:src="${item.mainImg}" alt="">
                                 </a>
                                 <a class="shop-details-overly active" href="#shop-details-2" data-toggle="tab">
-                                    <img src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top222.png" alt="">
+                                    <img th:src="${item.subImg1}" alt="">
                                 </a>
                                 <a class="shop-details-overly" href="#shop-details-3" data-toggle="tab">
-                                    <img src="https://shinnosuke.s3.ap-northeast-2.amazonaws.com/productdto/0/2024/11/07/bf794c3f-5914-48a7-8f60-44608117d41c.png" alt="">
+                                    <img th:src="${item.subImg2}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -250,19 +247,19 @@
                             <br>
                             <br>
                             <div style="text-align: center;">
-                                <img src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top1ex1.png" style="width: 800px; height: 900px;">
+                                <img th:src="${item.mainImg}" style="width: 800px; height: 900px;">
                             </div>
                             <br>
                             <div style="text-align: center;">
-                                <img src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top1ex2.png" style="width: 800px; height: 900px;">
+                                <img th:src="${item.subImg1}" style="width: 800px; height: 900px;">
                             </div>
                             <br>
                             <div style="text-align: center;">
-                                <img src="https://shinnosuke.s3.ap-northeast-2.amazonaws.com/productdto/0/2024/11/07/8b2d1501-cc5f-404a-87f5-8796b3eceded.png" style="width: 800px; height: 900px;">
+                                <img th:src="${item.subImg2}" style="width: 800px; height: 900px;">
                             </div>
                             <br>
                             <div style="text-align: center;">
-                                <img src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/top/top1ex4.png" style="width: 800px; height: 900px;">
+                                <img th:src="${item?.subImg3}" style="width: 800px; height: 900px;">
                             </div>
                             <div>
                                 <strong></strong>

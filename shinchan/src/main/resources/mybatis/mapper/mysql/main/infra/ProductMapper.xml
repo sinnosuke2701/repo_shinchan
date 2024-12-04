@@ -13,6 +13,7 @@
 			Product a
 		where 1 = 1
 			and a.prDelNY = 0
+			and a.prInventory = #{prInventory}
 		<if test="shDelNY != null and !shDelNY.equals('')">AND prDelNY = #{shDelNY}</if>
 		<if test="shUseNY != null and !shUseNY.equals('')">AND prUseNY = #{shUseNY}</if>
 		<if test="shSort != null and !shSort.equals('')">AND prSort = #{shSort}</if>
