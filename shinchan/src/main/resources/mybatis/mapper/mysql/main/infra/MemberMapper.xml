@@ -162,15 +162,6 @@
 			and memseq = #{memseq}
 	</update>
 	
-	<select id="selectOneId" resultMap="resultMapObj">
-		select
-			a.memId
-		from 
-			Member a
-		where 1 = 1
-			and memId = #{memId} 
-	</select>
-	
 	<select id="selectOneLogin" resultMap="resultMapObj">
 		select
 			a.memseq
@@ -186,6 +177,15 @@
 			Member a
 		where 1 = 1
 			and memId = #{memId}
+	</select>
+	
+	<select id="selectOneId" resultMap="resultMapObj">
+		select
+			a.memId
+		from 
+			Member a
+		where 1 = 1
+			and memId = #{memId} 
 	</select>
 	
 </mapper>
