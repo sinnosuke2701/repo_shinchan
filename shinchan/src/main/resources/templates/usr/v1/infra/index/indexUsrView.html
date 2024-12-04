@@ -339,8 +339,8 @@
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
                                 <a th:href="@{/usr/v1/infra/product/detailUsrView(prseq=${list.prseq})}">
-                                    <img class="default-img" src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/best_bottom/bottom1.png" alt="">
-                                    <img class="hover-img" src="/usr/v1/template/flone-html-tf-v2.5.1/assets/img/best_bottom/bottom11.png" alt="">
+                                    <img class="default-img" th:src="${list.mainImg}" alt="">
+                                    <img class="hover-img" th:src="${list.subImg1}" alt="">
                                 </a>
 <!--                                 <span class="pink">-10%</span> -->
 <!--                                 <div class="product-action-2"> -->
