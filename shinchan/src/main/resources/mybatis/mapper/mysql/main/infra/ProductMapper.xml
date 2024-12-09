@@ -185,12 +185,14 @@
 			reTitle
 			,reComment
 			,reDelNY
+			,reStar
 			,Product_prseq
 			,Member_memseq
 		)values(
 			#{reTitle}
 			,#{reComment}
 			,0
+			,#{reStar}
 			,#{Product_prseq}
 			,#{Member_memseq}
 		)

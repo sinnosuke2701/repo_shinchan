@@ -122,7 +122,7 @@ public class ProductController {
     @RequestMapping(value="/usr/v1/infra/review/reviewUsrInst")
     public String reviewUsrInst(ProductDto productDto) {
         ProductService.insertReview(productDto);
-        return "redirect:/usr/v1/infra/product/detailUsrView";
+        return "redirect:/usr/v1/infra/index/indexUsrView";
     }
     
     @RequestMapping(value="/usr/v1/infra/product/cartUsrList")
