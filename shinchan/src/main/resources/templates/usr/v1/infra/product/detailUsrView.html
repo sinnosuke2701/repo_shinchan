@@ -315,7 +315,6 @@
                     </div>
                     <div id="des-details3" class="tab-pane">
 					    <div class="row">
-					    
 					        <!-- 리뷰 목록 -->
 					        <div class="col-lg-6">
 					            <div class="review-wrapper" th:each="relist : ${relist}">
@@ -345,7 +344,6 @@
 					                </div>
 					            </div>
 					        </div>
-					
 					        <!-- 후기 작성 -->
 					        <div class="col-lg-6">
 					            <div class="ratting-form-wrapper pl-50">
@@ -354,7 +352,6 @@
 					                    <form id="reviewform" name="reviewform" method="post" action="/usr/v1/infra/review/reviewUsrInst">
 					                        <input type="hidden" id="Product_prseq" name="Product_prseq" th:value="${item?.prseq}">
 					                        <input type="hidden" id="memId" name="Member_memseq" th:value="${session.sessSeqUsr}">
-					                        
 					                        <!-- 별점 입력 -->
 					                        <div class="star-box">
 					                            <div class="ratting-star">
@@ -363,12 +360,9 @@
 					                                <i class="fa fa-star" data-value="3"></i>
 					                                <i class="fa fa-star" data-value="4"></i>
 					                                <i class="fa fa-star" data-value="5"></i>
-					                                <!-- 이곳에서 JavaScript로 동적으로 값이 들어감 -->
 					                                <input type="hidden" id="reStarInput" name="reStar" value="">  <!-- 별점 값 -->
 					                            </div>
 					                        </div>
-					
-					                        <!-- 제목 및 내용 입력 -->
 					                        <div class="row">
 					                            <div class="col-md-6">
 					                                <div class="rating-form-style mb-10">
@@ -650,151 +644,53 @@ document.getElementById("btnReview").onclick = function(){
 	}
 </script>
 <script type="text/javascript">
-//리뷰 별점
-const stars = document.querySelectorAll('.ratting-star .fa-star'); // 별 요소 선택
-let selectedValue = 0; // 선택된 별점 값을 저장하는 변수
-
-// 별에 마우스 올렸을 때 해당 별과 왼쪽 별들 채우기
-stars.forEach((star, index) => {
-    star.addEventListener('mouseover', () => {
-        // 마우스 올린 별까지 색상 변경
-        stars.forEach((s, i) => {
-            if (i <= index) {
-                s.style.color = 'rgba(250, 208, 0, 0.99)';
-            } else {
-                s.style.color = 'rgba(0, 0, 0, 0.3)'; // 기본 색상
-            }
-        });
-    });
-
-    // 마우스가 별 밖으로 나가면 선택된 상태 유지
-    star.addEventListener('mouseout', () => {
-        stars.forEach((s, i) => {
-            if (i < selectedValue) {
-                s.style.color = 'rgba(250, 208, 0, 0.99)';
-            } else {
-                s.style.color = 'rgba(0, 0, 0, 0.3)';
-            }
-        });
-    });
-
-    // 별 클릭 시 선택 상태 저장 및 유지
-    star.addEventListener('click', () => {
-        selectedValue = index + 1; // 선택된 값 저장 (1부터 시작)
-        console.log("선택된 별점 값: " + selectedValue);
-
-        // 모든 별 업데이트
-        stars.forEach((s, i) => {
-            if (i < selectedValue) {
-                s.style.color = 'rgba(250, 208, 0, 0.99)';
-            } else {
-                s.style.color = 'rgba(0, 0, 0, 0.3)';
-            }
-        });
-
-        // 선택된 값 hidden input에 설정
-        const inputField = document.querySelector('#reStarInput');
-        if (inputField) {
-            inputField.value = selectedValue; // 기존 input에 값만 갱신
-        } else {
-            const form = document.getElementById('reviewform');
-            const newInputField = document.createElement('input');
-            newInputField.type = 'hidden';
-            newInputField.id = 'reStarInput';
-            newInputField.name = 'reStar';
-            newInputField.value = selectedValue;
-            form.appendChild(newInputField); // 없으면 추가
-        }
-    });
-});
-
-// 리뷰 저장 버튼 클릭 시
-document.getElementById('btnReview').onclick = function() {
-    // 입력된 값을 가져옴
-    const Product_prseq = document.querySelector('input[name="Product_prseq"]').value;  // Product_prseq (상품 번호)
-    const memSeq = document.querySelector('input[name="Member_memseq"]').value;  // Member_memseq (회원 번호)
-    const reStar = document.querySelector('input[name="reStar"]').value;  // 선택된 별점 값을 가져옵니다
-    const reTitle = document.getElementById('reTitle').value;  // 리뷰 제목
-    const reComment = document.getElementById('reComment').value;  // 리뷰 내용
-    
-    if (reStar && reTitle && reComment && Product_prseq && memSeq) {  // 별점, 제목, 내용, 상품 번호, 회원 번호가 모두 채워졌는지 확인
-        // Ajax로 데이터 전송
-        $.ajax({
-            async: true,
-            cache: false,
-            type: "post",
-            url: '/usr/v1/infra/review/reviewUsrInst',  // 리뷰 저장 요청 URL
-            data: {
-                "reTitle": reTitle,
-                "reComment": reComment,
-                "reStar": reStar,  // 선택된 별점 값
-                "Product_prseq": Product_prseq,  // 상품 번호
-                "Member_memseq": memSeq  // 회원 번호
-            },
-            success: function(response) {
-                console.log("서버 응답:", response); // 서버 응답 로그 확인
-                if (response.rt === "success") {
-                    alert("리뷰 저장 성공");
-
-                    // 새 리뷰 항목을 생성하고 페이지에 즉시 추가
-                    let target = '';
-                    target += '<div class="col-lg-6">';
-                    target += '    <div class="review-wrapper">';
-                    target += '        <div class="single-review">';
-                    target += '            <div class="review-content">';
-                    target += '                <div class="review-top-wrap">';
-                    target += '                    <div class="review-left">';
-                    target += '                        <div class="review-name">';
-                    target += '                            <span>' + response.reId + '</span>';
-                    target += '                            <br>';
-                    target += '                            <div class="review-rating">';
-                    
-                    // 별점 표시 (1~5까지)
-                    for (let i = 1; i <= 5; i++) {
-                        target += '  <i class="fa ' + (response.reStar >= i ? 'fa-star' : 'fa-star-o') + '"></i>';
-                    }
-
-                    target += '                        </div>';
-                    target += '                        <h4>' + response.reTitle + '</h4>';
-                    target += '                    </div>';
-                    target += '                </div>';
-                    target += '            </div>';
-                    target += '            <div class="review-bottom">';
-                    target += '                <h5>' + response.reComment + '</h5>';
-                    target += '            </div>';
-                    target += '        </div>';
-                    target += '    </div>';
-                    target += '</div>';
-
-                    // 새로운 리뷰를 기존 리뷰 리스트에 즉시 추가
-                    $(".review-wrapper").prepend(target);  // 새로운 리뷰를 맨 앞에 추가
-
-                    // 리뷰 폼 초기화
-                    document.getElementById('reviewform').reset();
-                    // 별점 초기화
-                    const stars = document.querySelectorAll('.ratting-star .fa-star');
-                    stars.forEach(star => star.style.color = 'rgba(0, 0, 0, 0.3)');
-                    document.getElementById('reStarInput').value = '';  // hidden 값 초기화
-
-                } else {
-                    alert("리뷰 저장 실패: 응답 값이 예상과 다릅니다.");
-//                     console.error("응답 데이터:", response); // 서버에서 받은 응답 전체 확인
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error('Ajax 요청 실패:', error);
-                console.log('응답 상태:', xhr.status); // 응답 상태 확인
-                console.log('응답 텍스트:', xhr.responseText); // 응답 텍스트 확인
-                alert('리뷰 저장 중 오류가 발생했습니다.');
-            }
-        });
-    } else {
-        alert("별점, 제목, 내용, 상품 번호, 회원 번호를 모두 입력해주세요.");
-    }
-};
-
+	//리뷰 별점
+	const stars = document.querySelectorAll('.ratting-star .fa-star'); // 별 요소 선택
+	let selectedValue = 0; // 선택된 별점 값을 저장하는 변수
+	
+	// 별에 마우스 올렸을 때 해당 별과 왼쪽 별들 채우기
+	stars.forEach((star, index) => {
+	    star.addEventListener('mouseover', () => {
+	        // 마우스 올린 별까지 색상 변경
+	        stars.forEach((s, i) => {
+	            if (i <= index) {
+	                s.style.color = 'rgba(250, 208, 0, 0.99)';
+	            } else {
+	                s.style.color = 'rgba(0, 0, 0, 0.3)'; // 기본 색상
+	            }
+	        });
+	    });
+	    // 마우스가 별 밖으로 나가면 선택된 상태 유지
+	    star.addEventListener('mouseout', () => {
+	        stars.forEach((s, i) => {
+	            if (i < selectedValue) {
+	                s.style.color = 'rgba(250, 208, 0, 0.99)';
+	            } else {
+	                s.style.color = 'rgba(0, 0, 0, 0.3)';
+	            }
+	        });
+	    });
+	    // 별 클릭 시 선택 상태 저장 및 유지
+	    star.addEventListener('click', () => {
+	        selectedValue = index + 1; // 선택된 값 저장 (1부터 시작)
+	        console.log("선택된 별점 값: " + selectedValue);
+	        // 모든 별 업데이트
+	        stars.forEach((s, i) => {
+	            if (i < selectedValue) {
+	                s.style.color = 'rgba(250, 208, 0, 0.99)';
+	            } else {
+	                s.style.color = 'rgba(0, 0, 0, 0.3)';
+	            }
+	        });
+	        // 선택된 값 hidden input에 설정
+	        const inputField = document.querySelector('#reStarInput');
+	        if (inputField) {
+	            inputField.value = selectedValue; // 기존 input에 값만 갱신
+	        }
+	    });
+	});
+	
 </script>
-
 
 </body>
 
