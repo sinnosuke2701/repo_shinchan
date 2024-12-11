@@ -22,6 +22,10 @@ public class WebMvcConfigurerImpl implements WebMvcConfigurer{
 							"/xdm/v1/infra/member/signinXdmForm",
 							"/xdm/v1/infra/member/signinXdmProc",
 							"/xdm/v1/infra/member/signinUsrProc"
+//							"/usr/v1/infra/index/indexUsrView",
+//							"/usr/v1/infra/member/signinUsrForm",
+//							"/usr/v1/infra/member/signinUsrProc",
+//							"/usr/v1/infra/member/signupXdmForm"
 							
 			);	
 			

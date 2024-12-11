@@ -350,8 +350,8 @@
 					                <h3>후기 작성</h3>
 					                <div class="ratting-form">
 					                    <form id="reviewform" name="reviewform" method="post" action="/usr/v1/infra/review/reviewUsrInst">
-					                        <input type="hidden" id="Product_prseq" name="Product_prseq" th:value="${item?.prseq}">
-					                        <input type="hidden" id="memId" name="Member_memseq" th:value="${session.sessSeqUsr}">
+<input type="hidden" id="Product_prseq" name="Product_prseq" th:value="${item?.prseq}">
+<input type="hidden" id="Member_memseq" name="Member_memseq" th:value="${session.sessSeqUsr}">
 					                        <!-- 별점 입력 -->
 					                        <div class="star-box">
 					                            <div class="ratting-star">
@@ -360,7 +360,7 @@
 					                                <i class="fa fa-star" data-value="3"></i>
 					                                <i class="fa fa-star" data-value="4"></i>
 					                                <i class="fa fa-star" data-value="5"></i>
-					                                <input type="hidden" id="reStarInput" name="reStar" value="">  <!-- 별점 값 -->
+<input type="hidden" id="reStarInput" name="reStar" value="">  <!-- 별점 값 -->
 					                            </div>
 					                        </div>
 					                        <div class="row">
@@ -605,92 +605,134 @@
 			}
 </script>
 <script>
-document.getElementById("btnReview").onclick = function(){
-	let form = document.querySelector("form[name = reviewform]");
-	form.action = "/usr/v1/infra/review/reviewUsrInst";
-	form.submit();
-}
-</script>
+    // 리뷰 별점
+    const stars = document.querySelectorAll('.ratting-star .fa-star'); // 별 요소 선택
+    let selectedValue = 0; // 선택된 별점 값을 저장하는 변수
+    
+    // 별에 마우스 올렸을 때 해당 별과 왼쪽 별들 채우기
+    stars.forEach((star, index) => {
+        star.addEventListener('mouseover', () => {
+            // 마우스 올린 별까지 색상 변경
+            stars.forEach((s, i) => {
+                if (i <= index) {
+                    s.style.color = 'rgba(250, 208, 0, 0.99)';
+                } else {
+                    s.style.color = 'rgba(0, 0, 0, 0.3)'; // 기본 색상
+                }
+            });
+        });
+        // 마우스가 별 밖으로 나가면 선택된 상태 유지
+        star.addEventListener('mouseout', () => {
+            stars.forEach((s, i) => {
+                if (i < selectedValue) {
+                    s.style.color = 'rgba(250, 208, 0, 0.99)';
+                } else {
+                    s.style.color = 'rgba(0, 0, 0, 0.3)';
+                }
+            });
+        });
+        // 별 클릭 시 선택 상태 저장 및 유지
+        star.addEventListener('click', () => {
+            selectedValue = index + 1; // 선택된 값 저장 (1부터 시작)
+            console.log("선택된 별점 값: " + selectedValue);
+            // 모든 별 업데이트
+            stars.forEach((s, i) => {
+                if (i < selectedValue) {
+                    s.style.color = 'rgba(250, 208, 0, 0.99)';
+                } else {
+                    s.style.color = 'rgba(0, 0, 0, 0.3)';
+                }
+            });
+            // 선택된 값 hidden input에 설정
+            const inputField = document.querySelector('#reStarInput');
+            if (inputField) {
+                inputField.value = selectedValue; // 기존 input에 값만 갱신
+            } 
+        });
+    });
 
-<script>
-	let forms = document.getElementById("forms");
-	function aaa(){
-		forms.action = "/usr/v1/infra/product/checkoutUsrView";
-		forms.submit();
-	}
+    // 리뷰 저장 버튼 클릭 시
+    $("#btnReview").click(function() {
+        const productPrseq = $("#Product_prseq").val();
+        const Member_memseq = $("#Member_memseq").val();
+        const reTitle = $("#reTitle").val();
+        const reComment = $("#reComment").val();
+        const reStar = $("#reStarInput").val();
+
+        // Ajax 요청
+        $.ajax({
+            type: "POST",
+            url: "/usr/v1/infra/review/reviewUsrInst",
+            data: {
+                Product_prseq: productPrseq,
+                Member_memseq: Member_memseq,
+                reTitle: reTitle,
+                reComment: reComment,
+                reStar: reStar
+            },
+            success: function(response) {
+                if (response.rt === "success") {
+                    // 새로 추가된 리뷰 HTML 생성
+                    let reviewHtml = '<div class="single-review">';
+                    reviewHtml += '<div class="review-content">';
+                    reviewHtml += '<div class="review-top-wrap">';
+                    reviewHtml += '<div class="review-left">';
+                    reviewHtml += '<div class="review-name">';
+                    reviewHtml += '<span>' + response.relist.memId + '</span>';
+                    reviewHtml += '<br>';
+                    reviewHtml += '<div class="review-rating">' + renderStars(response.relist.reStar) + '</div>';
+                    reviewHtml += '<h4>' + response.relist.reTitle + '</h4>';
+                    reviewHtml += '</div></div></div>';
+                    reviewHtml += '<div class="review-bottom"><h5>' + response.relist.reComment + '</h5></div>';
+                    reviewHtml += '</div></div>';
+                    // 리뷰 목록에 추가
+                    $("#reviewList").append(reviewHtml);
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function() {
+                alert("리뷰 저장 중 오류가 발생했습니다.");
+            }
+        });
+    });
+
+    // 별점 렌더링 함수
+    function renderStars(reStar) {
+        let stars = "";
+        for (let i = 1; i <= 5; i++) {
+            stars += '<i class="fa ' + (i <= reStar ? "fa-star" : "fa-star-o") + '"></i>';
+        }
+        return stars;
+    }
+
+    // 사이즈 선택 처리
     window.onload = function() {
         var prSizeSelect = document.getElementById("prSize");
         var selectedSize = prSizeSelect.options[prSizeSelect.selectedIndex].text;
         document.getElementById("selecteSize").textContent = selectedSize;
         document.getElementById("pmPrice").value = selectedSize;
-        
     };
+
     document.getElementById("prSize").addEventListener("change", function() {
         var selecteSize = this.options[this.selectedIndex].text.trim();
         document.getElementById("selecteSize").textContent = selecteSize;
         document.getElementById("pmPrice").value = selecteSize;
     });
+
+    // 로그인 버튼 클릭 시
+    document.getElementById("btnLogin").onclick = function() {
+        window.location = "/usr/v1/infra/member/signinUsrForm";
+    };
+
+    // 리뷰 버튼 클릭 시
+    document.getElementById("btnReview").onclick = function() {
+        let form = document.querySelector("form[name = reviewform]");
+        form.action = "/usr/v1/infra/review/reviewUsrInst";
+        form.submit();
+    };
 </script>
-<script>
-	document.getElementById("btnReview").onclick = function(){
-		let form = document.querySelector("form[name=reviewform]");
-		form.action = "/usr/v1/infra/review/reviewUsrInst";
-		form.submit();
-	}
-</script>
-<script>
-	document.getElementById("btnLogin").onclick = function(){
-		window.location = "/usr/v1/infra/member/signinUsrForm";
-	}
-</script>
-<script type="text/javascript">
-	//리뷰 별점
-	const stars = document.querySelectorAll('.ratting-star .fa-star'); // 별 요소 선택
-	let selectedValue = 0; // 선택된 별점 값을 저장하는 변수
-	
-	// 별에 마우스 올렸을 때 해당 별과 왼쪽 별들 채우기
-	stars.forEach((star, index) => {
-	    star.addEventListener('mouseover', () => {
-	        // 마우스 올린 별까지 색상 변경
-	        stars.forEach((s, i) => {
-	            if (i <= index) {
-	                s.style.color = 'rgba(250, 208, 0, 0.99)';
-	            } else {
-	                s.style.color = 'rgba(0, 0, 0, 0.3)'; // 기본 색상
-	            }
-	        });
-	    });
-	    // 마우스가 별 밖으로 나가면 선택된 상태 유지
-	    star.addEventListener('mouseout', () => {
-	        stars.forEach((s, i) => {
-	            if (i < selectedValue) {
-	                s.style.color = 'rgba(250, 208, 0, 0.99)';
-	            } else {
-	                s.style.color = 'rgba(0, 0, 0, 0.3)';
-	            }
-	        });
-	    });
-	    // 별 클릭 시 선택 상태 저장 및 유지
-	    star.addEventListener('click', () => {
-	        selectedValue = index + 1; // 선택된 값 저장 (1부터 시작)
-	        console.log("선택된 별점 값: " + selectedValue);
-	        // 모든 별 업데이트
-	        stars.forEach((s, i) => {
-	            if (i < selectedValue) {
-	                s.style.color = 'rgba(250, 208, 0, 0.99)';
-	            } else {
-	                s.style.color = 'rgba(0, 0, 0, 0.3)';
-	            }
-	        });
-	        // 선택된 값 hidden input에 설정
-	        const inputField = document.querySelector('#reStarInput');
-	        if (inputField) {
-	            inputField.value = selectedValue; // 기존 input에 값만 갱신
-	        }
-	    });
-	});
-	
-</script>
+
 
 </body>
 

@@ -137,14 +137,4 @@ public class ProductController {
         return "usr/v1/infra/index/deliveryUsrView";
     }
    
-    @RequestMapping(value="/usr/v1/infra/product/bottomUsrList")
-    public String bottomUsrList() {
-        return "usr/v1/infra/product/bottomUsrList";
-    }
-    
-    @RequestMapping(value="/usr/v1/infra/product/shoeUsrList")
-    public String shoeUsrList() {
-        return "usr/v1/infra/product/shoeUsrList";
-    }
-    
 }
