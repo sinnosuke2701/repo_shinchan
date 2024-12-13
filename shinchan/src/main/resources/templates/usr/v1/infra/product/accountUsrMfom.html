@@ -37,32 +37,35 @@
                                         <div class="account-info-wrapper">
                                             <h4>내 정보</h4>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="billing-info">
-                                                    <label>이름</label>
-                                                    <input type="text" class="form-control" id="memName"  name="memName" th:value="${item?.memName}" autocomplete="off">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="billing-info">
-                                                    <label>이메일</label>
-                                                    <input type="email" autocomplete="off">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="billing-info">
-                                                    <label>전화번호</label>
-                                                    <input type="text" autocomplete="off">
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <form id="forms" name="forms" method="post" action="/usr/v1/infra/member/MemberUsrPdt">
+<input type="text" id="memGender" name="memGender" th:value="${session.sessGenderUsr}">
+	                                        <div class="row">
+	                                            <div class="col-lg-6 col-md-6">
+	                                                <div class="billing-info">
+	                                                    <label>이름</label>
+	                                                    <input type="text" class="form-control" id="memName"  name="memName" th:value="${session.sessNameUsr}" autocomplete="off" readonly>
+	                                                </div>
+	                                            </div>
+	                                            <div class="col-lg-6 col-md-6">
+	                                                <div class="billing-info">
+	                                                    <label>이메일</label>
+	                                                    <input type="email" id="memEmail" name="memEmail" th:value="${session.sessEmailUsr}" autocomplete="off">
+	                                                </div>
+	                                            </div>
+	                                            <div class="col-lg-6 col-md-6">
+	                                                <div class="billing-info">
+	                                                    <label>전화번호</label>
+	                                                    <input type="text" id="memPhoneNume" name="memPhoneNum" th:value="${session.sessPhoneNumUsr}" autocomplete="off">
+	                                                </div>
+	                                            </div>
+	                                        </div>
+                                        </form>
                                         <div class="billing-back-btn">
                                             <div class="billing-back">
                                                 <a href="#"><i class="fa fa-arrow-up"></i>위로 가기</a>
                                             </div>
                                             <div class="billing-btn">
-                                                <button type="submit">저장</button>
+                                                <button type="button" id="btnUpdate">저장</button>
                                             </div>
                                         </div>
                                     </div>
@@ -82,13 +85,13 @@
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12">
                                                 <div class="billing-info">
-                                                    <label>현재 비밀번호</label>
+                                                    <label>변경 비밀번호</label>
                                                     <input type="password">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-md-12">
                                                 <div class="billing-info">
-                                                    <label>변경 비밀번호</label>
+                                                    <label>변경 비밀번호 확인</label>
                                                     <input type="password">
                                                 </div>
                                             </div>
@@ -105,48 +108,54 @@
                                 </div>
                             </div>
                         </div>
-<!--                         <div class="panel panel-default single-my-account"> -->
-<!--                             <div class="panel-heading my-account-title"> -->
-<!--                                 <h3 class="panel-title"><span>3 .</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-3">Modify your address book entries   </a></h3> -->
-<!--                             </div> -->
-<!--                             <div id="my-account-3" class="panel-collapse collapse"> -->
-<!--                                 <div class="panel-body"> -->
-<!--                                     <div class="myaccount-info-wrapper"> -->
-<!--                                         <div class="account-info-wrapper"> -->
-<!--                                             <h4>Address Book Entries</h4> -->
-<!--                                         </div> -->
-<!--                                         <div class="entries-wrapper"> -->
-<!--                                             <div class="row"> -->
-<!--                                                 <div class="col-lg-6 col-md-6 d-flex align-items-center justify-content-center"> -->
-<!--                                                     <div class="entries-info text-center"> -->
-<!--                                                         <p>Farhana hayder (shuvo) </p> -->
-<!--                                                         <p>hastech </p> -->
-<!--                                                         <p> Road#1 , Block#c </p> -->
-<!--                                                         <p> Rampura. </p> -->
-<!--                                                         <p>Dhaka </p> -->
-<!--                                                         <p>Bangladesh </p> -->
-<!--                                                     </div> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-lg-6 col-md-6 d-flex align-items-center justify-content-center"> -->
-<!--                                                     <div class="entries-edit-delete text-center"> -->
-<!--                                                         <a class="edit" href="#">Edit</a> -->
-<!--                                                         <a href="#">Delete</a> -->
-<!--                                                     </div> -->
-<!--                                                 </div> -->
-<!--                                             </div> -->
-<!--                                         </div> -->
-<!--                                         <div class="billing-back-btn"> -->
-<!--                                             <div class="billing-back"> -->
-<!--                                                 <a href="#"><i class="fa fa-arrow-up"></i> back</a> -->
-<!--                                             </div> -->
-<!--                                             <div class="billing-btn"> -->
-<!--                                                 <button type="submit">Continue</button> -->
-<!--                                             </div> -->
-<!--                                         </div> -->
-<!--                                     </div> -->
-<!--                                 </div> -->
-<!--                             </div> -->
-<!--                         </div> -->
+                        <div class="panel panel-default single-my-account">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>3 .</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-3">주소 변경</a></h3>
+                            </div>
+                            <div id="my-account-3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="myaccount-info-wrapper">
+                                        <div class="account-info-wrapper">
+                                            <h4>주소 변경</h4>
+                                        </div>
+                                        <div class="row">
+                                        	<div class="col-lg-6 col-md-6">
+                                                <div class="billing-info">
+                                                    <label>우편번호</label>
+                                                    <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+                                                </div>
+                                            </div>
+                                        	<div class="col-lg-6 col-md-6">
+                                                <div class="billing-info">
+                                                    <label>우편번호</label>
+                                                    <input type="text" class="form-control" id="sample6_postcode" name="memZipcode" placeholder="우편번호" autocomplete="off" th:value="${session.sessZipcodeUsr}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info">
+                                                    <label>주소</label>
+                                                    <input type="text" class="form-control" id="sample6_address" name="memAddress" placeholder="주소" autocomplete="off" th:value="${session.sessAddressUsr}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info">
+                                                    <label>상세주소</label>
+                                                    <input type="text" class="form-control" id="sample6_detailAddress" name="memDtAddress" placeholder="상세주소" autocomplete="off" th:value="${session.sessDtAddressUsr}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="billing-back-btn">
+                                            <div class="billing-back">
+                                                <a href="#"><i class="fa fa-arrow-up"></i>위로 가기</a>
+                                            </div>
+                                            <div class="billing-btn">
+                                                <button type="submit">저장</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 <!--                         <div class="panel panel-default single-my-account"> -->
 <!--                             <div class="panel-heading my-account-title"> -->
 <!--                                 <h3 class="panel-title"><span>4 .</span> <a href="wishlist.html">Modify your wish list   </a></h3> -->
@@ -195,6 +204,65 @@
 					}
 				});
 			}
+</script>
+<!-- kakao 우편번호 Start -->
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function sample6_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+//                     // 조합된 참고항목을 해당 필드에 넣는다.
+//                     document.getElementById("sample6_extraAddress").value = extraAddr;
+                
+                } else {
+                    document.getElementById("sample6_extraAddress").value = '';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample6_postcode').value = data.zonecode;
+                document.getElementById("sample6_address").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("sample6_detailAddress").focus();
+            }
+        }).open();
+    }
+</script>
+<!-- kakao 우편번호 End -->
+<script>
+	document.getElementById("btnUpdate").onclick =function (){
+		let form = document.querySelector("form[name=forms]");
+		form.action = "/usr/v1/infra/member/MemberUsrPdt";
+		form.submit();
+	}
 </script>
 </body>
 

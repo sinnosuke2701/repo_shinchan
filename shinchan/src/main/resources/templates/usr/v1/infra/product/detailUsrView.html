@@ -22,7 +22,7 @@
             <div class="breadcrumb-content text-center">
                 <ul>
                     <li>
-                        <a href="/usr/v1/infra/product/itemUsrList">목록</a>
+                        목록
                     </li>
                     <li class="active">상세 페이지</li>
                 </ul>
@@ -651,57 +651,127 @@
         });
     });
 
-    // 리뷰 저장 버튼 클릭 시
-    $("#btnReview").click(function() {
-        const productPrseq = $("#Product_prseq").val();
-        const Member_memseq = $("#Member_memseq").val();
-        const reTitle = $("#reTitle").val();
-        const reComment = $("#reComment").val();
-        const reStar = $("#reStarInput").val();
+//     $("#btnReview").onclick(function() {
+//         const requestData = {
+//             Product_prseq: $("#Product_prseq").val(),
+//             Member_memseq: $("#Member_memseq").val(),
+//             reTitle: $("#reTitle").val(),
+//             reComment: $("#reComment").val(),
+//             reStar: $("#reStarInput").val()
+//         };
+//     });
 
-        // Ajax 요청
-        $.ajax({
-            type: "POST",
-            url: "/usr/v1/infra/review/reviewUsrInst",
-            data: {
-                Product_prseq: productPrseq,
-                Member_memseq: Member_memseq,
-                reTitle: reTitle,
-                reComment: reComment,
-                reStar: reStar
-            },
-            success: function(response) {
-                if (response.rt === "success") {
-                    // 새로 추가된 리뷰 HTML 생성
-                    let reviewHtml = '<div class="single-review">';
-                    reviewHtml += '<div class="review-content">';
-                    reviewHtml += '<div class="review-top-wrap">';
-                    reviewHtml += '<div class="review-left">';
-                    reviewHtml += '<div class="review-name">';
-                    reviewHtml += '<span>' + response.relist.memId + '</span>';
-                    reviewHtml += '<br>';
-                    reviewHtml += '<div class="review-rating">' + renderStars(response.relist.reStar) + '</div>';
-                    reviewHtml += '<h4>' + response.relist.reTitle + '</h4>';
-                    reviewHtml += '</div></div></div>';
-                    reviewHtml += '<div class="review-bottom"><h5>' + response.relist.reComment + '</h5></div>';
-                    reviewHtml += '</div></div>';
-                    // 리뷰 목록에 추가
-                    $("#reviewList").append(reviewHtml);
-                } else {
-                    alert(response.message);
-                }
-            },
-            error: function() {
-                alert("리뷰 저장 중 오류가 발생했습니다.");
-            }
-        });
-    });
+
+			function insertComment(event) {
+		         // 로그인 여부 확인
+		         if (!$("#Member_memseq").val()) {
+		             alert("로그인 후 이용하세요.");
+		             return; // 함수 종료
+		         }
+		
+		         // 댓글 내용 입력 확인
+		         if (!$("#reComment").val()) {
+		             alert("내용을 입력하세요.");
+		         } else {
+		             var reDto = {
+		            	 Product_prseq: $("#Product_prseq").val(),
+		                 Member_memseq: $("#Member_memseq").val(),
+		                 reComment: $("#reComment").val(),
+		                 reStar: $("#reStar").val() // 별점 선택 값
+		             };
+		
+		             $.ajax({
+		                 url: "/usr/v1/infra/review/reviewUsrInst",  // 댓글 추가 요청 URL
+		                 type: 'POST',
+		                 data: reDto,
+		                 success: function(result) {
+		                     // 댓글 목록 새로 고침
+		                     getCommentList();
+		                     // 댓글 입력란 초기화
+		                     $("#reComment").val("");
+		                 },
+		                 error: function() {
+		                     console.log("리뷰 등록 실패.");
+		                 }
+		             });
+		         }
+		     }
+			 
+			// 댓글 목록을 가져오는 함수
+		     function getCommentList() {
+		         $.ajax({
+		             url: "/reviewList",  // 서버에서 리뷰 목록을 가져오는 URL
+		             type: 'get',
+		             dataType: 'json',
+		             data: { 
+		                 "Member_memseq": $("#Member_memseq").val(), 
+		                 "Product_prseq": $("#Product_prseq").val() 
+		             },
+		             success: function(response) {
+		                 console.log("response", response);
+		                 var reviewsHtml = "";  // 댓글 HTML을 저장할 변수
+		
+		                 // 서버에서 받은 댓글 데이터를 반복하여 HTML 생성
+		                 $.each(response.rvList, function(index, list) {
+		                     var starsHtml = ''; // 별 아이콘을 저장할 변수
+		                     
+// 		                     // 별점 표시
+// 		                     if (list.rvRank == 1) {
+// 		                         starsHtml = '<i class="ri-star-fill text-warning"></i>';
+// 		                     } else if (list.rvRank == 2) {
+// 		                         starsHtml = '<span><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></span>';
+// 		                     } else if (list.rvRank == 3) {
+// 		                         starsHtml = '<span><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></span>';
+// 		                     } else if (list.rvRank == 4) {
+// 		                         starsHtml = '<span><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></span>';
+// 		                     } else {
+// 		                         starsHtml = '<span><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></span>';
+// 		                     }
+		
+		                     // 리뷰 HTML 생성
+		                     reviewsHtml += `
+		                         <div class="col-lg-12 col-12 pe-lg-5">
+		                             <form class="row g-3" name="mfom">                            
+		                                 <div class="d-flex align-items-start gap-3 py-3" id="ms-3">
+		                                     <img class="img-fluid rounded-circle avtar-sm" src="/usr/img/pages/team/member-1.jpg" alt="Image Description">
+		                                     <div class="w-100">
+		                                         <div class="d-flex justify-content-between mb-2">
+		                                             <div class="d-flex align-items-end gap-2">
+		                                                 <h5 class="fw-bold m-0">${list.mmNickName}</h5>
+		                                                 <span class="text-muted fw-normal small">${formattedDate}</span>
+		                                             </div>
+		                                             <div class="d-flex align-items-center gap-2">
+		                                                 ${starsHtml}
+		                                             </div>
+		                                         </div>
+		                                         <p class="text-muted">${list.rvComment}</p>
+		                                     </div>
+		                                     <!-- 댓글 삭제 버튼 -->
+		                                     <button type="button" id="rvSeq" onclick="deleteComment(event)" class="btn btn-outline-danger rounded-3 delbtn" value="${list.rvSeq}" aria-label="리뷰 삭제">
+		                                         <i class="ri-delete-bin-5-fill"></i>
+		                                     </button>
+		                                 </div>
+		                             </form>
+		                         </div>
+		                     `;
+		                 });
+		
+		                 // 기존의 리뷰 목록을 새로 고침
+		                 $("#reviewsContainer").html(reviewsHtml); // 기존 내용 덮어쓰기
+		             },
+		             error: function() {
+		                 console.log("리뷰 목록 가져오기 실패.");
+		             }
+		         });
+		     }
+
+
 
     // 별점 렌더링 함수
     function renderStars(reStar) {
         let stars = "";
         for (let i = 1; i <= 5; i++) {
-            stars += '<i class="fa ' + (i <= reStar ? "fa-star" : "fa-star-o") + '"></i>';
+            stars += `<i class="fa ${i <= reStar ? "fa-star" : "fa-star-o"}"></i>`;
         }
         return stars;
     }

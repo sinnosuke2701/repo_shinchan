@@ -88,6 +88,12 @@ public class MemberController {
 		return "xdm/v1/infra/member/MemberXdmMfom";
 	}
 	
+	@RequestMapping(value = "/usr/v1/infra/member/MemberUsrPdt")
+	public String MemberUsrPdt(MemberDto memberDto) {
+		MemberService.update(memberDto);
+		return "redirect:/usr/v1/infra/index/indexUsrView";
+	}
+	
 	@RequestMapping(value = "/xdm/v1/infra/member/MemberXdmPdt")
 	public String MemberXdmPdt(MemberDto memberDto) {
 		MemberService.update(memberDto);
@@ -192,6 +198,7 @@ public class MemberController {
 				httpSession.setAttribute("sessIdUsr", rtMember2.getMemId());
 				httpSession.setAttribute("sessNameUsr", rtMember2.getMemName());
 				httpSession.setAttribute("sessEmailUsr", rtMember2.getMemEmail());
+				httpSession.setAttribute("sessGenderUsr", rtMember2.getMemGender());
 				httpSession.setAttribute("sessPhoneNumUsr", rtMember2.getMemPhoneNum());
 				httpSession.setAttribute("sessZipcodeUsr", rtMember2.getMemZipcode());
 				httpSession.setAttribute("sessAddressUsr", rtMember2.getMemAddress());
@@ -210,6 +217,7 @@ public class MemberController {
 		System.out.println("sessNameUsr: " + httpSession.getAttribute("sessNameUsr"));
 		System.out.println("Member_memseq: " + httpSession.getAttribute("Member_memseq"));
 		System.out.println("sessEmailUsr: " + httpSession.getAttribute("sessEmailUsr"));
+		System.out.println("sessGenderUsr: " + httpSession.getAttribute("sessGenderUsr"));
 		System.out.println("sessPhoneNumUsr: " + httpSession.getAttribute("sessPhoneNumUsr"));
 		System.out.println("sessZipcodeUsr: " + httpSession.getAttribute("sessZipcodeUsr"));
 		System.out.println("sessAddressUsr: " + httpSession.getAttribute("sessAddressUsr"));
