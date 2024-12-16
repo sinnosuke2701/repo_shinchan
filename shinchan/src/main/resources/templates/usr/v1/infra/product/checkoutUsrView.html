@@ -272,38 +272,22 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
 	}
 </script>
 <script type="text/javascript">
-    $(function(){
-        $("#btnKakao").click(function(){
-            // pmProd와 pmToPrice 값을 가져옵니다.
-            var pmProd = $("#pmProd").val();
-            var pmToPrice = $("#pmToPrice").val();
-
-            $.ajax({
-                url: "/usr/v1/infra/checkout/kakaopay",
-                type: "POST", // POST 방식으로 변경
-                data: JSON.stringify({
-                    pmProd: pmProd, 
-                    pmToPrice: pmToPrice
-                }),
-                contentType: "application/json", // JSON 형식으로 전송
-                dataType: "json",
-                success: function(data){
-                    // 카카오페이에서 받은 응답 중 next_redirect_pc_url을 사용하여 리디렉션
-                    var redirectUrl = data.next_redirect_pc_url;
-                    if (redirectUrl) {
-                        window.open(redirectUrl); // 새 창에서 카카오페이 결제 페이지 열기
-                    } else {
-                        alert("카카오페이 결제 준비가 실패했습니다.");
-                    }
-                },
-                error: function(error){
-                    alert("Error: " + error.statusText);
-                }
-            });
-        });
-    });
-</script>
-
+        	$(function(){
+        		$("#btnKakao").click(function(){
+	        		$.ajax({
+	        			url:"/usr/v1/infra/checkout/kakaopay" ,
+	        			dataType:"json",
+	        			success:function(data){
+	        				var box = data.next_redirect_pc_url;
+	        				window.open(box);
+	        			},
+	        			error:function(error){
+	        				alert(error);
+        				}
+        			})
+       			})
+       		})
+        </script>
 
 </body>
 
