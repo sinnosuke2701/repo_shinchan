@@ -1,12 +1,16 @@
 package com.shinnosuke.infra.product;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shinnosuke.common.util.UtilDateTime;
 
@@ -119,12 +123,62 @@ public class ProductController {
         return "redirect:/usr/v1/infra/product/cartUsrList";
     }
     
-    @RequestMapping(value="/usr/v1/infra/review/reviewUsrInst")
-    public String reviewUsrInst(ProductDto productDto) {
-        ProductService.insertReview(productDto);
-        return "redirect:/usr/v1/infra/index/indexUsrView";
-    }
+//    @RequestMapping(value="/usr/v1/infra/review/reviewUsrInst")
+//    public String reviewUsrInst(ProductDto productDto) {
+//        ProductService.insertReview(productDto);
+//        return "redirect:/usr/v1/infra/index/indexUsrView";
+//    }
     
+//    @ResponseBody
+//	@RequestMapping(value = "/usr/v1/infra/review/reviewUsrProc")
+//	public Map<String, Object> reviewUsrProc(ProductDto productDto, HttpSession httpSession) throws Exception {
+//		Map<String, Object> returnMap = new HashMap<String, Object>();
+//		httpSession.setAttribute("sessIdUsr", productDto.getMemId());
+//		returnMap.put("sessIdUsr",httpSession.getAttribute("sessIdUsr"));
+//		return returnMap;
+//    }
+//    
+//    @RequestMapping(value="/usr/v1/infra/review/reviewUsrInst", method=RequestMethod.POST)
+//    @ResponseBody
+//    public Map<String, Object> reviewUsrInst(ProductDto productDto) {
+//        // 리뷰 인서트 처리
+//        ProductService.insertReview(productDto);
+//        
+//        // 서버에서 클라이언트로 반환할 데이터를 맵으로 구성
+//        Map<String, Object> response = new HashMap<>();
+//        response.put("memId", productDto.getMemId()); // 예시로 productDto에 memId가 포함되었다고 가정
+//        response.put("reStar", productDto.getReStar());
+//        response.put("reTitle", productDto.getReTitle());
+//        response.put("reComment", productDto.getReComment());
+//
+//        // 작성된 리뷰 정보를 클라이언트로 반환
+//        return response;
+//    }
+    
+    @ResponseBody
+    @RequestMapping(value="/usr/v1/infra/review/reviewUsrInst", method=RequestMethod.POST)
+    public Map<String, Object> reviewUsrInst(ProductDto productDto, HttpSession httpSession) {
+        String sessIdUsr = (String) httpSession.getAttribute("sessIdUsr");
+        
+        if (sessIdUsr == null) {
+            Map<String, Object> errorResponse = new HashMap<>();
+            errorResponse.put("error", "User not logged in");
+            return errorResponse;
+        }
+        
+        productDto.setMemId(sessIdUsr);
+        
+        ProductService.insertReview(productDto);
+        
+        Map<String, Object> response = new HashMap<>();
+        response.put("memId", productDto.getMemId()); 
+        response.put("reStar", productDto.getReStar());
+        response.put("reTitle", productDto.getReTitle());
+        response.put("reComment", productDto.getReComment());
+
+        return response;
+    }
+
     @RequestMapping(value="/usr/v1/infra/product/cartUsrList")
     public String cartUsrView(ProductDto productDto , Model model) {
         List<ProductDto> payment =ProductService.selectListPayment(productDto);

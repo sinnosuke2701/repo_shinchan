@@ -16913,3 +16913,12 @@ select:-webkit-autofill:focus {
   padding-left: 10px;
 }
 
+/* 기본 상태로 빈 별을 반투명하게 표시 */
+.fa-star-o {
+    color: rgba(0, 0, 0, 0.3); /* 빈 별의 색 */
+}
+
+/* 채워진 별은 금색으로 표시 */
+.fa-star {
+    color: rgba(250, 208, 0, 0.99); /* 채워진 별의 색 */
+}

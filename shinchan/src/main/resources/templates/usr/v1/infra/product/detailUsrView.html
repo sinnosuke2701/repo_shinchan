@@ -316,34 +316,34 @@
                     <div id="des-details3" class="tab-pane">
 					    <div class="row">
 					        <!-- 리뷰 목록 -->
-					        <div class="col-lg-6">
-					            <div class="review-wrapper" th:each="relist : ${relist}">
-					                <div class="single-review">
-					                    <div class="review-content">
-					                        <div class="review-top-wrap">
-					                            <div class="review-left">
-					                                <div class="review-name">
-					                                    <span th:text="${relist.memId}"></span>
-					                                    <br>
-					                                    <div class="review-rating">
-					                                        <!-- 별점 표시 -->
-					                                        <i class="fa" th:classappend="${relist.reStar >= 1 ? 'fa-star' : 'fa-star-o'}"></i>
-					                                        <i class="fa" th:classappend="${relist.reStar >= 2 ? 'fa-star' : 'fa-star-o'}"></i>
-					                                        <i class="fa" th:classappend="${relist.reStar >= 3 ? 'fa-star' : 'fa-star-o'}"></i>
-					                                        <i class="fa" th:classappend="${relist.reStar >= 4 ? 'fa-star' : 'fa-star-o'}"></i>
-					                                        <i class="fa" th:classappend="${relist.reStar >= 5 ? 'fa-star' : 'fa-star-o'}"></i>
-					                                    </div>
-					                                    <h4><span th:text="${relist.reTitle}"></span></h4>
-					                                </div>
-					                            </div>
-					                        </div>
-					                        <div class="review-bottom">
-					                            <h5><span th:text="${relist.reComment}"></span></h5>
-					                        </div>
-					                    </div>
-					                </div>
-					            </div>
-					        </div>
+					        <div class="col-lg-6" id="abc">
+							    <div class="review-wrapper" th:each="relist : ${relist}">
+							        <div class="single-review">
+							            <div class="review-content">
+							                <div class="review-top-wrap">
+							                    <div class="review-left">
+							                        <div class="review-name">
+							                            <span th:text="${relist.memId}"></span>
+							                            <br>
+							                            <div class="review-rating">
+							                                <!-- 별점 표시: 서버에서 넘어오는 reStar 값에 따라 동적으로 클래스 설정 -->
+							                                <i class="fa" th:classappend="${relist.reStar >= 1 ? 'fa-star' : 'fa-star-o'}"></i>
+							                                <i class="fa" th:classappend="${relist.reStar >= 2 ? 'fa-star' : 'fa-star-o'}"></i>
+							                                <i class="fa" th:classappend="${relist.reStar >= 3 ? 'fa-star' : 'fa-star-o'}"></i>
+							                                <i class="fa" th:classappend="${relist.reStar >= 4 ? 'fa-star' : 'fa-star-o'}"></i>
+							                                <i class="fa" th:classappend="${relist.reStar >= 5 ? 'fa-star' : 'fa-star-o'}"></i>
+							                            </div>
+							                            <h4><span th:text="${relist.reTitle}"></span></h4>
+							                        </div>
+							                    </div>
+							                </div>
+							                <div class="review-bottom">
+							                    <h5><span th:text="${relist.reComment}"></span></h5>
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							</div>
 					        <!-- 후기 작성 -->
 					        <div class="col-lg-6">
 					            <div class="ratting-form-wrapper pl-50">
@@ -588,6 +588,8 @@
     <script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/ajax-mail.js"></script>
     <!-- Main JS -->
     <script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
 <script>
 	document.getElementById("btnLogout").onclick = function(){
 				$.ajax({
@@ -651,130 +653,86 @@
         });
     });
 
-//     $("#btnReview").onclick(function() {
-//         const requestData = {
-//             Product_prseq: $("#Product_prseq").val(),
-//             Member_memseq: $("#Member_memseq").val(),
-//             reTitle: $("#reTitle").val(),
-//             reComment: $("#reComment").val(),
-//             reStar: $("#reStarInput").val()
-//         };
-//     });
+    $('#btnReview').on('click', function () {
+        const Product_prseq = $('#Product_prseq').val();
+        const Member_memseq = $('#Member_memseq').val();
+        const reStar = $('#reStarInput').val();
+        const reTitle = $('#reTitle').val();
+        const reComment = $('#reComment').val();
 
+        // 데이터 검증
+        if (!reStar || !reTitle || !reComment) {
+            alert('모든 필드를 입력해주세요.');
+            return;
+        }
 
-			function insertComment(event) {
-		         // 로그인 여부 확인
-		         if (!$("#Member_memseq").val()) {
-		             alert("로그인 후 이용하세요.");
-		             return; // 함수 종료
-		         }
-		
-		         // 댓글 내용 입력 확인
-		         if (!$("#reComment").val()) {
-		             alert("내용을 입력하세요.");
-		         } else {
-		             var reDto = {
-		            	 Product_prseq: $("#Product_prseq").val(),
-		                 Member_memseq: $("#Member_memseq").val(),
-		                 reComment: $("#reComment").val(),
-		                 reStar: $("#reStar").val() // 별점 선택 값
-		             };
-		
-		             $.ajax({
-		                 url: "/usr/v1/infra/review/reviewUsrInst",  // 댓글 추가 요청 URL
-		                 type: 'POST',
-		                 data: reDto,
-		                 success: function(result) {
-		                     // 댓글 목록 새로 고침
-		                     getCommentList();
-		                     // 댓글 입력란 초기화
-		                     $("#reComment").val("");
-		                 },
-		                 error: function() {
-		                     console.log("리뷰 등록 실패.");
-		                 }
-		             });
-		         }
-		     }
-			 
-			// 댓글 목록을 가져오는 함수
-		     function getCommentList() {
-		         $.ajax({
-		             url: "/reviewList",  // 서버에서 리뷰 목록을 가져오는 URL
-		             type: 'get',
-		             dataType: 'json',
-		             data: { 
-		                 "Member_memseq": $("#Member_memseq").val(), 
-		                 "Product_prseq": $("#Product_prseq").val() 
-		             },
-		             success: function(response) {
-		                 console.log("response", response);
-		                 var reviewsHtml = "";  // 댓글 HTML을 저장할 변수
-		
-		                 // 서버에서 받은 댓글 데이터를 반복하여 HTML 생성
-		                 $.each(response.rvList, function(index, list) {
-		                     var starsHtml = ''; // 별 아이콘을 저장할 변수
-		                     
-// 		                     // 별점 표시
-// 		                     if (list.rvRank == 1) {
-// 		                         starsHtml = '<i class="ri-star-fill text-warning"></i>';
-// 		                     } else if (list.rvRank == 2) {
-// 		                         starsHtml = '<span><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></span>';
-// 		                     } else if (list.rvRank == 3) {
-// 		                         starsHtml = '<span><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></span>';
-// 		                     } else if (list.rvRank == 4) {
-// 		                         starsHtml = '<span><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></span>';
-// 		                     } else {
-// 		                         starsHtml = '<span><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i><i class="ri-star-fill text-warning"></i></span>';
-// 		                     }
-		
-		                     // 리뷰 HTML 생성
-		                     reviewsHtml += `
-		                         <div class="col-lg-12 col-12 pe-lg-5">
-		                             <form class="row g-3" name="mfom">                            
-		                                 <div class="d-flex align-items-start gap-3 py-3" id="ms-3">
-		                                     <img class="img-fluid rounded-circle avtar-sm" src="/usr/img/pages/team/member-1.jpg" alt="Image Description">
-		                                     <div class="w-100">
-		                                         <div class="d-flex justify-content-between mb-2">
-		                                             <div class="d-flex align-items-end gap-2">
-		                                                 <h5 class="fw-bold m-0">${list.mmNickName}</h5>
-		                                                 <span class="text-muted fw-normal small">${formattedDate}</span>
-		                                             </div>
-		                                             <div class="d-flex align-items-center gap-2">
-		                                                 ${starsHtml}
-		                                             </div>
-		                                         </div>
-		                                         <p class="text-muted">${list.rvComment}</p>
-		                                     </div>
-		                                     <!-- 댓글 삭제 버튼 -->
-		                                     <button type="button" id="rvSeq" onclick="deleteComment(event)" class="btn btn-outline-danger rounded-3 delbtn" value="${list.rvSeq}" aria-label="리뷰 삭제">
-		                                         <i class="ri-delete-bin-5-fill"></i>
-		                                     </button>
-		                                 </div>
-		                             </form>
-		                         </div>
-		                     `;
-		                 });
-		
-		                 // 기존의 리뷰 목록을 새로 고침
-		                 $("#reviewsContainer").html(reviewsHtml); // 기존 내용 덮어쓰기
-		             },
-		             error: function() {
-		                 console.log("리뷰 목록 가져오기 실패.");
-		             }
-		         });
-		     }
+        // AJAX 요청
+        $.ajax({
+            url: '/usr/v1/infra/review/reviewUsrInst',
+            method: 'POST',
+            data: {
+                Product_prseq: Product_prseq,
+                Member_memseq: Member_memseq,
+                reStar: reStar,
+                reTitle: reTitle,
+                reComment: reComment
+            },
+            success: function(response) {
+                // 서버 응답을 확인
+                console.log(response);  // 응답 확인
 
+                // 새 리뷰 HTML 생성
+                const newReview = `
+                    <div class="single-review">
+                        <div class="review-content">
+                            <div class="review-top-wrap">
+                                <div class="review-left">
+                                    <div class="review-name">
+                                        <span>${response.memId}</span>
+                                        <br>
+                                        <div class="review-rating">
+                                            ${renderStars(response.reStar)} <!-- 별점 표시 -->
+                                        </div>
+                                        <h4><span>${response.reTitle}</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-bottom">
+                                <h5><span>${response.reComment}</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                `;
 
+                // 후기 리스트에 새 리뷰 추가
+                $('#abc').append(newReview);
+
+                // 입력 필드 초기화
+                $('#reStarInput').val('');
+                $('#reTitle').val('');
+                $('#reComment').val('');
+                $('.ratting-star .fa-star').removeClass('selected');
+            },
+            error: function() {
+                alert('후기 작성에 실패했습니다. 다시 시도해주세요.');
+            }
+        });
+    });
 
     // 별점 렌더링 함수
     function renderStars(reStar) {
         let stars = "";
         for (let i = 1; i <= 5; i++) {
-            stars += `<i class="fa ${i <= reStar ? "fa-star" : "fa-star-o"}"></i>`;
+            if (i <= reStar) {
+                stars += '<i class="fa fa-star"></i>'; // 채워진 별
+            } else {
+                stars += '<i class="fa fa-star-o"></i>'; // 빈 별
+            }
         }
         return stars;
     }
+
+
 
     // 사이즈 선택 처리
     window.onload = function() {
@@ -802,7 +760,13 @@
         form.submit();
     };
 </script>
-
+<script>
+let forms = document.getElementById("forms");
+function aaa(){
+	forms.action = "/usr/v1/infra/product/checkoutUsrView";
+	forms.submit();
+}
+</script>
 
 </body>
 

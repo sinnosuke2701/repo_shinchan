@@ -14011,6 +14011,17 @@ a.default-btn {
   margin-right: 1px;
   color: #ffa900;
 }
+
+.single-review .review-top-wrap .review-left .review-rating .fa-star-o {
+    color: rgba(0, 0, 0, 0.3); /* 빈 별 색 (회색) */
+}
+
+/* 채워진 별 */
+.single-review .review-top-wrap .review-left .review-rating .fa-star {
+    color: rgba(250, 208, 0, 0.99); /* 채워진 별 색 (노란색) */
+}
+
+
 .single-review .review-top-wrap .review-btn a {
   font-weight: 500;
   line-height: 1;
@@ -16055,5 +16066,14 @@ h3.cart-page-title {
     border-radius: 5px;
     font-size: 16px;
     resize: none;
+}
+/* 기본 상태로 빈 별을 반투명하게 표시 */
+.fa-star-o {
+    color: rgba(0, 0, 0, 0.3); /* 빈 별의 색 */
+}
+
+/* 채워진 별은 금색으로 표시 */
+.fa-star {
+    color: rgba(250, 208, 0, 0.99); /* 채워진 별의 색 */
 }
 

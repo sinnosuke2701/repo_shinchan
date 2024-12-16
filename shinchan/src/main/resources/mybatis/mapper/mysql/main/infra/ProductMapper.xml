@@ -54,8 +54,8 @@
 				,a.prDelNY
 				,(select count(c.cdseq) from code c where 1 = 1 and c.cdseq = a.prSize) as sizeCount
 				,(select count(r.reSeq) from review r where 1 = 1 and r.Product_prseq = a.prseq) as reviewCount
-				,(select avg(r.reSeq) from review r where 1 = 1 and r.Product_prseq = a.prseq) as reviewAvg
-				
+<!-- 				,(select avg(r.reSeq)  from review r where 1 = 1 and r.Product_prseq = a.prseq) as reviewAvg -->
+				,(select avg(r.reStar) from review r where 1 = 1 and r.Product_prseq = a.prseq) as reviewAvg
 				,(select aa.pfPath from productFile aa where 1=1 and aa.pfPseq = a.prseq and aa.pfDefaultNY = 1) as mainImg
 				, (select aa.pfPath from productFile aa where 1=1 and aa.pfPseq = a.prseq and aa.pfDefaultNY = 2) as subImg1
 				, (select aa.pfPath from productFile aa where 1=1 and aa.pfPseq = a.prseq and aa.pfDefaultNY = 3) as subImg2
