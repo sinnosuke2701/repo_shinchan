@@ -120,13 +120,15 @@
                         <button class="btnPayment" type="button" id="btnPayment" th:if="${session.sessSeqUsr != null}">결제하기</button>
                         <button class="btnPayment" type="button" id="btnLogin" th:unless="${session.sessSeqUsr != null}">로그인을 해주세요.</button>
                     </div>
-	            </div>
-            	<div id="map" style="width:56%;height:300px;margin-left:15px;"></div>
-				<p><em>지도를 클릭해주세요!</em></p> 
-				<div id="clickLatlng"></div>
-	        </div>
-	    </div>
-	</div>
+					<button type="button"id="btnKakao" class="btn btn-warning px-5 py-3 w-100" th:if="${session.sessSeqUsr != null}">카카오페이</button>		
+                </div>
+            </div>
+            <div id="map" style="width:56%;height:300px;margin-left:15px;"></div>
+			<p><em>지도를 클릭해주세요!</em></p> 
+			<div id="clickLatlng"></div>
+        </div>
+    </div>
+</div>
 <!-- footer Start -->
 <div th:replace="~{usr/v1/infra/include/footer :: footer}"></div>
 <!-- footer Start -->
@@ -144,6 +146,12 @@
 <script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/ajax-mail.js"></script>
 <!-- Main JS -->
 <script src="/usr/v1/template/flone-html-tf-v2.5.1/assets/js/main.js"></script>
+<!-- 포트원 카카오페이 결제 -->
+<script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<!-- iamport.payment.js -->
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 
 <script>
 	document.getElementById("btnLogout").onclick = function(){
@@ -263,6 +271,40 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
 		window.location = "/usr/v1/infra/member/signinUsrForm";
 	}
 </script>
+<script type="text/javascript">
+    $(function(){
+        $("#btnKakao").click(function(){
+            // pmProd와 pmToPrice 값을 가져옵니다.
+            var pmProd = $("#pmProd").val();
+            var pmToPrice = $("#pmToPrice").val();
+
+            $.ajax({
+                url: "/usr/v1/infra/checkout/kakaopay",
+                type: "POST", // POST 방식으로 변경
+                data: JSON.stringify({
+                    pmProd: pmProd, 
+                    pmToPrice: pmToPrice
+                }),
+                contentType: "application/json", // JSON 형식으로 전송
+                dataType: "json",
+                success: function(data){
+                    // 카카오페이에서 받은 응답 중 next_redirect_pc_url을 사용하여 리디렉션
+                    var redirectUrl = data.next_redirect_pc_url;
+                    if (redirectUrl) {
+                        window.open(redirectUrl); // 새 창에서 카카오페이 결제 페이지 열기
+                    } else {
+                        alert("카카오페이 결제 준비가 실패했습니다.");
+                    }
+                },
+                error: function(error){
+                    alert("Error: " + error.statusText);
+                }
+            });
+        });
+    });
+</script>
+
+
 </body>
 
 </html>
