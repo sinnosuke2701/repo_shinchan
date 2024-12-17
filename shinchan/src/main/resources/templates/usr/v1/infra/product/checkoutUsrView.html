@@ -111,6 +111,7 @@
                                     <li class="order-total">총액 :</li>
                                     <li><span class="order-price" th:text="${#numbers.formatInteger(dto.pmToPrice, 3, 'COMMA')}+'원'" name="pmToPrice"></span></li>
 <input type="hidden" id="pmToPrice" name="pmToPrice" th:value="${dto.pmToPrice}">                                    
+<input type="hidden" id="pmInvoiceNo" name="pmInvoiceNo">
                                 </ul>
                             </div>
                         </div>
@@ -169,12 +170,32 @@
 				});
 			}
 </script>
-<script>
+<!-- <script>
 	document.getElementById("btnPayment").onclick = function(){
 		let form = document.querySelector("form[name=form]");
 		form.action = "/usr/v1/infra/product/paymentUsrInst";
 		form.submit();
 	} 
+</script> -->
+<script>
+    document.getElementById("btnPayment").onclick = function(){
+        // 10자리 랜덤 숫자 송장번호 생성 함수
+        function generateInvoiceNumber() {
+            var randomNum = Math.floor(Math.random() * 10000000000); // 10자리 랜덤 숫자
+            return randomNum.toString().padStart(12, '0'); // 12자리 숫자로 반환
+        }
+
+        // 송장번호 생성
+        var invoiceNumber = generateInvoiceNumber();
+
+        // 송장번호를 hidden input에 설정
+        document.getElementById("pmInvoiceNo").value = invoiceNumber;
+
+        // 폼 제출
+        var form = document.querySelector("form[name=form]");
+        form.action = "/usr/v1/infra/product/paymentUsrInst";
+        form.submit();
+    }
 </script>
 
 <!-- kakao 주소 Start -->

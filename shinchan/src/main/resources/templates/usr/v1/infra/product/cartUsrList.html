@@ -36,6 +36,7 @@
                                     <th>상품 사이즈</th>
                                     <th>수량</th>
                                     <th>상품 총액</th>
+                                    <th>송장 번호</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,6 +46,7 @@
                                     <td class="product-price-cart" th:text="${list.pmSize}"></td>
                                     <td class="product-quantity" th:text="${list.pmQty}"></td>
                                     <td class="product-subtotal" th:text="${#numbers.formatInteger(list.pmToPrice, 3, 'COMMA') + '원'}"></td>
+                                    <td th:text=${list.pmInvoiceNo}></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -215,6 +215,7 @@
 			,pmQty
 			,pmPrice
 			,pmToPrice
+			,pmInvoiceNo
 			,Member_memseq
 		)values(
 			#{pmName}
@@ -230,6 +231,7 @@
 			,#{pmQty}
 			,#{pmPrice}
 			,#{pmToPrice}
+			,#{pmInvoiceNo}
 			,#{Member_memseq}
 		)
 		<selectKey resultType="String" keyProperty="pmSeq" order="AFTER">
@@ -282,7 +284,8 @@
 			a.pmSize,
 			a.pmQty,
 			a.pmPrice,
-			a.pmToPrice
+			a.pmToPrice,
+			a.pmInvoiceNo
 		from
 			payment a
 		left join

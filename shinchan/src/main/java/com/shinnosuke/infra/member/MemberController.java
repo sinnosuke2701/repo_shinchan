@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shinnosuke.common.constants.Constants;
@@ -17,7 +19,6 @@ import com.shinnosuke.common.util.UtilDateTime;
 import com.shinnosuke.infra.mail.MailService;
 
 import jakarta.servlet.http.HttpSession;
-
 @Controller
 public class MemberController {
 	
@@ -233,5 +234,13 @@ public class MemberController {
 		returnMap.put("rt", "success");
 		return returnMap;
 	}
+	
+	// 로그인 성공 후 카카오 메시지 전송
+    @GetMapping("/kakao-login-callback")
+    public String kakaoLoginCallback(@RequestParam("access_token") String accessToken) {
+        // 카카오 로그인 후 access token을 이용해 메시지 전송
+        MemberService.sendKakaoMessage(accessToken);
+        return "로그인 성공, 카카오톡으로 메시지를 보냈습니다!";
+    }
 	
 }

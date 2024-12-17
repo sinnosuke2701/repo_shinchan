@@ -3,7 +3,12 @@ package com.shinnosuke.infra.member;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 public class MemberService {
@@ -63,5 +68,32 @@ public class MemberService {
 		return MemberDao.insertLogLogin(memberDto);
 		
 	}
+	
+	@Value("${kakao.api.key}") // 카카오 API 키를 application.properties에서 가져옵니다
+    private String kakaoApiKey;
+
+    // 카카오 메시지 보내기
+    public void sendKakaoMessage(String accessToken) {
+        String url = "https://kapi.kakao.com/v2/api/talk/memo/default/send";
+        
+        // 헤더에 Access Token을 추가
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + accessToken);
+
+        // 메시지 내용 설정
+        String message = "{"
+                + "\"object_type\": \"text\","
+                + "\"text\": \"카카오 로그인에 성공했습니다! 🎉\","
+                + "\"link\": {"
+                + "\"web_url\": \"/usr/v1/infra/index/indexUsrView\","
+                + "\"mobile_web_url\": \"/usr/v1/infra/index/indexUsrView\""
+                + "}"
+                + "}";
+
+        // 요청 보내기
+        RestTemplate restTemplate = new RestTemplate();
+        HttpEntity<String> entity = new HttpEntity<>(message, headers);
+        restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
+    }
 	
 }

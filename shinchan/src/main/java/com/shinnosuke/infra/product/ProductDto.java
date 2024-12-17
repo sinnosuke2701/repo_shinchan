@@ -51,6 +51,7 @@ public class ProductDto {
 	private Integer pmQty;
 	private Integer pmPrice;
 	private Integer pmToPrice;
+	private String pmInvoiceNo;
 	
 	private String cd_Name;
 	
@@ -62,7 +63,7 @@ public class ProductDto {
 	private String pfPath;
 	private String pfOriginalName;
 	private String pfUuidFileName;
-	private String pfExt;
+	private String pfExt;	
 	private Long pfSize;
 	private String pfTableName;
 	private Integer pfType;
@@ -407,6 +408,12 @@ public class ProductDto {
 	}
 	public void setSubImg4(String subImg4) {
 		this.subImg4 = subImg4;
+	}
+	public String getPmInvoiceNo() {
+		return pmInvoiceNo;
+	}
+	public void setPmInvoiceNo(String pmInvoiceNo) {
+		this.pmInvoiceNo = pmInvoiceNo;
 	}
 	
 }

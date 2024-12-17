@@ -15,6 +15,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -126,6 +127,9 @@ public class ProductController {
         return "usr/v1/infra/product/checkoutUsrView";
     }
     
+    @Value("${kakao.pay.rest.api.key}")
+    private String SECRET_KEY;
+    
     @RequestMapping("/usr/v1/infra/checkout/kakaopay")
 	@ResponseBody
 	public String kakaopay() {
@@ -134,7 +138,7 @@ public class ProductController {
 	        try {
 	            HttpURLConnection connent = (HttpURLConnection) url.openConnection();
 	            connent.setRequestMethod("POST");
-	            connent.setRequestProperty("Authorization", "SECRET_KEY DEVFC8B253C305A758DB5C9194879E20D28687FF"); // 실제 액세스 토큰으로 변경
+	            connent.setRequestProperty("Authorization", SECRET_KEY); // 실제 액세스 토큰으로 변경
 	            connent.setRequestProperty("Content-Type", "application/json");
 	            connent.setDoOutput(true);
 	            // JSON 형식의 요청 본문

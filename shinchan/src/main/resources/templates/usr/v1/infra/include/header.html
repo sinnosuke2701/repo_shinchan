@@ -80,7 +80,7 @@
 									<a th:unless="${session.sessSeqUsr == null}"></a>
 									<li></li>
 									<a th:if="${session.sessSeqUsr == null}"></a>
-									<a th:unless="${session.sessSeqUsr == null}" th:href="@{/usr/v1/infra/product/cartUsrList}">위시리스트</a>
+									<a th:unless="${session.sessSeqUsr == null}" th:href="@{/usr/v1/infra/product/cartUsrList}">구매내역</a>
 									<li></li>
 									<a th:if="${session.sessSeqUsr == null}" ></a>
 									<a th:unless="${session.sessSeqUsr == null}" th:href="@{/usr/v1/infra/product/accountUsrMfom}">내정보</a>

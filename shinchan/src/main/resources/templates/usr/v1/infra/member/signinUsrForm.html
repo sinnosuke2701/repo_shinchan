@@ -199,7 +199,7 @@
 	}
 </script>
 <!-- kakao login start -->
-<script>
+<!-- <script>
 	Kakao.init('9a79b228465df4faa6a10e4225e1beec');
     console.log( Kakao.isInitialized() );
   function loginWithKakao() {
@@ -239,6 +239,81 @@
 	        document.getElementById("btnLogin").click();
 	    }
 	});
+</script> -->
+<script>
+  // 카카오 SDK 초기화
+  Kakao.init('9a79b228465df4faa6a10e4225e1beec'); 
+  console.log(Kakao.isInitialized());
+
+  // 카카오 로그인 함수
+  function loginWithKakao() {
+    Kakao.Auth.authorize({
+      redirectUri: 'http://localhost:8080/usr/v1/infra/index/indexUsrView',
+    });
+  }
+
+  // 로그인 성공 후 토큰 확인 및 메시지 전송
+  function displayToken() {
+    var token = getCookie('authorize-access-token');
+
+    if (token) {
+      Kakao.Auth.setAccessToken(token);
+      Kakao.Auth.getStatusInfo()
+        .then(function (res) {
+          if (res.status === 'connected') {
+            document.getElementById('token-result').innerText =
+              'login success, token: ' + Kakao.Auth.getAccessToken();
+            
+            // 여기서 메시지 API를 호출합니다.
+            sendKakaoMessage();
+          }
+        })
+        .catch(function (err) {
+          console.error(err);
+          Kakao.Auth.setAccessToken(null);
+        });
+    }
+  }
+
+  // 카카오 메시지 보내기 함수
+  function sendKakaoMessage() {
+    Kakao.API.request({
+      url: '/v2/api/talk/memo/default/send',
+      data: {
+        template_object: {
+          object_type: 'text',
+          text: '카카오 로그인에 성공했습니다! 🎉',
+          link: {
+            web_url: '/usr/v1/infra/index/indexUsrView', // 이동할 URL
+            mobile_web_url: '/usr/v1/infra/index/indexUsrView'
+          }
+        }
+      }
+    })
+      .then(function (res) {
+        console.log('메시지 전송 성공', res);
+        alert('카카오톡으로 로그인 알림 메시지를 보냈습니다!');
+      })
+      .catch(function (err) {
+        console.error('메시지 전송 실패', err);
+        alert('메시지 전송에 실패했습니다.');
+      });
+  }
+
+  // 쿠키 가져오는 함수
+  function getCookie(name) {
+    var parts = document.cookie.split(name + '=');
+    if (parts.length === 2) {
+      return parts[1].split(';')[0];
+    }
+  }
+
+  // 엔터키 로그인 버튼 활성화
+  document.addEventListener('keydown', function (event) {
+    if (event.key == 'Enter') {
+      document.getElementById('btnLogin').click();
+    }
+  });
 </script>
 <script>
 	document.getElementById("btnLogout").onclick = function(){
