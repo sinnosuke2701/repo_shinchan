@@ -351,6 +351,7 @@
 					                <div class="ratting-form">
 					                    <form id="reviewform" name="reviewform" method="post" action="/usr/v1/infra/review/reviewUsrInst">
 <input type="hidden" id="Product_prseq" name="Product_prseq" th:value="${item?.prseq}">
+<input type="hidden" id="reDateTime" name="reDateTime">
 <input type="hidden" id="Member_memseq" name="Member_memseq" th:value="${session.sessSeqUsr}">
 					                        <!-- 별점 입력 -->
 					                        <div class="star-box">

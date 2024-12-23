@@ -188,6 +188,7 @@
 			,reComment
 			,reDelNY
 			,reStar
+			,reDateTime
 			,Product_prseq
 			,Member_memseq
 		)values(
@@ -195,6 +196,7 @@
 			,#{reComment}
 			,0
 			,#{reStar}
+			,now()
 			,#{Product_prseq}
 			,#{Member_memseq}
 		)
