@@ -5,9 +5,10 @@
 			<div class="sidebar-widget">
 				<h4 class="pro-sidebar-title">검색</h4>
 				<div class="pro-sidebar-search mb-50 mt-25">
-					<form class="pro-sidebar-search-form" action="#">
-						<input type="text" placeholder="검색어를 입력해주세요.">
-						<button>
+					<form class="pro-sidebar-search-form" method="get" action="/usr/v1/infra/product/itemUsrList">
+						<input type="hidden" name="shOption" value="2">
+						<input type="text" placeholder="상품명을 입력해주세요." name="shValue" autocomplete="off">
+						<button type="submit">
 							<i class="pe-7s-search"></i>
 						</button>
 					</form>

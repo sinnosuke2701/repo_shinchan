@@ -24,8 +24,16 @@ public class ProductService {
 		return ProductDao.selectOneCount(productVo);
 	}
 	
+	public int selectOneCountProduct(ProductVo productVo) {
+		return ProductDao.selectOneCountProduct(productVo);
+	}
+	
 		List<ProductDto> selectList(ProductVo productVo){
 			return ProductDao.selectList(productVo);
+		}
+		
+		List<ProductDto> selectListProduct(ProductVo productVo){
+			return ProductDao.selectListProduct(productVo);
 		}
 	
 	public int insert(ProductDto productDto , int type) throws Exception {

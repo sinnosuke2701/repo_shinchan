@@ -39,8 +39,10 @@ public class ProductController {
     public String ProductXdmList(Model model , @ModelAttribute("vo") ProductVo productVo) {
         productVo.setShStartDate(productVo.getShStartDate() == null || productVo.getShStartDate() == "" ? null : UtilDateTime.add00TimeString(productVo.getShStartDate()));
         productVo.setShEndDate(productVo.getShEndDate() == null || productVo.getShEndDate() == "" ? null : UtilDateTime.add59TimeString(productVo.getShEndDate()));
-        productVo.setParamsPaging(ProductService.selectOneCount(productVo));
-        List<ProductDto> products = ProductService.selectList(productVo);
+        productVo.setParamsPaging(ProductService.selectOneCountProduct(productVo));
+//        List<ProductDto> products = ProductService.selectList(productVo);
+//        model.addAttribute("list", products);
+        List<ProductDto> products = ProductService.selectListProduct(productVo);
         model.addAttribute("list", products);
         return "xdm/v1/infra/product/ProductXdmList";
     }

@@ -65,13 +65,66 @@
 		<include refid="selectCommon"></include>
 		Order By a.prseq asc
 		) aa
-		limit #{rowNumToShow} offset #{startRnumForMysql}
+		limit #{rowNumToShow} offset #{startRnumForMysql} 
+	</select>
+	
+	<sql id="selectCommonProduct">
+		from 
+			Product a
+		where 1 = 1
+		<if test="shDelNY != null and !shDelNY.equals('')">AND prDelNY = #{shDelNY}</if>
+		<if test="shUseNY != null and !shUseNY.equals('')">AND prUseNY = #{shUseNY}</if>
+		<if test="shSort != null and !shSort.equals('')">AND prSort = #{shSort}</if>
+		<if test="shSize != null and !shSize.equals('')">AND prSize = #{shSize}</if>
+		<if test="shColor != null and !shColor.equals('')">AND prColor = #{shColor}</if>
+<!-- 		<if test="shValue != null and !shValue.equals('')">AND a.ifqnaTitle LIKE CONCAT('%', #{shValue}, '%')</if> -->
+		
+		<choose>
+			<when test="shOption == 1 ">AND a.prseq = #{shValue}</when>
+			<when test="shOption == 2 ">AND a.prProdName LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 3 ">AND a.prReguPrice LIKE CONCAT('%',#{shValue},'%')</when> 
+			<when test="shOption == 4 ">AND a.prSalePrice LIKE CONCAT('%',#{shValue},'%')</when> 
+			<when test="shOption == 5 ">AND a.prInventory LIKE CONCAT('%',#{shValue},'%')</when> 
+		</choose>
+		
+		<choose>
+			<when test="shOptionDate == 1">AND a.prReDate BETWEEN #{shStartDate} AND #{shEndDate}</when>
+			<when test="shOptionDate == 2">AND a.prMoDate BETWEEN #{shStartDate} AND #{shEndDate}</when>		
+		</choose>
+	</sql>
+	
+	<select id="selectListProduct" resultMap="resultMapObj">
+		select aa.* from (
+			select
+				a.prseq
+					,a.prProdName
+					,a.prUseNY
+					,a.prSort
+					,a.prSize
+					,a.prColor
+					,a.prBestNY
+					,a.prProdDesc
+					,a.prReguPrice
+					,a.prSalePrice
+					,a.prInventory
+					,a.prReDate
+					,a.prMoDate
+					,a.prDelNY
+			<include refid="selectCommonProduct"></include>
+			Order By a.prseq asc
+			) aa
+			limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
 	
 	<select id="selectOneCount" resultType="Integer">
 		SELECT COUNT(*)
 		<include refid="selectCommon"></include>
 	</select>	
+	
+	<select id="selectOneCountProduct" resultType="Integer">
+		SELECT COUNT(*)
+		<include refid="selectCommonProduct"></include>
+	</select>
 	
 	<insert id="insert">
 		insert into Product(
